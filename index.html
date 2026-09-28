@@ -3,498 +3,677 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team Counsel — Daily Intelligence</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Team Counsel · Daily Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0a0a0b;
-    --surface: #111114;
-    --surface2: #18181c;
-    --surface3: #1e1e24;
-    --border: rgba(255,255,255,0.06);
-    --border-md: rgba(255,255,255,0.1);
-    --text: #e8e6df;
-    --text-dim: #6b6a63;
-    --text-muted: #3a3a3f;
+:root {
+  --bg: #0a0a0b;
+  --card: #111114;
+  --text: #e8e6df;
+  --text-muted: #8a8a8f;
+  --border: rgba(255,255,255,0.06);
+  --blue: #5b9bd5;
+  --amber: #d4954a;
+  --teal: #3ebf8f;
+  --coral: #d4705a;
+  --purple: #8b7cf8;
+  --green: #6db87a;
+  --red: #e05252;
+  --font-heading: 'Syne', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-body: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-    --blue: #5b9bd5;
-    --blue-dim: rgba(91,155,213,0.12);
-    --amber: #d4954a;
-    --amber-dim: rgba(212,149,74,0.12);
-    --teal: #3ebf8f;
-    --teal-dim: rgba(62,191,143,0.12);
-    --coral: #d4705a;
-    --coral-dim: rgba(212,112,90,0.12);
-    --purple: #8b7cf8;
-    --purple-dim: rgba(139,124,248,0.12);
-    --green: #6db87a;
-    --green-dim: rgba(109,184,122,0.12);
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,11,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 32px; }
+.nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; height: 52px; gap: 16px; flex-wrap: wrap; }
+.nav-brand { font-family: var(--font-heading); font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+.nav-sep { color: var(--text-muted); opacity: .3; }
+.nav-title { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: .08em; text-transform: uppercase; }
+.nav-tags { display: flex; gap: 6px; margin-left: auto; }
+.tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border); color: var(--text-muted); }
+.tag.us { border-color: rgba(91,155,213,0.3); color: var(--blue); }
+.tag.uk { border-color: rgba(139,124,248,0.3); color: var(--purple); }
+.tag.in { border-color: rgba(62,191,143,0.3); color: var(--teal); }
+.nav-date { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
 
-    --red: #e05c5c;
-    --red-dim: rgba(224,92,92,0.1);
+/* LAYOUT */
+.container { max-width: 1100px; margin: 0 auto; padding: 32px; }
 
-    --r-sm: 6px;
-    --r-md: 9px;
-    --r-lg: 12px;
-  }
+/* HEADER */
+.page-header { margin-bottom: 32px; }
+.page-header h1 { font-family: var(--font-heading); font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+.page-header .subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; }
+.header-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.header-meta .tag { font-size: 10px; }
+.last-updated { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); opacity: .7; }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* SECTION LABELS */
+.section-label { font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: .14em; color: #3a3a3f; margin-bottom: 16px; padding-bottom: 8px; position: relative; }
+.section-label::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.06) 0%, transparent 100%); }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-  }
+/* PANELS */
+.panel { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+.panel-title { font-family: var(--font-heading); font-size: 14px; font-weight: 600; margin-bottom: 14px; }
 
-  /* ── NAV ── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(10,10,11,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 32px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-left { display: flex; align-items: center; gap: 20px; }
-  .nav-wordmark {
-    font-family: 'Syne', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    letter-spacing: -.01em;
-  }
-  .nav-sep { width: 1px; height: 14px; background: var(--border-md); }
-  .nav-title { font-size: 12px; color: var(--text-dim); }
-  .nav-right { display: flex; align-items: center; gap: 10px; }
-  .nav-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    border: 1px solid var(--border-md);
-    color: var(--text-dim);
-  }
-  .nav-week {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--text-muted);
-  }
+/* STAT CARDS */
+.stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 36px; }
+.stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; text-align: center; }
+.stat-value { font-family: var(--font-heading); font-size: 28px; font-weight: 600; }
+.stat-label { font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: .14em; color: var(--text-muted); margin-top: 4px; }
+.stat-card:nth-child(1) .stat-value { color: var(--blue); }
+.stat-card:nth-child(2) .stat-value { color: var(--teal); }
+.stat-card:nth-child(3) .stat-value { color: var(--amber); }
+.stat-card:nth-child(4) .stat-value { color: var(--purple); }
+.stat-card:nth-child(5) .stat-value { color: var(--coral); }
 
-  /* ── PAGE ── */
-  .page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 32px 32px 80px;
-  }
+/* GRID LAYOUTS */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+.g5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 36px; }
 
-  /* ── PAGE HEADER ── */
-  .page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 28px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .ph-left {}
-  .ph-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-  }
-  .ph-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 26px;
-    font-weight: 600;
-    letter-spacing: -.02em;
-    line-height: 1;
-    color: var(--text);
-  }
-  .ph-sub { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
-  .ph-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-  .market-tags { display: flex; gap: 5px; }
-  .market-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    padding: 3px 9px;
-    border-radius: 3px;
-    border: 1px solid var(--border-md);
-    color: var(--text-dim);
-  }
-  .signal-count {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--text-muted);
-  }
+/* SENTIMENT BARS */
+.sentiment-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.sentiment-label { font-family: var(--font-mono); font-size: 11px; min-width: 32px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; }
+.sentiment-bar-bg { flex: 1; height: 20px; background: rgba(255,255,255,0.04); border-radius: 4px; overflow: hidden; position: relative; }
+.sentiment-bar { height: 100%; border-radius: 4px; transition: width 1s ease; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; }
+.sentiment-pct { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.9); font-weight: 500; }
+.sentiment-note { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
 
-  /* ── GRID HELPERS ── */
-  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
-  .g5 { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; }
-  .mb { margin-bottom: 10px; }
-  .mb-lg { margin-bottom: 28px; }
+/* ROUND ROWS */
+.round-row { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.round-row:last-child { border-bottom: none; }
+.round-amount { font-family: var(--font-heading); font-size: 16px; font-weight: 600; min-width: 80px; }
+.round-info { flex: 1; }
+.round-company { font-weight: 600; font-size: 13px; }
+.round-meta { font-size: 11px; color: var(--text-muted); }
+.stage-pill { display: inline-block; font-family: var(--font-mono); font-size: 9px; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: .06em; margin-left: 6px; }
+.stage-seed { background: rgba(62,191,143,0.15); color: var(--teal); }
+.stage-a { background: rgba(91,155,213,0.15); color: var(--blue); }
+.stage-b { background: rgba(139,124,248,0.15); color: var(--purple); }
+.stage-c { background: rgba(212,149,74,0.15); color: var(--amber); }
+.stage-d { background: rgba(212,112,90,0.15); color: var(--coral); }
+.market-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+.market-us { background: var(--blue); }
+.market-uk { background: var(--purple); }
+.market-in { background: var(--teal); }
 
-  /* ── SECTION LABEL ── */
-  .sec-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .sec-label::after { content: ''; flex: 1; height: .5px; background: var(--border); }
+/* PROSPECT ROWS */
+.prospect-row { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.prospect-row:last-child { border-bottom: none; }
+.prospect-name { font-weight: 600; font-size: 13px; }
+.prospect-need { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.prospect-pills { margin-top: 4px; display: flex; gap: 4px; flex-wrap: wrap; }
 
-  /* ── STAT CARD ── */
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--r-md);
-    padding: 16px 16px 18px;
-  }
-  .sc-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 8.5px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-  }
-  .sc-value {
-    font-family: 'Syne', sans-serif;
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -.02em;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
-  .sc-delta { font-size: 10.5px; }
-  .up { color: var(--teal); }
-  .down { color: var(--coral); }
-  .flat { color: var(--text-muted); }
+/* INVESTOR ROWS */
+.investor-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.investor-row:last-child { border-bottom: none; }
+.investor-name { font-weight: 600; font-size: 13px; }
+.investor-mandate { font-size: 11px; color: var(--text-muted); }
+.btn-contact { font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: .1em; padding: 4px 10px; border: 1px solid var(--border); border-radius: 4px; color: var(--text-muted); background: transparent; cursor: pointer; text-decoration: none; transition: all .2s; flex-shrink: 0; }
+.btn-contact:hover { border-color: var(--blue); color: var(--blue); }
 
-  /* ── PANEL ── */
-  .panel {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--r-lg);
-    padding: 18px 20px;
-  }
-  .panel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .panel-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-  }
-  .panel-link {
-    font-size: 10px;
-    color: var(--text-muted);
-    text-decoration: none;
-    border: 1px solid var(--border-md);
-    border-radius: 4px;
-    padding: 2px 9px;
-    transition: color .15s, border-color .15s;
-    cursor: pointer;
-  }
-  .panel-link:hover { color: var(--text-dim); border-color: rgba(255,255,255,0.2); }
+/* EVENTS */
+.event-row { padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.event-row:last-child { border-bottom: none; }
+.event-info { flex: 1; }
+.event-name { font-weight: 600; font-size: 13px; }
+.event-meta { font-size: 11px; color: var(--text-muted); }
+.badge { font-family: var(--font-mono); font-size: 9px; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
+.badge-attend { background: rgba(62,191,143,0.15); color: var(--teal); }
+.badge-monitor { background: rgba(212,149,74,0.15); color: var(--amber); }
+.badge-skip { background: rgba(255,255,255,0.06); color: var(--text-muted); }
 
-  /* ── SENTIMENT BARS ── */
-  .sentiment-row { margin-bottom: 14px; }
-  .sentiment-row:last-child { margin-bottom: 0; }
-  .sr-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 5px;
-  }
-  .sr-market { font-size: 12px; color: var(--text-dim); }
-  .sr-label { font-family: 'DM Mono', monospace; font-size: 9.5px; }
-  .sr-bar {
-    height: 3px;
-    background: var(--surface3);
-    border-radius: 2px;
-    overflow: hidden;
-    margin-bottom: 5px;
-  }
-  .sr-fill { height: 100%; border-radius: 2px; }
-  .sr-note { font-size: 10px; color: var(--text-muted); line-height: 1.5; }
+/* POLICY ALERTS */
+.policy-row { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.policy-row:last-child { border-bottom: none; }
+.policy-title { font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 6px; }
+.policy-desc { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.urgency-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.urgency-urgent { background: var(--coral); }
+.urgency-watch { background: var(--amber); }
+.urgency-info { background: var(--blue); }
 
-  /* ── TABLE ROWS ── */
-  .table-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .table-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .tr-left {}
-  .tr-name { font-size: 12.5px; font-weight: 500; color: var(--text); line-height: 1.3; margin-bottom: 2px; }
-  .tr-sub { font-size: 10px; color: var(--text-muted); line-height: 1.4; }
-  .tr-right { text-align: right; flex-shrink: 0; padding-left: 12px; }
-  .tr-amount { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--amber); }
-  .tr-action {
-    font-size: 9.5px;
-    color: var(--text-muted);
-    cursor: pointer;
-    margin-top: 3px;
-    text-decoration: none;
-    display: block;
-  }
-  .tr-action:hover { color: var(--text-dim); }
+/* CONTENT CALENDAR */
+.cal-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.cal-day { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 10px; min-height: 80px; }
+.cal-day-label { font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; letter-spacing: .12em; color: var(--text-muted); margin-bottom: 6px; }
+.cal-item { font-size: 11px; margin-bottom: 4px; color: var(--text); }
+.cal-type { font-family: var(--font-mono); font-size: 8px; color: var(--text-muted); text-transform: uppercase; }
 
-  /* ── STAGE PILLS ── */
-  .stage-pill {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    padding: 2px 7px;
-    border-radius: 3px;
-    background: var(--purple-dim);
-    color: var(--purple);
-    border: 1px solid rgba(139,124,248,0.2);
-  }
+/* ACTION TRACKER */
+.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.action-item { display: flex; align-items: flex-start; gap: 8px; padding: 8px 0; font-size: 12px; border-bottom: 1px solid var(--border); }
+.action-item:last-child { border-bottom: none; }
+.action-status { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.action-overdue { background: var(--red); }
+.action-open { background: var(--amber); }
+.action-done { background: var(--green); }
+.action-text-done { text-decoration: line-through; color: var(--text-muted); }
 
-  /* ── EVENT ROWS ── */
-  .event-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .event-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .ev-name { font-size: 12.5px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
-  .ev-meta { font-size: 10px; color: var(--text-muted); margin-bottom: 3px; }
-  .ev-link { font-size: 9.5px; color: var(--text-muted); text-decoration: none; cursor: pointer; }
-  .ev-link:hover { color: var(--text-dim); }
-  .badge {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 8.5px;
-    padding: 2px 7px;
-    border-radius: 3px;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .badge-attend { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(62,191,143,0.2); }
-  .badge-monitor { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(212,149,74,0.2); }
-  .badge-skip { background: var(--surface3); color: var(--text-muted); border: 1px solid var(--border); }
-  .badge-urgent { background: var(--coral-dim); color: var(--coral); border: 1px solid rgba(212,112,90,0.25); }
-  .badge-watch { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(212,149,74,0.2); }
-  .badge-info { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(91,155,213,0.2); }
+/* FOOTER */
+.footer { text-align: center; padding: 32px; font-family: var(--font-mono); font-size: 10px; color: #2a2a2f; letter-spacing: .1em; }
 
-  /* ── POLICY ALERT ── */
-  .policy-alert {
-    border-radius: var(--r-sm);
-    padding: 12px 14px;
-    margin-bottom: 8px;
-  }
-  .policy-alert:last-child { margin-bottom: 0; }
-  .pa-urgent { background: var(--coral-dim); border: 1px solid rgba(212,112,90,0.2); }
-  .pa-watch { background: var(--amber-dim); border: 1px solid rgba(212,149,74,0.18); }
-  .pa-info { background: var(--blue-dim); border: 1px solid rgba(91,155,213,0.18); }
-  .pa-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 8.5px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-  }
-  .pa-name { font-size: 12px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
-  .pa-desc { font-size: 10.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 6px; }
-  .pa-action { font-size: 9.5px; text-decoration: none; cursor: pointer; }
+/* SERVICE LINE TAGS */
+.sl-tag { display: inline-block; font-family: var(--font-mono); font-size: 8px; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: .06em; }
+.sl-ecp { background: rgba(91,155,213,0.15); color: var(--blue); }
+.sl-fgc { background: rgba(62,191,143,0.15); color: var(--teal); }
+.sl-caas { background: rgba(139,124,248,0.15); color: var(--purple); }
+.sl-ldt { background: rgba(212,149,74,0.15); color: var(--amber); }
 
-  /* ── CONTENT CAL ── */
-  .cal-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 9px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .cal-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .cal-day {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    padding: 2px 7px;
-    border-radius: 3px;
-    background: var(--green-dim);
-    color: var(--green);
-    border: 1px solid rgba(109,184,122,0.2);
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .cal-title { font-size: 12px; color: var(--text); line-height: 1.4; margin-bottom: 2px; }
-  .cal-meta { font-size: 10px; color: var(--text-muted); }
-
-  /* ── ACTION TRACKER ── */
-  .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-  .action-item {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: var(--r-sm);
-    padding: 10px 12px;
-  }
-  .action-item.done { opacity: .5; }
-  .action-item.overdue { border-color: rgba(224,92,92,0.2); background: var(--red-dim); }
-  .checkbox {
-    width: 15px; height: 15px;
-    border-radius: 3px;
-    border: 1px solid var(--border-md);
-    flex-shrink: 0;
-    margin-top: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .checkbox.checked { background: var(--teal-dim); border-color: rgba(62,191,143,0.4); }
-  .checkbox.overdue-box { background: var(--red-dim); border-color: rgba(224,92,92,0.4); }
-  .check-mark { font-size: 9px; color: var(--teal); }
-  .action-text { font-size: 11.5px; color: var(--text); line-height: 1.45; }
-  .action-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
-  .action-meta.overdue-text { color: var(--coral); }
-  .done .action-text { text-decoration: line-through; color: var(--text-muted); }
-
-  /* ── INVESTOR ROW ── */
-  .investor-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .investor-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .contact-btn {
-    font-size: 10px;
-    color: var(--teal);
-    border: 1px solid rgba(62,191,143,0.25);
-    border-radius: 4px;
-    padding: 3px 10px;
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    flex-shrink: 0;
-  }
-  .contact-btn:hover { background: var(--teal-dim); }
-
-  /* ── SCROLLABLE PANEL ── */
-  .panel-scroll { max-height: 260px; overflow-y: auto; }
-  .panel-scroll::-webkit-scrollbar { width: 3px; }
-  .panel-scroll::-webkit-scrollbar-track { background: transparent; }
-  .panel-scroll::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 2px; }
-
-  /* ── DIVIDER ── */
-  .divider { height: .5px; background: var(--border); margin: 14px 0; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .g5 { grid-template-columns: repeat(2,1fr); }
-    .g2, .g3 { grid-template-columns: 1fr; }
-    .action-grid { grid-template-columns: 1fr; }
-    .page-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-    .ph-right { align-items: flex-start; }
-    .page { padding: 16px 16px 60px; }
-    nav { padding: 0 16px; }
-  }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .container { padding: 16px; }
+  .stats-grid, .g5 { grid-template-columns: repeat(2, 1fr); }
+  .g2, .g3 { grid-template-columns: 1fr; }
+  .cal-grid { grid-template-columns: repeat(2, 1fr); }
+  .action-grid { grid-template-columns: 1fr; }
+  .nav-inner { height: auto; padding: 10px 0; }
+  .nav-tags { margin-left: 0; }
+  .page-header h1 { font-size: 24px; }
+  .stat-value { font-size: 22px; }
+}
 </style>
 </head>
 <body>
-<!-- TEMPLATE: Content sections will be populated by the daily scheduled task -->
+
 <!-- NAV -->
-<nav>
-  <div class="nav-left">
-    <span class="nav-wordmark">Team Counsel</span>
-    <div class="nav-sep"></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-brand">Team Counsel</span>
+    <span class="nav-sep">&middot;</span>
     <span class="nav-title">Daily Intelligence</span>
-  </div>
-  <div class="nav-right">
-    <span class="nav-badge">US</span>
-    <span class="nav-badge">UK</span>
-    <span class="nav-badge">India</span>
-    <div class="nav-sep"></div>
-    <span class="nav-week"><!-- DATE_LABEL --></span>
+    <div class="nav-tags">
+      <span class="tag us">US</span>
+      <span class="tag uk">UK</span>
+      <span class="tag in">India</span>
+    </div>
+    <span class="nav-date">28 Sep 2026</span>
   </div>
 </nav>
 
-<div class="page">
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <div class="ph-left">
-      <div class="ph-eyebrow">Intelligence dashboard</div>
-      <div class="ph-title"><!-- DATE_TITLE --></div>
-      <div class="ph-sub"><!-- SIGNAL_SUMMARY --></div>
-    </div>
-    <div class="ph-right">
-      <div class="market-tags">
-        <span class="market-tag">US</span>
-        <span class="market-tag">UK</span>
-        <span class="market-tag">India</span>
-      </div>
-      <div class="signal-count"><!-- LAST_UPDATED --></div>
-    </div>
-  </div>
+<div class="container">
 
-  <!-- STAT CARDS -->
-  <div class="g5 mb mb-lg">
-    <!-- STAT_CARDS -->
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <h1>Intelligence Briefing &mdash; 28 September 2026</h1>
+  <p class="subtitle">34 funding rounds tracked across 3 markets &middot; 6 policy alerts active &middot; 6 pipeline-ready prospects identified</p>
+  <div class="header-meta">
+    <span class="tag us">US</span>
+    <span class="tag uk">UK</span>
+    <span class="tag in">India</span>
+    <span class="last-updated">Last updated: 28 Sep 2026 &middot; 06:00 UTC</span>
   </div>
+</header>
 
-  <!-- Market Intelligence -->
-  <div class="sec-label">Market intelligence</div>
-  <div class="g2 mb mb-lg">
-    <!-- SENTIMENT_PANEL -->
-    <!-- NOTABLE_ROUNDS_PANEL -->
+<!-- STAT CARDS -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-value">34</div>
+    <div class="stat-label">Rounds tracked</div>
   </div>
-
-  <!-- Pipeline Intelligence -->
-  <div class="sec-label">Pipeline intelligence</div>
-  <div class="g2 mb mb-lg">
-    <!-- STARTUPS_PANEL -->
-    <!-- INVESTORS_PANEL -->
+  <div class="stat-card">
+    <div class="stat-value">$2.1B</div>
+    <div class="stat-label">Capital deployed</div>
   </div>
-
-  <!-- Events, Policy & Content -->
-  <div class="sec-label">Events, policy &amp; content</div>
-  <div class="g3 mb mb-lg">
-    <!-- EVENTS_PANEL -->
-    <!-- POLICY_PANEL -->
-    <!-- CONTENT_PANEL -->
+  <div class="stat-card">
+    <div class="stat-value">12</div>
+    <div class="stat-label">Raise signals</div>
   </div>
-
-  <!-- Action Tracker -->
-  <div class="sec-label">Action tracker</div>
-  <div class="panel">
-    <!-- ACTION_TRACKER -->
+  <div class="stat-card">
+    <div class="stat-value">5</div>
+    <div class="stat-label">Events ahead</div>
   </div>
-
+  <div class="stat-card">
+    <div class="stat-value">8</div>
+    <div class="stat-label">Open actions</div>
+  </div>
 </div>
+
+<!-- MARKET INTELLIGENCE -->
+<div class="section-label">Market intelligence</div>
+<div class="g2">
+
+  <!-- Sentiment Panel -->
+  <div class="panel">
+    <div class="panel-title">Market Sentiment</div>
+    <div class="sentiment-row">
+      <span class="sentiment-label">US</span>
+      <div class="sentiment-bar-bg">
+        <div class="sentiment-bar" style="width:78%; background: linear-gradient(90deg, var(--blue), rgba(91,155,213,0.5));">
+          <span class="sentiment-pct">78%</span>
+        </div>
+      </div>
+    </div>
+    <div class="sentiment-note" style="margin-left:44px; margin-bottom:14px;">AI infrastructure &amp; cybersecurity dominate. $1.1B+ in week's top 10 rounds. General Catalyst, Goldman Sachs, Greylock deploying aggressively.</div>
+
+    <div class="sentiment-row">
+      <span class="sentiment-label">UK</span>
+      <div class="sentiment-bar-bg">
+        <div class="sentiment-bar" style="width:62%; background: linear-gradient(90deg, var(--purple), rgba(139,124,248,0.5));">
+          <span class="sentiment-pct">62%</span>
+        </div>
+      </div>
+    </div>
+    <div class="sentiment-note" style="margin-left:44px; margin-bottom:14px;">Fintech regulation tightening &mdash; BNPL authorization Jul 2026, payment safeguarding May 2026. Provisional licence regime opens doors for early-stage fintechs.</div>
+
+    <div class="sentiment-row">
+      <span class="sentiment-label">IN</span>
+      <div class="sentiment-bar-bg">
+        <div class="sentiment-bar" style="width:82%; background: linear-gradient(90deg, var(--teal), rgba(62,191,143,0.5));">
+          <span class="sentiment-pct">82%</span>
+        </div>
+      </div>
+    </div>
+    <div class="sentiment-note" style="margin-left:44px;">$412M raised in single week (Sep 7&ndash;12). IPO pipeline strong &mdash; Spinny pre-filing, Moneyview IPO active. SEBI reforms easing startup listing.</div>
+  </div>
+
+  <!-- Notable Rounds Panel -->
+  <div class="panel">
+    <div class="panel-title">Notable Rounds This Week</div>
+
+    <div class="round-row">
+      <div class="round-amount" style="color:var(--blue);">$400M</div>
+      <div class="round-info">
+        <div class="round-company"><span class="market-dot market-us"></span>Cyera <span class="stage-pill stage-d">Series G</span></div>
+        <div class="round-meta">Cybersecurity &middot; AI-agent security &middot; Goldman Sachs Alternatives</div>
+      </div>
+    </div>
+
+    <div class="round-row">
+      <div class="round-amount" style="color:var(--purple);">$350M</div>
+      <div class="round-info">
+        <div class="round-company"><span class="market-dot market-us"></span>Snorkel AI <span class="stage-pill stage-d">Growth</span></div>
+        <div class="round-meta">AI Training Data &middot; Insight Partners, Greylock, Wells Fargo</div>
+      </div>
+    </div>
+
+    <div class="round-row">
+      <div class="round-amount" style="color:var(--teal);">$100M</div>
+      <div class="round-info">
+        <div class="round-company"><span class="market-dot market-in"></span>Pixxel <span class="stage-pill stage-c">Series C</span></div>
+        <div class="round-meta">SpaceTech &middot; Temasek, Seraphim Space, 360 ONE Asset</div>
+      </div>
+    </div>
+
+    <div class="round-row">
+      <div class="round-amount" style="color:var(--purple);">$90M</div>
+      <div class="round-info">
+        <div class="round-company"><span class="market-dot market-uk"></span>Synthesia <span class="stage-pill stage-c">Series C</span></div>
+        <div class="round-meta">AI Video &middot; London &middot; $1B valuation</div>
+      </div>
+    </div>
+
+    <div class="round-row">
+      <div class="round-amount" style="color:var(--blue);">$85M</div>
+      <div class="round-info">
+        <div class="round-company"><span class="market-dot market-us"></span>Go.AI <span class="stage-pill stage-a">Series A</span></div>
+        <div class="round-meta">Private AI Infrastructure &middot; Updata Partners, GFT Ventures</div>
+      </div>
+    </div>
+
+    <div class="round-row">
+      <div class="round-amount" style="color:var(--teal);">$77M</div>
+      <div class="round-info">
+        <div class="round-company"><span class="market-dot market-in"></span>Ema <span class="stage-pill stage-b">Series B</span></div>
+        <div class="round-meta">Enterprise AI &middot; Creaegis &middot; Valuation 4&times; since Series A</div>
+      </div>
+    </div>
+
+    <div class="round-row">
+      <div class="round-amount" style="color:var(--blue);">$75M</div>
+      <div class="round-info">
+        <div class="round-company"><span class="market-dot market-us"></span>Firecrawl <span class="stage-pill stage-b">Series B</span></div>
+        <div class="round-meta">AI Web-Data Infra &middot; Smash Capital, Y Combinator, Nexus VP</div>
+      </div>
+    </div>
+
+    <div class="round-row">
+      <div class="round-amount" style="color:var(--teal);">$50M</div>
+      <div class="round-info">
+        <div class="round-company"><span class="market-dot market-in"></span>Nua <span class="stage-pill stage-c">Series C</span></div>
+        <div class="round-meta">HealthTech &middot; Peak XV Partners, Filter Capital</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PIPELINE INTELLIGENCE -->
+<div class="section-label">Pipeline intelligence</div>
+<div class="g2">
+
+  <!-- Startups Seeking Counsel -->
+  <div class="panel">
+    <div class="panel-title">Startups Seeking Counsel</div>
+
+    <div class="prospect-row">
+      <div class="prospect-name"><span class="market-dot market-in"></span>Ema &mdash; $77M Series B, Enterprise AI</div>
+      <div class="prospect-need">Post-Series B governance structuring. Contract volume scaling with 4&times; valuation jump. Cross-border data compliance (India-US corridor).</div>
+      <div class="prospect-pills">
+        <span class="sl-tag sl-fgc">FGC</span>
+        <span class="sl-tag sl-caas">CAAS</span>
+        <span class="stage-pill stage-b">Series B</span>
+      </div>
+    </div>
+
+    <div class="prospect-row">
+      <div class="prospect-name"><span class="market-dot market-in"></span>Pixxel &mdash; $100M Series C, SpaceTech</div>
+      <div class="prospect-need">IPO preparation track (Spinny-style confidential pre-filing). Government contracts (ISRO/defence). IP portfolio structuring for satellite imagery patents.</div>
+      <div class="prospect-pills">
+        <span class="sl-tag sl-ecp">ECP</span>
+        <span class="sl-tag sl-ldt">LD&amp;T</span>
+        <span class="stage-pill stage-c">Series C</span>
+      </div>
+    </div>
+
+    <div class="prospect-row">
+      <div class="prospect-name"><span class="market-dot market-in"></span>Piston &mdash; $15M Series A, Fintech</div>
+      <div class="prospect-need">RBI/SEBI compliance framework. FEMA structuring for US investors (FPV Ventures, Spark Capital, Pear VC). Post-raise contract scaling.</div>
+      <div class="prospect-pills">
+        <span class="sl-tag sl-ecp">ECP</span>
+        <span class="sl-tag sl-fgc">FGC</span>
+        <span class="stage-pill stage-a">Series A</span>
+      </div>
+    </div>
+
+    <div class="prospect-row">
+      <div class="prospect-name"><span class="market-dot market-in"></span>QNu Labs &mdash; $20.9M Series A1, Cybersecurity</div>
+      <div class="prospect-need">National Quantum Mission government procurement. IP assignment for quantum tech patents. Multi-stakeholder investor governance (Sony, Gaja Capital).</div>
+      <div class="prospect-pills">
+        <span class="sl-tag sl-ecp">ECP</span>
+        <span class="sl-tag sl-ldt">LD&amp;T</span>
+        <span class="stage-pill stage-a">Series A1</span>
+      </div>
+    </div>
+
+    <div class="prospect-row">
+      <div class="prospect-name"><span class="market-dot market-us"></span>Chamelio &mdash; $26M Series A, Legal Tech</div>
+      <div class="prospect-need">Cross-border structuring (US/Israel). Enterprise AI compliance framework. Partnership agreements with law firms. DPDPA/GDPR alignment.</div>
+      <div class="prospect-pills">
+        <span class="sl-tag sl-caas">CAAS</span>
+        <span class="sl-tag sl-ldt">LD&amp;T</span>
+        <span class="stage-pill stage-a">Series A</span>
+      </div>
+    </div>
+
+    <div class="prospect-row">
+      <div class="prospect-name"><span class="market-dot market-us"></span>Baselayer &mdash; $35M Series A, Fintech</div>
+      <div class="prospect-need">Fraud detection regulatory framework. Financial infrastructure compliance (US). Scaling contract ops with M13, Picus, Torch Capital backing.</div>
+      <div class="prospect-pills">
+        <span class="sl-tag sl-fgc">FGC</span>
+        <span class="sl-tag sl-caas">CAAS</span>
+        <span class="stage-pill stage-a">Series A</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Investor Watchlist -->
+  <div class="panel">
+    <div class="panel-title">Investor Watchlist</div>
+
+    <div class="investor-row">
+      <div style="flex:1;">
+        <div class="investor-name">Creaegis</div>
+        <div class="investor-mandate">Led Ema $77M Series B &middot; Enterprise AI &middot; India-focused growth &middot; Active deployer Q3 2026</div>
+      </div>
+      <a class="btn-contact" href="#">Track</a>
+    </div>
+
+    <div class="investor-row">
+      <div style="flex:1;">
+        <div class="investor-name">Temasek</div>
+        <div class="investor-mandate">Led Pixxel $100M Series C &middot; Deep tech &amp; space &middot; India corridor &middot; $300B+ AUM sovereign wealth</div>
+      </div>
+      <a class="btn-contact" href="#">Track</a>
+    </div>
+
+    <div class="investor-row">
+      <div style="flex:1;">
+        <div class="investor-name">Peak XV Partners</div>
+        <div class="investor-mandate">Nua $50M Series C + Mokobara Series C &middot; India consumer &amp; health &middot; High-velocity deployer</div>
+      </div>
+      <a class="btn-contact" href="#">Track</a>
+    </div>
+
+    <div class="investor-row">
+      <div style="flex:1;">
+        <div class="investor-name">Insight Partners</div>
+        <div class="investor-mandate">Graph AI $13.3M + Snorkel AI $350M &middot; AI infrastructure &middot; US-India cross-border active</div>
+      </div>
+      <a class="btn-contact" href="#">Track</a>
+    </div>
+
+    <div class="investor-row">
+      <div style="flex:1;">
+        <div class="investor-name">Goldman Sachs Alternatives</div>
+        <div class="investor-mandate">Cyera $400M Series G &middot; Cybersecurity &middot; Federal market expansion &middot; Late-stage growth</div>
+      </div>
+      <a class="btn-contact" href="#">Track</a>
+    </div>
+
+    <div class="investor-row">
+      <div style="flex:1;">
+        <div class="investor-name">M13</div>
+        <div class="investor-mandate">Led Baselayer $35M Series A &middot; Fintech infrastructure &middot; US early-growth &middot; Consumer enterprise</div>
+      </div>
+      <a class="btn-contact" href="#">Track</a>
+    </div>
+
+    <div class="investor-row">
+      <div style="flex:1;">
+        <div class="investor-name">Y Combinator</div>
+        <div class="investor-mandate">ByteAsk $1M (India) + Firecrawl $75M &middot; AI agents &amp; infra &middot; Seed to growth &middot; Global</div>
+      </div>
+      <a class="btn-contact" href="#">Track</a>
+    </div>
+  </div>
+</div>
+
+<!-- EVENTS, POLICY & CONTENT -->
+<div class="section-label">Events, policy &amp; content</div>
+<div class="g3">
+
+  <!-- Events -->
+  <div class="panel">
+    <div class="panel-title">Upcoming Events</div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-name">Sifted Summit 2026</div>
+        <div class="event-meta">Sep 30 &ndash; Oct 1 &middot; London &middot; European startup &amp; investor summit</div>
+      </div>
+      <span class="badge badge-attend">Attend</span>
+    </div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-name">TechCrunch Disrupt 2026</div>
+        <div class="event-meta">Oct 13&ndash;15 &middot; San Francisco &middot; Startup Battlefield, VC networking</div>
+      </div>
+      <span class="badge badge-attend">Attend</span>
+    </div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-name">Money20/20 USA</div>
+        <div class="event-meta">Oct 18&ndash;21 &middot; Las Vegas &middot; Payments, lending, crypto, embedded finance</div>
+      </div>
+      <span class="badge badge-monitor">Monitor</span>
+    </div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-name">Birmingham Tech Week</div>
+        <div class="event-meta">Oct 19&ndash;23 &middot; Birmingham, UK &middot; MedTech, AI, manufacturing</div>
+      </div>
+      <span class="badge badge-skip">Skip</span>
+    </div>
+
+    <div class="event-row">
+      <div class="event-info">
+        <div class="event-name">India Mobile Congress</div>
+        <div class="event-meta">Oct 2026 &middot; New Delhi &middot; 5G, IoT, edge computing</div>
+      </div>
+      <span class="badge badge-monitor">Monitor</span>
+    </div>
+  </div>
+
+  <!-- Policy Alerts -->
+  <div class="panel">
+    <div class="panel-title">Policy Alerts</div>
+
+    <div class="policy-row">
+      <div class="policy-title"><span class="urgency-dot urgency-urgent"></span>DPDPA Compliance Deadline</div>
+      <div class="policy-desc">MeitY proposed accelerating deadline to Nov 13, 2026 (from May 2027). SDF designation pending. Every enterprise client will ask compliance status. <strong>TC Opportunity: DPDPA readiness advisory.</strong></div>
+    </div>
+
+    <div class="policy-row">
+      <div class="policy-title"><span class="urgency-dot urgency-urgent"></span>IRDAI Commission Caps</div>
+      <div class="policy-desc">Zero commission on new-vehicle 3P insurance, 15% cap on health. PB Fintech crashed 36%. InsurTech startups need immediate legal restructuring.</div>
+    </div>
+
+    <div class="policy-row">
+      <div class="policy-title"><span class="urgency-dot urgency-watch"></span>SEBI IPO Reforms (ICDR)</div>
+      <div class="policy-desc">Loss-making companies with 3yr history + &#8377;25Cr net worth can now IPO. Promoter lock-in cut to 18 months. IGP capital lowered to &#8377;5Cr.</div>
+    </div>
+
+    <div class="policy-row">
+      <div class="policy-title"><span class="urgency-dot urgency-watch"></span>UK BNPL Regulation</div>
+      <div class="policy-desc">Third-party BNPL lenders require FCA authorization from Jul 2026. Payment safeguarding audits mandatory May 2026. Conduct rules extended Sep 1.</div>
+    </div>
+
+    <div class="policy-row">
+      <div class="policy-title"><span class="urgency-dot urgency-info"></span>MeitY AI Content Rules</div>
+      <div class="policy-desc">SaaS products enabling AI-generated content face new due diligence obligations (Feb 2026). Safe harbour conditional on technical compliance.</div>
+    </div>
+
+    <div class="policy-row">
+      <div class="policy-title"><span class="urgency-dot urgency-info"></span>UK Provisional Licence</div>
+      <div class="policy-desc">FCA introducing time-limited permissions for early-stage fintechs. Allows operation while pursuing full authorization. Opens entry for startup clients.</div>
+    </div>
+  </div>
+
+  <!-- Content Calendar -->
+  <div class="panel">
+    <div class="panel-title">Content Calendar &middot; Week of Sep 28</div>
+    <div class="cal-grid">
+      <div class="cal-day">
+        <div class="cal-day-label">Mon</div>
+        <div class="cal-item">DPDPA Compliance Countdown</div>
+        <div class="cal-type">LinkedIn Post</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-label">Tue</div>
+        <div class="cal-item">SEBI IPO Reforms: What Founders Must Know</div>
+        <div class="cal-type">LinkedIn Carousel</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-label">Wed</div>
+        <div class="cal-item">India M&amp;A Doubled &mdash; Legal Implications</div>
+        <div class="cal-type">LinkedIn Post</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-label">Thu</div>
+        <div class="cal-item">FEMA Violations Surface at Due Diligence</div>
+        <div class="cal-type">LinkedIn Post</div>
+      </div>
+      <div class="cal-day">
+        <div class="cal-day-label">Fri</div>
+        <div class="cal-item">Weekly Funding Round-Up + TC Pipeline</div>
+        <div class="cal-type">Newsletter</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACTION TRACKER -->
+<div class="section-label">Action tracker</div>
+<div class="panel" style="margin-bottom:36px;">
+  <div class="panel-title">Open Actions</div>
+  <div class="action-grid">
+    <div>
+      <div class="action-item">
+        <span class="action-status action-overdue"></span>
+        <span>Reach out to Ema founder/GC post-$77M raise &mdash; FGC qualification call. <strong>Due: Sep 26</strong></span>
+      </div>
+      <div class="action-item">
+        <span class="action-status action-overdue"></span>
+        <span>Draft DPDPA compliance advisory one-pager for SaaS prospects. <strong>Due: Sep 27</strong></span>
+      </div>
+      <div class="action-item">
+        <span class="action-status action-open"></span>
+        <span>Research Pixxel GC/legal team for LD&amp;T outreach (IPO track).</span>
+      </div>
+      <div class="action-item">
+        <span class="action-status action-open"></span>
+        <span>Prepare Piston qualification brief &mdash; fintech regulatory compliance (FEMA + RBI).</span>
+      </div>
+    </div>
+    <div>
+      <div class="action-item">
+        <span class="action-status action-open"></span>
+        <span>Map QNu Labs stakeholder structure for ECP approach (National Quantum Mission angle).</span>
+      </div>
+      <div class="action-item">
+        <span class="action-status action-open"></span>
+        <span>Register for Sifted Summit (Sep 30) &mdash; UK pipeline development.</span>
+      </div>
+      <div class="action-item">
+        <span class="action-status action-done"></span>
+        <span class="action-text-done">Update PR Intelligence Tracker with SEBI 2026 circulars data.</span>
+      </div>
+      <div class="action-item">
+        <span class="action-status action-done"></span>
+        <span class="action-text-done">Publish LinkedIn post on India deep tech funding ($2.3B, 37% YoY).</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE LINE REFERENCE -->
+<div class="section-label">Service line reference &middot; Team Counsel</div>
+<div class="g2" style="margin-bottom:24px;">
+  <div class="panel">
+    <div class="panel-title">Service Lines &amp; ICP Match</div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+      <div style="padding:10px; border:1px solid var(--border); border-radius:8px;">
+        <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><span class="sl-tag sl-ecp">ECP</span><span style="font-weight:600; font-size:13px;">Fundraise Support</span></div>
+        <div style="font-size:11px; color:var(--text-muted);">Angel to Series A &middot; India primary &middot; &#8377;2L+ per transaction &middot; Entry wedge to lifecycle</div>
+      </div>
+      <div style="padding:10px; border:1px solid var(--border); border-radius:8px;">
+        <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><span class="sl-tag sl-fgc">FGC</span><span style="font-weight:600; font-size:13px;">Fractional GC</span></div>
+        <div style="font-size:11px; color:var(--text-muted);">Seed to Pre-Series A &middot; India primary &middot; &#8377;1L+/month &middot; Core revenue engine</div>
+      </div>
+      <div style="padding:10px; border:1px solid var(--border); border-radius:8px;">
+        <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><span class="sl-tag sl-caas">CAAS</span><span style="font-weight:600; font-size:13px;">Contract-as-a-Service</span></div>
+        <div style="font-size:11px; color:var(--text-muted);">Series B to Pre-IPO &middot; US primary &middot; $80K+ USD &middot; CLM + ARR engine</div>
+      </div>
+      <div style="padding:10px; border:1px solid var(--border); border-radius:8px;">
+        <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><span class="sl-tag sl-ldt">LD&amp;T</span><span style="font-weight:600; font-size:13px;">Legal Design &amp; Transform</span></div>
+        <div style="font-size:11px; color:var(--text-muted);">Series B+ &middot; US primary &middot; $50K&ndash;150K USD &middot; Premium flagship</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-title">Key Signals from Team Research</div>
+    <div style="font-size:12px; line-height:1.7;">
+      <div style="padding:6px 0; border-bottom:1px solid var(--border);">31% of Indian startups EBITDA positive (up from 18% in 2021) &mdash; structural shift creates legal structuring demand</div>
+      <div style="padding:6px 0; border-bottom:1px solid var(--border);">42 Indian tech IPOs in 2025 &mdash; SEBI simplified DRHP but governance scrutiny intensifying at listing stage</div>
+      <div style="padding:6px 0; border-bottom:1px solid var(--border);">India startup M&amp;A doubled &mdash; 140+ deals in 2025 &mdash; capability acquisition driving legal complexity</div>
+      <div style="padding:6px 0; border-bottom:1px solid var(--border);">68% rise in patent filings since 2020-21 &mdash; IP assignment at due diligence is TC sweet spot</div>
+      <div style="padding:6px 0; border-bottom:1px solid var(--border);">FEMA violations surface at due diligence &mdash; most founders unprepared for inbound investment rules</div>
+      <div style="padding:6px 0;">IndiaAI Mission: 38,000+ GPUs at &#8377;65/hr &mdash; AI startups need compute agreements + data compliance</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<footer class="footer">
+  Team Counsel &middot; Daily Intelligence Dashboard &middot; Auto-generated 28 Sep 2026 &middot; Sources: Crunchbase, StartupTalky, Indian Startup News, SEBI, MeitY, FCA, PitchBook
+</footer>
+
 </body>
 </html>
