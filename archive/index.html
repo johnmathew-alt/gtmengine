@@ -4,214 +4,123 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Team Counsel — Intelligence Archive</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/6a2bef73200216edf6f8afeb/6a311c309e2742d653afe2f0_favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --navy: #1e3557;
   --blue: #3981ca;
   --lime: #dbe56c;
-  --bg: #f5f6f8;
-  --surface: #ffffff;
-  --surface-alt: #f0f2f5;
-  --border: #e2e5ea;
-  --border-light: #eceef2;
-  --text: #1a1e26;
-  --text-secondary: #4a5568;
-  --text-muted: #8892a4;
-  --text-inverse: #ffffff;
-  --r-sm: 6px;
-  --r-md: 10px;
-  --r-lg: 14px;
-  --shadow-sm: 0 1px 3px rgba(30,53,87,0.06);
-  --shadow-md: 0 4px 12px rgba(30,53,87,0.08);
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Figtree', system-ui, sans-serif;
+  background: var(--gray-50);
+  color: var(--gray-800);
+  font-family: 'Figtree', sans-serif;
   min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
 }
 .topbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(30,53,87,0.97);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 0 32px;
-  height: 56px;
+  background: var(--navy);
+  padding: 20px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 3px solid var(--lime);
 }
-.topbar-left { display: flex; align-items: center; gap: 16px; }
-.topbar-brand {
+.topbar h1 {
   font-family: 'Sora', sans-serif;
-  font-size: 15px;
+  color: var(--white);
+  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-inverse);
-  letter-spacing: -0.01em;
 }
-.topbar-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.2); }
-.topbar-sub {
-  font-size: 12px;
-  color: rgba(255,255,255,0.6);
-  font-weight: 400;
-}
-.topbar-right { display: flex; align-items: center; gap: 12px; }
-.topbar-link {
-  font-size: 12px;
-  color: rgba(255,255,255,0.7);
+.topbar a {
+  color: var(--lime);
   text-decoration: none;
-  padding: 4px 14px;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: var(--r-sm);
-  transition: all 0.15s;
-}
-.topbar-link:hover { background: rgba(255,255,255,0.1); color: var(--text-inverse); }
-
-.page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 32px 80px;
-}
-.page-header { margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
-.ph-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 6px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
-.ph-title {
+.topbar a:hover { text-decoration: underline; }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+h2 {
   font-family: 'Sora', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-}
-.ph-sub { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
-
-.archive-list { list-style: none; }
-.archive-item {
-  background: var(--surface);
-  border: 1px solid var(--border-light);
-  border-radius: var(--r-md);
-  margin-bottom: 10px;
-  overflow: hidden;
-  transition: all 0.2s;
-  position: relative;
-}
-.archive-item::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--lime);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.archive-item:hover { box-shadow: var(--shadow-md); }
-.archive-item:hover::after { opacity: 1; }
-.archive-item a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 24px;
-  text-decoration: none;
-  color: inherit;
-}
-.ai-left {}
-.ai-date {
-  font-family: 'Sora', sans-serif;
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--navy);
-  margin-bottom: 3px;
+  margin-bottom: 24px;
 }
-.ai-meta {
-  font-size: 12px;
-  color: var(--text-muted);
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-.ai-arrow {
-  font-size: 18px;
-  color: var(--text-muted);
-  transition: transform 0.2s, color 0.2s;
+.archive-item {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.archive-item:hover .ai-arrow { transform: translateX(4px); color: var(--blue); }
-
+.archive-item:hover {
+  border-color: var(--blue);
+  box-shadow: 0 2px 8px rgba(57,129,202,0.1);
+}
+.archive-date {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+.archive-label {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  margin-top: 2px;
+}
+.arrow {
+  color: var(--blue);
+  font-size: 1.25rem;
+}
 .footer {
   text-align: center;
-  padding: 24px 0;
-  border-top: 1px solid var(--border);
-  margin-top: 32px;
-}
-.footer-text { font-size: 11px; color: var(--text-muted); }
-.footer-text a { color: var(--blue); text-decoration: none; }
-
-@media (max-width: 768px) {
-  .page { padding: 24px 16px 60px; }
-  .topbar { padding: 0 16px; }
+  padding: 40px 24px;
+  color: var(--gray-400);
+  font-size: 0.8rem;
 }
 </style>
 </head>
 <body>
-
 <div class="topbar">
-  <div class="topbar-left">
-    <span class="topbar-brand">Team Counsel</span>
-    <div class="topbar-sep"></div>
-    <span class="topbar-sub">Knowledge Engine — Archive</span>
-  </div>
-  <div class="topbar-right">
-    <a href="../" class="topbar-link">← Current Report</a>
+  <h1>📁 Intelligence Archive</h1>
+  <a href="../index.html">← Back to Dashboard</a>
+</div>
+<div class="container">
+  <h2>Past Reports</h2>
+  <div class="archive-list">
+    <a class="archive-item" href="2026-09-28.html">
+      <div>
+        <div class="archive-date">28 September 2026</div>
+        <div class="archive-label">Daily Intelligence Report</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
   </div>
 </div>
-
-<div class="page">
-  <div class="page-header">
-    <div class="ph-eyebrow">Intelligence Archive</div>
-    <div class="ph-title">Past Reports</div>
-    <div class="ph-sub">Daily intelligence reports generated by the Team Counsel Knowledge Engine</div>
-  </div>
-
-  <ul class="archive-list">
-    <li class="archive-item">
-      <a href="2026-09-28.html">
-        <div class="ai-left">
-          <div class="ai-date">28 September 2026</div>
-          <div class="ai-meta">Daily Intelligence Report · 47 signals · DPDP 227 days</div>
-        </div>
-        <span class="ai-arrow">→</span>
-      </a>
-    </li>
-    <li class="archive-item">
-      <a href="2026-09-27.html">
-        <div class="ai-left">
-          <div class="ai-date">27 September 2026</div>
-          <div class="ai-meta">Daily Intelligence Report</div>
-        </div>
-        <span class="ai-arrow">→</span>
-      </a>
-    </li>
-  </ul>
-
-  <div class="footer">
-    <div class="footer-text">
-      Team Counsel Knowledge Engine ·
-      <a href="../">Current Report</a> ·
-      <a href="https://github.com/johnmathew-alt/gtmengine" target="_blank">GitHub</a>
-    </div>
-  </div>
+<div class="footer">
+  Team Counsel OS · Intelligence Archive
 </div>
-
 </body>
 </html>
