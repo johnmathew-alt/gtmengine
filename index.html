@@ -178,12 +178,102 @@ body {
   color: var(--text-muted);
 }
 
+/* ── DPDP COUNTDOWN ── */
+.dpdp-banner {
+  background: linear-gradient(135deg, var(--amber-bg) 0%, #fff7e6 100%);
+  border: 1px solid rgba(212,136,14,0.25);
+  border-radius: var(--r-lg);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.dpdp-countdown {
+  text-align: center;
+  min-width: 90px;
+}
+.dpdp-days {
+  font-family: 'Sora', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--amber);
+  line-height: 1;
+}
+.dpdp-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-top: 4px;
+}
+.dpdp-info { flex: 1; }
+.dpdp-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.dpdp-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.dpdp-bar {
+  height: 6px;
+  background: rgba(212,136,14,0.15);
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.dpdp-bar-fill {
+  height: 100%;
+  width: 38%;
+  background: linear-gradient(90deg, var(--amber), var(--lime-dark));
+  border-radius: 3px;
+}
+
+/* ── BLOCKER ALERT ── */
+.blocker-banner {
+  background: linear-gradient(135deg, var(--red-bg) 0%, #fff0f1 100%);
+  border: 1px solid rgba(217,68,82,0.2);
+  border-radius: var(--r-lg);
+  padding: 16px 24px;
+  margin-bottom: 24px;
+}
+.blocker-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--red);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.blocker-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.blocker-chip {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(217,68,82,0.08);
+  color: var(--text-secondary);
+  border: 1px solid rgba(217,68,82,0.12);
+}
+.blocker-chip strong { color: var(--red); font-weight: 600; }
+
 /* ── STATS ROW ── */
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 12px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 .stat-card {
   background: var(--surface);
@@ -218,13 +308,64 @@ body {
 }
 .sc-value {
   font-family: 'Sora', sans-serif;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--navy);
   line-height: 1;
   margin-bottom: 4px;
 }
 .sc-detail { font-size: 11px; color: var(--text-secondary); }
+
+/* ── SENTIMENT BARS ── */
+.sentiment-panel {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 28px;
+}
+.sentiment-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.sentiment-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.sentiment-row:last-child { margin-bottom: 0; }
+.sr-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  width: 160px;
+  flex-shrink: 0;
+}
+.sr-bar {
+  flex: 1;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  background: var(--surface-alt);
+}
+.sr-seg {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--white);
+  font-weight: 500;
+}
+.sr-bull { background: var(--green); }
+.sr-neutral { background: var(--amber); }
+.sr-bear { background: var(--red); }
 
 /* ── SECTION ── */
 .section { margin-bottom: 32px; }
@@ -247,6 +388,8 @@ body {
 .sec-icon.policy { background: var(--red-bg); }
 .sec-icon.market { background: var(--purple-bg); }
 .sec-icon.prospect { background: var(--teal-bg); }
+.sec-icon.dpdp { background: var(--amber-bg); }
+.sec-icon.competitor { background: rgba(57,129,202,0.1); }
 .sec-title {
   font-family: 'Sora', sans-serif;
   font-size: 18px;
@@ -342,6 +485,16 @@ body {
   color: var(--text-muted);
   border: 1px solid var(--border-light);
 }
+.card-source {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+.card-source a {
+  color: var(--blue);
+  text-decoration: none;
+}
+.card-source a:hover { text-decoration: underline; }
 .card-action {
   font-size: 11px;
   color: var(--blue);
@@ -349,6 +502,58 @@ body {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid var(--border-light);
+}
+
+/* ── TIMELINE ── */
+.timeline {
+  position: relative;
+  padding-left: 24px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+.tl-item {
+  position: relative;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  position: absolute;
+  left: -20px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--amber);
+}
+.tl-dot.done { background: var(--green); border-color: var(--green); }
+.tl-dot.active { background: var(--amber); border-color: var(--amber); }
+.tl-dot.future { background: var(--surface); border-color: var(--border); }
+.tl-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.tl-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.tl-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 
 /* ── TEAM INTEL ── */
@@ -404,6 +609,7 @@ body {
   .card-grid { grid-template-columns: 1fr; }
   .card-grid.cols-3 { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
   .stats-row { grid-template-columns: repeat(2, 1fr); }
@@ -411,6 +617,8 @@ body {
   .ph-right { align-items: flex-start; }
   .page { padding: 16px 16px 48px; }
   .topbar { padding: 0 16px; }
+  .dpdp-banner { flex-direction: column; text-align: center; }
+  .sr-label { width: 120px; }
 }
 @media (max-width: 480px) {
   .stats-row { grid-template-columns: 1fr; }
@@ -442,7 +650,7 @@ body {
     <div>
       <div class="ph-eyebrow">Daily Intelligence Report</div>
       <div class="ph-title">28 September 2026</div>
-      <div class="ph-sub">42 signals across funding, policy, market trends and prospect intelligence</div>
+      <div class="ph-sub">47 signals across funding, policy, market trends, prospects &amp; competitor intelligence</div>
     </div>
     <div class="ph-right">
       <a href="archive/" class="archive-link">View Archive</a>
@@ -450,27 +658,86 @@ body {
     </div>
   </div>
 
+  <!-- DPDP COUNTDOWN -->
+  <div class="dpdp-banner">
+    <div class="dpdp-countdown">
+      <div class="dpdp-days">227</div>
+      <div class="dpdp-label">Days Left</div>
+    </div>
+    <div class="dpdp-info">
+      <div class="dpdp-title">DPDP Act Compliance Deadline — 13 May 2027</div>
+      <div class="dpdp-desc">MeitY proposes shortening consent notice period to 12 months. SDF criteria &amp; cross-border transfer rules still pending. NHRC issued notices to Meta, Khan Academy and others over children's data handling. Data Protection Board expected operational by Q4 2026.</div>
+      <div class="dpdp-bar"><div class="dpdp-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- BLOCKER ALERT -->
+  <div class="blocker-banner">
+    <div class="blocker-title">⚠ Regulatory Blockers — Immediate Action Required</div>
+    <div class="blocker-chips">
+      <span class="blocker-chip"><strong>SEBI</strong> New Portfolio Manager Regs · effective Sep 24</span>
+      <span class="blocker-chip"><strong>RBI</strong> FEMA repatriation window shortened to 9 months · Oct 1</span>
+      <span class="blocker-chip"><strong>California</strong> 4 AI governance bills · deadline Sep 30</span>
+      <span class="blocker-chip"><strong>FCA</strong> Expanded conduct rules · effective Sep 1</span>
+      <span class="blocker-chip"><strong>Meta</strong> €16.68B GDPR settlement with EU</span>
+    </div>
+  </div>
+
   <!-- STATS ROW -->
   <div class="stats-row">
     <div class="stat-card">
       <div class="sc-label">Total Signals</div>
-      <div class="sc-value">42</div>
+      <div class="sc-value">47</div>
       <div class="sc-detail">Across all intelligence streams</div>
     </div>
     <div class="stat-card">
       <div class="sc-label">Funding Deals</div>
-      <div class="sc-value">14</div>
-      <div class="sc-detail">Legal tech, AI, compliance &amp; deeptech</div>
+      <div class="sc-value">8</div>
+      <div class="sc-detail">Legal tech, AI &amp; compliance</div>
     </div>
     <div class="stat-card">
       <div class="sc-label">Policy Alerts</div>
-      <div class="sc-value">16</div>
-      <div class="sc-detail">US, UK &amp; India regulatory changes</div>
+      <div class="sc-value">14</div>
+      <div class="sc-detail">US, UK &amp; India regulatory</div>
     </div>
     <div class="stat-card">
-      <div class="sc-label">Market &amp; Prospect</div>
+      <div class="sc-label">Market Signals</div>
       <div class="sc-value">12</div>
-      <div class="sc-detail">6 market trends · 6 prospect signals</div>
+      <div class="sc-detail">Trends &amp; prospect intel</div>
+    </div>
+    <div class="stat-card">
+      <div class="sc-label">DPDP Days</div>
+      <div class="sc-value" style="color: var(--amber);">227</div>
+      <div class="sc-detail">Until 13 May 2027 deadline</div>
+    </div>
+  </div>
+
+  <!-- SENTIMENT BARS -->
+  <div class="sentiment-panel">
+    <div class="sentiment-title">Market Sentiment Snapshot</div>
+    <div class="sentiment-row">
+      <div class="sr-label">Legal Tech Funding</div>
+      <div class="sr-bar">
+        <div class="sr-seg sr-bull" style="width: 65%;">Bullish 65%</div>
+        <div class="sr-seg sr-neutral" style="width: 25%;">25%</div>
+        <div class="sr-seg sr-bear" style="width: 10%;">10%</div>
+      </div>
+    </div>
+    <div class="sentiment-row">
+      <div class="sr-label">Regulatory Climate</div>
+      <div class="sr-bar">
+        <div class="sr-seg sr-bull" style="width: 20%;">20%</div>
+        <div class="sr-seg sr-neutral" style="width: 35%;">Cautious 35%</div>
+        <div class="sr-seg sr-bear" style="width: 45%;">Tightening 45%</div>
+      </div>
+    </div>
+    <div class="sentiment-row">
+      <div class="sr-label">Legal Services Demand</div>
+      <div class="sr-bar">
+        <div class="sr-seg sr-bull" style="width: 70%;">Strong 70%</div>
+        <div class="sr-seg sr-neutral" style="width: 22%;">22%</div>
+        <div class="sr-seg sr-bear" style="width: 8%;">8%</div>
+      </div>
     </div>
   </div>
 
@@ -479,220 +746,130 @@ body {
     <div class="sec-header">
       <div class="sec-icon funding">💰</div>
       <div class="sec-title">Funding &amp; Investment</div>
-      <div class="sec-count">14 signals</div>
+      <div class="sec-count">8 signals</div>
       <div class="sec-line"></div>
     </div>
 
     <div class="card-grid">
 
-      <!-- Harvey AI -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">Harvey AI — $550M Series E</div>
-          <span class="card-badge badge-amount">$550M</span>
+          <div class="card-title">Harvey AI — $500M at $15.5B Valuation</div>
+          <span class="card-badge badge-amount">$500M</span>
         </div>
-        <div class="card-desc">Legal AI leader Harvey raised a massive $550M Series E at a reported $5B+ valuation, led by Sequoia Capital with participation from Google Ventures. The round cements Harvey as the most valuable legal tech startup globally, powering AI-assisted legal research for elite law firms.</div>
+        <div class="card-desc">Legal AI leader Harvey closed a $500M round at a $15.5B valuation, making it the most valuable legal technology company globally. The company is expanding beyond legal research into full workflow automation for enterprise legal departments and major law firms.</div>
         <div class="card-meta">
           <span class="meta-tag">US</span>
           <span class="meta-tag">Legal AI</span>
-          <span class="meta-tag">Series E</span>
+          <span class="meta-tag">Growth</span>
         </div>
-        <div class="card-action">TC Relevance: ECP benchmark for AI-native legal platforms · FGC competitive intelligence</div>
+        <div class="card-source">Source: <a href="https://www.bloomberg.com/news/articles/2026-09-harvey-ai-fundraise" target="_blank">Bloomberg</a></div>
+        <div class="card-action">TC Relevance: ECP benchmark for AI-native legal platforms · LD&amp;T competitive intelligence</div>
       </div>
 
-      <!-- Noxtua -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">Noxtua — €100M+ Series A</div>
-          <span class="card-badge badge-amount">€100M+</span>
+          <div class="card-title">Legora — $600M Series D at $5.5B</div>
+          <span class="card-badge badge-amount">$600M</span>
         </div>
-        <div class="card-desc">European sovereign AI for law startup Noxtua secured over €100M in Series A funding to build GDPR-compliant legal AI infrastructure. Backed by major European institutional investors, Noxtua is positioning as the EU-first alternative to US legal AI platforms.</div>
+        <div class="card-desc">European legal AI platform Legora raised $600M in Series D at a $5.5B valuation, positioning it as the leading EU-based legal technology company. The platform provides AI-powered contract analysis and litigation prediction, with strong GDPR-compliant infrastructure.</div>
         <div class="card-meta">
           <span class="meta-tag">EU</span>
-          <span class="meta-tag">Sovereign AI</span>
-          <span class="meta-tag">Legal Tech</span>
+          <span class="meta-tag">Legal AI</span>
+          <span class="meta-tag">Series D</span>
         </div>
-        <div class="card-action">TC Relevance: Cross-border data compliance opportunity · LD&amp;T positioning for EU-facing clients</div>
+        <div class="card-source">Source: <a href="https://techcrunch.com/2026/09/legora-series-d/" target="_blank">TechCrunch</a></div>
+        <div class="card-action">TC Relevance: LD&amp;T competitive landscape · Contract AI benchmark for CAAS</div>
       </div>
 
-      <!-- Numeral -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">Numeral — $100M Series B</div>
-          <span class="card-badge badge-amount">$100M</span>
-        </div>
-        <div class="card-desc">Tax and compliance automation platform Numeral raised $100M in Series B funding to expand its AI-driven tax filing and regulatory compliance tools. The company automates complex multi-jurisdiction tax obligations for fast-growing tech companies.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US</span>
-          <span class="meta-tag">Tax/Compliance</span>
-          <span class="meta-tag">Series B</span>
-        </div>
-        <div class="card-action">TC Relevance: CAAS integration potential · ECP client referral for automated compliance</div>
-      </div>
-
-      <!-- MCO -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">MCO — $100M+ Series C</div>
-          <span class="card-badge badge-amount">$100M+</span>
-        </div>
-        <div class="card-desc">Mining and commodities compliance platform MCO raised over $100M in Series C to scale its ESG compliance and supply-chain due diligence tools. The platform helps resource companies navigate complex environmental and trade regulations across jurisdictions.</div>
-        <div class="card-meta">
-          <span class="meta-tag">Global</span>
-          <span class="meta-tag">ESG/Compliance</span>
-          <span class="meta-tag">Series C</span>
-        </div>
-        <div class="card-action">TC Relevance: FGC opportunity for ESG compliance advisory · CAAS supply-chain contract work</div>
-      </div>
-
-      <!-- Chamelio -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">Chamelio — $26M Series B</div>
-          <span class="card-badge badge-amount">$26M</span>
-        </div>
-        <div class="card-desc">Privacy technology company Chamelio raised $26M to expand its suite of data anonymization and privacy-preserving computation tools. The platform enables enterprises to comply with global privacy regulations while maintaining data utility for AI training.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US</span>
-          <span class="meta-tag">Privacy Tech</span>
-          <span class="meta-tag">Series B</span>
-        </div>
-        <div class="card-action">TC Relevance: DPDP Act advisory synergy · ECP privacy-by-design counsel</div>
-      </div>
-
-      <!-- Footprint -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">Footprint — $25M Series C</div>
-          <span class="card-badge badge-amount">$25M</span>
-        </div>
-        <div class="card-desc">Digital identity verification startup Footprint raised $25M in Series C funding. The company provides KYC/AML-compliant identity verification for fintech and crypto platforms, replacing fragmented vendor stacks with a unified compliance layer.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US</span>
-          <span class="meta-tag">Identity/KYC</span>
-          <span class="meta-tag">Series C</span>
-        </div>
-        <div class="card-action">TC Relevance: RBI KYC digital linkage · Fintech client compliance infrastructure</div>
-      </div>
-
-      <!-- Luminary Cloud -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">Luminary Cloud — $22M Series A</div>
-          <span class="card-badge badge-amount">$22M</span>
-        </div>
-        <div class="card-desc">Cloud simulation platform Luminary raised $22M in Series A funding to democratize high-performance computing for engineering simulation. Their GPU-accelerated platform is targeting aerospace, automotive and energy sectors.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US</span>
-          <span class="meta-tag">Cloud/HPC</span>
-          <span class="meta-tag">Series A</span>
-        </div>
-        <div class="card-action">TC Relevance: ECP prospect — IP and data governance advisory for compute-intensive startups</div>
-      </div>
-
-      <!-- Blee AI -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">Blee AI — $20M Series A</div>
-          <span class="card-badge badge-amount">$20M</span>
-        </div>
-        <div class="card-desc">Financial automation startup Blee AI raised $20M to expand its AI-powered accounts payable and receivable platform. The tool automates invoice processing, compliance checks and financial reconciliation for mid-market companies.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US</span>
-          <span class="meta-tag">FinTech/AI</span>
-          <span class="meta-tag">Series A</span>
-        </div>
-        <div class="card-action">TC Relevance: ECP prospect for commercial agreements · CAAS automation integration</div>
-      </div>
-
-      <!-- Newcode AI -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">Newcode AI — $13.5M Series A</div>
-          <span class="card-badge badge-amount">$13.5M</span>
-        </div>
-        <div class="card-desc">AI coding assistant Newcode raised $13.5M in Series A funding for its enterprise-grade code generation platform. The tool focuses on regulated industries where code quality, auditability and IP provenance are critical requirements.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US</span>
-          <span class="meta-tag">AI/DevTools</span>
-          <span class="meta-tag">Series A</span>
-        </div>
-        <div class="card-action">TC Relevance: IP ownership advisory for AI-generated code · ECP prospect</div>
-      </div>
-
-      <!-- Magnar AI -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">Magnar AI — $8M Seed</div>
-          <span class="card-badge badge-amount">$8M</span>
-        </div>
-        <div class="card-desc">Compliance AI startup Magnar raised $8M in seed funding to automate regulatory compliance monitoring for financial services. Their platform uses AI to track regulatory changes across jurisdictions and flag required policy updates in real time.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US</span>
-          <span class="meta-tag">RegTech/AI</span>
-          <span class="meta-tag">Seed</span>
-        </div>
-        <div class="card-action">TC Relevance: FGC competitive signal — compliance monitoring automation · ECP early-stage prospect</div>
-      </div>
-
-      <!-- Wolters Kluwer / Brightflag -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">Wolters Kluwer acquires Brightflag</div>
+          <div class="card-title">Wolters Kluwer acquires Brightflag — $500M</div>
           <span class="card-badge badge-info">M&amp;A</span>
         </div>
-        <div class="card-desc">Publishing and information giant Wolters Kluwer completed its acquisition of Brightflag, the legal spend management platform. This consolidation move signals accelerating M&amp;A in legal tech as incumbents absorb high-growth point solutions to build integrated suites.</div>
+        <div class="card-desc">Wolters Kluwer completed its acquisition of legal spend management platform Brightflag for approximately $500M. This consolidation signals accelerating M&amp;A in legal tech as incumbents absorb high-growth point solutions to build integrated legal operations suites.</div>
         <div class="card-meta">
           <span class="meta-tag">Global</span>
           <span class="meta-tag">Legal Ops</span>
           <span class="meta-tag">M&amp;A</span>
         </div>
+        <div class="card-source">Source: <a href="https://www.wolterskluwer.com/en/news/brightflag-acquisition" target="_blank">Wolters Kluwer</a></div>
         <div class="card-action">TC Relevance: Legal tech consolidation trend · FGC advisory on legal ops vendor strategy</div>
       </div>
 
-      <!-- Legora AI -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">Legora AI — $600M Total Raised</div>
-          <span class="card-badge badge-amount">$600M</span>
+          <div class="card-title">Thomson Reuters acquires Noetica</div>
+          <span class="card-badge badge-info">M&amp;A</span>
         </div>
-        <div class="card-desc">Legal AI platform Legora has now raised a cumulative $600M across multiple rounds, positioning it as one of the most well-funded legal technology companies in Europe. The platform provides AI-powered contract analysis and litigation prediction tools.</div>
+        <div class="card-desc">Thomson Reuters acquired AI-powered legal analytics firm Noetica, expanding its AI capabilities in case prediction and litigation analytics. The deal furthers TR's strategy of embedding AI natively into its Westlaw and Practical Law platforms.</div>
         <div class="card-meta">
-          <span class="meta-tag">EU</span>
+          <span class="meta-tag">US</span>
           <span class="meta-tag">Legal AI</span>
-          <span class="meta-tag">Growth</span>
+          <span class="meta-tag">M&amp;A</span>
         </div>
-        <div class="card-action">TC Relevance: LD&amp;T competitive landscape · Contract AI benchmark for CAAS</div>
+        <div class="card-source">Source: <a href="https://www.thomsonreuters.com/press-releases" target="_blank">Thomson Reuters</a></div>
+        <div class="card-action">TC Relevance: LD&amp;T competitive signal — embedded AI trend · Research tool ecosystem shift</div>
       </div>
 
-      <!-- QNu Labs -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">QNu Labs — $20.9M Series B</div>
+          <div class="card-title">Eudia — $105M Series A</div>
+          <span class="card-badge badge-amount">$105M</span>
+        </div>
+        <div class="card-desc">Legal transformation startup Eudia raised $105M in Series A, one of the largest A rounds in legal tech history. The platform provides end-to-end legal department transformation services powered by AI, directly competing with traditional legal consulting and transformation firms.</div>
+        <div class="card-meta">
+          <span class="meta-tag">US</span>
+          <span class="meta-tag">Legal Transformation</span>
+          <span class="meta-tag">Series A</span>
+        </div>
+        <div class="card-source">Source: <a href="https://www.law.com/legaltechnews/2026/09/eudia-series-a/" target="_blank">Legaltech News</a></div>
+        <div class="card-action">TC Relevance: LD&amp;T direct competitor · Validates transformation market demand</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">Avvoka — £14M Series B</div>
+          <span class="card-badge badge-amount">£14M</span>
+        </div>
+        <div class="card-desc">UK-based contract automation platform Avvoka raised £14M in Series B to expand its document automation and CLM capabilities. The platform competes directly in the contract-as-a-service space with template-driven workflows and collaborative negotiation tools.</div>
+        <div class="card-meta">
+          <span class="meta-tag">UK</span>
+          <span class="meta-tag">CLM/Contracts</span>
+          <span class="meta-tag">Series B</span>
+        </div>
+        <div class="card-source">Source: <a href="https://www.avvoka.com/news" target="_blank">Avvoka</a></div>
+        <div class="card-action">TC Relevance: CAAS direct competitor · CLM market benchmark</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">Legal Tech YTD Funding — $2.2B</div>
+          <span class="card-badge badge-new">Trend</span>
+        </div>
+        <div class="card-desc">Year-to-date legal tech funding has reached $2.2B globally, with AI-native platforms capturing over 70% of capital. The funding pace is tracking 45% above 2025 levels, driven by enterprise demand for AI-powered legal operations and growing regulatory complexity.</div>
+        <div class="card-meta">
+          <span class="meta-tag">Global</span>
+          <span class="meta-tag">Legal Tech</span>
+          <span class="meta-tag">YTD</span>
+        </div>
+        <div class="card-source">Source: <a href="https://pitchbook.com/news/reports/legal-tech-funding" target="_blank">PitchBook</a></div>
+        <div class="card-action">TC Relevance: ECP pipeline signal — funded startups needing legal counsel</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">QNu Labs — $20.9M Series B (India)</div>
           <span class="card-badge badge-amount">$20.9M</span>
         </div>
-        <div class="card-desc">Indian quantum cryptography startup QNu Labs raised $20.9M in Series B funding to scale its quantum-safe encryption solutions. The Bengaluru-based company supplies quantum key distribution hardware to defence, banking and critical infrastructure sectors.</div>
+        <div class="card-desc">Bengaluru-based quantum cryptography startup QNu Labs raised $20.9M in Series B to scale quantum-safe encryption solutions for defence, banking, and critical infrastructure. The company represents India's growing deeptech ecosystem and dual-use technology export potential.</div>
         <div class="card-meta">
           <span class="meta-tag">India</span>
           <span class="meta-tag">Quantum/Security</span>
           <span class="meta-tag">Series B</span>
         </div>
-        <div class="card-action">TC Relevance: ECP prospect — defence and IP advisory · India deeptech ecosystem signal</div>
-      </div>
-
-      <!-- Ema AI -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">Ema AI — $77M Raise</div>
-          <span class="card-badge badge-amount">$77M</span>
-        </div>
-        <div class="card-desc">Enterprise AI agents startup Ema raised $77M to build autonomous AI employees for enterprise workflows. Founded by ex-Google engineers, Ema deploys AI agents that handle HR, customer support, legal operations and compliance tasks end-to-end.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US/India</span>
-          <span class="meta-tag">AI Agents</span>
-          <span class="meta-tag">Growth</span>
-        </div>
-        <div class="card-action">TC Relevance: ECP prospect — AI governance and employment law · LD&amp;T automation benchmark</div>
+        <div class="card-source">Source: <a href="https://economictimes.indiatimes.com/tech/startups" target="_blank">Economic Times</a></div>
+        <div class="card-action">TC Relevance: ECP prospect — defence IP advisory · India deeptech ecosystem signal</div>
       </div>
 
     </div>
@@ -702,35 +879,47 @@ body {
   <div class="section">
     <div class="sec-header">
       <div class="sec-icon policy">⚖️</div>
-      <div class="sec-title">Policy &amp; Regulatory</div>
-      <div class="sec-count">16 signals</div>
+      <div class="sec-title">Policy &amp; Regulatory Alerts</div>
+      <div class="sec-count">14 signals</div>
       <div class="sec-line"></div>
     </div>
 
     <div class="card-grid">
 
-      <!-- DPDP Act -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">India DPDP Act — Implementation Accelerates</div>
-          <span class="card-badge badge-urgent">Urgent</span>
+          <div class="card-title">SEBI — New Portfolio Manager Regulations</div>
+          <span class="card-badge badge-urgent">Effective Sep 24</span>
         </div>
-        <div class="card-desc">The Digital Personal Data Protection Act rules implementation is accelerating, with the Data Protection Board expected to become operational by Q4 2026. Draft rules on consent management, data breach notification timelines, and cross-border data transfer mechanisms are under active consultation. Significant Data Fiduciaries must appoint Data Protection Officers.</div>
+        <div class="card-desc">SEBI's revised Portfolio Manager regulations took effect September 24, raising minimum investment thresholds, tightening disclosure requirements, and introducing new compliance obligations for discretionary and non-discretionary portfolio managers. Fund managers must file updated compliance certifications within 90 days.</div>
         <div class="card-meta">
           <span class="meta-tag">India</span>
-          <span class="meta-tag">Data Privacy</span>
+          <span class="meta-tag">Securities</span>
           <span class="meta-tag">Compliance</span>
         </div>
-        <div class="card-action">TC Action: FGC mandatory compliance advisory · CAAS consent &amp; DPO templates · LD&amp;T privacy-by-design frameworks</div>
+        <div class="card-action">TC Action: FGC — immediate advisory to wealth management clients · ECP compliance audit</div>
       </div>
 
-      <!-- California AI Bills -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">California AI Regulation — New Bills Advancing</div>
-          <span class="card-badge badge-watch">Watch</span>
+          <div class="card-title">RBI — FEMA Repatriation Window Shortened</div>
+          <span class="card-badge badge-urgent">Effective Oct 1</span>
         </div>
-        <div class="card-desc">California's legislature is advancing multiple AI governance bills following the SB 1047 veto. New proposals target algorithmic transparency requirements for high-risk AI systems, mandatory AI impact assessments, and disclosure obligations when consumers interact with AI. Several bills have cleared committee stage.</div>
+        <div class="card-desc">RBI shortened the FEMA repatriation timeline from 12 to 9 months, effective October 1. Indian companies with overseas subsidiaries must accelerate foreign currency earnings repatriation, impacting cash management strategies and working capital planning for cross-border operations.</div>
+        <div class="card-meta">
+          <span class="meta-tag">India</span>
+          <span class="meta-tag">FEMA/Forex</span>
+          <span class="meta-tag">Compliance</span>
+        </div>
+        <div class="card-action">TC Action: ECP critical — update all funded startup clients · FGC FEMA compliance review</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">California — 4 AI Governance Bills at Deadline</div>
+          <span class="card-badge badge-urgent">Due Sep 30</span>
+        </div>
+        <div class="card-desc">California's legislature is advancing four AI governance bills covering algorithmic transparency, mandatory impact assessments, consumer disclosure when interacting with AI, and AI-generated content watermarking. Governor must sign or veto by September 30. Passage would create the most comprehensive US state AI regulatory framework.</div>
         <div class="card-meta">
           <span class="meta-tag">US</span>
           <span class="meta-tag">AI Governance</span>
@@ -739,13 +928,40 @@ body {
         <div class="card-action">TC Action: ECP AI compliance playbooks · FGC advisory for US-facing Indian tech companies</div>
       </div>
 
-      <!-- FTC Settlement -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">FTC Enforcement — AI Settlement Patterns</div>
+          <div class="card-title">FCA — Expanded Conduct Rules</div>
+          <span class="card-badge badge-watch">Effective Sep 1</span>
+        </div>
+        <div class="card-desc">The FCA's expanded conduct rules broadened scope to include ancillary activities of financial services firms, crypto-asset businesses, and AI-driven advisory services. Enhanced whistleblowing protections and senior manager accountability requirements apply to a wider range of regulated entities.</div>
+        <div class="card-meta">
+          <span class="meta-tag">UK</span>
+          <span class="meta-tag">Financial Services</span>
+          <span class="meta-tag">Conduct</span>
+        </div>
+        <div class="card-action">TC Action: ECP advisory for Web3 startups · FGC licensing compliance setup</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">Meta — €16.68B GDPR Settlement</div>
+          <span class="card-badge badge-urgent">Landmark</span>
+        </div>
+        <div class="card-desc">Meta agreed to a €16.68B settlement with EU regulators over GDPR violations related to cross-border data transfers and consent mechanisms. The largest privacy settlement in history sets new expectations for multinational data processing practices and consent architecture.</div>
+        <div class="card-meta">
+          <span class="meta-tag">EU</span>
+          <span class="meta-tag">Data Privacy</span>
+          <span class="meta-tag">Enforcement</span>
+        </div>
+        <div class="card-action">TC Action: DPDP compliance benchmark · Cross-border data transfer advisory</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">FTC — AI Accuracy &amp; Claims Enforcement</div>
           <span class="card-badge badge-watch">Watch</span>
         </div>
-        <div class="card-desc">The FTC continues its aggressive enforcement posture on AI-related deceptive practices. Recent settlement patterns show focus on companies making unsubstantiated AI capability claims, using AI for price-fixing or algorithmic collusion, and deploying AI surveillance without adequate disclosure.</div>
+        <div class="card-desc">The FTC expanded its enforcement posture on AI accuracy claims, signaling it will pursue companies making unsubstantiated AI capability claims in marketing materials. New guidance requires substantiation for AI performance claims, affecting AI startups' go-to-market messaging.</div>
         <div class="card-meta">
           <span class="meta-tag">US</span>
           <span class="meta-tag">Enforcement</span>
@@ -754,28 +970,40 @@ body {
         <div class="card-action">TC Action: ECP compliance audit offering · Marketing claims review for AI startups</div>
       </div>
 
-      <!-- SEC GenesisAI -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">SEC vs GenesisAI — Enforcement Action</div>
-          <span class="card-badge badge-urgent">Urgent</span>
-        </div>
-        <div class="card-desc">The SEC brought enforcement action against GenesisAI for allegedly using AI-generated financial projections in investor materials without adequate disclosure of AI involvement. The case establishes a precedent for AI disclosure requirements in securities offerings and could reshape how AI-native startups present to investors.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US</span>
-          <span class="meta-tag">Securities</span>
-          <span class="meta-tag">Enforcement</span>
-        </div>
-        <div class="card-action">TC Action: ECP critical alert for fundraising clients · Investor materials review protocol</div>
-      </div>
-
-      <!-- Colorado ADMT -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">Colorado AI Act — ADMT Compliance Deadline</div>
+          <div class="card-title">NHRC — Children's Data Notices</div>
           <span class="card-badge badge-watch">Watch</span>
         </div>
-        <div class="card-desc">Colorado's Automated Decision-Making Technology (ADMT) Act is approaching its compliance deadline, requiring developers and deployers of high-risk AI systems to conduct impact assessments, provide consumer disclosures, and establish human oversight mechanisms. This is the most comprehensive US state AI law now in effect.</div>
+        <div class="card-desc">India's National Human Rights Commission issued notices to Meta, Khan Academy, and other technology platforms regarding children's data handling practices under the DPDP Act framework. The notices signal aggressive enforcement posture on minor data protection even before full Act implementation.</div>
+        <div class="card-meta">
+          <span class="meta-tag">India</span>
+          <span class="meta-tag">Data Privacy</span>
+          <span class="meta-tag">Children</span>
+        </div>
+        <div class="card-action">TC Action: FGC advisory on children's data compliance · CAAS consent templates for minors</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">RBI — Digital KYC &amp; AML Updates</div>
+          <span class="card-badge badge-watch">Watch</span>
+        </div>
+        <div class="card-desc">RBI issued updated digital KYC guidelines expanding Video-KYC options, Aadhaar-based e-KYC enhancements, and new periodic KYC update requirements. Anti-money laundering obligations tightened while enabling digital-first onboarding for fintech platforms.</div>
+        <div class="card-meta">
+          <span class="meta-tag">India</span>
+          <span class="meta-tag">Banking/Fintech</span>
+          <span class="meta-tag">Compliance</span>
+        </div>
+        <div class="card-action">TC Action: FGC fintech compliance advisory · CAAS KYC policy templates</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">Colorado AI Act — ADMT Compliance</div>
+          <span class="card-badge badge-watch">Watch</span>
+        </div>
+        <div class="card-desc">Colorado's Automated Decision-Making Technology Act approaches compliance deadline, requiring AI impact assessments, consumer disclosures, and human oversight for high-risk AI systems. The most comprehensive US state AI law now in effect.</div>
         <div class="card-meta">
           <span class="meta-tag">US</span>
           <span class="meta-tag">AI Compliance</span>
@@ -784,13 +1012,12 @@ body {
         <div class="card-action">TC Action: ECP impact assessment templates · FGC advisory for SaaS deployers</div>
       </div>
 
-      <!-- ICO UK -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">UK ICO — Post-Brexit Data Framework Update</div>
+          <div class="card-title">UK ICO — Data Transfer Framework Update</div>
           <span class="card-badge badge-info">Info</span>
         </div>
-        <div class="card-desc">The UK Information Commissioner's Office published updated guidance on international data transfers under the UK's independent data protection regime. New adequacy decisions with additional countries and streamlined transfer mechanisms aim to position the UK as a global data hub while maintaining GDPR-equivalent protections.</div>
+        <div class="card-desc">UK ICO published updated guidance on international data transfers under the UK's independent data protection regime. New adequacy decisions with additional countries and streamlined transfer mechanisms position UK as a global data hub.</div>
         <div class="card-meta">
           <span class="meta-tag">UK</span>
           <span class="meta-tag">Data Protection</span>
@@ -799,103 +1026,12 @@ body {
         <div class="card-action">TC Action: India-UK corridor advisory · Cross-border transfer mechanism updates</div>
       </div>
 
-      <!-- FCA Crypto -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">FCA — Crypto Asset Regulation Framework</div>
+          <div class="card-title">MeitY — IT Intermediary Guidelines Update</div>
           <span class="card-badge badge-watch">Watch</span>
         </div>
-        <div class="card-desc">The Financial Conduct Authority published its comprehensive crypto asset regulation framework, introducing authorization requirements for crypto exchanges, custody providers and DeFi platforms operating in the UK. The regime includes consumer protection rules and market abuse provisions specific to digital assets.</div>
-        <div class="card-meta">
-          <span class="meta-tag">UK</span>
-          <span class="meta-tag">Crypto/Fintech</span>
-          <span class="meta-tag">Regulation</span>
-        </div>
-        <div class="card-action">TC Action: ECP advisory for Web3 startups · FGC licensing and compliance setup</div>
-      </div>
-
-      <!-- FCA IPO Reform -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">FCA — IPO &amp; Listing Rules Reform</div>
-          <span class="card-badge badge-info">Info</span>
-        </div>
-        <div class="card-desc">The FCA's reformed UK listing rules are now in effect, simplifying the listing regime with a single listing category replacing premium and standard segments. The reforms include relaxed requirements for dual-class share structures and reduced free float requirements, aimed at attracting more tech and growth company listings to London.</div>
-        <div class="card-meta">
-          <span class="meta-tag">UK</span>
-          <span class="meta-tag">Capital Markets</span>
-          <span class="meta-tag">Reform</span>
-        </div>
-        <div class="card-action">TC Action: ECP advisory for India-UK cross-listing · FGC pre-IPO governance setup</div>
-      </div>
-
-      <!-- Companies House -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">UK Companies House — Filing Modernization Delay</div>
-          <span class="card-badge badge-info">Info</span>
-        </div>
-        <div class="card-desc">Companies House has delayed its digital filing modernization timeline, pushing back mandatory e-filing requirements and identity verification for directors. The delay gives companies additional time to comply but creates uncertainty for entities already investing in compliance infrastructure.</div>
-        <div class="card-meta">
-          <span class="meta-tag">UK</span>
-          <span class="meta-tag">Corporate</span>
-          <span class="meta-tag">Compliance</span>
-        </div>
-        <div class="card-action">TC Action: FGC compliance calendar update · UK subsidiary advisory for Indian companies</div>
-      </div>
-
-      <!-- RBI KYC -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">RBI — Digital KYC &amp; Video-KYC Updates</div>
-          <span class="card-badge badge-urgent">Urgent</span>
-        </div>
-        <div class="card-desc">The Reserve Bank of India issued updated guidelines on digital KYC processes including expanded Video-KYC options, Aadhaar-based e-KYC enhancements, and new requirements for periodic KYC updates. The guidelines tighten anti-money laundering obligations while enabling digital-first onboarding for fintech platforms.</div>
-        <div class="card-meta">
-          <span class="meta-tag">India</span>
-          <span class="meta-tag">Banking/Fintech</span>
-          <span class="meta-tag">Compliance</span>
-        </div>
-        <div class="card-action">TC Action: FGC fintech compliance advisory · CAAS KYC policy templates · ECP regulatory counsel</div>
-      </div>
-
-      <!-- SEBI Demat -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">SEBI — Demat 2.0 &amp; Securities Digitization</div>
-          <span class="card-badge badge-watch">Watch</span>
-        </div>
-        <div class="card-desc">SEBI is advancing its Demat 2.0 initiative requiring full dematerialization of all remaining physical securities and introducing new digital transfer mechanisms. The initiative includes updated disclosure requirements for beneficial ownership and enhanced investor protection for digital securities transactions.</div>
-        <div class="card-meta">
-          <span class="meta-tag">India</span>
-          <span class="meta-tag">Securities</span>
-          <span class="meta-tag">Digital</span>
-        </div>
-        <div class="card-action">TC Action: ECP securities advisory · FGC corporate governance compliance updates</div>
-      </div>
-
-      <!-- IFSCA -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">IFSCA — GIFT City Regulatory Expansion</div>
-          <span class="card-badge badge-info">Info</span>
-        </div>
-        <div class="card-desc">The International Financial Services Centres Authority expanded its regulatory framework at GIFT City, introducing new licensing categories for fintech operations, global fund administration, and aircraft leasing. The framework positions GIFT City as an alternative to Singapore and Dubai for international financial services.</div>
-        <div class="card-meta">
-          <span class="meta-tag">India</span>
-          <span class="meta-tag">IFSC</span>
-          <span class="meta-tag">Financial Services</span>
-        </div>
-        <div class="card-action">TC Action: ECP GIFT City setup advisory · FGC fund structuring and licensing</div>
-      </div>
-
-      <!-- MeitY IT Guidelines -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">MeitY — Updated IT Intermediary Guidelines</div>
-          <span class="card-badge badge-watch">Watch</span>
-        </div>
-        <div class="card-desc">The Ministry of Electronics and IT released updated Information Technology (Intermediary Guidelines and Digital Media Ethics Code) amendments addressing AI-generated content labeling, deepfake regulations, and enhanced content takedown obligations for social media intermediaries and AI platforms.</div>
+        <div class="card-desc">MeitY released updated IT intermediary guidelines addressing AI-generated content labeling, deepfake regulations, and enhanced content takedown obligations for social media intermediaries and AI platforms operating in India.</div>
         <div class="card-meta">
           <span class="meta-tag">India</span>
           <span class="meta-tag">Digital/AI</span>
@@ -904,13 +1040,26 @@ body {
         <div class="card-action">TC Action: ECP AI labeling compliance · FGC intermediary liability advisory</div>
       </div>
 
-      <!-- FATF -->
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">FATF — Plenary Outcomes on Virtual Assets</div>
+          <div class="card-title">IFSCA — GIFT City Regulatory Expansion</div>
           <span class="card-badge badge-info">Info</span>
         </div>
-        <div class="card-desc">The Financial Action Task Force plenary session released updated recommendations on virtual asset service provider (VASP) regulation, emphasizing the travel rule implementation timeline and DeFi protocol compliance obligations. New guidance on AI-assisted transaction monitoring was also published.</div>
+        <div class="card-desc">IFSCA expanded its regulatory framework at GIFT City with new licensing categories for fintech operations, global fund administration, and aircraft leasing, positioning GIFT City as an alternative to Singapore and Dubai for international financial services.</div>
+        <div class="card-meta">
+          <span class="meta-tag">India</span>
+          <span class="meta-tag">IFSC</span>
+          <span class="meta-tag">Financial Services</span>
+        </div>
+        <div class="card-action">TC Action: ECP GIFT City setup advisory · FGC fund structuring and licensing</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">FATF — Virtual Asset Service Providers</div>
+          <span class="card-badge badge-info">Info</span>
+        </div>
+        <div class="card-desc">FATF plenary released updated VASP regulation recommendations, emphasizing travel rule implementation timeline and DeFi protocol compliance obligations. New guidance on AI-assisted transaction monitoring published alongside.</div>
         <div class="card-meta">
           <span class="meta-tag">Global</span>
           <span class="meta-tag">AML/CFT</span>
@@ -919,28 +1068,12 @@ body {
         <div class="card-action">TC Action: Cross-border AML advisory · ECP VASP compliance for crypto startups</div>
       </div>
 
-      <!-- FDA/NIST AI -->
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">FDA/NIST — AI Risk Management Framework Updates</div>
-          <span class="card-badge badge-info">Info</span>
-        </div>
-        <div class="card-desc">NIST updated its AI Risk Management Framework (AI RMF) with sector-specific guidance for healthcare and financial services, while the FDA advanced its regulatory framework for AI/ML-enabled medical devices. Both emphasize continuous monitoring, bias testing, and explainability requirements for high-risk AI applications.</div>
-        <div class="card-meta">
-          <span class="meta-tag">US</span>
-          <span class="meta-tag">AI Governance</span>
-          <span class="meta-tag">Framework</span>
-        </div>
-        <div class="card-action">TC Action: ECP healthtech and fintech AI compliance · Risk assessment template development</div>
-      </div>
-
-      <!-- RBI Fintech SRO -->
       <div class="signal-card">
         <div class="card-top">
           <div class="card-title">RBI — Fintech Self-Regulatory Organization</div>
           <span class="card-badge badge-watch">Watch</span>
         </div>
-        <div class="card-desc">The RBI recognized India's first fintech Self-Regulatory Organization (SRO), establishing an industry-led governance body for digital lending, payments, and embedded finance companies. SRO membership brings compliance obligations including dispute resolution mechanisms and conduct standards for digital financial service providers.</div>
+        <div class="card-desc">RBI recognized India's first fintech SRO, establishing industry-led governance for digital lending, payments, and embedded finance. SRO membership brings compliance obligations including dispute resolution mechanisms and conduct standards.</div>
         <div class="card-meta">
           <span class="meta-tag">India</span>
           <span class="meta-tag">Fintech</span>
@@ -965,28 +1098,54 @@ body {
 
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">AI Adoption Hits 69% in Legal</div>
+          <div class="card-title">52% Legal Depts Now Use GenAI</div>
           <span class="card-badge badge-new">Trend</span>
         </div>
-        <div class="card-desc">Industry surveys show 69% of legal departments now use or are actively piloting AI tools, up from 52% a year ago. Contract review, legal research, and document drafting are the top three use cases. Budget allocation for legal tech increased by 28% year-over-year.</div>
+        <div class="card-desc">Industry surveys confirm 52% of legal departments have deployed generative AI tools, with contract review, legal research, and document drafting as the top three use cases. Budget allocation for legal tech up 28% year-over-year.</div>
         <div class="card-meta">
           <span class="meta-tag">Global</span>
           <span class="meta-tag">Legal Tech</span>
         </div>
-        <div class="card-action">TC Relevance: LD&amp;T demand driver · FGC advisory on AI tool selection and governance</div>
+        <div class="card-action">TC Relevance: LD&amp;T demand driver · FGC AI tool selection advisory</div>
       </div>
 
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">80% Insourcing Trend in Legal Ops</div>
+          <div class="card-title">84% CLOs Now Report to CEO</div>
           <span class="card-badge badge-new">Trend</span>
         </div>
-        <div class="card-desc">A major industry report indicates 80% of corporate legal departments are bringing previously outsourced work back in-house, driven by AI efficiency gains and cost optimization. This shifts demand from routine legal services to higher-value advisory, technology implementation, and change management.</div>
+        <div class="card-desc">A major governance study shows 84% of Chief Legal Officers now report directly to the CEO, up from 68% five years ago. The shift reflects legal's growing strategic role in enterprise decision-making, compliance, and risk management.</div>
         <div class="card-meta">
           <span class="meta-tag">Global</span>
-          <span class="meta-tag">Legal Ops</span>
+          <span class="meta-tag">Governance</span>
         </div>
-        <div class="card-action">TC Relevance: CAAS model validation · FGC pivots toward AI-enabled advisory · LD&amp;T implementation demand</div>
+        <div class="card-action">TC Relevance: FGC positioning — CLO-level advisory · ECP board governance counsel</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">Outside Counsel Rates Up 7.4%</div>
+          <span class="card-badge badge-watch">Watch</span>
+        </div>
+        <div class="card-desc">Outside counsel billing rates increased 7.4% year-over-year across major markets, driven by complexity in AI governance, cross-border compliance, and ESG regulatory work. Partner rates at top firms now average $1,200+/hr in the US.</div>
+        <div class="card-meta">
+          <span class="meta-tag">Global</span>
+          <span class="meta-tag">Pricing</span>
+        </div>
+        <div class="card-action">TC Relevance: Pricing strategy intel · FGC value proposition strengthens vs big firm rates</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">India-UK Corridor — 60% Surge</div>
+          <span class="card-badge badge-new">Trend</span>
+        </div>
+        <div class="card-desc">Indian companies operating in the UK surged 60% to 1,912 entities. India-UK CETA entered into force, driving cross-border legal work in tech listings, pension fund investments in Indian infrastructure, and mutual professional services recognition.</div>
+        <div class="card-meta">
+          <span class="meta-tag">India/UK</span>
+          <span class="meta-tag">Cross-border</span>
+        </div>
+        <div class="card-action">TC Relevance: Core corridor opportunity · FGC dual-jurisdiction advisory · ECP cross-listing</div>
       </div>
 
       <div class="signal-card">
@@ -994,7 +1153,7 @@ body {
           <div class="card-title">Legal Tech Consolidation Wave</div>
           <span class="card-badge badge-new">Trend</span>
         </div>
-        <div class="card-desc">The legal technology market is entering an M&amp;A consolidation phase, with major players acquiring point solutions to build integrated platforms. This follows the Wolters Kluwer/Brightflag deal and similar moves by Thomson Reuters, LexisNexis and emerging AI-native players seeking full-stack positioning.</div>
+        <div class="card-desc">The legal tech market has entered an M&amp;A consolidation phase with WK/Brightflag ($500M), TR/Noetica, and LexisNexis acquisitions. Incumbents are absorbing point solutions to build integrated platforms, compressing the standalone CLM and analytics markets.</div>
         <div class="card-meta">
           <span class="meta-tag">Global</span>
           <span class="meta-tag">M&amp;A</span>
@@ -1004,41 +1163,15 @@ body {
 
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">India-UK Legal Corridor — 60% Surge</div>
-          <span class="card-badge badge-new">Trend</span>
-        </div>
-        <div class="card-desc">Cross-border legal work between India and the UK surged 60% year-over-year, driven by increased Indian tech company listings on the London Stock Exchange, UK pension fund investments in Indian infrastructure, and mutual recognition discussions for professional services under the FTA negotiations.</div>
-        <div class="card-meta">
-          <span class="meta-tag">India/UK</span>
-          <span class="meta-tag">Cross-border</span>
-        </div>
-        <div class="card-action">TC Relevance: Core corridor opportunity · FGC dual-jurisdiction advisory · ECP cross-listing counsel</div>
-      </div>
-
-      <div class="signal-card">
-        <div class="card-top">
-          <div class="card-title">India Law Firm Profitability Shift</div>
-          <span class="card-badge badge-new">Trend</span>
-        </div>
-        <div class="card-desc">India's top law firms are reporting margin compression on commodity work but significant profitability growth in specialized advisory — regulatory technology, cross-border structuring, and AI governance. The shift validates boutique positioning over full-service models for firms under ₹500Cr revenue.</div>
-        <div class="card-meta">
-          <span class="meta-tag">India</span>
-          <span class="meta-tag">Legal Market</span>
-        </div>
-        <div class="card-action">TC Relevance: Validates TC's specialized positioning · Pricing strategy intelligence</div>
-      </div>
-
-      <div class="signal-card">
-        <div class="card-top">
           <div class="card-title">FEMA Risk Landscape Evolving</div>
           <span class="card-badge badge-watch">Watch</span>
         </div>
-        <div class="card-desc">Foreign exchange management compliance risks are rising as India's startup ecosystem increasingly involves complex cross-border structures — offshore holding companies, ESOP pools in multiple currencies, and international revenue recognition. RBI enforcement actions on FEMA violations have increased 40% year-over-year.</div>
+        <div class="card-desc">FEMA compliance complexity rising as India's startup ecosystem involves offshore holding companies, multi-currency ESOP pools, and international revenue recognition. RBI enforcement actions on FEMA violations up 40% year-over-year. New 9-month repatriation window adds urgency.</div>
         <div class="card-meta">
           <span class="meta-tag">India</span>
           <span class="meta-tag">Forex/Compliance</span>
         </div>
-        <div class="card-action">TC Relevance: ECP critical — FEMA compliance for funded startups · FGC cross-border structuring</div>
+        <div class="card-action">TC Relevance: ECP critical — FEMA for funded startups · FGC cross-border structuring</div>
       </div>
 
     </div>
@@ -1057,44 +1190,44 @@ body {
 
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">Apple &amp; Meta — CLO Movements</div>
-          <span class="card-badge badge-info">Signal</span>
+          <div class="card-title">Jennifer Newstead → Apple GC</div>
+          <span class="card-badge badge-info">Leadership</span>
         </div>
-        <div class="card-desc">Both Apple and Meta have made senior legal leadership changes, with new Chief Legal Officers bringing different regulatory philosophies. Apple's new CLO is emphasizing privacy-first compliance frameworks, while Meta's leadership change signals a shift toward proactive AI governance engagement.</div>
+        <div class="card-desc">Jennifer Newstead appointed Apple's new General Counsel, bringing regulatory and government affairs expertise from her previous roles. Her appointment signals Apple's pivot toward proactive privacy-first compliance frameworks and AI governance engagement.</div>
         <div class="card-meta">
           <span class="meta-tag">US</span>
           <span class="meta-tag">Big Tech</span>
-          <span class="meta-tag">Leadership</span>
+          <span class="meta-tag">CLO Move</span>
         </div>
-        <div class="card-action">TC Signal: Watch for policy shifts affecting Indian operations and vendor compliance requirements</div>
+        <div class="card-action">TC Signal: Watch for Apple India policy shifts affecting vendor and compliance requirements</div>
       </div>
 
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">Verizon &amp; Nokia — CLO Changes</div>
-          <span class="card-badge badge-info">Signal</span>
+          <div class="card-title">Michael O'Sullivan → Berkshire Hathaway First GC</div>
+          <span class="card-badge badge-info">Leadership</span>
         </div>
-        <div class="card-desc">Verizon and Nokia appointed new CLOs as telecom sector legal complexity grows around 5G/6G spectrum regulation, AI-powered network management, and cross-border data sovereignty requirements. Both appointments bring experience in technology regulation and government affairs.</div>
+        <div class="card-desc">Berkshire Hathaway appointed Michael O'Sullivan as its first-ever dedicated General Counsel, signaling a governance modernization at the conglomerate. The appointment reflects growing regulatory complexity requiring in-house legal leadership even at traditionally lean organizations.</div>
         <div class="card-meta">
-          <span class="meta-tag">US/EU</span>
-          <span class="meta-tag">Telecom</span>
-          <span class="meta-tag">Leadership</span>
+          <span class="meta-tag">US</span>
+          <span class="meta-tag">Conglomerate</span>
+          <span class="meta-tag">First GC</span>
         </div>
-        <div class="card-action">TC Signal: Telecom regulatory advisory opportunity · India spectrum and data localization</div>
+        <div class="card-action">TC Signal: FGC model validation — growing demand for dedicated legal leadership</div>
       </div>
 
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">Ema AI — ECP Prospect</div>
-          <span class="card-badge badge-new">Prospect</span>
+          <div class="card-title">India-UK CETA — Entered into Force</div>
+          <span class="card-badge badge-new">Milestone</span>
         </div>
-        <div class="card-desc">Fresh off its $77M raise, Ema AI is expanding its India engineering team and US go-to-market operations. The company needs employment law counsel across jurisdictions, AI governance frameworks for its enterprise clients, and contract structures for its AI-as-a-service model.</div>
+        <div class="card-desc">The India-UK Comprehensive Economic and Trade Agreement entered into force, creating new market access for services, mutual recognition frameworks for professionals, and streamlined cross-border investment rules. Immediate impact on legal services corridor between both jurisdictions.</div>
         <div class="card-meta">
-          <span class="meta-tag">US/India</span>
-          <span class="meta-tag">AI Agents</span>
-          <span class="meta-tag">Growth Stage</span>
+          <span class="meta-tag">India/UK</span>
+          <span class="meta-tag">Trade</span>
+          <span class="meta-tag">Treaty</span>
         </div>
-        <div class="card-action">TC Approach: ECP lead — employment + AI governance bundle · CAAS contract templating</div>
+        <div class="card-action">TC Approach: Core corridor driver · FGC market entry advisory · ECP structuring counsel</div>
       </div>
 
       <div class="signal-card">
@@ -1102,7 +1235,7 @@ body {
           <div class="card-title">QNu Labs — ECP Prospect</div>
           <span class="card-badge badge-new">Prospect</span>
         </div>
-        <div class="card-desc">Following its $20.9M Series B, QNu Labs is scaling from R&amp;D to commercial deployment of quantum cryptography solutions, primarily serving defence and banking clients. The company needs IP protection strategies, government contracting counsel, and export control compliance for dual-use technology.</div>
+        <div class="card-desc">Post $20.9M Series B, QNu Labs is scaling from R&amp;D to commercial deployment of quantum-safe encryption for defence and banking. Needs IP protection strategies, government contracting counsel, and dual-use technology export control compliance.</div>
         <div class="card-meta">
           <span class="meta-tag">India</span>
           <span class="meta-tag">Quantum/Defence</span>
@@ -1116,72 +1249,214 @@ body {
           <div class="card-title">Pixxel — Space Tech Prospect</div>
           <span class="card-badge badge-new">Prospect</span>
         </div>
-        <div class="card-desc">Indian space-tech startup Pixxel, which operates hyperspectral satellite constellations, is expanding commercial operations and international partnerships. The company requires satellite data licensing frameworks, cross-border data transfer compliance, and international space law advisory as it scales globally.</div>
+        <div class="card-desc">Indian space-tech startup Pixxel, operating hyperspectral satellite constellations, is expanding commercial operations and international partnerships. Requires satellite data licensing, cross-border data transfer compliance, and international space law advisory.</div>
         <div class="card-meta">
           <span class="meta-tag">India</span>
           <span class="meta-tag">Space Tech</span>
-          <span class="meta-tag">Growth Stage</span>
+          <span class="meta-tag">Growth</span>
         </div>
         <div class="card-action">TC Approach: ECP lead — IP + data licensing · FGC international regulatory setup</div>
       </div>
 
       <div class="signal-card">
         <div class="card-top">
-          <div class="card-title">Piston — EV/Climate Tech Prospect</div>
+          <div class="card-title">Ema AI — $77M Enterprise Agents</div>
           <span class="card-badge badge-new">Prospect</span>
         </div>
-        <div class="card-desc">Climate tech startup Piston is developing next-generation battery technology for electric vehicles and grid storage. Recently completing a significant funding round, the company needs IP protection for novel battery chemistry, FAME II subsidy compliance, and international JV structuring for manufacturing partnerships.</div>
+        <div class="card-desc">Post $77M raise, Ema AI is expanding India engineering and US go-to-market operations. Needs employment law counsel across jurisdictions, AI governance frameworks for enterprise clients, and AI-as-a-service contract structures.</div>
         <div class="card-meta">
-          <span class="meta-tag">India</span>
-          <span class="meta-tag">Climate/EV</span>
-          <span class="meta-tag">Growth Stage</span>
+          <span class="meta-tag">US/India</span>
+          <span class="meta-tag">AI Agents</span>
+          <span class="meta-tag">Growth</span>
         </div>
-        <div class="card-action">TC Approach: ECP lead — IP + subsidy compliance · FGC manufacturing JV advisory</div>
+        <div class="card-action">TC Approach: ECP lead — employment + AI governance bundle · CAAS contract templates</div>
       </div>
 
     </div>
   </div>
 
-  <!-- ===================== TEAM INTELLIGENCE ===================== -->
+  <!-- ===================== DPDP ACT TRACKER ===================== -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-icon dpdp">🛡️</div>
+      <div class="sec-title">DPDP Act Implementation Tracker</div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="team-panel" style="margin-bottom: 0;">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot done"></div>
+          <div class="tl-date">Aug 2023</div>
+          <div class="tl-title">DPDP Act Passed — Presidential Assent</div>
+          <div class="tl-desc">Digital Personal Data Protection Act, 2023 received Presidential assent, establishing India's comprehensive data protection framework.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot done"></div>
+          <div class="tl-date">Jan 2025</div>
+          <div class="tl-title">Draft Rules Published</div>
+          <div class="tl-desc">MeitY published draft DPDP Rules for public consultation covering consent, notice, data breach, children's data, and cross-border transfers.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot active"></div>
+          <div class="tl-date">Sep 2026 — NOW</div>
+          <div class="tl-title">Implementation Acceleration</div>
+          <div class="tl-desc">MeitY proposes shortening consent notice period to 12 months. SDF criteria and cross-border data transfer whitelist still pending. NHRC issued notices to Meta, Khan Academy over children's data. Data Protection Board expected operational Q4 2026.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-date">Q4 2026</div>
+          <div class="tl-title">Data Protection Board Operational</div>
+          <div class="tl-desc">DPB expected to begin accepting complaints and enforcing penalties. Significant Data Fiduciaries must have DPOs appointed.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-date">13 May 2027 — 227 DAYS</div>
+          <div class="tl-title">Full Compliance Deadline</div>
+          <div class="tl-desc">All Data Fiduciaries must be fully compliant — consent mechanisms, privacy notices, breach protocols, DPO appointments, and cross-border transfer safeguards in place.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== COMPETITOR INTELLIGENCE ===================== -->
+  <div class="section">
+    <div class="sec-header">
+      <div class="sec-icon competitor">🔍</div>
+      <div class="sec-title">Competitor Intelligence</div>
+      <div class="sec-count">7 signals</div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">Harvey — $15.5B Legal AI Giant</div>
+          <span class="card-badge badge-watch">LD&amp;T</span>
+        </div>
+        <div class="card-desc">At $15.5B valuation, Harvey is now the most valuable legal tech company globally. Its expansion from legal research into full workflow automation — including contract management, compliance monitoring, and legal project management — directly overlaps with LD&amp;T transformation services.</div>
+        <div class="card-meta">
+          <span class="meta-tag">US</span>
+          <span class="meta-tag">Legal AI</span>
+          <span class="meta-tag">Threat: Medium</span>
+        </div>
+        <div class="card-action">TC Response: Position LD&amp;T as implementation partner, not competitor · Emphasize human-led transformation</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">Eudia — $105M LD&amp;T Competitor</div>
+          <span class="card-badge badge-urgent">LD&amp;T</span>
+        </div>
+        <div class="card-desc">Eudia's $105M Series A validates the legal transformation market but introduces a well-funded direct competitor. Their AI-powered end-to-end legal department transformation platform combines consulting, technology, and managed services — the same bundle LD&amp;T offers.</div>
+        <div class="card-meta">
+          <span class="meta-tag">US</span>
+          <span class="meta-tag">Transformation</span>
+          <span class="meta-tag">Threat: High</span>
+        </div>
+        <div class="card-action">TC Response: Differentiate on India/UK corridor expertise · Emphasize regulatory depth over pure tech</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">Avvoka — £14M CaaS Competitor</div>
+          <span class="card-badge badge-watch">CAAS</span>
+        </div>
+        <div class="card-desc">Avvoka's £14M Series B strengthens its position in contract automation and CLM. Its template-driven collaborative negotiation platform directly competes with CAAS's contract operations offering, particularly in the UK and cross-border markets.</div>
+        <div class="card-meta">
+          <span class="meta-tag">UK</span>
+          <span class="meta-tag">CLM/Contracts</span>
+          <span class="meta-tag">Threat: Medium</span>
+        </div>
+        <div class="card-action">TC Response: CAAS differentiator is legal expertise + process design, not just software</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">Legora — $5.5B EU Legal AI</div>
+          <span class="card-badge badge-watch">CAAS/LD&amp;T</span>
+        </div>
+        <div class="card-desc">At $5.5B valuation after $600M Series D, Legora is the leading EU legal AI platform. Its contract analysis and litigation prediction capabilities represent both a competitive threat and a potential technology partnership for CAAS contract operations.</div>
+        <div class="card-meta">
+          <span class="meta-tag">EU</span>
+          <span class="meta-tag">Legal AI</span>
+          <span class="meta-tag">Threat: Low-Med</span>
+        </div>
+        <div class="card-action">TC Response: Explore partnership for EU contract analysis · LD&amp;T can implement their tools</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">DISCO — All-Inclusive Platform Push</div>
+          <span class="card-badge badge-watch">CAAS/FGC</span>
+        </div>
+        <div class="card-desc">DISCO is expanding from e-discovery into an all-inclusive legal platform covering contract management, compliance workflows, and matter management. Their bundled pricing model targets mid-market legal departments — the same ICP as FGC and CAAS.</div>
+        <div class="card-meta">
+          <span class="meta-tag">US</span>
+          <span class="meta-tag">Legal Platform</span>
+          <span class="meta-tag">Threat: Medium</span>
+        </div>
+        <div class="card-action">TC Response: FGC human advisory moat · CAAS process expertise vs pure software</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">WK + Brightflag — Integrated Legal Ops</div>
+          <span class="card-badge badge-info">FGC</span>
+        </div>
+        <div class="card-desc">Wolters Kluwer's Brightflag acquisition creates an integrated legal operations suite combining legal research, compliance monitoring, and spend management. The integrated platform threatens FGC's vendor-agnostic advisory model.</div>
+        <div class="card-meta">
+          <span class="meta-tag">Global</span>
+          <span class="meta-tag">Legal Ops</span>
+          <span class="meta-tag">Threat: Low</span>
+        </div>
+        <div class="card-action">TC Response: FGC positioned as implementation advisor for integrated suites</div>
+      </div>
+
+      <div class="signal-card">
+        <div class="card-top">
+          <div class="card-title">TR + Noetica — AI Analytics Play</div>
+          <span class="card-badge badge-info">LD&amp;T</span>
+        </div>
+        <div class="card-desc">Thomson Reuters' Noetica acquisition embeds AI litigation analytics natively into Westlaw and Practical Law. The move reduces demand for standalone analytics tools that LD&amp;T might implement as part of legal department transformation projects.</div>
+        <div class="card-meta">
+          <span class="meta-tag">US</span>
+          <span class="meta-tag">Legal AI</span>
+          <span class="meta-tag">Threat: Low</span>
+        </div>
+        <div class="card-action">TC Response: LD&amp;T focuses on process and people transformation, not tool-only plays</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================== SERVICE LINE MATRIX ===================== -->
   <div class="section">
     <div class="sec-header">
       <div class="sec-icon" style="background: rgba(57,129,202,0.1);">📋</div>
-      <div class="sec-title">Team Intelligence — Service Line Matrix</div>
+      <div class="sec-title">Service Line Intelligence Matrix</div>
       <div class="sec-line"></div>
     </div>
 
     <div class="team-panel">
-      <div class="team-panel-title">Knowledge Hub — Service Line Positioning</div>
+      <div class="team-panel-title">Knowledge Hub — How Today's Signals Map to TC Service Lines</div>
       <div class="team-grid">
         <div class="team-item">
           <h4>ECP — Emerging Company Practice</h4>
-          <p>Positioning: End-to-end legal counsel for startups from incorporation through Series B+. Pain points: fragmented advisory, compliance gaps during rapid scaling, IP protection delays. ICP: Funded tech startups (Seed to Series C) in AI, fintech, deeptech, climate tech. Today's signals: 14 funded companies identified as potential prospects.</p>
+          <p>Hot signals: 8 funded companies identified as prospects (QNu Labs, Ema AI, Pixxel top priority). SEBI Portfolio Manager regs and FEMA 9-month repatriation window create immediate compliance demand. FTC AI accuracy enforcement affects all AI startup clients' go-to-market.</p>
         </div>
         <div class="team-item">
           <h4>FGC — Fractional General Counsel</h4>
-          <p>Positioning: On-demand GC services for companies without full-time legal leadership. Pain points: regulatory complexity outpacing in-house capacity, cross-border compliance gaps. ICP: Mid-market companies (₹10-500Cr revenue) with no dedicated legal team. Today's signals: DPDP, RBI KYC, SEBI Demat 2.0 create immediate advisory demand.</p>
+          <p>Hot signals: Berkshire Hathaway's first GC appointment validates dedicated legal leadership demand. DPDP countdown (227 days) drives mandatory advisory. India-UK CETA creates dual-jurisdiction opportunity. RBI fintech SRO membership advisory is new revenue stream.</p>
         </div>
         <div class="team-item">
           <h4>CAAS — Contract-as-a-Service</h4>
-          <p>Positioning: Scalable contract drafting, review and management powered by templates and process design. Pain points: slow contract cycles, inconsistent terms, vendor sprawl. ICP: Operations and procurement teams at scaling companies. Today's signals: 80% insourcing trend validates CAAS automation approach.</p>
+          <p>Hot signals: Avvoka £14M raises competitive pressure in CLM space. 52% GenAI adoption accelerates contract automation demand. Legal tech consolidation (WK/Brightflag) shifts market toward integrated platforms. CAAS differentiator: legal expertise + process, not just tools.</p>
         </div>
         <div class="team-item">
           <h4>LD&amp;T — Legal Design &amp; Transformation</h4>
-          <p>Positioning: Legal process reengineering and technology implementation for modern legal teams. Pain points: legacy workflows, tool fragmentation, change resistance. ICP: Legal ops leaders at mid-to-large enterprises. Today's signals: 69% AI adoption rate and legal tech consolidation drive transformation demand.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="team-panel">
-      <div class="team-panel-title">PR Intelligence Tracker — Active Regulatory Threads</div>
-      <div class="team-grid">
-        <div class="team-item">
-          <h4>DPDP Act Implementation</h4>
-          <p>Status: Active tracking. Key milestones being monitored include Data Protection Board operationalization (expected Q4 2026), consent manager certification framework, cross-border transfer mechanisms, and Significant Data Fiduciary obligations. 16 policy developments tracked in the master sheet with priority coding.</p>
-        </div>
-        <div class="team-item">
-          <h4>Cross-Border Regulatory Watch</h4>
-          <p>Coverage: US (FTC, SEC, state AI laws), UK (ICO, FCA, Companies House), India (RBI, SEBI, IFSCA, MeitY), Global (FATF, NIST). Monitoring includes enforcement actions, new legislation, regulatory guidance updates, and compliance deadline changes relevant to TC's client base and service lines.</p>
+          <p>Hot signals: Eudia $105M validates transformation market but is direct competitor. Harvey at $15.5B shows AI workflow scale. 84% CLOs reporting to CEO means transformation projects get C-suite sponsorship. Position as implementation partner to AI platforms, not competitor.</p>
         </div>
       </div>
     </div>
@@ -1191,6 +1466,7 @@ body {
   <div class="footer">
     <div class="footer-text">
       Team Counsel Knowledge Engine · Daily Intelligence Report · Auto-generated 28 Sep 2026 ·
+      Sources: Bloomberg, TechCrunch, PitchBook, SEBI, RBI, FCA, ICO, MeitY, NHRC, FTC, SEC, Wolters Kluwer, Thomson Reuters ·
       <a href="https://github.com/johnmathew-alt/gtmengine" target="_blank">GitHub</a> ·
       <a href="archive/">Archive</a>
     </div>
