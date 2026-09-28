@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Knowledge Engine — Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Figtree',system-ui,sans-serif;background:#f7f8fa;color:#1d2433;font-size:15px;line-height:1.55}
+.topbar{position:sticky;top:0;z-index:50;height:62px;background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #e8eaef;display:flex;align-items:center;padding:0 40px}
+.logo{font-family:'Sora',system-ui,sans-serif;font-weight:700;font-size:18px;color:#1e3557}
+.logo span{color:#3981ca}
+.subtitle{font-family:'Sora',system-ui,sans-serif;font-size:13.5px;color:#697287;margin-left:16px;font-weight:500}
+.shell{max-width:1280px;margin:0 auto;padding:40px}
+.back{display:inline-flex;align-items:center;gap:8px;color:#3981ca;text-decoration:none;font-weight:500;font-size:15px;margin-bottom:32px}
+.back:hover{color:#2f6fb0}
+h1{font-family:'Sora',system-ui,sans-serif;font-size:32px;font-weight:700;color:#1e3557;margin-bottom:8px}
+.desc{color:#697287;margin-bottom:32px}
+.empty{background:#fff;border:1px solid #e8eaef;border-radius:13px;padding:48px;text-align:center;color:#697287}
+.empty h2{font-family:'Sora',system-ui,sans-serif;font-size:20px;color:#1e3557;margin-bottom:8px}
+.report-list{list-style:none}
+.report-list li{background:#fff;border:1px solid #e8eaef;border-radius:13px;padding:20px 24px;margin-bottom:12px;transition:transform 0.2s ease,box-shadow 0.2s ease}
+.report-list li:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(30,53,87,0.08)}
+.report-list a{text-decoration:none;color:#1e3557;font-family:'Sora',system-ui,sans-serif;font-weight:600;font-size:16px;display:flex;justify-content:space-between;align-items:center}
+.report-list .arrow{color:#3981ca;font-size:18px}
+@media(max-width:768px){.topbar{padding:0 24px}.shell{padding:24px}}
+@media(max-width:480px){.topbar{padding:0 16px}.shell{padding:16px}}
+</style>
+</head>
+<body>
+<nav class="topbar">
+<div class="logo">Team <span>Counsel</span></div>
+<span class="subtitle">Knowledge Engine — Archive</span>
+</nav>
+<div class="shell">
+<a href="../index.html" class="back">← Latest Report</a>
+<h1>Past Reports</h1>
+<p class="desc">Daily intelligence reports are archived here automatically. Check back tomorrow for the first archived report.</p>
+<div class="empty">
+<h2>No archived reports yet</h2>
+<p>The first report will be archived after tomorrow's scheduled run.</p>
+</div>
+</div>
+</body>
+</html>
