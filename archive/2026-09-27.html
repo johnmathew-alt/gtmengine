@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Counsel — Daily Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: #111114;
+    --surface2: #18181c;
+    --surface3: #1e1e24;
+    --border: rgba(255,255,255,0.06);
+    --border-md: rgba(255,255,255,0.1);
+    --text: #e8e6df;
+    --text-dim: #6b6a63;
+    --text-muted: #3a3a3f;
+
+    --blue: #5b9bd5;
+    --blue-dim: rgba(91,155,213,0.12);
+    --amber: #d4954a;
+    --amber-dim: rgba(212,149,74,0.12);
+    --teal: #3ebf8f;
+    --teal-dim: rgba(62,191,143,0.12);
+    --coral: #d4705a;
+    --coral-dim: rgba(212,112,90,0.12);
+    --purple: #8b7cf8;
+    --purple-dim: rgba(139,124,248,0.12);
+    --green: #6db87a;
+    --green-dim: rgba(109,184,122,0.12);
+
+    --red: #e05c5c;
+    --red-dim: rgba(224,92,92,0.1);
+
+    --r-sm: 6px;
+    --r-md: 9px;
+    --r-lg: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,11,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-left { display: flex; align-items: center; gap: 20px; }
+  .nav-wordmark {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -.01em;
+  }
+  .nav-sep { width: 1px; height: 14px; background: var(--border-md); }
+  .nav-title { font-size: 12px; color: var(--text-dim); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .nav-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border-md);
+    color: var(--text-dim);
+  }
+  .nav-week {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+
+  /* ── PAGE ── */
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 32px 80px;
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ph-left {}
+  .ph-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .ph-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -.02em;
+    line-height: 1;
+    color: var(--text);
+  }
+  .ph-sub { font-size: 12px; color: var(--text-dim); margin-top: 6px; }
+  .ph-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .market-tags { display: flex; gap: 5px; }
+  .market-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 3px 9px;
+    border-radius: 3px;
+    border: 1px solid var(--border-md);
+    color: var(--text-dim);
+  }
+  .signal-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+
+  /* ── GRID HELPERS ── */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .g5 { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; }
+  .mb { margin-bottom: 10px; }
+  .mb-lg { margin-bottom: 28px; }
+
+  /* ── SECTION LABEL ── */
+  .sec-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sec-label::after { content: ''; flex: 1; height: .5px; background: var(--border); }
+
+  /* ── STAT CARD ── */
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: 16px 16px 18px;
+  }
+  .sc-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .sc-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -.02em;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .sc-delta { font-size: 10.5px; }
+  .up { color: var(--teal); }
+  .down { color: var(--coral); }
+  .flat { color: var(--text-muted); }
+
+  /* ── PANEL ── */
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 18px 20px;
+  }
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .panel-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .panel-link {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border-md);
+    border-radius: 4px;
+    padding: 2px 9px;
+    transition: color .15s, border-color .15s;
+    cursor: pointer;
+  }
+  .panel-link:hover { color: var(--text-dim); border-color: rgba(255,255,255,0.2); }
+
+  /* ── SENTIMENT BARS ── */
+  .sentiment-row { margin-bottom: 14px; }
+  .sentiment-row:last-child { margin-bottom: 0; }
+  .sr-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+  }
+  .sr-market { font-size: 12px; color: var(--text-dim); }
+  .sr-label { font-family: 'DM Mono', monospace; font-size: 9.5px; }
+  .sr-bar {
+    height: 3px;
+    background: var(--surface3);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .sr-fill { height: 100%; border-radius: 2px; }
+  .sr-note { font-size: 10px; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── TABLE ROWS ── */
+  .table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .table-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .tr-left {}
+  .tr-name { font-size: 12.5px; font-weight: 500; color: var(--text); line-height: 1.3; margin-bottom: 2px; }
+  .tr-sub { font-size: 10px; color: var(--text-muted); line-height: 1.4; }
+  .tr-right { text-align: right; flex-shrink: 0; padding-left: 12px; }
+  .tr-amount { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--amber); }
+  .tr-action {
+    font-size: 9.5px;
+    color: var(--text-muted);
+    cursor: pointer;
+    margin-top: 3px;
+    text-decoration: none;
+    display: block;
+  }
+  .tr-action:hover { color: var(--text-dim); }
+
+  /* ── STAGE PILLS ── */
+  .stage-pill {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: var(--purple-dim);
+    color: var(--purple);
+    border: 1px solid rgba(139,124,248,0.2);
+  }
+
+  /* ── EVENT ROWS ── */
+  .event-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .event-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .ev-name { font-size: 12.5px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .ev-meta { font-size: 10px; color: var(--text-muted); margin-bottom: 3px; }
+  .ev-link { font-size: 9.5px; color: var(--text-muted); text-decoration: none; cursor: pointer; }
+  .ev-link:hover { color: var(--text-dim); }
+  .badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .badge-attend { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(62,191,143,0.2); }
+  .badge-monitor { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(212,149,74,0.2); }
+  .badge-skip { background: var(--surface3); color: var(--text-muted); border: 1px solid var(--border); }
+  .badge-urgent { background: var(--coral-dim); color: var(--coral); border: 1px solid rgba(212,112,90,0.25); }
+  .badge-watch { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(212,149,74,0.2); }
+  .badge-info { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(91,155,213,0.2); }
+
+  /* ── POLICY ALERT ── */
+  .policy-alert {
+    border-radius: var(--r-sm);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+  .policy-alert:last-child { margin-bottom: 0; }
+  .pa-urgent { background: var(--coral-dim); border: 1px solid rgba(212,112,90,0.2); }
+  .pa-watch { background: var(--amber-dim); border: 1px solid rgba(212,149,74,0.18); }
+  .pa-info { background: var(--blue-dim); border: 1px solid rgba(91,155,213,0.18); }
+  .pa-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .pa-name { font-size: 12px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+  .pa-desc { font-size: 10.5px; color: var(--text-muted); line-height: 1.5; margin-bottom: 6px; }
+  .pa-action { font-size: 9.5px; text-decoration: none; cursor: pointer; }
+
+  /* ── CONTENT CAL ── */
+  .cal-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .cal-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .cal-day {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: var(--green-dim);
+    color: var(--green);
+    border: 1px solid rgba(109,184,122,0.2);
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .cal-title { font-size: 12px; color: var(--text); line-height: 1.4; margin-bottom: 2px; }
+  .cal-meta { font-size: 10px; color: var(--text-muted); }
+
+  /* ── ACTION TRACKER ── */
+  .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .action-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    padding: 10px 12px;
+  }
+  .action-item.done { opacity: .5; }
+  .action-item.overdue { border-color: rgba(224,92,92,0.2); background: var(--red-dim); }
+  .checkbox {
+    width: 15px; height: 15px;
+    border-radius: 3px;
+    border: 1px solid var(--border-md);
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .checkbox.checked { background: var(--teal-dim); border-color: rgba(62,191,143,0.4); }
+  .checkbox.overdue-box { background: var(--red-dim); border-color: rgba(224,92,92,0.4); }
+  .check-mark { font-size: 9px; color: var(--teal); }
+  .action-text { font-size: 11.5px; color: var(--text); line-height: 1.45; }
+  .action-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .action-meta.overdue-text { color: var(--coral); }
+  .done .action-text { text-decoration: line-through; color: var(--text-muted); }
+
+  /* ── INVESTOR ROW ── */
+  .investor-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .investor-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .contact-btn {
+    font-size: 10px;
+    color: var(--teal);
+    border: 1px solid rgba(62,191,143,0.25);
+    border-radius: 4px;
+    padding: 3px 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .contact-btn:hover { background: var(--teal-dim); }
+
+  /* ── SCROLLABLE PANEL ── */
+  .panel-scroll { max-height: 260px; overflow-y: auto; }
+  .panel-scroll::-webkit-scrollbar { width: 3px; }
+  .panel-scroll::-webkit-scrollbar-track { background: transparent; }
+  .panel-scroll::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 2px; }
+
+  /* ── DIVIDER ── */
+  .divider { height: .5px; background: var(--border); margin: 14px 0; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .g5 { grid-template-columns: repeat(2,1fr); }
+    .g2, .g3 { grid-template-columns: 1fr; }
+    .action-grid { grid-template-columns: 1fr; }
+    .page-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .ph-right { align-items: flex-start; }
+    .page { padding: 16px 16px 60px; }
+    nav { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+<!-- TEMPLATE: Content sections will be populated by the daily scheduled task -->
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <span class="nav-wordmark">Team Counsel</span>
+    <div class="nav-sep"></div>
+    <span class="nav-title">Daily Intelligence</span>
+  </div>
+  <div class="nav-right">
+    <span class="nav-badge">US</span>
+    <span class="nav-badge">UK</span>
+    <span class="nav-badge">India</span>
+    <div class="nav-sep"></div>
+    <span class="nav-week"><!-- DATE_LABEL --></span>
+  </div>
+</nav>
+
+<div class="page">
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="ph-left">
+      <div class="ph-eyebrow">Intelligence dashboard</div>
+      <div class="ph-title"><!-- DATE_TITLE --></div>
+      <div class="ph-sub"><!-- SIGNAL_SUMMARY --></div>
+    </div>
+    <div class="ph-right">
+      <div class="market-tags">
+        <span class="market-tag">US</span>
+        <span class="market-tag">UK</span>
+        <span class="market-tag">India</span>
+      </div>
+      <div class="signal-count"><!-- LAST_UPDATED --></div>
+    </div>
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="g5 mb mb-lg">
+    <!-- STAT_CARDS -->
+  </div>
+
+  <!-- Market Intelligence -->
+  <div class="sec-label">Market intelligence</div>
+  <div class="g2 mb mb-lg">
+    <!-- SENTIMENT_PANEL -->
+    <!-- NOTABLE_ROUNDS_PANEL -->
+  </div>
+
+  <!-- Pipeline Intelligence -->
+  <div class="sec-label">Pipeline intelligence</div>
+  <div class="g2 mb mb-lg">
+    <!-- STARTUPS_PANEL -->
+    <!-- INVESTORS_PANEL -->
+  </div>
+
+  <!-- Events, Policy & Content -->
+  <div class="sec-label">Events, policy &amp; content</div>
+  <div class="g3 mb mb-lg">
+    <!-- EVENTS_PANEL -->
+    <!-- POLICY_PANEL -->
+    <!-- CONTENT_PANEL -->
+  </div>
+
+  <!-- Action Tracker -->
+  <div class="sec-label">Action tracker</div>
+  <div class="panel">
+    <!-- ACTION_TRACKER -->
+  </div>
+
+</div>
+</body>
+</html>

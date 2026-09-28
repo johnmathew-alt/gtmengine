@@ -3,334 +3,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Knowledge Engine — Archive</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Team Counsel — Intelligence Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ── TC OS Design System — Light Theme ── */
 :root {
   --navy: #1e3557;
   --blue: #3981ca;
   --lime: #dbe56c;
-  --navy-90: #354d6e;
-  --navy-70: #627a99;
-  --navy-50: #8fa7c3;
-  --blue-light: #e8f1fb;
-  --lime-light: #f5f8d9;
-  --surface-primary: #ffffff;
-  --surface-secondary: #f7f8fa;
-  --surface-tertiary: #eef0f4;
-  --border-subtle: #e2e5eb;
-  --border-strong: #cdd1d9;
-  --text-primary: #1e3557;
-  --text-secondary: #627a99;
-  --text-muted: #8fa7c3;
-  --font-display: 'Sora', sans-serif;
-  --font-body: 'Figtree', sans-serif;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --shadow-sm: 0 1px 3px rgba(30,53,87,.06);
-  --shadow-md: 0 4px 12px rgba(30,53,87,.08);
-  --shadow-lg: 0 8px 24px rgba(30,53,87,.10);
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-alt: #f0f2f5;
+  --border: #e2e5ea;
+  --border-light: #eceef2;
+  --text: #1a1e26;
+  --text-secondary: #4a5568;
+  --text-muted: #8892a4;
+  --text-inverse: #ffffff;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(30,53,87,0.06);
+  --shadow-md: 0 4px 12px rgba(30,53,87,0.08);
 }
-
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: var(--font-body);
-  background: var(--surface-secondary);
-  color: var(--text-primary);
-  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Figtree', system-ui, sans-serif;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
-
-/* ── Sticky Glass Topbar ── */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255,255,255,.82);
+  background: rgba(30,53,87,0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 0 24px;
-  height: 64px;
+  padding: 0 32px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 3px solid var(--lime);
 }
-
+.topbar-left { display: flex; align-items: center; gap: 16px; }
 .topbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-decoration: none;
-  color: var(--text-primary);
-}
-
-.topbar-logo {
-  width: 36px;
-  height: 36px;
-  background: var(--navy);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--lime);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.topbar-title {
-  font-family: var(--font-display);
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
   font-weight: 600;
-  font-size: 16px;
-  color: var(--navy);
+  color: var(--text-inverse);
+  letter-spacing: -0.01em;
 }
-
-.topbar-subtitle {
-  font-family: var(--font-body);
+.topbar-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.2); }
+.topbar-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
   font-weight: 400;
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-left: 4px;
 }
-
-.topbar-back {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--blue);
+.topbar-right { display: flex; align-items: center; gap: 12px; }
+.topbar-link {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
-  transition: background .15s;
+  padding: 4px 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--r-sm);
+  transition: all 0.15s;
 }
+.topbar-link:hover { background: rgba(255,255,255,0.1); color: var(--text-inverse); }
 
-.topbar-back:hover { background: var(--blue-light); }
-
-/* ── Main Content ── */
-.container {
-  max-width: 960px;
+.page {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 40px 24px 80px;
+  padding: 40px 32px 80px;
 }
-
-.page-header {
-  margin-bottom: 40px;
+.page-header { margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.ph-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 6px;
+  font-weight: 500;
 }
-
-.page-header h1 {
-  font-family: var(--font-display);
+.ph-title {
+  font-family: 'Sora', sans-serif;
   font-size: 28px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 8px;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
+.ph-sub { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
 
-.page-header p {
-  font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.5;
+.archive-list { list-style: none; }
+.archive-item {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-md);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all 0.2s;
+  position: relative;
 }
-
-.archive-count {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--lime-light);
-  color: var(--navy);
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-top: 12px;
+.archive-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--lime);
+  opacity: 0;
+  transition: opacity 0.2s;
 }
-
-/* ── Archive List ── */
-.archive-list {
+.archive-item:hover { box-shadow: var(--shadow-md); }
+.archive-item:hover::after { opacity: 1; }
+.archive-item a {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.archive-card {
-  background: var(--surface-primary);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
   text-decoration: none;
   color: inherit;
-  transition: border-color .15s, box-shadow .15s, transform .15s;
 }
-
-.archive-card:hover {
-  border-color: var(--blue);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
-}
-
-.archive-card-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.archive-date-badge {
-  width: 52px;
-  height: 52px;
-  background: var(--surface-secondary);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.archive-date-badge .day {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1;
-}
-
-.archive-date-badge .month {
-  font-family: var(--font-display);
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  line-height: 1;
-  margin-top: 2px;
-}
-
-.archive-card-info h3 {
-  font-family: var(--font-display);
+.ai-left {}
+.ai-date {
+  font-family: 'Sora', sans-serif;
   font-size: 15px;
   font-weight: 600;
   color: var(--navy);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
-
-.archive-card-info p {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-.archive-card-arrow {
-  color: var(--text-muted);
-  font-size: 18px;
-  transition: color .15s, transform .15s;
-  flex-shrink: 0;
-}
-
-.archive-card:hover .archive-card-arrow {
-  color: var(--blue);
-  transform: translateX(3px);
-}
-
-/* ── Empty State ── */
-.empty-state {
-  text-align: center;
-  padding: 60px 24px;
-  color: var(--text-secondary);
-}
-
-.empty-state svg {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 16px;
-  opacity: .4;
-}
-
-/* ── Footer ── */
-.footer {
-  text-align: center;
-  padding: 32px 24px;
+.ai-meta {
   font-size: 12px;
   color: var(--text-muted);
-  border-top: 1px solid var(--border-subtle);
-  margin-top: 48px;
 }
+.ai-arrow {
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: transform 0.2s, color 0.2s;
+}
+.archive-item:hover .ai-arrow { transform: translateX(4px); color: var(--blue); }
 
-/* ── Responsive ── */
+.footer {
+  text-align: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+}
+.footer-text { font-size: 11px; color: var(--text-muted); }
+.footer-text a { color: var(--blue); text-decoration: none; }
+
 @media (max-width: 768px) {
+  .page { padding: 24px 16px 60px; }
   .topbar { padding: 0 16px; }
-  .topbar-subtitle { display: none; }
-  .container { padding: 24px 16px 60px; }
-  .page-header h1 { font-size: 22px; }
-  .archive-card { padding: 16px; }
-  .archive-card-info h3 { font-size: 14px; }
-}
-
-@media print {
-  .topbar { position: static; background: white; backdrop-filter: none; }
-  .archive-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
 }
 </style>
 </head>
 <body>
 
-<!-- ── Topbar ── -->
-<header class="topbar">
-  <a href="../index.html" class="topbar-brand">
-    <div class="topbar-logo">TC</div>
-    <span class="topbar-title">Knowledge Engine<span class="topbar-subtitle"> — Archive</span></span>
-  </a>
-  <a href="../index.html" class="topbar-back">
-    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12 6 8l4-4"/></svg>
-    Latest Report
-  </a>
-</header>
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-brand">Team Counsel</span>
+    <div class="topbar-sep"></div>
+    <span class="topbar-sub">Knowledge Engine — Archive</span>
+  </div>
+  <div class="topbar-right">
+    <a href="../" class="topbar-link">← Current Report</a>
+  </div>
+</div>
 
-<!-- ── Content ── -->
-<main class="container">
+<div class="page">
   <div class="page-header">
-    <h1>Report Archive</h1>
-    <p>Daily intelligence reports generated by the Team Counsel Knowledge Engine. Each report contains curated signals across funding, policy, market trends, and prospect intelligence.</p>
-    <div class="archive-count">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="10" height="10" rx="1.5"/><path d="M6 1v2M10 1v2M2 5h12"/></svg>
-      1 report archived
+    <div class="ph-eyebrow">Intelligence Archive</div>
+    <div class="ph-title">Past Reports</div>
+    <div class="ph-sub">Daily intelligence reports generated by the Team Counsel Knowledge Engine</div>
+  </div>
+
+  <ul class="archive-list">
+    <li class="archive-item">
+      <a href="2026-09-27.html">
+        <div class="ai-left">
+          <div class="ai-date">27 September 2026</div>
+          <div class="ai-meta">Daily Intelligence Report</div>
+        </div>
+        <span class="ai-arrow">→</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="footer">
+    <div class="footer-text">
+      Team Counsel Knowledge Engine ·
+      <a href="../">Current Report</a> ·
+      <a href="https://github.com/johnmathew-alt/gtmengine" target="_blank">GitHub</a>
     </div>
   </div>
-
-  <div class="archive-list">
-
-    <a href="2026-09-28.html" class="archive-card">
-      <div class="archive-card-left">
-        <div class="archive-date-badge">
-          <span class="day">28</span>
-          <span class="month">Sep</span>
-        </div>
-        <div class="archive-card-info">
-          <h3>Daily Intelligence Report — 28 September 2026</h3>
-          <p>Funding &amp; Investment &middot; Policy &amp; Regulatory &middot; Market Trends &middot; Prospect Intelligence</p>
-        </div>
-      </div>
-      <span class="archive-card-arrow">&rarr;</span>
-    </a>
-
-  </div>
-</main>
-
-<!-- ── Footer ── -->
-<footer class="footer">
-  Team Counsel &middot; Knowledge Engine Archive &middot; Auto-generated daily
-</footer>
+</div>
 
 </body>
 </html>
