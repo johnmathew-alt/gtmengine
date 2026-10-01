@@ -33,11 +33,25 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.topbar h1 {
+.logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.logo-team { color: var(--white); }
+.logo-counsel { color: var(--blue); }
+.topbar-title {
   font-family: 'Sora', sans-serif;
   color: var(--white);
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 16px;
+  opacity: 0.8;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 .topbar a {
   color: var(--lime);
@@ -56,7 +70,12 @@ h2 {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--navy);
-  margin-bottom: 24px;
+  margin-bottom: 8px;
+}
+.subtitle {
+  color: var(--gray-600);
+  font-size: 0.95rem;
+  margin-bottom: 32px;
 }
 .archive-list {
   display: flex;
@@ -79,6 +98,9 @@ h2 {
   border-color: var(--blue);
   box-shadow: 0 2px 8px rgba(57,129,202,0.1);
 }
+.archive-item.current {
+  border-left: 4px solid var(--lime);
+}
 .archive-date {
   font-family: 'Sora', sans-serif;
   font-weight: 600;
@@ -90,6 +112,17 @@ h2 {
   color: var(--gray-400);
   margin-top: 2px;
 }
+.badge {
+  display: inline-block;
+  background: var(--lime);
+  color: var(--navy);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
 .arrow {
   color: var(--blue);
   font-size: 1.25rem;
@@ -100,19 +133,28 @@ h2 {
   color: var(--gray-400);
   font-size: 0.8rem;
 }
+@media (max-width: 480px) {
+  .topbar { flex-wrap: wrap; gap: 8px; }
+  .topbar-title { display: none; }
+  .archive-item { padding: 16px; }
+}
 </style>
 </head>
 <body>
 <div class="topbar">
-  <h1>Intelligence Archive</h1>
+  <div style="display:flex;align-items:center;">
+    <span class="logo"><span class="logo-team">Team</span><span class="logo-counsel">Counsel</span></span>
+    <span class="topbar-title">Intelligence Archive</span>
+  </div>
   <a href="../index.html">← Back to Dashboard</a>
 </div>
 <div class="container">
   <h2>Past Reports</h2>
+  <p class="subtitle">Browse previous daily intelligence dashboards</p>
   <div class="archive-list">
-    <a class="archive-item" href="../index.html">
+    <a class="archive-item current" href="../index.html">
       <div>
-        <div class="archive-date">1 October 2026</div>
+        <div class="archive-date">1 October 2026 <span class="badge">LATEST</span></div>
         <div class="archive-label">Daily Intelligence Report — Current</div>
       </div>
       <span class="arrow">→</span>
@@ -148,7 +190,7 @@ h2 {
   </div>
 </div>
 <div class="footer">
-  Team Counsel OS · Intelligence Archive
+  Team Counsel OS · Intelligence Archive · Updated daily
 </div>
 </body>
 </html>
