@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="https://cdn.prod.website-files.com/6a2bef73200216edf6f8afeb/6a311c309e2742d653afe2f0_favicon.png" type="image/png" sizes="32x32">
-<title>Team Counsel — Daily Intelligence · 29 Sep 2026</title>
+<title>Team Counsel — Daily Intelligence · 1 Oct 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -75,11 +75,12 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
 .dpdp-count{display:flex;align-items:baseline;gap:6px;flex-shrink:0}
 .dpdp-count .num{font-family:'Sora',sans-serif;font-size:42px;font-weight:700;color:var(--lime);line-height:1}
 .dpdp-count .unit{color:rgba(255,255,255,.65);font-size:13px;font-weight:500}
+.dpdp-counts{display:flex;gap:28px;flex-shrink:0;flex-wrap:wrap}
 
 .alert-strip{background:var(--amber-bg);border:1px solid rgba(212,136,14,.2);border-radius:var(--r-md);padding:10px 16px;font-size:13px;color:var(--amber);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:8px}
 .alert-strip .icon{font-size:16px}
 
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:24px}
 .stat-box{background:var(--surface);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:16px;text-align:center}
 .stat-box .val{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:var(--navy)}
 .stat-box .lbl{font-size:12px;color:var(--text-muted);margin-top:2px;font-weight:500}
@@ -100,6 +101,8 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
 .tag-dpdp{background:var(--red-bg);color:var(--red)}
 .tag-competitor{background:var(--surface-alt);color:var(--text-secondary)}
 .tag-partnership{background:#eef0ff;color:#4a5abd}
+.tag-hot{background:var(--red-bg);color:var(--red)}
+.tag-pipeline{background:var(--amber-bg);color:var(--amber)}
 .card h4{font-size:14px;margin-bottom:6px;color:var(--text);line-height:1.35}
 .card p{font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:10px}
 .card .source{font-size:11px;margin-top:auto}
@@ -120,13 +123,21 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
 .legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-muted)}
 .legend-dot{width:8px;height:8px;border-radius:2px}
 
+.icp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:24px}
+.icp-box{background:var(--surface);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:16px 20px}
+.icp-box h4{font-size:13px;color:var(--navy);margin-bottom:6px}
+.icp-box p{font-size:12px;color:var(--text-secondary);line-height:1.5}
+.icp-box .icp-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);margin-bottom:6px}
+
 @media(max-width:768px){
   .topbar-inner{height:auto;padding:10px 0;flex-wrap:wrap}
   .topbar-meta{margin-left:0;width:100%;justify-content:flex-start}
   .stats-row{grid-template-columns:repeat(2,1fr)}
   .cards{grid-template-columns:1fr}
+  .icp-grid{grid-template-columns:1fr}
   .tab-btn{padding:10px 14px;font-size:12px}
   .dpdp-banner{flex-direction:column;text-align:center}
+  .dpdp-counts{justify-content:center}
 }
 </style>
 </head>
@@ -138,7 +149,7 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
     <span class="topbar-title">Daily Intelligence</span>
     <div class="topbar-meta">
       <span class="chip chip-live">Live</span>
-      <span class="topbar-date">29 Sep 2026</span>
+      <span class="topbar-date">1 Oct 2026</span>
       <a href="archive/" class="archive-link">View Archive →</a>
     </div>
   </div>
@@ -149,7 +160,7 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
     <button class="tab-btn active" data-tab="overview">Overview</button>
     <button class="tab-btn" data-tab="outbound">Outbound</button>
     <button class="tab-btn" data-tab="inbound">Inbound</button>
-    <button class="tab-btn" data-tab="pr">P&amp;R</button>
+    <button class="tab-btn" data-tab="pr">P&amp;R Intel</button>
     <button class="tab-btn" data-tab="partnerships">Partnerships</button>
   </div>
 </nav>
@@ -159,25 +170,32 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
 <section class="tab-panel active" id="tab-overview">
   <div class="dpdp-banner">
     <div>
-      <h3>DPDP Act Full Enforcement Countdown</h3>
-      <p>Phase 3 mandatory compliance deadline — May 13, 2027. Penalties up to ₹250 crore enforceable.</p>
+      <h3>DPDP Act Compliance Countdown</h3>
+      <p>Phase 3 mandatory compliance — May 13, 2027. Consent Manager deadline — Nov 13, 2026. Penalties up to ₹250 crore enforceable.</p>
     </div>
-    <div class="dpdp-count">
-      <span class="num">226</span>
-      <span class="unit">days remaining</span>
+    <div class="dpdp-counts">
+      <div class="dpdp-count">
+        <span class="num">224</span>
+        <span class="unit">days to full<br>compliance</span>
+      </div>
+      <div class="dpdp-count">
+        <span class="num">43</span>
+        <span class="unit">days to consent<br>manager deadline</span>
+      </div>
     </div>
   </div>
 
   <div class="alert-strip">
     <span class="icon">⚡</span>
-    MeitY proposed accelerating DPDP timeline — SDF provisions may enforce immediately upon notification. Nov 2026 marks end of soft enforcement.
+    MeitY accelerating DPDP timeline — SDF provisions may enforce immediately. NHRC issued notices to Meta, WhatsApp, Khan Academy over alleged violations.
   </div>
 
   <div class="stats-row">
-    <div class="stat-box"><div class="val">34</div><div class="lbl">Signals Tracked</div></div>
-    <div class="stat-box"><div class="val">6</div><div class="lbl">Funding Deals</div></div>
-    <div class="stat-box"><div class="val">9</div><div class="lbl">Policy Updates</div></div>
-    <div class="stat-box"><div class="val">8</div><div class="lbl">Market Signals</div></div>
+    <div class="stat-box"><div class="val">~8×</div><div class="lbl">LegalTech Funding vs 5yr Avg</div></div>
+    <div class="stat-box"><div class="val">1,083</div><div class="lbl">India Deep Tech Startups</div></div>
+    <div class="stat-box"><div class="val">140+</div><div class="lbl">India M&A Deals 2025</div></div>
+    <div class="stat-box"><div class="val">42</div><div class="lbl">Tech IPOs 2025</div></div>
+    <div class="stat-box"><div class="val">$11B</div><div class="lbl">AI Legal Market 2026</div></div>
   </div>
 
   <div class="sentiment-section">
@@ -185,25 +203,25 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
     <div class="sentiment-row">
       <span class="sentiment-label">US</span>
       <div class="sentiment-bar">
-        <div class="seg seg-pos" style="width:50%">3</div>
-        <div class="seg seg-neu" style="width:33%">2</div>
-        <div class="seg seg-neg" style="width:17%">1</div>
+        <div class="seg seg-pos" style="width:45%">3</div>
+        <div class="seg seg-neu" style="width:35%">2</div>
+        <div class="seg seg-neg" style="width:20%">1</div>
       </div>
     </div>
     <div class="sentiment-row">
       <span class="sentiment-label">UK</span>
       <div class="sentiment-bar">
-        <div class="seg seg-pos" style="width:50%">2</div>
-        <div class="seg seg-neu" style="width:25%">1</div>
-        <div class="seg seg-neg" style="width:25%">1</div>
+        <div class="seg seg-pos" style="width:55%">3</div>
+        <div class="seg seg-neu" style="width:27%">1</div>
+        <div class="seg seg-neg" style="width:18%">1</div>
       </div>
     </div>
     <div class="sentiment-row">
       <span class="sentiment-label">India</span>
       <div class="sentiment-bar">
-        <div class="seg seg-pos" style="width:57%">4</div>
-        <div class="seg seg-neu" style="width:29%">2</div>
-        <div class="seg seg-neg" style="width:14%">1</div>
+        <div class="seg seg-pos" style="width:50%">3</div>
+        <div class="seg seg-neu" style="width:33%">2</div>
+        <div class="seg seg-neg" style="width:17%">1</div>
       </div>
     </div>
     <div class="sentiment-legend">
@@ -213,7 +231,47 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
     </div>
   </div>
 
-  <h2 class="section-title">Today's Highlights</h2>
+  <h2 class="section-title">Top Signals</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag tag-funding">M&A</span>
+      <h4>Clio Acquires Learned Hand — Judiciary AI Strategy Takes Shape</h4>
+      <p>Clio acquired AI-for-courts startup Learned Hand, expanding beyond law firm practice management into the judiciary market. Puts lawyers and judges on one AI vendor — data segregation and conflict management become critical.</p>
+      <div class="source"><a href="https://www.lawnext.com/2026/09/clio-acquires-learned-hand-giving-its-new-judiciary-business-an-existing-product.html" target="_blank">LawNext →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-funding">M&A</span>
+      <h4>Mitratech Acquires BotDojo — Agentic AI Enters Enterprise Legal</h4>
+      <p>Mitratech acquired agent orchestration startup BotDojo to add MCP-based AI agents to its ARIES platform. Enterprise legal software now getting autonomous agent capabilities for contract, compliance, and workflow automation.</p>
+      <div class="source"><a href="https://www.artificiallawyer.com/2026/09/28/mitratech-buys-botdojo-for-agent-orchestration/" target="_blank">Artificial Lawyer →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-funding">Funding</span>
+      <h4>Complaion Raises €13.5M for AI Compliance — European SMEs</h4>
+      <p>Munich-based Complaion raised €13.5M to simplify regulatory compliance for European SMEs using AI. Signals growing demand for compliance automation outside the US-India corridor — watch for partnership opportunities.</p>
+      <div class="source"><a href="https://tech.eu/2026/09/28/complaion-raises-eur135m-to-simplify-compliance-for-european-smes/" target="_blank">Tech.eu →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-dpdp">DPDP</span>
+      <h4>NHRC Issues Notices to Meta, WhatsApp, Khan Academy</h4>
+      <p>NHRC acted on ASIA think tank report — concerns about children's data tracking, server security, grievance redressal. Directed entities to submit compliance reports within 15 days. IAMAI calls it "overreach." First major enforcement signal.</p>
+      <div class="source"><a href="https://www.aninews.in/news/national/general-news/nhrc-issues-notices-over-alleged-dpdp-act-violations-by-ai-social-media-edtech-platforms20260325081218" target="_blank">ANI News →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-policy">Policy</span>
+      <h4>Colorado AI Act — Replacement Bill Signed, Enforcement in Flux</h4>
+      <p>Colorado's comprehensive AI regulation (SB 205) faces delays and a replacement bill after federal court blocked the original's enforcement. Still the most aggressive US state AI law — sets precedent for risk management, impact assessments, and transparency obligations.</p>
+      <div class="source"><a href="https://www.mcdermottlaw.com/insights/colorado-ai-law-in-flux-comprehensive-replacement-bill-signed-after-federal-court-blocks-predecessors-enforcement/" target="_blank">McDermott →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-policy">Policy</span>
+      <h4>EU AI Act Full Enforcement — August 2, 2026</h4>
+      <p>High-risk AI systems require risk management, model evaluation, cybersecurity, and incident reporting. Penalties up to €35M or 7% global turnover. Applies to employment, credit, and law enforcement AI. 10 months away.</p>
+      <div class="source"><a href="https://secureprivacy.ai/blog/privacy-laws-2026" target="_blank">Secure Privacy →</a></div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Funding Trends</h2>
   <div class="cards">
     <div class="card">
       <span class="tag tag-funding">Funding</span>
@@ -222,70 +280,42 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
       <div class="source"><a href="https://www.legaltechnologyhub.com/contents/legal-tech-funding-2026-is-on-track-to-outpace-2025/" target="_blank">Legaltech Hub →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Policy</span>
-      <h4>DPDP Nov 2026: End of Soft Enforcement — Consent Manager Goes Live</h4>
-      <p>MeitY expected to activate Consent Manager framework by Jun–Aug 2026. By Nov 2026, transitional period ends and active regulatory supervision begins. Legacy data without valid consent faces exposure.</p>
-      <div class="source"><a href="https://www.india-briefing.com/news/india-dpdp-compliance-timeline-enforcement-2026-27-44740.html/" target="_blank">India Briefing →</a></div>
+      <span class="tag tag-market">Market</span>
+      <h4>AI Legal Tech Market Sized at $11B in 2026 — 30%+ CAGR</h4>
+      <p>Technavio and Research &amp; Markets both project the AI legal tech market growing at 30%+ CAGR through 2030. Contract AI, compliance automation, and practice management AI are the three leading segments.</p>
+      <div class="source"><a href="https://www.technavio.com/report/ai-legal-tech-market-industry-analysis" target="_blank">Technavio →</a></div>
     </div>
     <div class="card">
       <span class="tag tag-market">Market</span>
-      <h4>62% of Law Firms Expanding Cloud Ops — AI Adoption Crosses Inflection</h4>
-      <p>Span Global benchmark report confirms majority of firms now expanding cloud operations. AI has crossed from experimentation to infrastructure in corporate legal, accelerating CLM and compliance tool adoption.</p>
-      <div class="source"><a href="https://blog.platinumids.com/blog/ai-adoption-inflection-legal-2026" target="_blank">PlatinumIDS Blog →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-prospect">Prospect Signal</span>
-      <h4>GCCs in India Face 6-Front Compliance Squeeze</h4>
-      <p>NASSCOM analysis shows India's booming GCC sector faces rising compliance burden with 2,000+ annual filings across labor, tax, data protection, IP, and corporate governance — creating urgent need for legal ops support.</p>
-      <div class="source"><a href="https://yourstory.com/enterprise-story/2026/03/indias-gcc-boom-rising-compliance-burden-2000-annual-filings-report" target="_blank">YourStory →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-competitor">Competitor</span>
-      <h4>Harvey Seeking $500M at $15.5B Valuation — Acquired 3 Companies in 2026</h4>
-      <p>4-year-old Harvey has raised $1.2B to date and reportedly seeking $500M more. Made 3 acquisitions in 2026. Legora (Stockholm) raised $600M Series D at $5.5B valuation, tripling in 6 months.</p>
-      <div class="source"><a href="https://news.crunchbase.com/venture/legal-tech-startuo-funding-down-ai-acquisitions-2026/" target="_blank">Crunchbase News →</a></div>
+      <h4>India Deep Tech: $2.3B Raised in 2025 — AI 91% of Total</h4>
+      <p>India deep tech startups raised $2.3B (up 37% YoY). AI accounts for 91% of deep tech funding, 84% of startups. 74% of deal activity still at seed/early — huge opportunity for TC's ECP offering.</p>
+      <div class="source"><a href="https://nasscom.in" target="_blank">NASSCOM →</a></div>
     </div>
   </div>
 </section>
 
 <section class="tab-panel" id="tab-outbound">
-  <h2 class="section-title">Funding & Investment Signals</h2>
-  <div class="cards">
-    <div class="card">
-      <span class="tag tag-funding">Funding</span>
-      <h4>Q1 2026: $1.42B in Legal Tech — Record Pace</h4>
-      <p>35 funding rounds in Q1 alone. 2025 total was $4.28B across 107 rounds. 2026 is tracking to significantly outpace the prior year, with AI-legal at the center of investor interest.</p>
-      <div class="source"><a href="https://www.legaltechnologyhub.com/contents/legal-tech-funding-2026-is-on-track-to-outpace-2025/" target="_blank">Legaltech Hub →</a></div>
+  <h2 class="section-title">ICP Snapshot</h2>
+  <div class="icp-grid">
+    <div class="icp-box">
+      <div class="icp-label">ECP — Early-Stage Counsel</div>
+      <h4>Seed–Series B Startups</h4>
+      <p>Founders raising capital need incorporation cleanup, ESOP structuring, SHA/SSA drafting, IP assignment, and FEMA compliance. 74% of India deep tech deals at seed/early. Patent filings up 68% since 2020–21.</p>
     </div>
-    <div class="card">
-      <span class="tag tag-funding">Funding</span>
-      <h4>Legora Raises $600M Series D at $5.5B Valuation</h4>
-      <p>Stockholm-based Legora tripled its valuation in 6 months. Acquired at least 5 companies in 2026. One of the most aggressive consolidation plays in legal AI.</p>
-      <div class="source"><a href="https://news.crunchbase.com/venture/legal-tech-startuo-funding-down-ai-acquisitions-2026/" target="_blank">Crunchbase News →</a></div>
+    <div class="icp-box">
+      <div class="icp-label">FGC — Fractional General Counsel</div>
+      <h4>Growth-Stage & GCCs</h4>
+      <p>Series B+ companies and India GCC setups needing ongoing legal ops without a full-time GC. 2,000+ annual compliance filings per GCC across labor, tax, data protection, IP, and governance.</p>
     </div>
-    <div class="card">
-      <span class="tag tag-funding">Funding</span>
-      <h4>Harvey Targets $500M Round at $15.5B Valuation</h4>
-      <p>Total raised to date: $1.2B. Made 3 acquisitions in 2026. The AI-first legal platform is now the most valuable legal tech company globally, focused on enterprise law firm adoption.</p>
-      <div class="source"><a href="https://news.crunchbase.com/venture/legal-tech-startuo-funding-down-ai-acquisitions-2026/" target="_blank">Crunchbase News →</a></div>
+    <div class="icp-box">
+      <div class="icp-label">CRaaS — Contract Review as a Service</div>
+      <h4>Mid-Market & Enterprise</h4>
+      <p>CLM market shifting to conversational AI agents (Sirion, Gartner Leader). Multi-model GenAI and verified legal AI with citations now table stakes. India-US corridor pricing is TC's edge.</p>
     </div>
-    <div class="card">
-      <span class="tag tag-funding">Funding</span>
-      <h4>Wolters Kluwer Acquires Brightflag for $500M</h4>
-      <p>Legal spend management platform Brightflag acquired in one of the largest legal tech M&A deals. WK also acquired Libra for $105M — consolidation accelerating among incumbents.</p>
-      <div class="source"><a href="https://news.crunchbase.com/venture/legal-tech-startuo-funding-down-ai-acquisitions-2026/" target="_blank">Crunchbase News →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-funding">Funding</span>
-      <h4>Clio: $1.4B Raised — Legal Practice Management AI Pivot</h4>
-      <p>Vancouver-based Clio raised $1.4B across 2024–2025 rounds. Now pivoting aggressively to AI-native features across practice management. Key competitor in the SMB legal market.</p>
-      <div class="source"><a href="https://news.crunchbase.com/venture/legal-tech-startuo-funding-down-ai-acquisitions-2026/" target="_blank">Crunchbase News →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-funding">Funding</span>
-      <h4>India Deep Tech: $2.3B Raised in 2025 — AI 91% of Total</h4>
-      <p>India deep tech startups raised $2.3B (up 37% YoY). AI accounts for 91% of deep tech funding, 84% of startups. 74% of deal activity still at seed/early — huge opportunity for TC's ECP offering.</p>
-      <div class="source"><a href="https://nasscom.in" target="_blank">NASSCOM →</a></div>
+    <div class="icp-box">
+      <div class="icp-label">LD&T — Legal Design & Transformation</div>
+      <h4>Enterprise Legal Ops</h4>
+      <p>Legal departments no longer just cost centres — tech reshaping ops. ACC reports AI, CLM, and smart workflows as three pillars of transformation. Budget allocation shifting to technology.</p>
     </div>
   </div>
 
@@ -300,294 +330,260 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
     <div class="card">
       <span class="tag tag-prospect">Prospect Signal</span>
       <h4>India Startup M&A Doubled: 140+ Deals in 2025</h4>
-      <p>36% of tech startups involved in M&A. This is capability acquisition — large Indian companies buying for tech and talent, not revenue. ECP/FGC opportunity for founders preparing for M&A readiness.</p>
+      <p>36% of tech startups involved in M&A. This is capability acquisition — large Indian companies buying for tech and talent. ECP/FGC opportunity for founders preparing for M&A readiness.</p>
       <div class="source"><a href="https://inc42.com" target="_blank">Inc42 →</a></div>
     </div>
     <div class="card">
       <span class="tag tag-prospect">Prospect Signal</span>
       <h4>42 Indian Tech IPOs in 2025 — Domestic Capital Driving Exits</h4>
-      <p>First time Indian startup exits don't depend primarily on foreign capital. Retail and domestic institutional investors driving demand. Changes exit timeline and domicile strategy for CAAS/LD&T prospects.</p>
+      <p>First time Indian startup exits don't depend primarily on foreign capital. Retail and domestic institutional investors driving demand. Changes exit timeline and domicile strategy for CRaaS/LD&T prospects.</p>
       <div class="source"><a href="https://sebi.gov.in" target="_blank">SEBI →</a></div>
     </div>
     <div class="card">
       <span class="tag tag-prospect">Prospect Signal</span>
       <h4>31% of Indian Startups Now EBITDA Positive</h4>
-      <p>Up from 18% in 2021. Structural shift to capital efficiency partly driven by angel tax removal, SEBI reforms, and NCLT friction reduction. Profitability-focused companies need operational legal infrastructure.</p>
+      <p>Up from 18% in 2021. Structural shift to capital efficiency driven by angel tax removal, SEBI reforms, and NCLT friction reduction. Profitability-focused companies need operational legal infrastructure.</p>
       <div class="source"><a href="https://nasscom.in" target="_blank">NASSCOM →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-prospect">Prospect Signal</span>
-      <h4>Patent Filings Up 68% Since 2020–21 — IP Due Diligence Demand Rising</h4>
-      <p>A 68% rise signals ecosystem maturity. Direct implications for IP assignment at due diligence stage — a gap TC sees repeatedly in fundraising readiness work. ECP expansion opportunity.</p>
-      <div class="source"><a href="https://ipindia.gov.in" target="_blank">IP India →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-prospect">Prospect Signal</span>
-      <h4>Legal Dept No Longer Just a Cost Centre — Tech Reshaping Ops</h4>
-      <p>Corporate legal departments increasingly adopting CLM, AI review, and workflow automation. Legal Reader reports 2026 as the tipping point where legal ops becomes a strategic function, not overhead.</p>
-      <div class="source"><a href="https://www.legalreader.com/legal-technology-is-reshaping-corporate-legal-operations-in-2026-the-legal-department-is-no-longer-just-a-cost-centre/" target="_blank">Legal Reader →</a></div>
     </div>
   </div>
 
-  <h2 class="section-title">Competitor Intelligence</h2>
+  <h2 class="section-title">Competitor Watch</h2>
   <div class="cards">
     <div class="card">
-      <span class="tag tag-competitor">Competitor</span>
-      <h4>CLM Market: Conversational AI Agents Now Table Stakes</h4>
-      <p>Sirion (Gartner Leader) identifies 10 CLM trends for 2026: AI agents, intelligent extraction, multi-model GenAI integration, verified legal AI with citations, and enterprise system integration with CRM/ERP.</p>
-      <div class="source"><a href="https://www.sirion.ai/library/contract-management/clm-contract-management-software-market/" target="_blank">Sirion →</a></div>
+      <span class="tag tag-competitor">India</span>
+      <h4>SpotDraft — $26M Series A, Expanding CLM Play</h4>
+      <p>Premji Invest–led $26M round. Series B extension from Qualcomm Ventures. Strongest India-origin CLM competitor — focused on mid-market, product-led growth. Direct overlap with TC's CRaaS offering.</p>
+      <div class="source"><a href="https://www.dealstreetasia.com/stories/india-spotdraft-series-a-funding-332777" target="_blank">DealStreetAsia →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-competitor">Competitor</span>
-      <h4>5 Legal Ops Trends Reshaping 2026 — ACC Report</h4>
-      <p>ACC Corporate Counsel identifies AI, CLM, and smart workflows as the three pillars of legal ops transformation. Future Ready Lawyer 2026 survey confirms budget allocation shifting to technology.</p>
-      <div class="source"><a href="https://corporatecounselnow.com/node/4302" target="_blank">ACC Corporate Counsel →</a></div>
+      <span class="tag tag-competitor">India</span>
+      <h4>Legistify — Indian Legaltech Building Litigation & Compliance</h4>
+      <p>India-focused legal ops startup covering litigation management, IP, and compliance tracking. Growing presence in the enterprise segment. Differentiation from TC: tech-first vs. TC's advisory-first model.</p>
+      <div class="source"><a href="https://blogs.ecourtsindia.com/2026/04/16/top-legaltech-startups-in-india-2026-whos-building-the-future-of-law/" target="_blank">eCourtsIndia →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-competitor">Competitor</span>
-      <h4>Elevate, Epiq, Pramata — Key CAAS Competitors Active</h4>
-      <p>TC's primary CAAS competitors (Elevate, Epiq, Pramata) continue to dominate US CLM market. LD&T competitors (Elevate, UpLevel Ops) expanding legal transformation advisory. Differentiation through India-corridor pricing remains TC's edge.</p>
-      <div class="source"><a href="https://docs.google.com/spreadsheets/d/1ShLtk7yjGq-97eX0x6xhYboZ4GKwOjZHHh74T8sulhE" target="_blank">TC Knowledge Hub →</a></div>
+      <span class="tag tag-competitor">Global</span>
+      <h4>Luminance — AI Contract Intelligence, Enterprise-Grade</h4>
+      <p>UK-origin AI contract review platform gaining traction in APAC and India corridors. Enterprise-grade NLP for due diligence and contract analysis. Competing in the same advisory-tech overlap as TC's CRaaS.</p>
+      <div class="source"><a href="https://www.mordorintelligence.com/industry-reports/ai-software-market-in-legal-industry" target="_blank">Mordor Intelligence →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-competitor">Global</span>
+      <h4>Kira (Litera) / Big 4 — Enterprise M&A Due Diligence</h4>
+      <p>Litera's Kira AI dominates M&A due diligence. Big 4 (Deloitte, PwC, EY, KPMG) expanding legal ops advisory — Deloitte just formed Ironclad strategic alliance. TC must compete on India-corridor specialization and founder intimacy.</p>
+      <div class="source"><a href="https://www.deloitte.com/us/en/about/press-room/deloitte-and-ironclad-form-strategic-alliance.html" target="_blank">Deloitte →</a></div>
     </div>
   </div>
 </section>
 
 <section class="tab-panel" id="tab-inbound">
-  <h2 class="section-title">Policy & Regulatory Updates</h2>
+  <h2 class="section-title">Content Signals & Buying Triggers</h2>
   <div class="cards">
     <div class="card">
-      <span class="tag tag-policy">Policy</span>
-      <h4>3 New US State Privacy Laws Active in 2026</h4>
-      <p>Kentucky, Rhode Island, and Indiana privacy laws now in effect. Apply to businesses managing 100K+ consumers. Require Global Privacy Control recognition, data minimization, and consent for sensitive data.</p>
-      <div class="source"><a href="https://secureprivacy.ai/blog/privacy-laws-2026" target="_blank">Secure Privacy →</a></div>
+      <span class="tag tag-market">Content Signal</span>
+      <h4>62% of Law Firms Expanding Cloud Ops — AI Crossed Inflection</h4>
+      <p>Span Global benchmark report confirms majority of firms now expanding cloud operations. AI has crossed from experimentation to infrastructure in corporate legal, accelerating CLM and compliance tool adoption.</p>
+      <div class="source"><a href="https://blog.platinumids.com/blog/ai-adoption-inflection-legal-2026" target="_blank">PlatinumIDS →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Policy</span>
-      <h4>California: Mandatory Cybersecurity Audits + Privacy Risk Assessments</h4>
-      <p>Annual cybersecurity audits required for orgs earning 50%+ from data sales or $26.6M+ revenue. Privacy risk assessments mandatory for AI training, facial recognition, automated decision-making. Penalties: $7,988/intentional violation.</p>
-      <div class="source"><a href="https://secureprivacy.ai/blog/privacy-laws-2026" target="_blank">Secure Privacy →</a></div>
+      <span class="tag tag-market">Content Signal</span>
+      <h4>Legal Department No Longer Just a Cost Centre</h4>
+      <p>Corporate legal departments increasingly adopting CLM, AI review, and workflow automation. 2026 is the tipping point where legal ops becomes a strategic function, not overhead. Content angle for TC's LD&T positioning.</p>
+      <div class="source"><a href="https://www.legalreader.com/legal-technology-is-reshaping-corporate-legal-operations-in-2026-the-legal-department-is-no-longer-just-a-cost-centre/" target="_blank">Legal Reader →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Policy</span>
-      <h4>EU AI Act Full Enforcement — Aug 2, 2026</h4>
-      <p>High-risk AI systems require risk management, model evaluation, cybersecurity, incident reporting. Penalties up to €35M or 7% global turnover for prohibited practices. Applies to employment, credit, law enforcement AI.</p>
-      <div class="source"><a href="https://secureprivacy.ai/blog/privacy-laws-2026" target="_blank">Secure Privacy →</a></div>
+      <span class="tag tag-prospect">Buying Trigger</span>
+      <h4>DPDP Consent Manager Deadline: 43 Days — Panic Window Open</h4>
+      <p>Nov 13, 2026 deadline for Consent Manager activation. Most companies haven't started. The regulator supposed to register Consent Managers doesn't yet exist. Panic buying window for DPDP compliance advisory.</p>
+      <div class="source"><a href="https://compliancehub.wiki/india-dpdp-consent-manager-november-2026-phase-two-deadline-compliance/" target="_blank">ComplianceHub →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Policy</span>
-      <h4>UK Data (Use and Access) Act 2025 — Operational in 2026</h4>
-      <p>Relaxes GDPR Article 22 for non-sensitive data. New "recognized legitimate interests" basis without balancing test. Allows cookies without consent in low-risk situations. Penalties up to £17.5M or 4% turnover.</p>
-      <div class="source"><a href="https://secureprivacy.ai/blog/privacy-laws-2026" target="_blank">Secure Privacy →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-policy">Policy</span>
-      <h4>MeitY AI Content Obligations — IT Intermediary Amendment Rules</h4>
-      <p>Notified Feb 2026: SaaS platforms enabling AI-generated content now have due diligence obligations. Safe harbour protection is conditional on technical compliance. Most founders haven't read the rules.</p>
+      <span class="tag tag-prospect">Buying Trigger</span>
+      <h4>MeitY IT Intermediary Rules — AI Content Obligations Live</h4>
+      <p>SaaS platforms enabling AI-generated content now have due diligence obligations. Safe harbour protection conditional on technical compliance. Most founders haven't read the rules — content and advisory opportunity.</p>
       <div class="source"><a href="https://www.meity.gov.in/content/notification" target="_blank">MeitY →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Policy</span>
-      <h4>SEBI Simplified DRHP: 42 Tech IPOs in 2025 — Governance Stakes Rise</h4>
-      <p>SEBI made filing easier but public market scrutiny harder. Investors asking tougher governance questions at listing. Implication for TC: pre-IPO legal readiness is now a critical service gap.</p>
-      <div class="source"><a href="https://sebi.gov.in" target="_blank">SEBI →</a></div>
+      <span class="tag tag-prospect">Buying Trigger</span>
+      <h4>Patent Filings Up 68% Since 2020–21 — IP Due Diligence Demand</h4>
+      <p>A 68% rise signals ecosystem maturity. Direct implications for IP assignment at due diligence stage — a gap TC sees repeatedly in fundraising readiness work. ECP expansion opportunity.</p>
+      <div class="source"><a href="https://ipindia.gov.in" target="_blank">IP India →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Policy</span>
-      <h4>FEMA Violations Surface at Due Diligence — Still Complex</h4>
-      <p>2025 simplified FVCI registration changed some pathways, but core ODI and inbound investment rules remain complex. FEMA violations don't announce themselves — they surface during fundraise DD.</p>
+      <span class="tag tag-prospect">Buying Trigger</span>
+      <h4>FEMA Violations — The Silent Due Diligence Risk</h4>
+      <p>FEMA violations don't announce themselves — they surface during due diligence at the worst possible moment. Core ODI and inbound investment rules remain complex. Recurring ECP/FGC engagement trigger.</p>
       <div class="source"><a href="https://rbi.org.in/fema" target="_blank">RBI →</a></div>
-    </div>
-  </div>
-
-  <h2 class="section-title">DPDP Act Tracker</h2>
-  <div class="cards">
-    <div class="card">
-      <span class="tag tag-dpdp">DPDP</span>
-      <h4>Consent Manager Framework: Jun–Aug 2026 Activation Expected</h4>
-      <p>MeitY expected to activate interoperable Consent Manager framework. Organizations must update consent collection systems and backend data management to align with Consent Manager APIs.</p>
-      <div class="source"><a href="https://www.india-briefing.com/news/india-dpdp-compliance-timeline-enforcement-2026-27-44740.html/" target="_blank">India Briefing →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-dpdp">DPDP</span>
-      <h4>Nov 2026: Transitional Period Ends — Active Supervision Begins</h4>
-      <p>1-year anniversary of DPDP Rules notification. Shift from soft enforcement to active regulatory supervision. Legacy data without valid notice and consent mechanisms faces increased exposure.</p>
-      <div class="source"><a href="https://www.india-briefing.com/news/india-dpdp-compliance-timeline-enforcement-2026-27-44740.html/" target="_blank">India Briefing →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-dpdp">DPDP</span>
-      <h4>NHRC Issues Notices to Meta, WhatsApp, Khan Academy Over Alleged Violations</h4>
-      <p>NHRC took action on ASIA think tank report — concerns about children's data tracking, server security, grievance redressal. Directed entities to submit compliance reports within 15 days. IAMAI calls it "overreach."</p>
-      <div class="source"><a href="https://www.aninews.in/news/national/general-news/nhrc-issues-notices-over-alleged-dpdp-act-violations-by-ai-social-media-edtech-platforms20260325081218" target="_blank">ANI News →</a></div>
     </div>
   </div>
 
   <h2 class="section-title">Market Sentiment</h2>
   <div class="cards">
     <div class="card">
-      <span class="tag tag-market">US — Positive</span>
-      <h4>Legal Tech Market Sized at $29B in 2026 — 10% CAGR</h4>
-      <p>New Market Pitch reports legal tech market at $29B globally. US remains largest market. AI-driven contract review, practice management, and compliance tools driving growth.</p>
-      <div class="source"><a href="https://newmarketpitch.com/blogs/news/legaltech-market-size" target="_blank">New Market Pitch →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-market">US — Positive</span>
-      <h4>AI Adoption Inflection: Experimentation → Infrastructure</h4>
-      <p>PlatinumIDS reports 2026 as the year AI legal tech crossed from experimentation to infrastructure. Corporate legal departments now budget for AI as operational necessity, not innovation line item.</p>
-      <div class="source"><a href="https://blog.platinumids.com/blog/ai-adoption-inflection-legal-2026" target="_blank">PlatinumIDS →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-market">US — Neutral</span>
-      <h4>Funding Climbs But Fewer Deals — Concentration Risk</h4>
-      <p>Law360 Pulse reports funding climbing in 2026 but across fewer deals. Capital concentrating in top players (Harvey, Legora, Clio). Mid-market players face consolidation pressure.</p>
+      <span class="tag tag-market">US — Cautious-Bullish</span>
+      <h4>Funding Climbs But Fewer Deals — Capital Concentration</h4>
+      <p>Law360 Pulse: funding climbing in 2026 but across fewer deals. Capital concentrating in top players (Harvey $15.5B, Legora $5.5B, Clio $1.4B raised). Mid-market players face consolidation pressure.</p>
       <div class="source"><a href="https://www.law360.com/pulse/mid-law/articles/2500776/legal-tech-funding-climbs-in-2026-despite-fewer-deals" target="_blank">Law360 Pulse →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-market">UK — Positive</span>
+      <span class="tag tag-market">UK — Bullish</span>
       <h4>UK Data Act Creates New Lawful Processing Basis</h4>
-      <p>"Recognized legitimate interests" basis relaxes GDPR rigidity for UK businesses. Creates opportunity for more streamlined data processing, but also increases complexity for cross-border compliance.</p>
+      <p>"Recognized legitimate interests" relaxes GDPR rigidity. Creates more streamlined data processing but increases cross-border complexity. UK privacy divergence from EU creates dual compliance opportunity.</p>
       <div class="source"><a href="https://secureprivacy.ai/blog/privacy-laws-2026" target="_blank">Secure Privacy →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-market">UK — Neutral</span>
-      <h4>UK Privacy Divergence From EU Creates Compliance Complexity</h4>
-      <p>Wolters Kluwer analysis highlights UK's divergence from EU data protection standards creating dual compliance requirements for cross-border operations. Opportunity for advisory services.</p>
-      <div class="source"><a href="https://www.wolterskluwer.com/en/expert-insights/privacy-in-transition-what-2025-taught-us-and-how-to-prepare-for-2026" target="_blank">Wolters Kluwer →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-market">India — Positive</span>
-      <h4>India 3rd Largest Startup Ecosystem — 1.59L+ DPIIT-Recognised</h4>
-      <p>118 unicorns, 16.6 lakh jobs created. The headline is scale — the story is structural maturity. Capital allocation, sector outcomes, and commercialization signals all improving.</p>
+      <span class="tag tag-market">India — Cautious-Bullish</span>
+      <h4>India 3rd Largest Startup Ecosystem — 1.59L+ Recognised</h4>
+      <p>118 unicorns, 16.6 lakh jobs. Scale is clear — structural maturity improving. Capital allocation, sector outcomes, and commercialization signals all positive. IndiaAI Mission delivering 38K+ GPUs at ₹65/hr.</p>
       <div class="source"><a href="https://dpiit.gov.in" target="_blank">DPIIT →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-market">India — Positive</span>
-      <h4>IndiaAI Mission: 38K+ GPUs at ₹65/hr — Compute Access Democratized</h4>
-      <p>One-third of global average cost through Yotta Shakti Cloud, E2E Networks, and L&T infra. Subsidy is real — access pathway is opaque. AI founders need legal clarity on subsidized compute agreements.</p>
-      <div class="source"><a href="https://indiaai.gov.in" target="_blank">IndiaAI →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-market">India — Positive</span>
-      <h4>GCC Legal Compliance Demand Surging — Setup Activity High</h4>
-      <p>Multiple advisory firms publishing 2026 GCC setup guides. Legal compliance frameworks, tax strategies, and talent regulations creating sustained demand for legal advisory in India GCC corridor.</p>
-      <div class="source"><a href="https://law.asia/india-gcc-compliance-framework/" target="_blank">Law.Asia →</a></div>
     </div>
   </div>
 </section>
 
 <section class="tab-panel" id="tab-pr">
-  <h2 class="section-title">Policy as Architecture</h2>
+  <h2 class="section-title">DPDP Act Timeline</h2>
   <div class="cards">
     <div class="card">
-      <span class="tag tag-policy">Regulatory</span>
-      <h4>MeitY IT Intermediary Guidelines — AI Content Obligations</h4>
-      <p>Notified 10 Feb 2026: SaaS products enabling AI-generated content inherit new due diligence obligations. Safe harbour protection now conditional on technical compliance. Most founders haven't read the rules.</p>
-      <div class="source"><a href="https://www.meity.gov.in/content/notification" target="_blank">MeitY →</a></div>
+      <span class="tag tag-dpdp">Phase 1 — Live</span>
+      <h4>Nov 13, 2025: Board Established, Core Sections Active</h4>
+      <p>Sections 1(2), 2, 18–26, 35, 38–43, 44(1)&(3) of Act + Rules 1, 2, 17–21 in force. Data Protection Board constituted in NCR. DPB Chairperson appointment process underway.</p>
+      <div class="source"><a href="https://www.azbpartners.com/bank/indias-digital-personal-data-protection-act-phased-rollout-and-key-compliance-milestones/" target="_blank">AZB Partners →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Legal Reform</span>
-      <h4>Jan Vishwas Act 2023 — 183 Provisions Decriminalised</h4>
-      <p>Removed criminal liability from dozens of routine compliance failures across 42 laws. Most startups don't know which provisions were decriminalised or how it affects operations. Bureau angle: awareness gap.</p>
-      <div class="source"><a href="https://prsindia.org/bills/acts" target="_blank">PRS India →</a></div>
+      <span class="tag tag-dpdp">Upcoming</span>
+      <h4>Nov 13, 2026: Consent Manager Activation — 43 Days</h4>
+      <p>1-year anniversary of DPDP Rules notification. Consent Manager framework goes live. Shift from soft enforcement to active regulatory supervision. Legacy data without valid consent mechanisms faces increased exposure.</p>
+      <div class="source"><a href="https://www.vinsys.com/blog/dpdp-act-compliance-deadline-nov-2026-for-consent-manager" target="_blank">Vinsys →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Legal Reform</span>
-      <h4>Companies Act Amendment — M&A Friction Reduced</h4>
-      <p>Removed NCLT approval requirement for certain mergers. Quietly reduced time and cost of startup M&A transactions. One of several structural friction reductions changing India's exit environment.</p>
-      <div class="source"><a href="https://mca.gov.in" target="_blank">MCA →</a></div>
+      <span class="tag tag-dpdp">Accelerated</span>
+      <h4>MeitY Proposed 12-Month Timeline — May Push to Nov 2026</h4>
+      <p>Jan 2026: MeitY proposed reducing 18-month window to 12 months (Nov 2026 instead of May 2027). SDF provisions may enforce immediately upon notification. Industry feedback received Feb 2026.</p>
+      <div class="source"><a href="https://chambers.com/articles/meity-plans-to-cut-short-dpdp-compliance-timeline-and-notify-cross-border-restrictions-for-sdfs" target="_blank">Chambers →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Regulatory</span>
-      <h4>SEBI DRHP Simplification — Governance Scrutiny Paradox</h4>
-      <p>SEBI made it easier to file for IPO. But harder to survive public market scrutiny. Investors now asking harder governance questions at listing stage than ever before. Pre-IPO readiness is critical.</p>
-      <div class="source"><a href="https://sebi.gov.in" target="_blank">SEBI →</a></div>
+      <span class="tag tag-dpdp">Pending</span>
+      <h4>SDF Designation & Cross-Border Rules: Still Not Notified</h4>
+      <p>Government has NOT notified the list of Significant Data Fiduciaries or designation criteria. Cross-border data transfer restrictions — countries/territories NOT notified. Two critical unknowns remain for large enterprises.</p>
+      <div class="source"><a href="https://primeinfoserv.com/blog-dpdp-compliance-2026-strategy-may-2027-deadline/" target="_blank">PrimeInfoserv →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Compliance</span>
-      <h4>FEMA Violations — The Silent Due Diligence Risk</h4>
-      <p>FEMA violations don't announce themselves. They surface during due diligence at the worst possible moment. 2025 simplified FVCI registration helped some pathways, but core rules remain complex.</p>
-      <div class="source"><a href="https://rbi.org.in/fema" target="_blank">RBI →</a></div>
+      <span class="tag tag-dpdp">Full Compliance</span>
+      <h4>May 13, 2027: Phase 3 Deadline — 224 Days</h4>
+      <p>Full enforcement of all remaining DPDP Act provisions. Penalties up to ₹250 crore for non-compliance. All data fiduciaries must have complete notice, consent, data principal rights, and breach notification mechanisms.</p>
+      <div class="source"><a href="https://www.india-briefing.com/news/india-dpdp-compliance-timeline-enforcement-2026-27-44740.html/" target="_blank">India Briefing →</a></div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Global Regulatory</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag tag-policy">US — Colorado</span>
+      <h4>Colorado AI Act — Comprehensive Replacement Bill Signed</h4>
+      <p>Federal court blocked original SB 205 enforcement. Replacement bill signed with risk management, impact assessments, and transparency obligations. Most aggressive US state AI regulation — sets national precedent.</p>
+      <div class="source"><a href="https://www.gibsondunn.com/colorado-mile-high-ai-act-6-key-takeaways/" target="_blank">Gibson Dunn →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Global</span>
-      <h4>EU AI Act Full Enforcement — August 2, 2026</h4>
-      <p>High-risk AI systems require risk management, model evaluation, cybersecurity, incident reporting, and documentation. Penalties: €35M or 7% global turnover. TC LD&T opportunity for AI governance advisory.</p>
+      <span class="tag tag-policy">EU</span>
+      <h4>EU AI Act Full Enforcement — Aug 2, 2026</h4>
+      <p>High-risk AI systems: risk management, model evaluation, cybersecurity, incident reporting. Penalties: €35M or 7% global turnover. TC LD&T opportunity for AI governance advisory across India-EU corridor.</p>
       <div class="source"><a href="https://secureprivacy.ai/blog/privacy-laws-2026" target="_blank">Secure Privacy →</a></div>
     </div>
     <div class="card">
       <span class="tag tag-policy">US States</span>
-      <h4>Connecticut: Neural Data Now "Sensitive" — July 1, 2026</h4>
-      <p>Broadens automated decision-making opt-out rights. Adds neural data, genetic/biometric-derived data, financial information to sensitive categories. New mobile app transparency obligations.</p>
+      <h4>3 New US State Privacy Laws Active + Connecticut Neural Data</h4>
+      <p>Kentucky, Rhode Island, Indiana privacy laws now in effect (100K+ consumers threshold). Connecticut adds neural data as "sensitive" category from Jul 1, 2026. Broadens automated decision-making opt-out rights.</p>
       <div class="source"><a href="https://secureprivacy.ai/blog/privacy-laws-2026" target="_blank">Secure Privacy →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-policy">Australia</span>
-      <h4>Australia Privacy Act — ADM Transparency by Dec 10, 2026</h4>
-      <p>Privacy policies must disclose personal information used in automated decision-making. Applies to decisions affecting individual rights. Aligns with global trend toward algorithmic transparency.</p>
+      <span class="tag tag-policy">California</span>
+      <h4>California: Mandatory Cybersecurity Audits + Privacy Risk Assessments</h4>
+      <p>Annual cybersecurity audits for orgs earning 50%+ from data sales or $26.6M+ revenue. Privacy risk assessments mandatory for AI training, facial recognition, automated decision-making. Penalties: $7,988/violation.</p>
       <div class="source"><a href="https://secureprivacy.ai/blog/privacy-laws-2026" target="_blank">Secure Privacy →</a></div>
     </div>
   </div>
 
-  <h2 class="section-title">DPDP Deep Dive</h2>
+  <h2 class="section-title">India Policy</h2>
   <div class="cards">
     <div class="card">
-      <span class="tag tag-dpdp">DPDP Timeline</span>
-      <h4>Phase 1 (Nov 13, 2025): Live — Board Established, Core Sections Active</h4>
-      <p>Sections 1(2), 2, 18–26, 35, 38–43, 44(1)&(3) of Act + Rules 1, 2, 17–21 in force. Data Protection Board constituted in NCR. DPB Chairperson appointment process underway (applications invited Apr 2026).</p>
-      <div class="source"><a href="https://www.azbpartners.com/bank/indias-digital-personal-data-protection-act-phased-rollout-and-key-compliance-milestones/" target="_blank">AZB Partners →</a></div>
+      <span class="tag tag-policy">Regulatory</span>
+      <h4>MeitY IT Intermediary Guidelines — AI Content Obligations</h4>
+      <p>Notified Feb 2026: SaaS products enabling AI-generated content inherit new due diligence obligations. Safe harbour protection now conditional on technical compliance. Most founders haven't read the rules.</p>
+      <div class="source"><a href="https://www.meity.gov.in/content/notification" target="_blank">MeitY →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-dpdp">DPDP Timeline</span>
-      <h4>MeitY Proposed Accelerating to 12-Month Timeline</h4>
-      <p>Jan 23, 2026: MeitY proposed reducing 18-month window to 12 months (deadline: Nov 13, 2026 instead of May 13, 2027). Industry feedback invited until Feb 4, 2026. SDF provisions may enforce immediately.</p>
-      <div class="source"><a href="https://chambers.com/articles/meity-plans-to-cut-short-dpdp-compliance-timeline-and-notify-cross-border-restrictions-for-sdfs" target="_blank">Chambers →</a></div>
+      <span class="tag tag-policy">Reform</span>
+      <h4>Jan Vishwas Act + Companies Act Amendment — Friction Reduced</h4>
+      <p>183 provisions decriminalised across 42 laws. NCLT approval removed for certain mergers — quietly reduced M&A time and cost. Most startups don't know which provisions changed or how it affects operations.</p>
+      <div class="source"><a href="https://prsindia.org/bills/acts" target="_blank">PRS India →</a></div>
     </div>
     <div class="card">
-      <span class="tag tag-dpdp">DPDP Pending</span>
-      <h4>SDF Designation & Cross-Border Rules: Still Not Notified</h4>
-      <p>Government has NOT yet notified the list of Significant Data Fiduciaries or designation criteria. Cross-border data transfer restrictions — countries/territories NOT yet notified. Two critical unknowns remain.</p>
-      <div class="source"><a href="https://primeinfoserv.com/blog-dpdp-compliance-2026-strategy-may-2027-deadline/" target="_blank">PrimeInfoserv →</a></div>
+      <span class="tag tag-policy">SEBI</span>
+      <h4>SEBI DRHP Simplification — Governance Scrutiny Paradox</h4>
+      <p>Filing easier, but public market scrutiny harder. Investors asking tougher governance questions at listing stage than ever before. Pre-IPO legal readiness is now a critical service gap.</p>
+      <div class="source"><a href="https://sebi.gov.in" target="_blank">SEBI →</a></div>
     </div>
   </div>
 </section>
 
 <section class="tab-panel" id="tab-partnerships">
-  <h2 class="section-title">Partnership-Relevant Signals</h2>
+  <h2 class="section-title">Hot Leads</h2>
   <div class="cards">
     <div class="card">
-      <span class="tag tag-partnership">Partnership</span>
-      <h4>India Semiconductor Mission — ₹76,000 Cr for Chip Design Startups</h4>
-      <p>DLI scheme offers up to 50% incentive for fabless design startups. Most founders think semiconductors means fabs and self-select out. Legal advisory for subsidy applications is a partnership opportunity.</p>
+      <span class="tag tag-hot">Hot</span>
+      <h4>Scrut Automation — GRC & Compliance Platform</h4>
+      <p>India-origin GRC platform (Series A, ₹615 Cr valuation). CEO: Aayush Ghosh Choudhury. Raised $7.5M+ in funding. Compliance automation for SOC 2, ISO 27001, GDPR. Natural co-sell partner for TC's DPDP compliance advisory — Scrut handles technical controls, TC handles legal framework and consent architecture.</p>
+      <div class="source"><a href="https://tracxn.com/d/companies/scrut/__dxKro3KlXXQZQJWfrtHJ884ze-tE4tJr7wdjnE13UWM" target="_blank">Tracxn →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-hot">Hot</span>
+      <h4>Ironclad — AI Contract Lifecycle Management</h4>
+      <p>Leading CLM platform. Just formed strategic alliance with Deloitte for agentic CLM. Launched AI Assistant and Agents for contract intelligence. TC can position as India implementation partner — same model as Deloitte-Ironclad alliance but for the India-US corridor mid-market.</p>
+      <div class="source"><a href="https://www.deloitte.com/us/en/about/press-room/deloitte-and-ironclad-form-strategic-alliance.html" target="_blank">Deloitte →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-hot">Hot</span>
+      <h4>Sprinto — Autonomous Compliance Engine</h4>
+      <p>$20M+ ARR. CEO: Girish Redekar. Launched "Autonomous Trust Platform" — moving from automated to autonomous compliance. Published "Business ROI of Compliance 2026." TC partnership angle: legal advisory layer on top of Sprinto's technical automation for DPDP, privacy, and data protection compliance.</p>
+      <div class="source"><a href="https://yourstory.com/2025/12/how-sprinto-is-building-the-worlds-first-autonomous-compliance-engine" target="_blank">YourStory →</a></div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Pipeline</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag tag-pipeline">Pipeline</span>
+      <h4>Volody — India-Origin CLM Platform</h4>
+      <p>India-focused contract lifecycle management with strong Delhi NCR and Pune enterprise presence. G2-reviewed. Publishing "Top 10 CLM Software in India 2026" rankings — positioning as market educator. Co-marketing and referral partnership opportunity for TC's CRaaS clients needing CLM tooling.</p>
+      <div class="source"><a href="https://www.volody.com/resource/top-10-contract-management-software-in-india-2026" target="_blank">Volody →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-pipeline">Pipeline</span>
+      <h4>Deel — Global HR & Compliance Platform</h4>
+      <p>Global HR platform handling contractor payments, EOR, and compliance across 150+ countries. Growing India operations. Partnership angle: Deel handles employment/contractor compliance, TC handles corporate legal, fundraising, and data protection — complementary not competitive.</p>
+      <div class="source"><a href="https://www.mordorintelligence.com/industry-reports/global-legal-tech-market" target="_blank">Mordor Intelligence →</a></div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Ecosystem</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag tag-partnership">Ecosystem</span>
+      <h4>ITechLaw — Global Legal Tech Association</h4>
+      <p>Premier global association for technology law professionals. Conference and thought leadership platform. TC opportunity: speaking engagements, co-published research on India data protection, and network access to US/EU legal tech buyers.</p>
+      <div class="source"><a href="https://www.itechlaw.org" target="_blank">ITechLaw →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-partnership">Ecosystem</span>
+      <h4>Deloitte-Ironclad Model — Strategic Alliance Template</h4>
+      <p>Deloitte's alliance with Ironclad for agentic CLM sets the template: large advisory firm + CLM platform = enterprise contract transformation. TC can replicate at mid-market scale with Ironclad, Volody, or SpotDraft as the tech partner.</p>
+      <div class="source"><a href="https://www.prnewswire.com/news-releases/deloitte-and-ironclad-form-strategic-alliance-to-expand-agentic-contract-lifecycle-management-capabilities-302792332.html" target="_blank">PR Newswire →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag tag-partnership">Ecosystem</span>
+      <h4>India Semiconductor + iDEX + Quantum Mission — Gov Programme Partners</h4>
+      <p>₹76,000 Cr semiconductor DLI scheme, iDEX 619 startups with ₹2,400 Cr procurement, National Quantum Mission ₹6,000 Cr. Most founders self-select out of these programmes. Legal advisory for subsidy applications = ECP pipeline through incubator partnerships.</p>
       <div class="source"><a href="https://semiconductors.india.gov.in" target="_blank">India Semiconductor Mission →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-partnership">Partnership</span>
-      <h4>iDEX — 619 Startups, ₹2,400 Cr Procurement, ADITI Grants Up to ₹25 Cr</h4>
-      <p>Defence procurement pathway for startups. Indian Army signed ₹168 Cr contract with Bangalore startup for solar drones through iDEX. Most defence tech founders don't know how to navigate from problem statement to procurement contract.</p>
-      <div class="source"><a href="https://idex.gov.in" target="_blank">iDEX →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-partnership">Partnership</span>
-      <h4>Startup India Seed Fund — ₹945 Cr Through Incubators</h4>
-      <p>Grants up to ₹20 lakh, soft loans up to ₹50 lakh. Access pathway runs through DPIIT-recognised incubators, not directly. Partnership with incubators to provide legal support for funded startups = ECP pipeline.</p>
-      <div class="source"><a href="https://startupindia.gov.in/seed-fund" target="_blank">Startup India →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-partnership">Partnership</span>
-      <h4>National Quantum Mission — ₹6,000 Cr Across 4 Verticals</h4>
-      <p>Computing, communication, sensing, and materials. Longest-horizon national mission bet, least understood by founders. IP protection and licensing for quantum technology = emerging legal niche.</p>
-      <div class="source"><a href="https://dst.gov.in/quantum" target="_blank">DST →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-partnership">Partnership</span>
-      <h4>GCC Compliance-as-a-Service: Legal Infra for India Operations</h4>
-      <p>GCCs setting up in India need legal compliance frameworks across labor, tax, data protection, IP, and corporate governance. TC's FGC offering maps perfectly to fractional GC needs of new India GCC setups.</p>
-      <div class="source"><a href="https://law.asia/india-gcc-compliance-framework/" target="_blank">Law.Asia →</a></div>
-    </div>
-    <div class="card">
-      <span class="tag tag-partnership">Partnership</span>
-      <h4>CLM Vendor Partnerships — Sirion, Pramata, Ironclad Active</h4>
-      <p>CLM market shifting to conversational AI agents, multi-model GenAI, and enterprise integration. TC's CAAS implementation expertise creates partnership opportunity with CLM vendors needing implementation partners in India-US corridor.</p>
-      <div class="source"><a href="https://www.sirion.ai/library/contract-management/clm-contract-management-software-market/" target="_blank">Sirion →</a></div>
     </div>
   </div>
 </section>
@@ -595,7 +591,7 @@ h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:600;line-height:
 </main>
 
 <footer style="text-align:center;padding:24px;font-size:11px;color:var(--text-muted);border-top:1px solid var(--border-light);background:var(--white)">
-  Team Counsel · Daily Intelligence Dashboard · Auto-generated 29 Sep 2026 · <a href="archive/" style="color:var(--blue);text-decoration:none">Archive</a>
+  Team Counsel · Daily Intelligence Dashboard · Auto-generated 1 Oct 2026 · <a href="archive/" style="color:var(--blue);text-decoration:none">Archive</a>
 </footer>
 
 <script>
