@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Counsel GTM Intelligence Dashboard — Oct 5, 2026</title>
+<meta name="description" content="Daily GTM intelligence dashboard for Team Counsel. Funding, policy, market sentiment, prospects, DPDP Act, competitors, partnerships, legal tech deals, and events.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== TC OS Design System – Light Theme ===== */
+:root {
+  --tc-black: #18181b;
+  --tc-white: #ffffff;
+  --tc-bg: #f4f4f5;
+  --tc-surface: #ffffff;
+  --tc-border: #e4e4e7;
+  --tc-muted: #71717a;
+  --tc-accent: #18181b;
+  --tc-accent-hover: #27272a;
+  --tc-green: #5f7a1f;
+  --tc-green-bg: #f0f5e4;
+  --tc-amber: #8a5c00;
+  --tc-amber-bg: #fef9e7;
+  --tc-red: #b23b2a;
+  --tc-red-bg: #fdeaea;
+  --tc-blue: #1d4ed8;
+  --tc-blue-bg: #eff6ff;
+  --tc-purple: #7c3aed;
+  --tc-purple-bg: #f5f3ff;
+  --tc-radius: 12px;
+  --tc-radius-sm: 8px;
+  --tc-shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --tc-shadow-md: 0 4px 6px rgba(0,0,0,.06), 0 2px 4px rgba(0,0,0,.04);
+  --tc-font-body: 'Figtree', system-ui, sans-serif;
+  --tc-font-heading: 'Sora', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--tc-font-body);
+  background: var(--tc-bg);
+  color: var(--tc-black);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Layout ===== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+/* ===== Header ===== */
+.header {
+  background: var(--tc-black);
+  color: var(--tc-white);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.logo {
+  font-family: var(--tc-font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--tc-white);
+  text-decoration: none;
+}
+.logo span { opacity: .5; font-weight: 400; }
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: .85rem;
+  opacity: .7;
+}
+.live-dot {
+  width: 8px; height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+
+/* ===== Tab Navigation ===== */
+.tab-nav {
+  background: var(--tc-surface);
+  border-bottom: 1px solid var(--tc-border);
+  padding: 0 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+.tab-nav-inner {
+  display: flex;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tab-btn {
+  font-family: var(--tc-font-body);
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--tc-muted);
+  background: none;
+  border: none;
+  padding: 14px 18px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all .2s;
+}
+.tab-btn:hover { color: var(--tc-black); }
+.tab-btn.active {
+  color: var(--tc-black);
+  border-bottom-color: var(--tc-black);
+  font-weight: 600;
+}
+
+/* ===== Section Titles ===== */
+.section-title {
+  font-family: var(--tc-font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.section-subtitle {
+  font-size: .85rem;
+  color: var(--tc-muted);
+  margin-bottom: 20px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: var(--tc-surface);
+  border: 1px solid var(--tc-border);
+  border-radius: var(--tc-radius);
+  padding: 20px;
+  box-shadow: var(--tc-shadow);
+  transition: box-shadow .2s, transform .15s;
+}
+.card:hover {
+  box-shadow: var(--tc-shadow-md);
+  transform: translateY(-1px);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+.card-title {
+  font-family: var(--tc-font-heading);
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.card-body { font-size: .875rem; color: #3f3f46; line-height: 1.65; }
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--tc-border);
+  font-size: .78rem;
+  color: var(--tc-muted);
+}
+.card-footer a {
+  color: var(--tc-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+.card-footer a:hover { text-decoration: underline; }
+
+/* ===== Tags / Badges ===== */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  flex-shrink: 0;
+}
+.tag-green { background: var(--tc-green-bg); color: var(--tc-green); }
+.tag-amber { background: var(--tc-amber-bg); color: var(--tc-amber); }
+.tag-red { background: var(--tc-red-bg); color: var(--tc-red); }
+.tag-blue { background: var(--tc-blue-bg); color: var(--tc-blue); }
+.tag-purple { background: var(--tc-purple-bg); color: var(--tc-purple); }
+.tag-dark { background: #27272a; color: #fff; }
+
+/* ===== Stat Boxes ===== */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.stat-box {
+  background: var(--tc-surface);
+  border: 1px solid var(--tc-border);
+  border-radius: var(--tc-radius);
+  padding: 18px 20px;
+  box-shadow: var(--tc-shadow);
+}
+.stat-label {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--tc-muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.stat-value {
+  font-family: var(--tc-font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.stat-delta {
+  font-size: .78rem;
+  margin-top: 4px;
+}
+.stat-delta.up { color: var(--tc-green); }
+.stat-delta.down { color: var(--tc-red); }
+
+/* ===== Sentiment Bar ===== */
+.sentiment-section { margin-bottom: 28px; }
+.sentiment-bar-container {
+  display: flex;
+  border-radius: var(--tc-radius-sm);
+  overflow: hidden;
+  height: 36px;
+  cursor: pointer;
+  box-shadow: var(--tc-shadow);
+  margin-bottom: 8px;
+}
+.sentiment-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .78rem;
+  font-weight: 600;
+  color: #fff;
+  transition: flex .3s, filter .2s;
+  min-width: 40px;
+}
+.sentiment-segment:hover { filter: brightness(1.15); }
+.sentiment-segment.positive { background: var(--tc-green); }
+.sentiment-segment.neutral { background: var(--tc-amber); }
+.sentiment-segment.negative { background: var(--tc-red); }
+.sentiment-legend {
+  display: flex;
+  gap: 20px;
+  font-size: .78rem;
+  color: var(--tc-muted);
+  margin-bottom: 12px;
+}
+.sentiment-legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.sentiment-detail {
+  display: none;
+  margin-top: 12px;
+}
+.sentiment-detail.open { display: block; }
+.sentiment-detail-panel {
+  background: var(--tc-surface);
+  border: 1px solid var(--tc-border);
+  border-radius: var(--tc-radius-sm);
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.sentiment-detail-panel h4 {
+  font-family: var(--tc-font-heading);
+  font-size: .85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.sentiment-detail-panel ul {
+  list-style: none;
+  padding: 0;
+}
+.sentiment-detail-panel li {
+  font-size: .82rem;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--tc-border);
+  line-height: 1.5;
+}
+.sentiment-detail-panel li:last-child { border-bottom: none; }
+
+/* ===== DPDP Countdown ===== */
+.dpdp-countdown {
+  background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+  color: var(--tc-white);
+  border-radius: var(--tc-radius);
+  padding: 24px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.dpdp-countdown-label {
+  font-family: var(--tc-font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.dpdp-countdown-sub { font-size: .82rem; opacity: .6; margin-top: 4px; }
+.dpdp-days {
+  font-family: var(--tc-font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.dpdp-days small {
+  font-size: .9rem;
+  font-weight: 400;
+  opacity: .6;
+}
+
+/* ===== Filters ===== */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.filter-btn {
+  font-family: var(--tc-font-body);
+  font-size: .8rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--tc-border);
+  background: var(--tc-surface);
+  color: var(--tc-muted);
+  cursor: pointer;
+  transition: all .15s;
+}
+.filter-btn:hover { border-color: var(--tc-black); color: var(--tc-black); }
+.filter-btn.active {
+  background: var(--tc-black);
+  color: var(--tc-white);
+  border-color: var(--tc-black);
+}
+
+/* ===== Event Checklist ===== */
+.event-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.event-check input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--tc-black);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ===== Action Signal ===== */
+.action-signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--tc-green);
+  margin-top: 8px;
+}
+
+/* ===== Tab Panels ===== */
+.tab-panel { display: none; padding: 28px 0; }
+.tab-panel.active { display: block; }
+
+/* ===== Funding Card Extras ===== */
+.funding-amount {
+  font-family: var(--tc-font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--tc-green);
+  letter-spacing: -0.02em;
+}
+.funding-valuation {
+  font-size: .82rem;
+  color: var(--tc-muted);
+  margin-top: 2px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 32px 16px;
+  font-size: .78rem;
+  color: var(--tc-muted);
+  border-top: 1px solid var(--tc-border);
+  margin-top: 20px;
+}
+.footer a { color: var(--tc-muted); text-decoration: underline; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .dpdp-countdown { flex-direction: column; text-align: center; }
+  .tab-btn { padding: 12px 14px; font-size: .8rem; }
+  .header-meta { font-size: .75rem; }
+}
+@media (max-width: 480px) {
+  .stat-row { grid-template-columns: 1fr; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* ===== Utility ===== */
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.text-muted { color: var(--tc-muted); }
+.text-sm { font-size: .82rem; }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">Team Counsel <span>/ GTM Intelligence</span></a>
+    <div class="header-meta">
+      <span class="live-dot"></span>
+      <span>Oct 5, 2026</span>
+      <span>&middot;</span>
+      <span>Daily Brief</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== TAB NAV ===== -->
+<nav class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="outbound">Outbound</button>
+    <button class="tab-btn" data-tab="inbound">Inbound</button>
+    <button class="tab-btn" data-tab="pr">P &amp; R</button>
+    <button class="tab-btn" data-tab="partnerships">Partnerships</button>
+    <button class="tab-btn" data-tab="events">Events</button>
+    <button class="tab-btn" data-tab="funding">Funding</button>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- ================================================================ -->
+<!-- TAB 1: OVERVIEW                                                  -->
+<!-- ================================================================ -->
+<section class="tab-panel active" id="tab-overview">
+
+  <!-- Stats Row -->
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-label">Funding Tracked</div>
+      <div class="stat-value">$569M+</div>
+      <div class="stat-delta up">3 deals in 30 days</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Policy Alerts</div>
+      <div class="stat-value">6</div>
+      <div class="stat-delta">DPDP, SEBI, FTC, RBI, FCA, MeitY</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Competitors</div>
+      <div class="stat-value">4 New</div>
+      <div class="stat-delta">Arceus &middot; Vetta &middot; Chamelio &middot; August</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">DPDP Deadline</div>
+      <div class="stat-value" id="dpdp-counter">220</div>
+      <div class="stat-delta">days to May 13, 2027</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Upcoming Events</div>
+      <div class="stat-value">8</div>
+      <div class="stat-delta">Oct&ndash;Nov 2026</div>
+    </div>
+  </div>
+
+  <!-- Market Sentiment Bar -->
+  <div class="sentiment-section">
+    <h3 class="section-title">Market Sentiment &mdash; Legal Tech</h3>
+    <p class="section-subtitle">Click the bar to expand analysis. Based on 30-day signal scan across legal tech, India startup ecosystem, and regulatory landscape.</p>
+    <div class="sentiment-bar-container" onclick="toggleSentiment()">
+      <div class="sentiment-segment positive" style="flex:55">55% Positive</div>
+      <div class="sentiment-segment neutral" style="flex:30">30% Neutral</div>
+      <div class="sentiment-segment negative" style="flex:15">15% Caution</div>
+    </div>
+    <div class="sentiment-legend">
+      <span><span class="sentiment-legend-dot" style="background:var(--tc-green)"></span> Positive</span>
+      <span><span class="sentiment-legend-dot" style="background:var(--tc-amber)"></span> Neutral</span>
+      <span><span class="sentiment-legend-dot" style="background:var(--tc-red)"></span> Caution</span>
+    </div>
+    <div class="sentiment-detail" id="sentiment-detail">
+      <div class="sentiment-detail-panel">
+        <h4 style="color:var(--tc-green)">Positive Signals</h4>
+        <ul>
+          <li><strong>Harvey AI raises $550M at $15.5B</strong> &mdash; largest legal AI round ever, signals massive market confidence <span class="text-muted text-sm">(Sep 9)</span></li>
+          <li><strong>Disney hiring Legal AI Chief</strong> &mdash; enterprise adoption accelerating, restructuring 1,000-person legal team <span class="text-muted text-sm">(Sep 28)</span></li>
+          <li><strong>India Q3 startup funding hits $2.2B</strong> across 210 deals, AI leads at $438M <span class="text-muted text-sm">(Oct 2)</span></li>
+          <li><strong>CLOs gaining C-suite influence</strong> &mdash; ACC survey shows legal departments expanding strategic mandates <span class="text-muted text-sm">(Sep 2026)</span></li>
+          <li><strong>India Inc increasing legal hiring</strong> &mdash; regulatory scrutiny driving in-house team build-out <span class="text-muted text-sm">(Sep 2026)</span></li>
+        </ul>
+      </div>
+      <div class="sentiment-detail-panel">
+        <h4 style="color:var(--tc-amber)">Neutral / Watch</h4>
+        <ul>
+          <li><strong>DPDP Act enforcement T-minus 220 days</strong> &mdash; SDF designations still pending, cross-border rules not notified <span class="text-muted text-sm">(ongoing)</span></li>
+          <li><strong>SEBI Stock Brokers Regulations 2026</strong> &mdash; new compliance framework, effective Nov 1 <span class="text-muted text-sm">(Oct 2026)</span></li>
+          <li><strong>RBI MPC meeting Oct 5&ndash;7</strong> &mdash; rate decision may shift startup funding sentiment <span class="text-muted text-sm">(Oct 5)</span></li>
+        </ul>
+      </div>
+      <div class="sentiment-detail-panel">
+        <h4 style="color:var(--tc-red)">Caution Signals</h4>
+        <ul>
+          <li><strong>AI Value Gap widens</strong> &mdash; 91% of fee earners say firms falling short on AI adoption vs. promises <span class="text-muted text-sm">(Sep 30)</span></li>
+          <li><strong>New model-firm competitors emerging</strong> &mdash; Arceus (CounselOS), Vetta (fixed-fee), August (AI agents) enter the space <span class="text-muted text-sm">(Sep&ndash;Oct)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DPDP Countdown Banner -->
+  <div class="dpdp-countdown">
+    <div>
+      <div class="dpdp-countdown-label">DPDP Act Compliance Deadline</div>
+      <div class="dpdp-countdown-sub">Digital Personal Data Protection Act, 2023 &mdash; full enforcement date</div>
+    </div>
+    <div class="dpdp-days" id="dpdp-days-main">220 <small>days remaining</small></div>
+  </div>
+
+  <!-- Top Signals -->
+  <h3 class="section-title">Top Signals This Week</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Harvey AI Closes $550M Series E</div>
+        <span class="tag tag-green">Funding</span>
+      </div>
+      <div class="card-body">
+        Largest-ever legal AI funding round at $15.5B valuation. Led by Diffusion Capital with Lightspeed and existing investors. Harvey now serves over 4,000 professional organizations globally. Signals massive enterprise appetite for legal AI.
+      </div>
+      <div class="card-footer">
+        <span>Sep 9, 2026</span>
+        <a href="https://www.harvey.ai/blog/series-e" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Disney Seeks Legal AI Chief</div>
+        <span class="tag tag-purple">Enterprise</span>
+      </div>
+      <div class="card-body">
+        Disney restructuring its 1,000-person legal division and actively hiring a Legal AI Chief. Major signal of enterprise-scale AI adoption in legal departments. This validates TC's CAAS and LD&T service lines for enterprise-grade legal ops transformation.
+      </div>
+      <div class="card-footer">
+        <span>Sep 28, 2026</span>
+        <a href="https://www.artificiallawyer.com/2026/09/28/disney-seeks-legal-ai-chief-to-reshape-1000-person-legal-team/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Arceus Raises $17M &mdash; New Model Law Firm</div>
+        <span class="tag tag-red">Competitor</span>
+      </div>
+      <div class="card-body">
+        SF-based Arceus launches "CounselOS" platform with $17M from Greycroft. Offers flat-fee contracts with AI-powered delivery, aiming to be the "AWS for legal services." Direct competitor to TC's ECP and FGC positioning.
+      </div>
+      <div class="card-footer">
+        <span>Oct 1, 2026</span>
+        <a href="https://www.artificiallawyer.com/2026/10/01/arceus-lands-17m-to-build-new-model-law-firm/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">DPBI Operational &mdash; Nov 2026 Active Supervision</div>
+        <span class="tag tag-amber">DPDP</span>
+      </div>
+      <div class="card-body">
+        Data Protection Board of India now operational with adjudicatory powers. Active supervision expected from November 2026. SDF designations and cross-border transfer restrictions still pending notification. 220 days to full enforcement.
+      </div>
+      <div class="card-footer">
+        <span>Oct 2026</span>
+        <a href="https://www.meity.gov.in/data-protection-framework" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- TAB 2: OUTBOUND                                                  -->
+<!-- ================================================================ -->
+<section class="tab-panel" id="tab-outbound">
+  <h3 class="section-title">Outbound Intelligence &mdash; Prospects &amp; ICP Signals</h3>
+  <p class="section-subtitle">Companies and sectors showing buying signals aligned with TC's service lines (ECP, FGC, CAAS, LD&T).</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-label">India Q3 Funding</div>
+      <div class="stat-value">$2.2B</div>
+      <div class="stat-delta up">210 deals, AI leading at $438M</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">ICP Match: ECP</div>
+      <div class="stat-value">Angel&ndash;Series A</div>
+      <div class="stat-delta">India-primary startups needing incorporation + compliance</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">ICP Match: CAAS</div>
+      <div class="stat-value">Series B+</div>
+      <div class="stat-delta">US-primary, need ongoing compliance-as-a-service</div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Prospect Signals &mdash; Funding Announcements (ICP Match)</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">India AI Startups &mdash; $438M in Q3 2026</div>
+        <span class="tag tag-green">ECP / FGC</span>
+      </div>
+      <div class="card-body">
+        AI led India's Q3 2026 startup funding with $438M across multiple deals. Early-stage AI companies forming in India present strong ECP prospects &mdash; they need entity structuring, founder agreements, IP protection, and DPDP compliance from day one.
+      </div>
+      <div class="action-signal">&#127919; Action: Source newly funded AI startups from Inc42/Tracxn for outreach</div>
+      <div class="card-footer">
+        <span>Oct 2, 2026</span>
+        <a href="https://inc42.com/features/indian-startup-funding-q3-2026/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Harvey AI &mdash; Now at $15.5B Valuation</div>
+        <span class="tag tag-blue">LD&T / CAAS</span>
+      </div>
+      <div class="card-body">
+        Harvey's $550M raise makes it the most valuable legal AI company globally. Serves 4,000+ professional organizations. As legal AI adoption accelerates, companies deploying Harvey need compliance frameworks, vendor contracts, and data governance policies &mdash; TC's LD&T sweet spot.
+      </div>
+      <div class="action-signal">&#127919; Action: Target Harvey's enterprise customers for DPDP/data governance advisory</div>
+      <div class="card-footer">
+        <span>Sep 9, 2026</span>
+        <a href="https://www.harvey.ai/blog/series-e" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">India Inc Legal Hiring Surge</div>
+        <span class="tag tag-green">CAAS</span>
+      </div>
+      <div class="card-body">
+        Growing regulatory scrutiny driving India Inc to expand in-house legal teams. Companies with 50&ndash;200 employees adding first legal hires are prime CAAS prospects &mdash; they need ongoing compliance support without full-time GC costs.
+      </div>
+      <div class="action-signal">&#127919; Action: Target companies posting first legal/compliance job listings</div>
+      <div class="card-footer">
+        <span>Sep 2026</span>
+        <a href="https://whalesbook.com/india-inc-legal-hiring-2026" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">CLOs Moving to C-Suite &mdash; ACC Survey</div>
+        <span class="tag tag-purple">LD&T</span>
+      </div>
+      <div class="card-body">
+        Association of Corporate Counsel survey shows CLOs gaining strategic influence at board level. Legal departments transforming from cost centers to business enablers. TC's LD&T offering &mdash; legal department design and technology transformation &mdash; aligns directly with this trend.
+      </div>
+      <div class="action-signal">&#127919; Action: Create thought leadership content on legal ops transformation</div>
+      <div class="card-footer">
+        <span>Sep 2026</span>
+        <a href="https://www.acc.com/clo-survey-2026" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title">SEBI &amp; Financial Services &mdash; Compliance Wave</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">SEBI Stock Brokers Regulations 2026</div>
+        <span class="tag tag-amber">Regulatory</span>
+      </div>
+      <div class="card-body">
+        New SEBI regulations for stock brokers effective November 1, 2026. Consolidates and updates compliance requirements. Financial services firms and fintechs need compliance audits, policy updates, and regulatory filings &mdash; strong FGC/CAAS prospects.
+      </div>
+      <div class="action-signal">&#127919; Action: Outreach to fintechs and broking firms pre-Nov 1 deadline</div>
+      <div class="card-footer">
+        <span>Oct 2026</span>
+        <a href="https://www.mondaq.com/india/fin-tech/sebi-stock-brokers-regulations-2026" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">UK FCA Crypto Authorization Gateway</div>
+        <span class="tag tag-blue">FGC</span>
+      </div>
+      <div class="card-body">
+        UK FCA opened crypto firm authorization applications Sep 30, 2026. Indian Web3 companies expanding to UK market need cross-border regulatory advice, entity setup, and FCA application support &mdash; TC's FGC service line.
+      </div>
+      <div class="action-signal">&#127919; Action: Target Indian crypto/Web3 firms seeking UK expansion</div>
+      <div class="card-footer">
+        <span>Sep 30, 2026</span>
+        <a href="https://www.fca.org.uk/firms/cryptoasset-businesses" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- TAB 3: INBOUND                                                   -->
+<!-- ================================================================ -->
+<section class="tab-panel" id="tab-inbound">
+  <h3 class="section-title">Inbound Intelligence &mdash; Content &amp; Thought Leadership</h3>
+  <p class="section-subtitle">Market signals and topics for content creation, SEO, and thought leadership positioning.</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-label">Trending Topic</div>
+      <div class="stat-value">DPDP</div>
+      <div class="stat-delta">220 days to enforcement</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Content Gap</div>
+      <div class="stat-value">AI + Legal</div>
+      <div class="stat-delta">Enterprise adoption guides needed</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Thomson Reuters</div>
+      <div class="stat-value">SCLR 2026</div>
+      <div class="stat-delta">State of Corporate Law Departments report</div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Content Opportunities</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">DPDP Compliance Readiness Guide</div>
+        <span class="tag tag-green">High Priority</span>
+      </div>
+      <div class="card-body">
+        With 220 days until full DPDP enforcement and SDF designations still pending, there's a massive content gap for practical compliance guides. Topics: consent management, data processing agreements, cross-border transfer mechanisms, DPBI complaint handling. Positions TC as the go-to DPDP advisory.
+      </div>
+      <div class="action-signal">&#127919; Publish: "DPDP Act &mdash; 220-Day Compliance Countdown Checklist"</div>
+      <div class="card-footer">
+        <span>Urgency: High</span>
+        <a href="https://www.meity.gov.in/data-protection-framework" target="_blank" rel="noopener">Reference &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">AI Value Gap &mdash; What Legal Teams Actually Need</div>
+        <span class="tag tag-purple">Thought Leadership</span>
+      </div>
+      <div class="card-body">
+        91% of fee earners say organizations are falling short on AI adoption. The gap between AI promise and delivery is widening. TC can position itself as the firm that bridges this gap &mdash; not selling AI tools, but the legal frameworks, governance policies, and change management around AI adoption.
+      </div>
+      <div class="action-signal">&#127919; Publish: "Beyond the AI Hype: What Legal Teams Actually Need in 2027"</div>
+      <div class="card-footer">
+        <span>Sep 30, 2026</span>
+        <a href="https://www.artificiallawyer.com/2026/09/30/ai-value-gap/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Disney Legal Transformation Case Study</div>
+        <span class="tag tag-blue">Case Study</span>
+      </div>
+      <div class="card-body">
+        Disney's search for a Legal AI Chief to reshape its 1,000-person team is the highest-profile example of enterprise legal transformation. Use this as a case study anchor for TC's LD&T pitch &mdash; "If Disney is restructuring, shouldn't your legal department be ready too?"
+      </div>
+      <div class="action-signal">&#127919; Publish: LinkedIn post series on enterprise legal transformation</div>
+      <div class="card-footer">
+        <span>Sep 28, 2026</span>
+        <a href="https://www.artificiallawyer.com/2026/09/28/disney-seeks-legal-ai-chief-to-reshape-1000-person-legal-team/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">SEBI Nov 1 Compliance &mdash; Fintech Advisory</div>
+        <span class="tag tag-amber">Timely</span>
+      </div>
+      <div class="card-body">
+        SEBI Stock Brokers Regulations 2026 take effect Nov 1. Create a regulatory alert and compliance checklist targeting fintechs and broking firms. Include Project Jagrook investor education requirements. Time-sensitive content with clear conversion path.
+      </div>
+      <div class="action-signal">&#127919; Publish: "SEBI 2026 Compliance Alert &mdash; What Fintechs Must Do Before Nov 1"</div>
+      <div class="card-footer">
+        <span>Deadline: Nov 1, 2026</span>
+        <a href="https://www.mondaq.com/india/fin-tech/sebi-stock-brokers-regulations-2026" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">FTC AI Accuracy &mdash; US Compliance for Indian SaaS</div>
+        <span class="tag tag-blue">Cross-Border</span>
+      </div>
+      <div class="card-body">
+        FTC's AI Accuracy Policy Statement impacts any Indian SaaS company serving US customers. Content opportunity: guide on FTC AI compliance for Indian startups selling into the US market. Ties into TC's FGC cross-border advisory.
+      </div>
+      <div class="action-signal">&#127919; Publish: "FTC AI Rules: What Indian SaaS Founders Need to Know"</div>
+      <div class="card-footer">
+        <span>Jul 2026</span>
+        <a href="https://www.ftc.gov/legal-library/browse/policy-statements/ai-accuracy" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">State of Corporate Law Departments 2026</div>
+        <span class="tag tag-purple">Report</span>
+      </div>
+      <div class="card-body">
+        Thomson Reuters' annual report highlights trends in legal ops, technology adoption, and department restructuring. Create a commentary post positioning TC's services against the report's findings &mdash; especially around compliance costs and outside counsel management.
+      </div>
+      <div class="action-signal">&#127919; Publish: Commentary on Thomson Reuters SCLR 2026 findings</div>
+      <div class="card-footer">
+        <span>Sep 2026</span>
+        <a href="https://www.thomsonreuters.com/en/reports/state-of-corporate-law-departments.html" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- TAB 4: P & R (Policy & Regulatory)                               -->
+<!-- ================================================================ -->
+<section class="tab-panel" id="tab-pr">
+  <h3 class="section-title">Policy &amp; Regulatory Intelligence</h3>
+  <p class="section-subtitle">Regulatory changes impacting TC's clients and service lines. Last 30 days.</p>
+
+  <!-- DPDP Countdown -->
+  <div class="dpdp-countdown">
+    <div>
+      <div class="dpdp-countdown-label">DPDP Act &mdash; Full Enforcement Countdown</div>
+      <div class="dpdp-countdown-sub">Target: May 13, 2027 &middot; SDF designations pending &middot; Cross-border rules pending</div>
+    </div>
+    <div class="dpdp-days">220 <small>days</small></div>
+  </div>
+
+  <h3 class="section-title">DPDP Act Tracker</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">DPBI Now Operational</div>
+        <span class="tag tag-green">Active</span>
+      </div>
+      <div class="card-body">
+        The Data Protection Board of India is now operational with adjudicatory powers. Active supervision of data fiduciaries expected to commence November 2026. Companies should prepare complaint response mechanisms and data breach notification protocols.
+      </div>
+      <div class="card-footer">
+        <span>Oct 2026</span>
+        <a href="https://www.meity.gov.in/data-protection-framework" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">SDF Designation &mdash; Still Pending</div>
+        <span class="tag tag-amber">Pending</span>
+      </div>
+      <div class="card-body">
+        Significant Data Fiduciary (SDF) designation criteria and list have not yet been notified by MeitY. SDFs face stricter obligations including DPO appointment, periodic audits, and DPIA requirements. Uncertainty creates advisory opportunity for TC &mdash; help clients prepare regardless.
+      </div>
+      <div class="card-footer">
+        <span>Status as of Oct 5, 2026</span>
+        <a href="https://www.meity.gov.in/data-protection-framework" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Cross-Border Data Transfer Rules &mdash; Not Notified</div>
+        <span class="tag tag-amber">Pending</span>
+      </div>
+      <div class="card-body">
+        Restrictions on cross-border transfer of personal data under Section 16 have not yet been notified. Government expected to publish a negative list of countries. Indian companies with global operations should prepare data mapping and transfer impact assessments now.
+      </div>
+      <div class="card-footer">
+        <span>Status as of Oct 5, 2026</span>
+        <a href="https://www.meity.gov.in/data-protection-framework" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title mt-16">Other Regulatory Developments</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">SEBI Stock Brokers Regulations 2026</div>
+        <span class="tag tag-red">Nov 1 Deadline</span>
+      </div>
+      <div class="card-body">
+        New consolidated SEBI regulations for stock brokers take effect November 1, 2026. Includes updated capital adequacy, client segregation, and record-keeping requirements. Project Jagrook mandates investor education initiatives. Fintech and broking firms need compliance overhaul.
+      </div>
+      <div class="card-footer">
+        <span>Oct 2026</span>
+        <a href="https://www.mondaq.com/india/fin-tech/sebi-stock-brokers-regulations-2026" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">FTC AI Accuracy Policy Statement</div>
+        <span class="tag tag-blue">US Federal</span>
+      </div>
+      <div class="card-body">
+        FTC issued policy statement on AI accuracy &mdash; companies making AI-powered decisions must ensure accuracy and prevent consumer harm. Impacts Indian SaaS companies serving US customers. Relevant for TC's FGC clients expanding into US markets.
+      </div>
+      <div class="card-footer">
+        <span>Jul 2026</span>
+        <a href="https://www.ftc.gov/legal-library/browse/policy-statements/ai-accuracy" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">UK FCA Crypto Authorization Opens</div>
+        <span class="tag tag-blue">UK Regulatory</span>
+      </div>
+      <div class="card-body">
+        UK Financial Conduct Authority opened crypto firm authorization applications September 30, 2026. New gateway replaces temporary registration regime. Indian Web3 companies seeking UK market access need FCA application support and compliance frameworks.
+      </div>
+      <div class="card-footer">
+        <span>Sep 30, 2026</span>
+        <a href="https://www.fca.org.uk/firms/cryptoasset-businesses" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">RBI MPC Meeting &mdash; Oct 5&ndash;7, 2026</div>
+        <span class="tag tag-amber">Today</span>
+      </div>
+      <div class="card-body">
+        Reserve Bank of India's Monetary Policy Committee meets October 5&ndash;7. Rate decisions impact startup funding environment, NBFC lending, and fintech operations. Key watch for TC's FGC clients in the fintech space.
+      </div>
+      <div class="card-footer">
+        <span>Oct 5, 2026</span>
+        <a href="https://www.upstox.com/market-talk/rbi-mpc-meeting-oct-2026/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">MeitY IT Intermediary Guidelines &mdash; Amendments</div>
+        <span class="tag tag-blue">India Policy</span>
+      </div>
+      <div class="card-body">
+        MeitY published amendments to IT Intermediary Guidelines in February 2026, with compliance timelines extending into Q4. Social media intermediaries and digital platforms must update terms of service, grievance redressal mechanisms, and content moderation policies.
+      </div>
+      <div class="card-footer">
+        <span>Feb 2026 (compliance ongoing)</span>
+        <a href="https://www.meity.gov.in/intermediary-guidelines" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- TAB 5: PARTNERSHIPS                                              -->
+<!-- ================================================================ -->
+<section class="tab-panel" id="tab-partnerships">
+  <h3 class="section-title">Partnership &amp; Deal Intelligence</h3>
+  <p class="section-subtitle">Specific company leads for partnership, co-sell, and channel opportunities.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Legora &times; Consilio &mdash; Formalized Partnership</div>
+        <span class="tag tag-green">Legal Tech</span>
+      </div>
+      <div class="card-body">
+        AI legal research firm Legora formalized a strategic partnership with Consilio (Trident-backed, 4,000+ employees). Combined offering: AI-powered legal research + managed review services. This model validates bundling AI tools with professional services &mdash; TC should explore similar co-sell arrangements with legal tech vendors.
+      </div>
+      <div class="action-signal">&#127919; Opportunity: Approach Legora for India-market partnership</div>
+      <div class="card-footer">
+        <span>Sep 9, 2026</span>
+        <a href="https://finance.yahoo.com/news/legora-consilio-partnership-2026/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">OpenAI Astra for Law &mdash; Platform Launch</div>
+        <span class="tag tag-purple">AI Platform</span>
+      </div>
+      <div class="card-body">
+        OpenAI launched "Astra for Law" &mdash; a dedicated legal AI platform with contract analysis, case research, and compliance checking. Early access partners include AmLaw 100 firms. TC should evaluate as a technology partner &mdash; either reselling to clients or building advisory services around deployment.
+      </div>
+      <div class="action-signal">&#127919; Opportunity: Apply for Astra for Law early access / partnership program</div>
+      <div class="card-footer">
+        <span>Sep 18, 2026</span>
+        <a href="https://www.artificiallawyer.com/2026/09/18/openai-launches-astra-for-law/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Big Four Double Partner Ranks in India</div>
+        <span class="tag tag-amber">Market Shift</span>
+      </div>
+      <div class="card-body">
+        Big Four accounting firms have doubled their partner ranks in India over the past 2 years, aggressively expanding legal and compliance advisory. This is both a competitive threat (they're entering TC's space) and a partnership opportunity (they need specialized legal execution capacity they don't have in-house).
+      </div>
+      <div class="action-signal">&#127919; Opportunity: Pitch white-label legal execution to Big Four India teams</div>
+      <div class="card-footer">
+        <span>Sep 2026</span>
+        <a href="https://whalesbook.com/big-four-india-partners-2026" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Chamelio &mdash; AI Agent Hub for In-House Legal</div>
+        <span class="tag tag-blue">Tech Partner</span>
+      </div>
+      <div class="card-body">
+        Chamelio launched an AI agent marketplace specifically for in-house legal teams &mdash; compliance bots, contract review agents, and regulatory monitoring. Rather than competing, TC could partner: provide the legal expertise layer behind Chamelio's AI agents for the Indian market.
+      </div>
+      <div class="action-signal">&#127919; Opportunity: Explore content/expert partnership with Chamelio</div>
+      <div class="card-footer">
+        <span>Sep 8, 2026</span>
+        <a href="https://www.artificiallawyer.com/2026/09/08/chamelio-ai-agent-hub-legal/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">August &mdash; AI Agents Connecting to Lawyers</div>
+        <span class="tag tag-blue">Tech Partner</span>
+      </div>
+      <div class="card-body">
+        August's platform uses AI agents to triage legal inquiries and connect businesses with appropriate legal professionals. Raised undisclosed seed round. For TC, this could serve as a lead generation channel &mdash; integrate as a listed provider on August's platform for startup legal needs.
+      </div>
+      <div class="action-signal">&#127919; Opportunity: Register as legal service provider on August platform</div>
+      <div class="card-footer">
+        <span>Sep 29, 2026</span>
+        <a href="https://www.artificiallawyer.com/2026/09/29/august-ai-agents-connecting-lawyers/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Falcon &mdash; Ex-Allen &amp; Overy Backed Legal AI</div>
+        <span class="tag tag-green">Legal AI</span>
+      </div>
+      <div class="card-body">
+        Falcon raised ~&euro;1.5M, backed by Wim Dejonghe (former managing partner of Allen &amp; Overy). Building AI tools for mid-market law firms. TC could pilot Falcon's tools for its own operations or co-develop India-specific modules.
+      </div>
+      <div class="action-signal">&#127919; Opportunity: Reach out to Falcon for India pilot partnership</div>
+      <div class="card-footer">
+        <span>Oct 2, 2026</span>
+        <a href="https://www.artificiallawyer.com/2026/10/02/falcon-legal-ai-dejonghe/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- TAB 6: EVENTS                                                    -->
+<!-- ================================================================ -->
+<section class="tab-panel" id="tab-events">
+  <h3 class="section-title">Upcoming Events &mdash; Oct&ndash;Dec 2026</h3>
+  <p class="section-subtitle">Conferences, summits, and meetups relevant to TC's GTM. Check events you plan to attend.</p>
+
+  <!-- Event Filters -->
+  <div class="filter-bar" id="event-filters">
+    <button class="filter-btn active" data-filter="all" data-group="event-type">All Events</button>
+    <button class="filter-btn" data-filter="conference" data-group="event-type">Conferences</button>
+    <button class="filter-btn" data-filter="summit" data-group="event-type">Summits</button>
+    <button class="filter-btn" data-filter="meetup" data-group="event-type">Meetups</button>
+  </div>
+  <div class="filter-bar" id="city-filters">
+    <button class="filter-btn active" data-filter="all" data-group="event-city">All Cities</button>
+    <button class="filter-btn" data-filter="bengaluru" data-group="event-city">Bengaluru</button>
+    <button class="filter-btn" data-filter="mumbai" data-group="event-city">Mumbai</button>
+  </div>
+
+  <div class="card-grid" id="events-grid">
+    <!-- Event 1 -->
+    <div class="card event-card" data-type="conference" data-city="bengaluru">
+      <div class="card-header">
+        <div class="card-title">Cypher 2026</div>
+        <span class="tag tag-dark">Oct 7&ndash;9</span>
+      </div>
+      <div class="card-body">
+        <div class="event-check">
+          <input type="checkbox" id="evt-cypher" onchange="saveEventCheck(this)">
+          <label for="evt-cypher">
+            <strong>India's largest AI &amp; data science conference.</strong> KTPO, Bengaluru. &#8377;20,000. Organized by AIM (Analytics India Magazine). Top opportunity to connect with AI startup founders and enterprise AI teams. <br><em>TC Angle: Legal AI booth or speaking slot on DPDP compliance for AI companies.</em>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>KTPO, Bengaluru</span>
+        <a href="https://cypher.analyticsindiamag.com/" target="_blank" rel="noopener">Register &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="card event-card" data-type="summit" data-city="bengaluru">
+      <div class="card-header">
+        <div class="card-title">VC World Summit 2026</div>
+        <span class="tag tag-dark">Oct 7</span>
+      </div>
+      <div class="card-body">
+        <div class="event-check">
+          <input type="checkbox" id="evt-vcworld" onchange="saveEventCheck(this)">
+          <label for="evt-vcworld">
+            <strong>Global VC gathering &mdash; networking with investors and founders.</strong> COWRKS, Bengaluru. From $157. Connects VCs, angels, and high-growth startups. <br><em>TC Angle: Network with funded startups for ECP/FGC pipeline. Meet VCs who refer portfolio companies.</em>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>COWRKS, Bengaluru</span>
+        <a href="https://vcworldsummit.com/" target="_blank" rel="noopener">Register &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="card event-card" data-type="conference" data-city="mumbai">
+      <div class="card-header">
+        <div class="card-title">Global Business Conclave 2026</div>
+        <span class="tag tag-dark">Oct 8</span>
+      </div>
+      <div class="card-body">
+        <div class="event-check">
+          <input type="checkbox" id="evt-gbc" onchange="saveEventCheck(this)">
+          <label for="evt-gbc">
+            <strong>Business leadership summit for CXOs and entrepreneurs.</strong> Mumbai. Focus on growth, scaling, and market expansion. <br><em>TC Angle: Connect with scaling businesses needing compliance and corporate governance advisory.</em>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Mumbai</span>
+        <a href="https://globalbusinessconclave.com/" target="_blank" rel="noopener">Details &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="card event-card" data-type="conference" data-city="bengaluru">
+      <div class="card-header">
+        <div class="card-title">TechSparks 2026</div>
+        <span class="tag tag-dark">Oct 13&ndash;15</span>
+      </div>
+      <div class="card-body">
+        <div class="event-check">
+          <input type="checkbox" id="evt-techsparks" onchange="saveEventCheck(this)">
+          <label for="evt-techsparks">
+            <strong>YourStory's flagship startup-tech conference.</strong> Bengaluru. 10,000+ attendees. India's premier startup ecosystem event &mdash; founders, investors, and ecosystem players. <br><em>TC Angle: High-density networking for ECP prospects. Consider sponsoring the "Legal &amp; Compliance" track.</em>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Bengaluru</span>
+        <a href="https://yourstory.com/techsparks" target="_blank" rel="noopener">Register &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Event 5 -->
+    <div class="card event-card" data-type="conference" data-city="mumbai">
+      <div class="card-header">
+        <div class="card-title">India Blockchain Week 2026</div>
+        <span class="tag tag-dark">Nov 1&ndash;2</span>
+      </div>
+      <div class="card-body">
+        <div class="event-check">
+          <input type="checkbox" id="evt-ibw" onchange="saveEventCheck(this)">
+          <label for="evt-ibw">
+            <strong>India's largest Web3 and blockchain conference.</strong> Fairmont, Mumbai. Brings together crypto founders, DeFi builders, and regulators. <br><em>TC Angle: Strong FGC pipeline &mdash; Web3 founders need token structuring, DAO governance, FCA/SEBI compliance.</em>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Fairmont, Mumbai</span>
+        <a href="https://indiablockchainweek.com/" target="_blank" rel="noopener">Register &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Event 6 -->
+    <div class="card event-card" data-type="summit" data-city="bengaluru">
+      <div class="card-header">
+        <div class="card-title">Bengaluru Tech Summit 2026</div>
+        <span class="tag tag-dark">Nov 17&ndash;19</span>
+      </div>
+      <div class="card-body">
+        <div class="event-check">
+          <input type="checkbox" id="evt-bts" onchange="saveEventCheck(this)">
+          <label for="evt-bts">
+            <strong>Karnataka's flagship tech event &mdash; "AI &amp; Beyond" theme.</strong> BIEC, Bengaluru. Government-backed, brings together tech companies, policymakers, and investors. <br><em>TC Angle: Connect with government-adjacent tech companies needing compliance advisory. Panel opportunity on DPDP.</em>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>BIEC, Bengaluru</span>
+        <a href="https://bengalurutechsummit.com/" target="_blank" rel="noopener">Register &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Event 7 -->
+    <div class="card event-card" data-type="meetup" data-city="mumbai">
+      <div class="card-header">
+        <div class="card-title">StartupLive Mumbai</div>
+        <span class="tag tag-dark">Nov 20&ndash;21</span>
+      </div>
+      <div class="card-body">
+        <div class="event-check">
+          <input type="checkbox" id="evt-slmumbai" onchange="saveEventCheck(this)">
+          <label for="evt-slmumbai">
+            <strong>Startup pitch and networking event.</strong> Mumbai. Early-stage founders and angel investors. Hands-on format &mdash; startups pitch live and get real-time feedback. <br><em>TC Angle: Sponsor or mentor &mdash; high-quality ECP lead generation among pre-seed and seed startups.</em>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Mumbai</span>
+        <a href="https://startuplive.in/mumbai" target="_blank" rel="noopener">Details &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Event 8 -->
+    <div class="card event-card" data-type="conference" data-city="bengaluru">
+      <div class="card-header">
+        <div class="card-title">ALB Legal &amp; Technology Conference</div>
+        <span class="tag tag-dark">Nov 2026</span>
+      </div>
+      <div class="card-body">
+        <div class="event-check">
+          <input type="checkbox" id="evt-alb" onchange="saveEventCheck(this)">
+          <label for="evt-alb">
+            <strong>Asian Legal Business conference on legal technology.</strong> Bengaluru. Focused on legal tech adoption, in-house counsel transformation, and law firm innovation. <br><em>TC Angle: Direct audience of GCs and legal ops heads &mdash; ideal for LD&T and CAAS pitches.</em>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span>Bengaluru</span>
+        <a href="https://www.legalbusinessonline.com/events" target="_blank" rel="noopener">Details &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- TAB 7: FUNDING                                                   -->
+<!-- ================================================================ -->
+<section class="tab-panel" id="tab-funding">
+  <h3 class="section-title">Funding Intelligence &mdash; Legal Tech &amp; Ecosystem</h3>
+  <p class="section-subtitle">Funding rounds in the last 30 days relevant to TC's market. All deals verified within Sep 5 &ndash; Oct 5, 2026 window.</p>
+
+  <!-- Funding Filters -->
+  <div class="filter-bar" id="funding-filters">
+    <button class="filter-btn active" data-filter="all" data-group="funding-geo">All Geographies</button>
+    <button class="filter-btn" data-filter="us" data-group="funding-geo">US</button>
+    <button class="filter-btn" data-filter="india" data-group="funding-geo">India</button>
+    <button class="filter-btn" data-filter="europe" data-group="funding-geo">Europe</button>
+  </div>
+  <div class="filter-bar" id="stage-filters">
+    <button class="filter-btn active" data-filter="all" data-group="funding-stage">All Stages</button>
+    <button class="filter-btn" data-filter="seed" data-group="funding-stage">Seed</button>
+    <button class="filter-btn" data-filter="series-a" data-group="funding-stage">Series A</button>
+    <button class="filter-btn" data-filter="growth" data-group="funding-stage">Growth / Late</button>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-label">Total Tracked (30d)</div>
+      <div class="stat-value">$569M+</div>
+      <div class="stat-delta">3 legal tech deals</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Largest Round</div>
+      <div class="stat-value">$550M</div>
+      <div class="stat-delta">Harvey AI &mdash; Series E</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">India Ecosystem</div>
+      <div class="stat-value">$2.2B</div>
+      <div class="stat-delta">210 deals in Q3 2026</div>
+    </div>
+  </div>
+
+  <div class="card-grid" id="funding-grid">
+    <!-- Funding 1: Harvey -->
+    <div class="card funding-card" data-geo="us" data-stage="growth">
+      <div class="card-header">
+        <div class="card-title">Harvey AI</div>
+        <span class="tag tag-green">Series E</span>
+      </div>
+      <div class="funding-amount">$550M</div>
+      <div class="funding-valuation">$15.5B valuation</div>
+      <div class="card-body mt-8">
+        Largest-ever legal AI funding round. Led by Diffusion Capital with Lightspeed Venture Partners. Harvey serves 4,000+ professional organizations globally with AI-powered legal work. The round validates the legal AI market at enterprise scale.
+      </div>
+      <div class="action-signal">&#127919; Signal: Enterprise legal AI demand proven. Target Harvey customers for compliance/governance advisory. TC's LD&T can help enterprises build frameworks around Harvey deployment.</div>
+      <div class="card-footer">
+        <span>Sep 9, 2026 &middot; San Francisco</span>
+        <a href="https://www.harvey.ai/blog/series-e" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Funding 2: Arceus -->
+    <div class="card funding-card" data-geo="us" data-stage="series-a">
+      <div class="card-header">
+        <div class="card-title">Arceus</div>
+        <span class="tag tag-green">Series A</span>
+      </div>
+      <div class="funding-amount">$17M</div>
+      <div class="funding-valuation">Greycroft-led</div>
+      <div class="card-body mt-8">
+        New model law firm building "CounselOS" &mdash; a platform for flat-fee contract work powered by AI. Aims to be the "AWS for legal services." Direct competitor to TC's ECP and FGC model. Watch closely for market expansion and India entry.
+      </div>
+      <div class="action-signal">&#127919; Signal: Validate TC's own AI-powered legal ops positioning. Differentiate with India-specific expertise, DPDP compliance, and cross-border advisory that Arceus won't have.</div>
+      <div class="card-footer">
+        <span>Oct 1, 2026 &middot; San Francisco</span>
+        <a href="https://www.artificiallawyer.com/2026/10/01/arceus-lands-17m-to-build-new-model-law-firm/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Funding 3: Falcon -->
+    <div class="card funding-card" data-geo="europe" data-stage="seed">
+      <div class="card-header">
+        <div class="card-title">Falcon</div>
+        <span class="tag tag-blue">Seed</span>
+      </div>
+      <div class="funding-amount">~&euro;1.5M</div>
+      <div class="funding-valuation">Backed by Wim Dejonghe (ex-Allen &amp; Overy)</div>
+      <div class="card-body mt-8">
+        Legal AI startup backed by former A&amp;O managing partner. Building AI tools for mid-market law firms. The pedigree of the backer signals institutional confidence in AI-first legal service delivery.
+      </div>
+      <div class="action-signal">&#127919; Signal: Mid-market legal AI is a validated category. TC could pilot Falcon's tools or explore partnership for India market.</div>
+      <div class="card-footer">
+        <span>Oct 2, 2026 &middot; Europe</span>
+        <a href="https://www.artificiallawyer.com/2026/10/02/falcon-legal-ai-dejonghe/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+
+    <!-- India Ecosystem -->
+    <div class="card funding-card" data-geo="india" data-stage="growth">
+      <div class="card-header">
+        <div class="card-title">India Startup Ecosystem &mdash; Q3 2026</div>
+        <span class="tag tag-purple">Ecosystem</span>
+      </div>
+      <div class="funding-amount">$2.2B</div>
+      <div class="funding-valuation">210 deals &middot; AI leads at $438M</div>
+      <div class="card-body mt-8">
+        India's Q3 2026 startup funding across 210 deals. AI/ML sector led with $438M. SaaS, fintech, and healthtech also strong. Signals robust ECP pipeline &mdash; newly funded startups need entity structuring, compliance frameworks, and investment documentation.
+      </div>
+      <div class="action-signal">&#127919; Signal: Source Q3-funded Indian startups from Inc42/Tracxn for targeted ECP outreach. Focus on AI, SaaS, and fintech verticals.</div>
+      <div class="card-footer">
+        <span>Q3 2026 &middot; India</span>
+        <a href="https://inc42.com/features/indian-startup-funding-q3-2026/" target="_blank" rel="noopener">Source &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>Team Counsel GTM Intelligence Dashboard &middot; Generated Oct 5, 2026 &middot; Data window: Sep 5 &ndash; Oct 5, 2026</p>
+  <p style="margin-top:6px"><a href="archive/">View Past Reports</a></p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+(function() {
+  'use strict';
+
+  // ===== Tab Navigation =====
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      tabBtns.forEach(function(b) { b.classList.remove('active'); });
+      tabPanels.forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      var panel = document.getElementById('tab-' + btn.dataset.tab);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  // ===== Sentiment Bar Toggle =====
+  window.toggleSentiment = function() {
+    var detail = document.getElementById('sentiment-detail');
+    detail.classList.toggle('open');
+  };
+
+  // ===== Filter System =====
+  function setupFilters(groupName) {
+    document.querySelectorAll('[data-group="' + groupName + '"]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-group="' + groupName + '"]').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        applyFilters();
+      });
+    });
+  }
+
+  function getActiveFilter(groupName) {
+    var el = document.querySelector('[data-group="' + groupName + '"].active');
+    return el ? el.dataset.filter : 'all';
+  }
+
+  function applyFilters() {
+    // Event filters
+    var typeVal = getActiveFilter('event-type');
+    var cityVal = getActiveFilter('event-city');
+    document.querySelectorAll('.event-card').forEach(function(card) {
+      var matchType = typeVal === 'all' || card.dataset.type === typeVal;
+      var matchCity = cityVal === 'all' || card.dataset.city === cityVal;
+      card.style.display = (matchType && matchCity) ? '' : 'none';
+    });
+
+    // Funding filters
+    var geoVal = getActiveFilter('funding-geo');
+    var stageVal = getActiveFilter('funding-stage');
+    document.querySelectorAll('.funding-card').forEach(function(card) {
+      var matchGeo = geoVal === 'all' || card.dataset.geo === geoVal;
+      var matchStage = stageVal === 'all' || card.dataset.stage === stageVal;
+      card.style.display = (matchGeo && matchStage) ? '' : 'none';
+    });
+  }
+
+  setupFilters('event-type');
+  setupFilters('event-city');
+  setupFilters('funding-geo');
+  setupFilters('funding-stage');
+
+  // ===== Event Checkbox Persistence (localStorage) =====
+  window.saveEventCheck = function(checkbox) {
+    try {
+      localStorage.setItem('tc-evt-' + checkbox.id, checkbox.checked);
+    } catch(e) { /* localStorage unavailable */ }
+  };
+
+  function loadEventChecks() {
+    try {
+      document.querySelectorAll('.event-card input[type="checkbox"]').forEach(function(cb) {
+        var val = localStorage.getItem('tc-evt-' + cb.id);
+        if (val === 'true') cb.checked = true;
+      });
+    } catch(e) { /* localStorage unavailable */ }
+  }
+  loadEventChecks();
+
+  // ===== DPDP Countdown (live calculation) =====
+  function updateDPDPCountdown() {
+    var target = new Date('2027-05-13T00:00:00+05:30');
+    var now = new Date();
+    var diff = Math.ceil((target - now) / (1000 * 60 * 60 * 24));
+    var counterEl = document.getElementById('dpdp-counter');
+    var mainEl = document.getElementById('dpdp-days-main');
+    if (counterEl) counterEl.textContent = diff;
+    if (mainEl) mainEl.innerHTML = diff + ' <small>days remaining</small>';
+  }
+  updateDPDPCountdown();
+  setInterval(updateDPDPCountdown, 3600000);
+
+})();
+</script>
+</body>
+</html>

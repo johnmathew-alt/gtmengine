@@ -3,201 +3,191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team Counsel — Intelligence Archive</title>
-<link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/6a2bef73200216edf6f8afeb/6a311c309e2742d653afe2f0_favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Team Counsel · Intelligence Archive</title>
+<link rel="icon" href="https://cdn.prod.website-files.com/6a2bef73200216edf6f8afeb/6a311c309e2742d653afe2f0_favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #1e3557;
-  --blue: #3981ca;
-  --lime: #dbe56c;
-  --white: #ffffff;
-  --gray-50: #f8fafc;
-  --gray-100: #f1f5f9;
-  --gray-200: #e2e8f0;
-  --gray-400: #94a3b8;
-  --gray-600: #475569;
-  --gray-800: #1e293b;
+  --tc-lime: #c8e628;
+  --tc-lime-dark: #5f7a1f;
+  --tc-charcoal: #1a1a1a;
+  --tc-light-bg: #fafaf5;
+  --tc-card-bg: #ffffff;
+  --tc-muted: #6b6b6b;
+  --tc-border: #e5e5e0;
+  --radius: 14px;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { margin:0; padding:0; box-sizing:border-box; }
 body {
-  background: var(--gray-50);
-  color: var(--gray-800);
   font-family: 'Figtree', sans-serif;
-  min-height: 100vh;
+  background: var(--tc-light-bg);
+  color: var(--tc-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
+h1,h2,h3 { font-family: 'Sora', sans-serif; }
 .topbar {
-  background: var(--navy);
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,250,245,0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--tc-border);
+  padding: 0 16px;
+}
+.topbar-inner {
+  max-width: 900px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
 }
 .logo {
   font-family: 'Sora', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-.logo-team { color: var(--white); }
-.logo-counsel { color: var(--blue); }
-.topbar-title {
-  font-family: 'Sora', sans-serif;
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 500;
-  margin-left: 16px;
-  opacity: 0.8;
-}
-.topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.topbar a {
-  color: var(--lime);
+  font-weight: 700; font-size: 20px;
+  color: var(--tc-charcoal);
   text-decoration: none;
-  font-size: 0.875rem;
+  display: flex; align-items: center; gap: 8px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--tc-lime);
+  border-radius: 50%;
+}
+.topbar-meta a {
+  font-size: 13px;
+  color: var(--tc-lime-dark);
+  text-decoration: none;
   font-weight: 500;
 }
-.topbar a:hover { text-decoration: underline; }
+.topbar-meta a:hover { text-decoration: underline; }
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 24px;
+  max-width: 900px; margin: 0 auto;
+  padding: 32px 16px 60px;
 }
-h2 {
-  font-family: 'Sora', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-.subtitle {
-  color: var(--gray-600);
-  font-size: 0.95rem;
-  margin-bottom: 32px;
-}
-.archive-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.archive-item {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
-  border-radius: 10px;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+h1 { font-size: 24px; margin-bottom: 6px; }
+.subtitle { font-size: 14px; color: var(--tc-muted); margin-bottom: 32px; }
+.report-card {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--tc-card-bg);
+  border: 1px solid var(--tc-border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-bottom: 12px;
   text-decoration: none;
-  color: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  color: var(--tc-charcoal);
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
 }
-.archive-item:hover {
-  border-color: var(--blue);
-  box-shadow: 0 2px 8px rgba(57,129,202,0.1);
+.report-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
 }
-.archive-item.current {
-  border-left: 4px solid var(--lime);
+.report-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--tc-lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
 }
-.archive-date {
+.report-card:hover::after { transform: scaleX(1); }
+.report-date {
   font-family: 'Sora', sans-serif;
   font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--navy);
+  font-size: 15px;
 }
-.archive-label {
-  font-size: 0.85rem;
-  color: var(--gray-400);
+.report-day {
+  font-size: 13px;
+  color: var(--tc-muted);
   margin-top: 2px;
 }
-.badge {
+.report-arrow {
+  font-size: 18px;
+  color: var(--tc-muted);
+}
+.current-tag {
   display: inline-block;
-  background: var(--lime);
-  color: var(--navy);
-  font-size: 0.7rem;
+  background: #e8f5c8;
+  color: var(--tc-lime-dark);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
   font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin-left: 8px;
-  vertical-align: middle;
+  margin-left: 10px;
 }
-.arrow {
-  color: var(--blue);
-  font-size: 1.25rem;
-}
-.footer {
-  text-align: center;
-  padding: 40px 24px;
-  color: var(--gray-400);
-  font-size: 0.8rem;
-}
-@media (max-width: 480px) {
-  .topbar { flex-wrap: wrap; gap: 8px; }
-  .topbar-title { display: none; }
-  .archive-item { padding: 16px; }
+@media (max-width: 768px) {
+  .report-card { flex-wrap: wrap; gap: 8px; }
 }
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div style="display:flex;align-items:center;">
-    <span class="logo"><span class="logo-team">Team</span><span class="logo-counsel">Counsel</span></span>
-    <span class="topbar-title">Intelligence Archive</span>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Team Counsel</a>
+    <div class="topbar-meta">
+      <a href="/">← Current Report</a>
+    </div>
   </div>
-  <a href="../index.html">← Back to Dashboard</a>
-</div>
-<div class="container">
-  <h2>Past Reports</h2>
-  <p class="subtitle">Browse previous daily intelligence dashboards</p>
-  <div class="archive-list">
-    <a class="archive-item current" href="../index.html">
-      <div>
-        <div class="archive-date">5 October 2026 <span class="badge">LATEST</span></div>
-        <div class="archive-label">Daily Intelligence Report — Current</div>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-    <a class="archive-item" href="2026-10-01.html">
-      <div>
-        <div class="archive-date">1 October 2026</div>
-        <div class="archive-label">Daily Intelligence Report</div>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-    <a class="archive-item" href="2026-09-30.html">
-      <div>
-        <div class="archive-date">30 September 2026</div>
-        <div class="archive-label">Daily Intelligence Report</div>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-    <a class="archive-item" href="2026-09-29.html">
-      <div>
-        <div class="archive-date">29 September 2026</div>
-        <div class="archive-label">Daily Intelligence Report</div>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-    <a class="archive-item" href="2026-09-28.html">
-      <div>
-        <div class="archive-date">28 September 2026</div>
-        <div class="archive-label">Daily Intelligence Report</div>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-    <a class="archive-item" href="2026-09-27.html">
-      <div>
-        <div class="archive-date">27 September 2026</div>
-        <div class="archive-label">Daily Intelligence Report</div>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-  </div>
-</div>
-<div class="footer">
-  Team Counsel OS · Intelligence Archive · Updated daily
-</div>
+</header>
+<main class="container">
+  <h1>Intelligence Archive</h1>
+  <p class="subtitle">Past daily intelligence reports from the Team Counsel Knowledge Engine.</p>
+
+  <a href="/" class="report-card">
+    <div>
+      <div class="report-date">6 October 2026 <span class="current-tag">Current</span></div>
+      <div class="report-day">Tuesday</div>
+    </div>
+    <div class="report-arrow">→</div>
+  </a>
+
+  <a href="/archive/2026-10-05.html" class="report-card">
+    <div>
+      <div class="report-date">5 October 2026</div>
+      <div class="report-day">Monday</div>
+    </div>
+    <div class="report-arrow">→</div>
+  </a>
+
+  <a href="/archive/2026-10-01.html" class="report-card">
+    <div>
+      <div class="report-date">1 October 2026</div>
+      <div class="report-day">Wednesday</div>
+    </div>
+    <div class="report-arrow">→</div>
+  </a>
+
+  <a href="/archive/2026-09-30.html" class="report-card">
+    <div>
+      <div class="report-date">30 September 2026</div>
+      <div class="report-day">Tuesday</div>
+    </div>
+    <div class="report-arrow">→</div>
+  </a>
+
+  <a href="/archive/2026-09-29.html" class="report-card">
+    <div>
+      <div class="report-date">29 September 2026</div>
+      <div class="report-day">Monday</div>
+    </div>
+    <div class="report-arrow">→</div>
+  </a>
+
+  <a href="/archive/2026-09-28.html" class="report-card">
+    <div>
+      <div class="report-date">28 September 2026</div>
+      <div class="report-day">Sunday</div>
+    </div>
+    <div class="report-arrow">→</div>
+  </a>
+
+  <a href="/archive/2026-09-27.html" class="report-card">
+    <div>
+      <div class="report-date">27 September 2026</div>
+      <div class="report-day">Saturday</div>
+    </div>
+    <div class="report-arrow">→</div>
+  </a>
+</main>
 </body>
 </html>
