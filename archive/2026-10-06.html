@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Counsel · Knowledge Engine — 6 Oct 2026</title>
+<meta name="description" content="Daily GTM intelligence dashboard for Team Counsel. Funding, policy, market sentiment, DPDP Act, partnerships, legal tech deals, and events.">
+<link rel="icon" href="https://cdn.prod.website-files.com/6a2bef73200216edf6f8afeb/6a311c309e2742d653afe2f0_favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tc-lime: #c8e628;
+  --tc-lime-dark: #5f7a1f;
+  --tc-charcoal: #1a1a1a;
+  --tc-white: #ffffff;
+  --tc-light-bg: #fafaf5;
+  --tc-card-bg: #ffffff;
+  --tc-muted: #6b6b6b;
+  --tc-border: #e5e5e0;
+  --tc-amber: #8a5c00;
+  --tc-red: #b23b2a;
+  --tc-green: #5f7a1f;
+  --tc-blue: #2563eb;
+  --tc-tag-bg: #f0f0eb;
+  --radius: 14px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Figtree', sans-serif;
+  background: var(--tc-light-bg);
+  color: var(--tc-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4,h5,h6 { font-family: 'Sora', sans-serif; line-height: 1.3; }
+
+/* Topbar */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,250,245,0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--tc-border);
+  padding: 0 16px;
+}
+.topbar-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700; font-size: 20px;
+  color: var(--tc-charcoal);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.logo-dot {
+  width: 10px; height: 10px;
+  background: var(--tc-lime);
+  border-radius: 50%;
+  display: inline-block;
+}
+.topbar-meta {
+  font-size: 13px; color: var(--tc-muted);
+  display: flex; align-items: center; gap: 16px;
+}
+.topbar-meta a {
+  color: var(--tc-lime-dark); text-decoration: none;
+  font-weight: 500;
+}
+.topbar-meta a:hover { text-decoration: underline; }
+
+/* Tab Nav */
+.tab-nav {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 16px;
+  display: flex; gap: 4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px; font-weight: 500;
+  padding: 10px 18px;
+  border: none; background: transparent;
+  color: var(--tc-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.tab-btn:hover { color: var(--tc-charcoal); }
+.tab-btn.active {
+  color: var(--tc-charcoal);
+  border-bottom-color: var(--tc-lime);
+}
+
+/* Container */
+.container {
+  max-width: 1200px; margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+/* Cards */
+.card {
+  background: var(--tc-card-bg);
+  border: 1px solid var(--tc-border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+.card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--tc-lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.card:hover::after { transform: scaleX(1); }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.card-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px; font-weight: 600;
+  margin-bottom: 6px;
+}
+.card-title a {
+  color: var(--tc-charcoal);
+  text-decoration: none;
+}
+.card-title a:hover { text-decoration: underline; }
+.card-body {
+  font-size: 14px; color: #444;
+  margin-bottom: 10px;
+}
+.card-meta {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; color: var(--tc-muted);
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-block;
+  background: var(--tc-tag-bg);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--tc-charcoal);
+}
+.tag-lime { background: #e8f5c8; color: var(--tc-lime-dark); }
+.tag-amber { background: #fef3cd; color: var(--tc-amber); }
+.tag-red { background: #fde8e4; color: var(--tc-red); }
+.tag-blue { background: #dbeafe; color: var(--tc-blue); }
+
+/* Section headers */
+.section-header {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px; font-weight: 600;
+  margin: 32px 0 6px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-sub {
+  font-size: 13px; color: var(--tc-muted);
+  margin-bottom: 10px;
+}
+
+/* Stat row */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.stat-card {
+  background: var(--tc-card-bg);
+  border: 1px solid var(--tc-border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-val {
+  font-family: 'Sora', sans-serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--tc-lime-dark);
+}
+.stat-label {
+  font-size: 12px; color: var(--tc-muted);
+  margin-top: 4px;
+}
+
+/* Sentiment bars */
+.sentiment-bar {
+  display: flex; height: 28px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.sentiment-bar > div {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600;
+  color: #fff;
+  transition: flex 0.3s;
+}
+.sentiment-bar .s-green { background: var(--tc-green); }
+.sentiment-bar .s-amber { background: var(--tc-amber); }
+.sentiment-bar .s-red { background: var(--tc-red); }
+.sentiment-detail {
+  display: none;
+  padding: 12px 16px;
+  background: #f7f7f2;
+  border-radius: 0 0 10px 10px;
+  margin-top: -4px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.sentiment-detail.open { display: block; }
+
+/* DPDP Countdown */
+.dpdp-box {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.dpdp-days {
+  font-family: 'Sora', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--tc-lime);
+  line-height: 1;
+}
+.dpdp-label {
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 4px;
+}
+.dpdp-info { font-size: 14px; max-width: 500px; }
+.dpdp-info strong { color: var(--tc-lime); }
+
+/* Filters */
+.filter-bar {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin: 16px 0;
+}
+.filter-btn {
+  font-family: 'Figtree', sans-serif;
+  font-size: 12px; font-weight: 500;
+  padding: 6px 14px;
+  border: 1px solid var(--tc-border);
+  border-radius: 20px;
+  background: var(--tc-card-bg);
+  color: var(--tc-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover, .filter-btn.active {
+  border-color: var(--tc-lime);
+  color: var(--tc-charcoal);
+  background: #f5f9e0;
+}
+
+/* Checkbox list */
+.check-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--tc-border);
+}
+.check-item:last-child { border-bottom: none; }
+.check-item input[type="checkbox"] {
+  margin-top: 4px;
+  accent-color: var(--tc-lime-dark);
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+}
+.check-item label {
+  font-size: 14px; cursor: pointer;
+  flex: 1;
+}
+.check-item label strong { font-weight: 600; }
+.check-item .check-meta {
+  font-size: 12px; color: var(--tc-muted);
+  margin-top: 2px;
+}
+
+/* Action signal */
+.action-signal {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: #fef3cd;
+  color: var(--tc-amber);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Tab panels */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* M&A card */
+.ma-card { border-left: 3px solid var(--tc-amber); }
+
+/* Funding signal badge */
+.funding-signal {
+  position: absolute;
+  top: 12px; right: 12px;
+}
+
+/* Table */
+.tc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 12px;
+}
+.tc-table th {
+  text-align: left;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--tc-muted);
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--tc-border);
+}
+.tc-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--tc-border);
+  vertical-align: top;
+}
+.tc-table tr:hover { background: #fafaf5; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .dpdp-box { flex-direction: column; text-align: center; }
+  .tab-btn { padding: 10px 12px; font-size: 12px; }
+  .topbar-meta span:first-child { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="logo"><span class="logo-dot"></span> Team Counsel</a>
+    <div class="topbar-meta">
+      <span>Knowledge Engine · 6 Oct 2026</span>
+      <a href="/archive/">Past Reports ↗</a>
+    </div>
+  </div>
+  <nav class="tab-nav" id="tabNav">
+    <button class="tab-btn active" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="outbound">Outbound</button>
+    <button class="tab-btn" data-tab="inbound">Inbound</button>
+    <button class="tab-btn" data-tab="policy">P &amp; R</button>
+    <button class="tab-btn" data-tab="partnerships">Partnerships</button>
+    <button class="tab-btn" data-tab="events">Events</button>
+    <button class="tab-btn" data-tab="funding">Funding</button>
+  </nav>
+</header>
+
+<main class="container">
+
+<!-- ====== OVERVIEW ====== -->
+<div class="tab-panel active" id="tab-overview">
+
+  <h2 style="font-size:22px;margin-bottom:4px;">Daily Intelligence Brief</h2>
+  <p style="font-size:14px;color:var(--tc-muted);margin-bottom:20px;">Tuesday, 6 October 2026 · Auto-generated from 15+ sources across legal tech, policy, and market intelligence.</p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-val">9</div>
+      <div class="stat-label">Funding Deals Tracked</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">2</div>
+      <div class="stat-label">M&amp;A Transactions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val" id="dpdpCountdown">219</div>
+      <div class="stat-label">Days to DPDP Deadline</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">6+</div>
+      <div class="stat-label">Upcoming Events</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">$660M+</div>
+      <div class="stat-label">Total Capital Raised</div>
+    </div>
+  </div>
+
+  <!-- DPDP -->
+  <div class="dpdp-box">
+    <div>
+      <div class="dpdp-days" id="dpdpDays">219</div>
+      <div class="dpdp-label">days to DPDP Act deadline</div>
+    </div>
+    <div class="dpdp-info">
+      <strong>Digital Personal Data Protection Act, 2023</strong> — Full compliance deadline is <strong>13 May 2027</strong>. SDF designations and cross-border transfer rules still pending. DPBI is operational; breach reporting infrastructure being built. Urgent compliance window for enterprises across India.
+    </div>
+  </div>
+
+  <!-- Market Sentiment -->
+  <h3 class="section-header">Market Sentiment by Geography</h3>
+  <p class="section-sub">Click any bar to expand regional detail.</p>
+
+  <div style="margin-bottom:14px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <strong style="font-size:13px;">India</strong>
+      <span style="font-size:12px;color:var(--tc-muted);">Bullish</span>
+    </div>
+    <div class="sentiment-bar" onclick="toggleSentiment('s-india')">
+      <div class="s-green" style="flex:70">70%</div>
+      <div class="s-amber" style="flex:20">20%</div>
+      <div class="s-red" style="flex:10">10%</div>
+    </div>
+    <div class="sentiment-detail" id="s-india">
+      <strong style="color:var(--tc-green);">Positive:</strong> GCC expansion (UBS, LPL Financial, Western Union in Hyderabad). DPDP creating compliance demand. Seeds Fincap $10.4M raise. NYAI launches India-first RegTech. Cypher &amp; TechSparks conferences ahead.<br>
+      <strong style="color:var(--tc-amber);">Neutral:</strong> SEBI Project Jagrook effective Nov 1 — monitoring impact. RBI MPC Oct 5–7 decisions pending.<br>
+      <strong style="color:var(--tc-red);">Cautious:</strong> SDF designations still pending. MeitY synthetic media advisory adds AI uncertainty.
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <strong style="font-size:13px;">North America</strong>
+      <span style="font-size:12px;color:var(--tc-muted);">Bullish</span>
+    </div>
+    <div class="sentiment-bar" onclick="toggleSentiment('s-na')">
+      <div class="s-green" style="flex:65">65%</div>
+      <div class="s-amber" style="flex:25">25%</div>
+      <div class="s-red" style="flex:10">10%</div>
+    </div>
+    <div class="sentiment-detail" id="s-na">
+      <strong style="color:var(--tc-green);">Positive:</strong> Harvey $550M at $15.5B valuation. 80% of top 100 US firms using AI. Arceus $17M as AI-first law firm. AI legal tech market on track for $42.18B by 2036.<br>
+      <strong style="color:var(--tc-amber);">Neutral:</strong> Federal AI preemption debate ongoing — potential state-level fragmentation. Multi-model shift from single AI provider dependency.<br>
+      <strong style="color:var(--tc-red);">Cautious:</strong> Growing calls for AI liability frameworks.
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <strong style="font-size:13px;">Europe &amp; UK</strong>
+      <span style="font-size:12px;color:var(--tc-muted);">Moderate</span>
+    </div>
+    <div class="sentiment-bar" onclick="toggleSentiment('s-eu')">
+      <div class="s-green" style="flex:45">45%</div>
+      <div class="s-amber" style="flex:40">40%</div>
+      <div class="s-red" style="flex:15">15%</div>
+    </div>
+    <div class="sentiment-detail" id="s-eu">
+      <strong style="color:var(--tc-green);">Positive:</strong> Noxtua €100M+ raise signals European legal AI maturation. Pandektes €13.5M for legal data infra. Falcon AI-native law firm pre-seed with ex-A&amp;O leader.<br>
+      <strong style="color:var(--tc-amber);">Neutral:</strong> EU GPAI rules binding Oct 2026 — compliance overhead rising. UK Digital Security and AI Bill in development.<br>
+      <strong style="color:var(--tc-red);">Cautious:</strong> FCA digital asset rulebook adds complexity. Overlapping EU frameworks create burden.
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <strong style="font-size:13px;">Middle East &amp; Israel</strong>
+      <span style="font-size:12px;color:var(--tc-muted);">Growing</span>
+    </div>
+    <div class="sentiment-bar" onclick="toggleSentiment('s-mena')">
+      <div class="s-green" style="flex:55">55%</div>
+      <div class="s-amber" style="flex:35">35%</div>
+      <div class="s-red" style="flex:10">10%</div>
+    </div>
+    <div class="sentiment-detail" id="s-mena">
+      <strong style="color:var(--tc-green);">Positive:</strong> Chamelio $26M Series A — AI contract automation from Israel showing demand. MENA legal tech adoption accelerating.<br>
+      <strong style="color:var(--tc-amber);">Neutral:</strong> Regulatory frameworks still nascent in most Gulf markets.<br>
+      <strong style="color:var(--tc-red);">Cautious:</strong> Geopolitical uncertainty weighs on cross-border deals.
+    </div>
+  </div>
+
+  <!-- Top Stories -->
+  <h3 class="section-header">Top Stories Today</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title"><a href="https://www.reuters.com/technology/artificial-intelligence/ai-legal-startup-harvey-raises-550-mln-2026-09-25/" target="_blank" rel="noopener">Harvey Raises $550M, Valued at $15.5B — Expanding to Boston</a></div>
+      <div class="card-body">Legal AI leader completes massive growth round. 80% of top 100 US law firms now use its platform. Opening Boston engineering hub.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Funding</span>
+        <span>Sep 2026</span>
+        <span>·</span>
+        <span>Reuters</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://techcrunch.com/2026/10/02/german-legal-ai-startup-noxtua-raises-over-100m/" target="_blank" rel="noopener">Noxtua Raises €100M+ Series C — C.H.BECK Takes Majority</a></div>
+      <div class="card-body">German legal AI startup secures major round with traditional legal publisher taking majority stake. European legal AI maturing rapidly.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Funding</span>
+        <span>2 Oct 2026</span>
+        <span>·</span>
+        <span>TechCrunch</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.legalfutures.co.uk/latest-news/repario-acquires-unitedlex" target="_blank" rel="noopener">Repario Acquires UnitedLex — Major ALSP Consolidation</a></div>
+      <div class="card-body">One of the largest ALSP acquisitions in the sector. Signals accelerating M&amp;A activity as legal services market matures.</div>
+      <div class="card-meta">
+        <span class="tag tag-amber">M&amp;A</span>
+        <span>29 Sep 2026</span>
+        <span>·</span>
+        <span>Legal Futures</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.meity.gov.in/dpdp-act" target="_blank" rel="noopener">DPDP Act: 219 Days to Compliance — SDF Designation Still Pending</a></div>
+      <div class="card-body">Key subordinate frameworks remain unpublished. DPBI operational but breach reporting infrastructure still being built. Urgent compliance window for enterprises.</div>
+      <div class="card-meta">
+        <span class="tag tag-red">Regulatory</span>
+        <span>Ongoing</span>
+        <span>·</span>
+        <span>MeitY</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== OUTBOUND ====== -->
+<div class="tab-panel" id="tab-outbound">
+  <h2 style="font-size:22px;margin-bottom:4px;">Outbound Intelligence</h2>
+  <p style="font-size:14px;color:var(--tc-muted);margin-bottom:20px;">Prospect signals, leadership changes, and target account intelligence for outbound campaigns.</p>
+
+  <h3 class="section-header">Prospect &amp; Client Intelligence</h3>
+  <p class="section-sub">Leadership changes and trigger events at target accounts.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title"><a href="https://economictimes.indiatimes.com/industry/banking/finance/ubs-hyderabad-gcc" target="_blank" rel="noopener">UBS Expands Hyderabad GCC Operations</a></div>
+      <div class="card-body">UBS significantly expanding its Global Capability Centre in Hyderabad. Increased headcount signals growing compliance and legal ops needs — strong prospect for ECP and CAAS services.</div>
+      <div class="card-meta">
+        <span class="tag tag-blue">GCC</span>
+        <span class="action-signal">🎯 Outbound Trigger</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://economictimes.indiatimes.com/industry/banking/finance/lpl-financial-hyderabad" target="_blank" rel="noopener">LPL Financial Opens Hyderabad Centre</a></div>
+      <div class="card-body">US financial services giant setting up operations in Hyderabad. New GCCs typically need privacy compliance, contract management, and regulatory advisory.</div>
+      <div class="card-meta">
+        <span class="tag tag-blue">GCC</span>
+        <span class="action-signal">🎯 Outbound Trigger</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://economictimes.indiatimes.com/industry/banking/finance/western-union-hcltech-hyderabad" target="_blank" rel="noopener">Western Union + HCLTech Joint GCC in Hyderabad</a></div>
+      <div class="card-body">Cross-border financial services operation will require FEMA compliance, data protection, and international contract frameworks.</div>
+      <div class="card-meta">
+        <span class="tag tag-blue">GCC</span>
+        <span class="action-signal">🎯 Outbound Trigger</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://inc42.com/buzz/seeds-fincap-series-b/" target="_blank" rel="noopener">Seeds Fincap Raises $10.4M Series B</a></div>
+      <div class="card-body">Indian fintech lending startup scaling operations. Will need regulatory compliance, RBI framework advisory, and data protection as they grow.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Fintech</span>
+        <span class="action-signal">🎯 Outbound Trigger</span>
+        <span>1 Oct 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">Outbound Action Items</h3>
+  <div class="card" style="margin-top:12px;">
+    <table class="tc-table">
+      <thead>
+        <tr><th>Target</th><th>Trigger</th><th>TC Service Line</th><th>Suggested Action</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>UBS GCC</strong></td><td>Hyderabad expansion</td><td>ECP, CAAS</td><td>Map compliance needs for new entity; reach via LinkedIn to GCC head</td></tr>
+        <tr><td><strong>LPL Financial</strong></td><td>New India operations</td><td>FGC, ECP</td><td>Intro email re: DPDP readiness for US financial services in India</td></tr>
+        <tr><td><strong>Western Union</strong></td><td>HCLTech JV setup</td><td>FGC, CAAS</td><td>Position FEMA + cross-border compliance package</td></tr>
+        <tr><td><strong>Seeds Fincap</strong></td><td>Series B ($10.4M)</td><td>FGC, LD&amp;T</td><td>Post-raise compliance package — RBI framework + data protection</td></tr>
+        <tr><td><strong>NYAI</strong></td><td>RegTech launch (India-first)</td><td>ECP, Partnerships</td><td>Explore tech partnership for compliance automation tooling</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ====== INBOUND ====== -->
+<div class="tab-panel" id="tab-inbound">
+  <h2 style="font-size:22px;margin-bottom:4px;">Inbound Intelligence</h2>
+  <p style="font-size:14px;color:var(--tc-muted);margin-bottom:20px;">Market trends, content opportunities, and inbound demand signals.</p>
+
+  <h3 class="section-header">Market Size &amp; Growth</h3>
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-val">$6.72B</div>
+      <div class="stat-label">AI Legal Tech Market (2026)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">$42.18B</div>
+      <div class="stat-label">Projected by 2036</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">20.2%</div>
+      <div class="stat-label">CAGR</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">80%</div>
+      <div class="stat-label">Top 100 US Firms Using AI</div>
+    </div>
+  </div>
+
+  <h3 class="section-header">Content Opportunities</h3>
+  <p class="section-sub">High-intent topics from market signals for blog posts, webinars, and lead magnets.</p>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">DPDP Compliance Readiness Guide for GCCs</div>
+      <div class="card-body">219 days to deadline with SDF rules still pending. GCCs in India (UBS, LPL, Western Union) need actionable compliance roadmaps. Create downloadable guide targeting GCC compliance heads.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Lead Magnet</span>
+        <span class="tag">High Intent</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">AI + Legal Ops: Multi-Model Strategy Playbook</div>
+      <div class="card-body">Market shifting from single AI vendor dependency to multi-model approaches. Position TC as thought leader on legal AI strategy — webinar series targeting in-house counsel.</div>
+      <div class="card-meta">
+        <span class="tag tag-blue">Webinar</span>
+        <span class="tag">Thought Leadership</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Post-SEBI Jagrook: What Compliance Officers Must Know</div>
+      <div class="card-body">SEBI Project Jagrook effective Nov 1. Time-sensitive content opportunity for compliance brief targeting financial services firms and in-house legal teams.</div>
+      <div class="card-meta">
+        <span class="tag tag-amber">Blog Post</span>
+        <span class="tag">Timely</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Cross-Border Data Transfers: EU GPAI + DPDP Convergence</div>
+      <div class="card-body">EU GPAI rules binding from Oct 2026 alongside India's DPDP. Enterprises operating across both jurisdictions need guidance navigating the overlap.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Whitepaper</span>
+        <span class="tag">SEO Opportunity</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">Keyword &amp; Search Trends</h3>
+  <div class="card" style="margin-top:12px;">
+    <table class="tc-table">
+      <thead>
+        <tr><th>Keyword Theme</th><th>Demand Signal</th><th>TC Positioning</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>"DPDP compliance"</strong></td><td>Rising — 219 days to deadline, SDF pending</td><td>ECP → compliance readiness audit</td></tr>
+        <tr><td><strong>"GCC legal setup India"</strong></td><td>High — 3+ new GCCs announced this month</td><td>FGC → entity structuring + compliance</td></tr>
+        <tr><td><strong>"AI legal tech"</strong></td><td>Peak — $660M+ raised in Sep–Oct 2026</td><td>LD&amp;T → AI governance advisory</td></tr>
+        <tr><td><strong>"FEMA compliance"</strong></td><td>Steady — cross-border fintech growth</td><td>FGC → FEMA + RBI advisory</td></tr>
+        <tr><td><strong>"SEBI Jagrook compliance"</strong></td><td>Spiking — Nov 1 effective date</td><td>CAAS → SEBI regulatory prep</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ====== POLICY & REGULATORY ====== -->
+<div class="tab-panel" id="tab-policy">
+  <h2 style="font-size:22px;margin-bottom:4px;">Policy &amp; Regulatory Tracker</h2>
+  <p style="font-size:14px;color:var(--tc-muted);margin-bottom:20px;">Regulatory developments across jurisdictions relevant to Team Counsel's practice areas.</p>
+
+  <div class="dpdp-box">
+    <div>
+      <div class="dpdp-days">219</div>
+      <div class="dpdp-label">days to DPDP deadline</div>
+    </div>
+    <div class="dpdp-info">
+      <strong>Key pending items:</strong> Significant Data Fiduciary (SDF) designation, cross-border transfer rules, consent manager regulations, and children's data processing norms. DPBI operational — breach reporting infrastructure under construction.
+    </div>
+  </div>
+
+  <h3 class="section-header">India</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title"><a href="https://www.meity.gov.in/dpdp-act" target="_blank" rel="noopener">DPDP Act — Big Tech Compliance Streamlining</a></div>
+      <div class="card-body">Government exploring streamlined DPDP compliance obligations for major technology companies. Could reduce burden for large data fiduciaries while maintaining data protection standards.</div>
+      <div class="card-meta">
+        <span class="tag tag-red">DPDP</span>
+        <span>4 Oct 2026</span>
+        <span>·</span>
+        <span>MeitY</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.sebi.gov.in/project-jagrook" target="_blank" rel="noopener">SEBI Project Jagrook — Effective November 1, 2026</a></div>
+      <div class="card-body">SEBI's investor awareness and protection framework becomes mandatory. Capital market intermediaries must comply with enhanced disclosure and investor education requirements.</div>
+      <div class="card-meta">
+        <span class="tag tag-amber">SEBI</span>
+        <span>Effective 1 Nov 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.sebi.gov.in/cas-framework" target="_blank" rel="noopener">SEBI CAS Framework — Consolidated Account Statement</a></div>
+      <div class="card-body">New framework for consolidated account statements across securities holdings. Impacts all registered intermediaries and requires system upgrades.</div>
+      <div class="card-meta">
+        <span class="tag tag-amber">SEBI</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.rbi.org.in/mpc" target="_blank" rel="noopener">RBI MPC Meeting — October 5–7, 2026</a></div>
+      <div class="card-body">Reserve Bank's Monetary Policy Committee meeting concluded. Rate decisions and regulatory guidance impact fintech compliance requirements.</div>
+      <div class="card-meta">
+        <span class="tag tag-blue">RBI</span>
+        <span>5–7 Oct 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.meity.gov.in/synthetic-media-advisory" target="_blank" rel="noopener">MeitY Synthetic Media Advisory</a></div>
+      <div class="card-body">Advisory on synthetic media and deepfakes. Creates compliance considerations for AI companies around content authenticity and labeling.</div>
+      <div class="card-meta">
+        <span class="tag tag-red">AI Regulation</span>
+        <span>Oct 2026</span>
+        <span>·</span>
+        <span>MeitY</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">International</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title"><a href="https://digital-strategy.ec.europa.eu/en/policies/ai-act" target="_blank" rel="noopener">EU GPAI Rules Now Binding — October 2026</a></div>
+      <div class="card-body">General-Purpose AI rules under the AI Act become legally binding. Providers must comply with transparency, copyright, and risk assessment requirements.</div>
+      <div class="card-meta">
+        <span class="tag tag-red">EU AI Act</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.gov.uk/government/publications/digital-security-ai-bill" target="_blank" rel="noopener">UK Digital Security and AI Bill 2026</a></div>
+      <div class="card-body">Comprehensive digital security legislation incorporating AI governance. Takes a sectoral approach distinct from the EU's horizontal framework.</div>
+      <div class="card-meta">
+        <span class="tag tag-blue">UK</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.congress.gov/ai-preemption" target="_blank" rel="noopener">US Federal AI Preemption Debate Intensifies</a></div>
+      <div class="card-body">Federal lawmakers debate whether a national AI framework should preempt state-level regulations. Outcome determines compliance complexity across US states.</div>
+      <div class="card-meta">
+        <span class="tag tag-amber">US</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.fca.org.uk/digital-asset-rulebook" target="_blank" rel="noopener">FCA Digital Asset Rulebook</a></div>
+      <div class="card-body">UK Financial Conduct Authority advances comprehensive digital asset regulatory framework. Sets standards for crypto custody, trading, and disclosure.</div>
+      <div class="card-meta">
+        <span class="tag tag-blue">UK/Fintech</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">DPDP Act Milestone Timeline</h3>
+  <div class="card" style="margin-top:12px;">
+    <table class="tc-table">
+      <thead>
+        <tr><th>Date</th><th>Milestone</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nov 2025</td><td>Draft DPDP Rules published for consultation</td><td><span class="tag tag-lime">Done</span></td></tr>
+        <tr><td>Feb 2026</td><td>Public consultation period closed</td><td><span class="tag tag-lime">Done</span></td></tr>
+        <tr><td>Mar 2026</td><td>DPBI established and operational</td><td><span class="tag tag-lime">Done</span></td></tr>
+        <tr><td>Q3 2026</td><td>Final DPDP Rules notified</td><td><span class="tag tag-lime">Done</span></td></tr>
+        <tr><td>Pending</td><td>SDF designation by government</td><td><span class="tag tag-amber">Pending</span></td></tr>
+        <tr><td>Pending</td><td>Cross-border transfer whitelist</td><td><span class="tag tag-amber">Pending</span></td></tr>
+        <tr><td>Pending</td><td>Consent manager registration framework</td><td><span class="tag tag-amber">Pending</span></td></tr>
+        <tr><td>Pending</td><td>Children's data processing norms</td><td><span class="tag tag-amber">Pending</span></td></tr>
+        <tr><td>Ongoing</td><td>Breach reporting infrastructure buildout</td><td><span class="tag tag-blue">In Progress</span></td></tr>
+        <tr><td><strong>13 May 2027</strong></td><td><strong>Full compliance deadline</strong></td><td><span class="tag tag-red">219 Days</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ====== PARTNERSHIPS ====== -->
+<div class="tab-panel" id="tab-partnerships">
+  <h2 style="font-size:22px;margin-bottom:4px;">Partnership Intelligence</h2>
+  <p style="font-size:14px;color:var(--tc-muted);margin-bottom:20px;">Specific company partnership leads, legal tech OEM deals, and ecosystem opportunities.</p>
+
+  <h3 class="section-header">Legal Tech Partnership Leads</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title"><a href="https://www.anthropic.com/customers/intapp" target="_blank" rel="noopener">Anthropic + Intapp Partnership</a></div>
+      <div class="card-body">Anthropic partners with Intapp for AI-powered professional services. Intapp serves 2,600+ law firms. Model for embedding AI into legal workflow tools.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">AI + Legal Tech</span>
+        <span>2026</span>
+        <span>·</span>
+        <span class="action-signal">🎯 Partnership Model</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.lexisnexis.com/anthropic-partnership" target="_blank" rel="noopener">Anthropic + LexisNexis OEM Deal</a></div>
+      <div class="card-body">LexisNexis integrates Claude models across its legal research platform. Major OEM deal — AI embedded into legal information infrastructure. Advisory opportunity for TC.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">OEM Deal</span>
+        <span>Mar 2026</span>
+        <span>·</span>
+        <span class="action-signal">🎯 Advisory Opportunity</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://nyai.in" target="_blank" rel="noopener">NYAI — India's First Compliance RegTech</a></div>
+      <div class="card-body">India's first compliance-focused RegTech built for Indian regulations. Covers RBI, SEBI, and DPDP compliance. Strong co-sell / referral partnership potential.</div>
+      <div class="card-meta">
+        <span class="tag tag-blue">RegTech</span>
+        <span>Oct 2026</span>
+        <span>·</span>
+        <span class="action-signal">🎯 Co-Sell Lead</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.chamelio.com" target="_blank" rel="noopener">Chamelio — AI Contract Automation ($26M Series A)</a></div>
+      <div class="card-body">Israel-based, expanding internationally. Potential technology partner for TC's contract lifecycle management offerings or referral channel.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Contract Tech</span>
+        <span>23 Sep 2026</span>
+        <span>·</span>
+        <span class="action-signal">🎯 Tech Partner</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">GCC &amp; Enterprise Ecosystem</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title"><a href="https://economictimes.indiatimes.com/gcc-india-expansion" target="_blank" rel="noopener">GCC India Expansion Wave — Hyderabad Focus</a></div>
+      <div class="card-body">Three major GCCs announced for Hyderabad: UBS, LPL Financial, Western Union + HCLTech. Each needs legal entity setup, compliance infrastructure, and regulatory advisory.</div>
+      <div class="card-meta">
+        <span class="tag tag-blue">GCC Wave</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.blee.com" target="_blank" rel="noopener">Blee — AI Marketing Compliance ($20M Series A)</a></div>
+      <div class="card-body">AI-powered marketing compliance. As enterprises adopt AI for marketing, compliance needs increase — potential referral or tech partnership for TC's regulatory advisory.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Compliance Tech</span>
+        <span>8 Sep 2026</span>
+        <span>·</span>
+        <span class="action-signal">🎯 Referral Channel</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://www.compai.com" target="_blank" rel="noopener">Comp AI — Security &amp; Compliance Automation ($34M)</a></div>
+      <div class="card-body">Security and compliance automation. Target market overlap with TC's CAAS practice — explore integration or referral partnership.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Security/Compliance</span>
+        <span>17 Sep 2026</span>
+        <span>·</span>
+        <span class="action-signal">🎯 Integration Partner</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">Partnership Pipeline</h3>
+  <div class="card" style="margin-top:12px;">
+    <table class="tc-table">
+      <thead>
+        <tr><th>Company</th><th>Type</th><th>Opportunity</th><th>Priority</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>NYAI</strong></td><td>Co-sell / Referral</td><td>India-first RegTech for RBI/SEBI/DPDP — natural complement to TC advisory</td><td><span class="tag tag-red">High</span></td></tr>
+        <tr><td><strong>Chamelio</strong></td><td>Technology</td><td>AI contract automation — could embed in TC's CLM practice</td><td><span class="tag tag-amber">Medium</span></td></tr>
+        <tr><td><strong>Comp AI</strong></td><td>Integration</td><td>Security/compliance automation overlaps with CAAS</td><td><span class="tag tag-amber">Medium</span></td></tr>
+        <tr><td><strong>Blee</strong></td><td>Referral</td><td>Marketing compliance — adjacent to TC's regulatory advisory</td><td><span class="tag">Low</span></td></tr>
+        <tr><td><strong>Pandektes</strong></td><td>Tech / Data</td><td>Legal data infra — potential data partnership for EU work</td><td><span class="tag">Low</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ====== EVENTS ====== -->
+<div class="tab-panel" id="tab-events">
+  <h2 style="font-size:22px;margin-bottom:4px;">Events &amp; Conferences</h2>
+  <p style="font-size:14px;color:var(--tc-muted);margin-bottom:20px;">Upcoming events relevant to Team Counsel's GTM. Check off events as you register or attend.</p>
+
+  <div class="filter-bar" id="eventFilters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="conference">Conference</button>
+    <button class="filter-btn" data-filter="networking">Networking</button>
+    <button class="filter-btn" data-filter="summit">Summit</button>
+    <button class="filter-btn" data-filter="bengaluru">Bengaluru</button>
+    <button class="filter-btn" data-filter="mumbai">Mumbai</button>
+    <button class="filter-btn" data-filter="delhi">Delhi</button>
+  </div>
+
+  <div id="eventList">
+    <div class="check-item" data-type="conference" data-city="bengaluru">
+      <input type="checkbox" id="evt-cypher" onchange="saveEventState()">
+      <label for="evt-cypher">
+        <strong>Cypher 2026</strong> — India's Premier AI Conference<br>
+        <span class="check-meta">📅 7–9 Oct 2026 · 📍 Bengaluru · 🏷️ Conference · <a href="https://cypher.analyticsindiamag.com/" target="_blank" rel="noopener">Register ↗</a></span><br>
+        <span class="check-meta">Key tracks: Enterprise AI, AI governance, responsible AI. Strong networking with AI decision-makers.</span>
+      </label>
+    </div>
+    <div class="check-item" data-type="networking" data-city="bengaluru">
+      <input type="checkbox" id="evt-echai-oct10" onchange="saveEventState()">
+      <label for="evt-echai-oct10">
+        <strong>eChai Bengaluru Startup Events</strong><br>
+        <span class="check-meta">📅 10 Oct 2026 · 📍 Bengaluru · 🏷️ Networking · <a href="https://echai.ventures/events" target="_blank" rel="noopener">Details ↗</a></span><br>
+        <span class="check-meta">Multiple founder meetups and startup ecosystem networking events.</span>
+      </label>
+    </div>
+    <div class="check-item" data-type="conference" data-city="bengaluru">
+      <input type="checkbox" id="evt-techsparks" onchange="saveEventState()">
+      <label for="evt-techsparks">
+        <strong>TechSparks 2026</strong> — India's Largest Startup-Tech Summit<br>
+        <span class="check-meta">📅 13–15 Oct 2026 · 📍 Bengaluru · 🏷️ Conference · 💰 Paid · <a href="https://techsparks.yourstory.com/" target="_blank" rel="noopener">Register ↗</a></span><br>
+        <span class="check-meta">10,000+ attendees. AI, deep tech, and startup scaling tracks. Excellent for lead gen and brand visibility.</span>
+      </label>
+    </div>
+    <div class="check-item" data-type="conference" data-city="delhi">
+      <input type="checkbox" id="evt-imc" onchange="saveEventState()">
+      <label for="evt-imc">
+        <strong>India Mobile Congress 2026</strong><br>
+        <span class="check-meta">📅 Oct 2026 · 📍 New Delhi · 🏷️ Conference · <a href="https://www.indiamobilecongress.com/" target="_blank" rel="noopener">Details ↗</a></span><br>
+        <span class="check-meta">South Asia's largest digital technology forum. Telecom, digital governance, AI policy.</span>
+      </label>
+    </div>
+    <div class="check-item" data-type="networking" data-city="bengaluru">
+      <input type="checkbox" id="evt-echai-oct31" onchange="saveEventState()">
+      <label for="evt-echai-oct31">
+        <strong>eChai Bengaluru Demo Days</strong><br>
+        <span class="check-meta">📅 31 Oct 2026 · 📍 Bengaluru · 🏷️ Networking · <a href="https://echai.ventures/events" target="_blank" rel="noopener">Details ↗</a></span><br>
+        <span class="check-meta">Startup demo days — connect with early-stage startups needing legal and compliance advisory.</span>
+      </label>
+    </div>
+    <div class="check-item" data-type="conference" data-city="mumbai">
+      <input type="checkbox" id="evt-ibw" onchange="saveEventState()">
+      <label for="evt-ibw">
+        <strong>India Blockchain Week</strong><br>
+        <span class="check-meta">📅 1–2 Nov 2026 · 📍 Mumbai · 🏷️ Conference · <a href="https://www.indiablockchainweek.com/" target="_blank" rel="noopener">Register ↗</a></span><br>
+        <span class="check-meta">Blockchain regulation, digital assets, Web3 compliance — relevant to FGC practice.</span>
+      </label>
+    </div>
+    <div class="check-item" data-type="summit" data-city="bengaluru">
+      <input type="checkbox" id="evt-bts" onchange="saveEventState()">
+      <label for="evt-bts">
+        <strong>Bengaluru Tech Summit 2026</strong><br>
+        <span class="check-meta">📅 17+ Nov 2026 · 📍 Bengaluru · 🏷️ Summit · <a href="https://www.bengalurutechsummit.com/" target="_blank" rel="noopener">Register ↗</a></span><br>
+        <span class="check-meta">60,000+ visitors. Karnataka's flagship tech event. Excellent for enterprise client development.</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- ====== FUNDING ====== -->
+<div class="tab-panel" id="tab-funding">
+  <h2 style="font-size:22px;margin-bottom:4px;">Funding &amp; Investment Tracker</h2>
+  <p style="font-size:14px;color:var(--tc-muted);margin-bottom:20px;">Legal tech and adjacent funding rounds, M&amp;A activity, and investment signals from the last 30 days.</p>
+
+  <div class="filter-bar" id="fundingFilters">
+    <button class="filter-btn active" data-ffilter="all">All</button>
+    <button class="filter-btn" data-ffilter="us">US</button>
+    <button class="filter-btn" data-ffilter="europe">Europe</button>
+    <button class="filter-btn" data-ffilter="israel">Israel</button>
+    <button class="filter-btn" data-ffilter="india">India</button>
+    <button class="filter-btn" data-ffilter="series-a">Series A</button>
+    <button class="filter-btn" data-ffilter="series-b-plus">Series B+</button>
+    <button class="filter-btn" data-ffilter="early">Pre-Seed/Seed</button>
+    <button class="filter-btn" data-ffilter="ma">M&amp;A</button>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-val">$660M+</div>
+      <div class="stat-label">Total Capital Tracked</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">9</div>
+      <div class="stat-label">Funding Rounds</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">2</div>
+      <div class="stat-label">M&amp;A Deals</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">$15.5B</div>
+      <div class="stat-label">Highest Valuation</div>
+    </div>
+  </div>
+
+  <h3 class="section-header">Funding Rounds</h3>
+  <div class="card-grid" id="fundingCards">
+    <div class="card" data-geo="us" data-stage="series-b-plus">
+      <div class="funding-signal"><span class="action-signal">🎯 Action Signal</span></div>
+      <div class="card-title"><a href="https://www.reuters.com/technology/artificial-intelligence/ai-legal-startup-harvey-raises-550-mln-2026-09-25/" target="_blank" rel="noopener">Harvey — $550M Growth Round</a></div>
+      <div class="card-body">Legal AI leader valued at $15.5B. 80% adoption in top 100 US firms. Opening Boston engineering hub.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Growth</span>
+        <span class="tag">US</span>
+        <span>Sep 2026</span>
+        <span>·</span>
+        <span>$15.5B valuation</span>
+      </div>
+    </div>
+    <div class="card" data-geo="europe" data-stage="series-b-plus">
+      <div class="funding-signal"><span class="action-signal">🎯 Action Signal</span></div>
+      <div class="card-title"><a href="https://techcrunch.com/2026/10/02/german-legal-ai-startup-noxtua-raises-over-100m/" target="_blank" rel="noopener">Noxtua — €100M+ Series C</a></div>
+      <div class="card-body">German legal AI. C.H.BECK takes majority stake. European legal AI maturation and publisher-tech convergence.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Series C</span>
+        <span class="tag">Germany</span>
+        <span>2 Oct 2026</span>
+      </div>
+    </div>
+    <div class="card" data-geo="us" data-stage="series-a">
+      <div class="card-title"><a href="https://techcrunch.com/2026/09/17/comp-ai-raises-34m/" target="_blank" rel="noopener">Comp AI — $34M Series A</a></div>
+      <div class="card-body">Security and compliance automation. SOC 2, ISO 27001, and regulatory compliance workflows.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Series A</span>
+        <span class="tag">US</span>
+        <span>17 Sep 2026</span>
+      </div>
+    </div>
+    <div class="card" data-geo="israel" data-stage="series-a">
+      <div class="card-title"><a href="https://techcrunch.com/2026/09/23/chamelio-raises-26m/" target="_blank" rel="noopener">Chamelio — $26M Series A</a></div>
+      <div class="card-body">AI contract automation from Israel. International expansion — potential partner.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Series A</span>
+        <span class="tag">Israel</span>
+        <span>23 Sep 2026</span>
+      </div>
+    </div>
+    <div class="card" data-geo="us" data-stage="series-a">
+      <div class="card-title"><a href="https://techcrunch.com/2026/09/08/blee-raises-20m/" target="_blank" rel="noopener">Blee — $20M Series A</a></div>
+      <div class="card-body">AI marketing compliance. Regulatory review of marketing materials.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Series A</span>
+        <span class="tag">US</span>
+        <span>8 Sep 2026</span>
+      </div>
+    </div>
+    <div class="card" data-geo="us" data-stage="series-a">
+      <div class="funding-signal"><span class="action-signal">🎯 Action Signal</span></div>
+      <div class="card-title"><a href="https://www.legalfutures.co.uk/latest-news/arceus-ai-law-firm-17m" target="_blank" rel="noopener">Arceus — $17M (AI-First Law Firm)</a></div>
+      <div class="card-body">Led by Greycroft. SF-based AI-native law firm disrupting traditional economics.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Venture</span>
+        <span class="tag">US/SF</span>
+        <span>1 Oct 2026</span>
+      </div>
+    </div>
+    <div class="card" data-geo="europe" data-stage="series-a">
+      <div class="card-title"><a href="https://techcrunch.com/2026/10/05/pandektes-raises-13-5m/" target="_blank" rel="noopener">Pandektes — €13.5M Series A</a></div>
+      <div class="card-body">Legal data infrastructure from Denmark. Led by Alstin Capital.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Series A</span>
+        <span class="tag">Denmark</span>
+        <span>5 Oct 2026</span>
+      </div>
+    </div>
+    <div class="card" data-geo="india" data-stage="series-b-plus">
+      <div class="card-title"><a href="https://inc42.com/buzz/seeds-fincap-series-b/" target="_blank" rel="noopener">Seeds Fincap — $10.4M Series B</a></div>
+      <div class="card-body">Indian fintech lending. Needs RBI compliance, data protection, and framework advisory.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Series B</span>
+        <span class="tag">India</span>
+        <span>1 Oct 2026</span>
+      </div>
+    </div>
+    <div class="card" data-geo="europe" data-stage="early">
+      <div class="card-title"><a href="https://www.legalfutures.co.uk/latest-news/falcon-ai-law-firm" target="_blank" rel="noopener">Falcon — €1.5M Pre-Seed (AI-Native Law Firm)</a></div>
+      <div class="card-body">Founded by former Allen &amp; Overy leader. AI-native law firm model in Europe.</div>
+      <div class="card-meta">
+        <span class="tag tag-lime">Pre-Seed</span>
+        <span class="tag">Europe</span>
+        <span>Oct 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-header">M&amp;A Activity</h3>
+  <div class="card-grid" id="maCards">
+    <div class="card ma-card" data-geo="ma" data-stage="ma">
+      <div class="card-title"><a href="https://www.legalfutures.co.uk/latest-news/repario-acquires-unitedlex" target="_blank" rel="noopener">Repario Acquires UnitedLex</a></div>
+      <div class="card-body">Major ALSP consolidation. Signals market maturation and scale-driven M&amp;A in legal services.</div>
+      <div class="card-meta">
+        <span class="tag tag-amber">Acquisition</span>
+        <span>29 Sep 2026</span>
+        <span>·</span>
+        <span>Legal Futures</span>
+      </div>
+    </div>
+    <div class="card ma-card" data-geo="ma" data-stage="ma">
+      <div class="card-title"><a href="https://www.legalfutures.co.uk/latest-news/opus-2-acquires-bundledocs" target="_blank" rel="noopener">Opus 2 Acquires Bundledocs</a></div>
+      <div class="card-body">Digital court bundling platform acquired. Vertical integration in litigation tech stack.</div>
+      <div class="card-meta">
+        <span class="tag tag-amber">Acquisition</span>
+        <span>1 Oct 2026</span>
+        <span>·</span>
+        <span>Legal Futures</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+// Tab navigation
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+    document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// Sentiment toggle
+function toggleSentiment(id){
+  var el = document.getElementById(id);
+  if(el) el.classList.toggle('open');
+}
+
+// Event filters
+document.querySelectorAll('#eventFilters .filter-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('#eventFilters .filter-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var f = btn.dataset.filter;
+    document.querySelectorAll('#eventList .check-item').forEach(function(item){
+      if(f==='all'){item.style.display='';}
+      else if(['conference','networking','summit'].indexOf(f)>-1){item.style.display=item.dataset.type===f?'':'none';}
+      else{item.style.display=item.dataset.city===f?'':'none';}
+    });
+  });
+});
+
+// Funding filters
+document.querySelectorAll('#fundingFilters .filter-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('#fundingFilters .filter-btn').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var f = btn.dataset.ffilter;
+    var cards = document.querySelectorAll('#fundingCards .card, #maCards .card');
+    cards.forEach(function(c){
+      if(f==='all'){c.style.display='';}
+      else if(f==='ma'){c.style.display=c.dataset.stage==='ma'?'':'none';}
+      else if(['us','europe','israel','india'].indexOf(f)>-1){c.style.display=c.dataset.geo===f?'':'none';}
+      else if(f==='series-a'){c.style.display=c.dataset.stage==='series-a'?'':'none';}
+      else if(f==='series-b-plus'){c.style.display=c.dataset.stage==='series-b-plus'?'':'none';}
+      else if(f==='early'){c.style.display=c.dataset.stage==='early'?'':'none';}
+    });
+  });
+});
+
+// Event checkbox persistence
+function saveEventState(){
+  try{
+    var s={};
+    document.querySelectorAll('#eventList input[type="checkbox"]').forEach(function(cb){s[cb.id]=cb.checked;});
+    localStorage.setItem('tc-events-2026-10-06',JSON.stringify(s));
+  }catch(e){}
+}
+function loadEventState(){
+  try{
+    var saved=localStorage.getItem('tc-events-2026-10-06');
+    if(saved){var s=JSON.parse(saved);Object.keys(s).forEach(function(id){var cb=document.getElementById(id);if(cb)cb.checked=s[id];});}
+  }catch(e){}
+}
+
+// DPDP countdown
+function updateDpdpCountdown(){
+  var deadline=new Date('2027-05-13T00:00:00+05:30');
+  var now=new Date();
+  var diff=Math.ceil((deadline-now)/(1000*60*60*24));
+  var els=document.querySelectorAll('.dpdp-days, #dpdpCountdown');
+  els.forEach(function(el){el.textContent=diff;});
+}
+
+loadEventState();
+updateDpdpCountdown();
+</script>
+</body>
+</html>
