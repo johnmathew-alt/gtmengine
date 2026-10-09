@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Counsel · Knowledge Engine — {{DATE_DISPLAY}}</title>
+<meta name="description" content="Daily GTM intelligence dashboard for Team Counsel. Funding, policy, market sentiment, DPDP Act, partnerships, legal tech deals, and events.">
+<link rel="icon" href="https://cdn.prod.website-files.com/6a2bef73200216edf6f8afeb/6a311c309e2742d653afe2f0_favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TC OS Design System — FROZEN
+   Do NOT modify these values. All dashboard runs share this
+   exact stylesheet so the layout is pixel-identical every day.
+   ============================================================ */
+:root{
+--tc-navy:#1e3557;--tc-blue:#3981ca;--tc-lime:#dbe56c;--tc-lime-bright:#c8e628;
+--tc-lime-dark:#5f7a1f;--tc-light-bg:#fafaf5;--tc-card-bg:#ffffff;--tc-border:#e8eaef;
+--tc-muted:#6b6b6b;--tc-charcoal:#1a1a1a;--tc-green:#5f7a1f;--tc-amber:#8a5c00;
+--tc-red:#b23b2a;--radius:13px;
+--shadow:0 1px 3px rgba(0,0,0,0.06);--shadow-hover:0 6px 20px rgba(0,0,0,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Figtree',sans-serif;background:var(--tc-light-bg);color:var(--tc-charcoal);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4,h5{font-family:'Sora',sans-serif;}
+a{color:var(--tc-blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Topbar */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(250,250,245,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--tc-border);padding:0 16px;}
+.topbar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.logo{font-family:'Sora',sans-serif;font-weight:700;font-size:20px;display:flex;align-items:center;gap:0;}
+.logo-team{color:var(--tc-navy);}
+.logo-dot{width:6px;height:6px;border-radius:50%;background:var(--tc-lime-bright);display:inline-block;margin:0 4px;vertical-align:middle;}
+.logo-counsel{color:var(--tc-blue);}
+.topbar-right{display:flex;align-items:center;gap:16px;font-size:14px;color:var(--tc-muted);}
+.topbar-right a{font-weight:500;}
+
+/* Tabs */
+.tab-bar{max-width:1200px;margin:0 auto;padding:12px 16px 0;display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.tab-bar::-webkit-scrollbar{display:none;}
+.tab-btn{font-family:'Sora',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border:1px solid var(--tc-border);background:var(--tc-card-bg);border-radius:8px 8px 0 0;cursor:pointer;white-space:nowrap;color:var(--tc-muted);transition:all .2s;border-bottom:2px solid transparent;}
+.tab-btn:hover{color:var(--tc-charcoal);background:#f5f5f0;}
+.tab-btn.active{color:var(--tc-charcoal);border-bottom:2px solid var(--tc-lime-bright);background:var(--tc-card-bg);font-weight:600;}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;padding:24px 16px 60px;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* Section */
+.section{margin-bottom:32px;}
+.section-title{font-size:18px;font-weight:600;color:var(--tc-navy);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:'';width:4px;height:20px;background:var(--tc-lime-bright);border-radius:2px;flex-shrink:0;}
+
+/* Cards */
+.card{background:var(--tc-card-bg);border:1px solid var(--tc-border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);transition:box-shadow .25s,transform .25s;position:relative;overflow:hidden;}
+.card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--tc-lime-bright);transform:scaleX(0);transition:transform .3s;transform-origin:left;}
+.card:hover{box-shadow:var(--shadow-hover);transform:translateY(-1px);}
+.card:hover::after{transform:scaleX(1);}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+.card-title{font-family:'Sora',sans-serif;font-weight:600;font-size:15px;margin-bottom:6px;}
+.card-meta{font-size:12px;color:var(--tc-muted);margin-bottom:8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.card-body{font-size:14px;color:#444;line-height:1.5;}
+.card-footer{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+
+/* Tags */
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;line-height:1.4;}
+.tag-lime{background:#eef3c8;color:var(--tc-lime-dark);}
+.tag-amber{background:#fdf0d5;color:var(--tc-amber);}
+.tag-red{background:#fce4e1;color:var(--tc-red);}
+.tag-blue{background:#dceafb;color:#1a5aab;}
+.tag-green{background:#e6f0d0;color:var(--tc-green);}
+
+/* Stat row */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;}
+.stat-card{background:var(--tc-card-bg);border:1px solid var(--tc-border);border-radius:var(--radius);padding:18px;text-align:center;box-shadow:var(--shadow);}
+.stat-num{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:var(--tc-navy);}
+.stat-label{font-size:12px;color:var(--tc-muted);margin-top:4px;font-weight:500;}
+
+/* DPDP Banner */
+.dpdp-banner{background:var(--tc-navy);color:#fff;border-radius:var(--radius);padding:28px 24px;margin-bottom:24px;position:relative;overflow:hidden;}
+.dpdp-banner::before{content:'';position:absolute;top:-30px;right:-30px;width:160px;height:160px;border-radius:50%;background:rgba(219,229,108,0.08);}
+.dpdp-big{font-family:'Sora',sans-serif;font-size:56px;font-weight:700;color:var(--tc-lime-bright);line-height:1;}
+.dpdp-sub{font-size:15px;margin-top:8px;opacity:0.92;line-height:1.5;}
+.dpdp-progress{margin-top:16px;}
+.dpdp-progress-track{height:8px;background:rgba(255,255,255,0.15);border-radius:4px;overflow:hidden;}
+.dpdp-progress-bar{height:100%;background:var(--tc-lime-bright);border-radius:4px;transition:width .5s;}
+.dpdp-progress-labels{display:flex;justify-content:space-between;font-size:11px;margin-top:6px;opacity:0.7;}
+
+/* Sentiment */
+.sentiment-item{margin-bottom:10px;cursor:pointer;}
+.sentiment-header{display:flex;align-items:center;gap:12px;margin-bottom:4px;}
+.sentiment-label{font-family:'Sora',sans-serif;font-weight:600;font-size:14px;width:50px;flex-shrink:0;}
+.sentiment-track{flex:1;height:24px;border-radius:4px;display:flex;overflow:hidden;}
+.sentiment-pos{background:var(--tc-green);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:600;}
+.sentiment-neu{background:var(--tc-amber);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:600;}
+.sentiment-neg{background:var(--tc-red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:600;}
+.sentiment-detail{display:none;padding:10px 14px;background:#f8f8f3;border-radius:8px;font-size:13px;color:#555;margin-top:6px;margin-bottom:8px;border-left:3px solid var(--tc-lime-bright);}
+.sentiment-detail.open{display:block;}
+
+/* Table */
+.tc-table{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;border:1px solid var(--tc-border);border-radius:var(--radius);overflow:hidden;}
+.tc-table th{background:#f3f4f6;font-family:'Sora',sans-serif;font-weight:600;padding:10px 14px;text-align:left;color:var(--tc-navy);font-size:12px;text-transform:uppercase;letter-spacing:0.3px;}
+.tc-table td{padding:10px 14px;border-top:1px solid var(--tc-border);vertical-align:top;}
+.tc-table tr:hover td{background:#fafaf5;}
+
+/* Filter bar */
+.filter-bar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.filter-btn{font-family:'Figtree',sans-serif;font-size:12px;font-weight:500;padding:6px 14px;border:1px solid var(--tc-border);background:var(--tc-card-bg);border-radius:99px;cursor:pointer;color:var(--tc-muted);transition:all .2s;}
+.filter-btn:hover{border-color:var(--tc-lime-bright);}
+.filter-btn.active{background:var(--tc-navy);color:#fff;border-color:var(--tc-navy);}
+
+/* Event checklist */
+.event-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--tc-card-bg);border:1px solid var(--tc-border);border-radius:var(--radius);margin-bottom:8px;box-shadow:var(--shadow);transition:box-shadow .2s;}
+.event-item:hover{box-shadow:var(--shadow-hover);}
+.event-check{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--tc-lime-dark);cursor:pointer;}
+.event-info{flex:1;}
+.event-name{font-family:'Sora',sans-serif;font-weight:600;font-size:14px;}
+.event-meta{font-size:12px;color:var(--tc-muted);margin-top:3px;}
+
+/* Relevance */
+.relevance{display:inline-flex;gap:2px;}
+.relevance-dot{width:8px;height:8px;border-radius:50%;background:#ddd;}
+.relevance-dot.filled{background:var(--tc-lime-bright);}
+
+/* Amber border card */
+.card-amber{border-left:3px solid var(--tc-amber);}
+
+/* Summary card */
+.summary-card{background:var(--tc-navy);color:#fff;border-radius:var(--radius);padding:20px 24px;margin-top:20px;}
+.summary-card h3{color:var(--tc-lime-bright);font-size:16px;margin-bottom:8px;}
+.summary-card p{font-size:14px;opacity:0.9;line-height:1.55;}
+
+/* Footer */
+footer{text-align:center;padding:32px 16px;font-size:12px;color:var(--tc-muted);border-top:1px solid var(--tc-border);margin-top:40px;}
+footer a{color:var(--tc-blue);}
+
+/* Signal indicator */
+.signal-high{color:var(--tc-green);font-weight:600;}
+.signal-medium{color:var(--tc-amber);font-weight:600;}
+.signal-watch{color:var(--tc-muted);font-weight:600;}
+
+/* Source link */
+.source-link{font-size:11px;color:var(--tc-blue);font-weight:500;}
+
+/* Responsive */
+@media(max-width:768px){
+  .stat-row{grid-template-columns:repeat(2,1fr);}
+  .card-grid{grid-template-columns:1fr;}
+  .tab-btn{padding:7px 12px;font-size:12px;}
+  .dpdp-big{font-size:40px;}
+  .topbar-inner{height:48px;}
+  .logo{font-size:17px;}
+}
+@media(max-width:480px){
+  .stat-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+<div class="topbar-inner">
+  <div class="logo"><span class="logo-team">Team</span><span class="logo-dot"></span><span class="logo-counsel">Counsel</span></div>
+  <div class="topbar-right">
+    <span>{{DATE_DISPLAY}}</span>
+    <a href="/archive/index.html">Archive</a>
+  </div>
+</div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" data-tab="overview">Overview</button>
+  <button class="tab-btn" data-tab="outbound">Outbound</button>
+  <button class="tab-btn" data-tab="inbound">Inbound</button>
+  <button class="tab-btn" data-tab="pr">P&amp;R</button>
+  <button class="tab-btn" data-tab="partnerships">Partnerships</button>
+  <button class="tab-btn" data-tab="events">Events</button>
+  <button class="tab-btn" data-tab="funding">Funding</button>
+</div>
+
+<div class="container">
+
+<!-- ============== TAB 1: OVERVIEW ============== -->
+<div class="tab-panel active" id="tab-overview">
+
+<div class="stat-row">
+{{STAT_CARDS}}
+</div>
+
+<div class="dpdp-banner">
+  <div style="display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;">
+    <div class="dpdp-big" id="dpdp-days-big">---</div>
+    <div style="flex:1;min-width:240px;">
+      <div style="font-family:'Sora',sans-serif;font-weight:600;font-size:16px;margin-bottom:4px;">days to DPDP Act compliance deadline</div>
+      <div class="dpdp-sub">{{DPDP_BANNER_TEXT}}</div>
+    </div>
+  </div>
+  <div class="dpdp-progress">
+    <div class="dpdp-progress-track"><div class="dpdp-progress-bar" id="dpdp-bar" style="width:0%"></div></div>
+    <div class="dpdp-progress-labels"><span>Aug 11, 2025 (Notified)</span><span>May 13, 2027 (Deadline)</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Market Sentiment</div>
+{{SENTIMENT_BARS}}
+</div>
+
+<div class="section">
+  <div class="section-title">Top Signals</div>
+  <div class="card-grid">
+{{TOP_SIGNALS}}
+  </div>
+</div>
+</div>
+
+<!-- ============== TAB 2: OUTBOUND ============== -->
+<div class="tab-panel" id="tab-outbound">
+{{OUTBOUND_CONTENT}}
+</div>
+
+<!-- ============== TAB 3: INBOUND ============== -->
+<div class="tab-panel" id="tab-inbound">
+{{INBOUND_CONTENT}}
+</div>
+
+<!-- ============== TAB 4: P&R ============== -->
+<div class="tab-panel" id="tab-pr">
+{{PR_CONTENT}}
+</div>
+
+<!-- ============== TAB 5: PARTNERSHIPS ============== -->
+<div class="tab-panel" id="tab-partnerships">
+{{PARTNERSHIPS_CONTENT}}
+</div>
+
+<!-- ============== TAB 6: EVENTS ============== -->
+<div class="tab-panel" id="tab-events">
+
+<div class="filter-bar" id="event-type-filters">
+  <button class="filter-btn active" data-etype="all">All</button>
+  <button class="filter-btn" data-etype="conference">Conference</button>
+  <button class="filter-btn" data-etype="summit">Summit</button>
+  <button class="filter-btn" data-etype="workshop">Workshop</button>
+</div>
+<div class="filter-bar" id="event-city-filters">
+  <button class="filter-btn active" data-ecity="all">All Cities</button>
+  <button class="filter-btn" data-ecity="bengaluru">Bengaluru</button>
+  <button class="filter-btn" data-ecity="delhi">Delhi</button>
+  <button class="filter-btn" data-ecity="others">Others</button>
+</div>
+
+<div id="events-list">
+{{EVENTS_LIST}}
+</div>
+</div>
+
+<!-- ============== TAB 7: FUNDING ============== -->
+<div class="tab-panel" id="tab-funding">
+
+<div class="filter-bar" id="funding-geo-filters">
+  <button class="filter-btn active" data-fgeo="all">All</button>
+  <button class="filter-btn" data-fgeo="us">US</button>
+  <button class="filter-btn" data-fgeo="europe">Europe</button>
+  <button class="filter-btn" data-fgeo="india">India</button>
+  <button class="filter-btn" data-fgeo="israel">Israel</button>
+</div>
+<div class="filter-bar" id="funding-stage-filters">
+  <button class="filter-btn active" data-fstage="all">All</button>
+  <button class="filter-btn" data-fstage="seed">Seed</button>
+  <button class="filter-btn" data-fstage="series-a">Series A</button>
+  <button class="filter-btn" data-fstage="series-b-plus">Series B+</button>
+  <button class="filter-btn" data-fstage="ma">M&amp;A</button>
+</div>
+
+<div class="card-grid" id="funding-cards">
+{{FUNDING_CARDS}}
+</div>
+
+<div class="section" style="margin-top:28px;">
+  <div class="section-title">M&amp;A Activity</div>
+  <div class="card-grid" id="ma-cards">
+{{MA_CARDS}}
+  </div>
+</div>
+
+<div class="summary-card">
+  <h3>What This Means for TC</h3>
+  <p>{{FUNDING_SUMMARY}}</p>
+</div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  <div style="margin-bottom:6px;">Built by <strong>Team Counsel</strong> &middot; Knowledge Engine &middot; Updated {{DATE_DISPLAY}}</div>
+  <div style="margin-bottom:6px;">Powered by TC OS</div>
+  <a href="/archive/index.html">View Archive</a>
+</footer>
+
+<script>
+/* ============================================================
+   TC OS Interactivity — FROZEN
+   Do NOT modify this script. It handles all dashboard
+   interactions identically across every daily build.
+   ============================================================ */
+(function(){
+  // === DPDP Days Calculation ===
+  var today = new Date();
+  var dpdpDeadline = new Date(2027, 4, 13); // May 13, 2027
+  var consentDeadline = new Date(2026, 10, 13); // Nov 13, 2026
+  var dpdpStart = new Date(2025, 7, 11); // Aug 11, 2025
+
+  var dpdpDays = Math.ceil((dpdpDeadline - today) / (1000*60*60*24));
+  var consentDays = Math.ceil((consentDeadline - today) / (1000*60*60*24));
+  if(dpdpDays < 0) dpdpDays = 0;
+  if(consentDays < 0) consentDays = 0;
+
+  // Update all DPDP day counters
+  document.querySelectorAll('[data-dpdp-days]').forEach(function(el){ el.textContent = dpdpDays; });
+  document.querySelectorAll('[data-consent-days]').forEach(function(el){ el.textContent = consentDays; });
+  var el2 = document.getElementById('dpdp-days-big');
+  if(el2) el2.textContent = dpdpDays;
+
+  // Progress bar
+  var totalSpan = dpdpDeadline - dpdpStart;
+  var elapsed = today - dpdpStart;
+  var pct = Math.min(100, Math.max(0, (elapsed / totalSpan) * 100));
+  var bar = document.getElementById('dpdp-bar');
+  if(bar) bar.style.width = pct.toFixed(1) + '%';
+
+  // === Tab Navigation ===
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var tabPanels = document.querySelectorAll('.tab-panel');
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var t = btn.getAttribute('data-tab');
+      tabBtns.forEach(function(b){ b.classList.remove('active'); });
+      tabPanels.forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      var panel = document.getElementById('tab-' + t);
+      if(panel) panel.classList.add('active');
+    });
+  });
+
+  // === Event Checkboxes (localStorage) ===
+  var STORAGE_KEY = 'tc-ke-events-{{DATE_ISO}}';
+  var savedChecks = {};
+  try { savedChecks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e){}
+  var checks = document.querySelectorAll('.event-check');
+  checks.forEach(function(cb){
+    var k = cb.getAttribute('data-key');
+    if(savedChecks[k]) cb.checked = true;
+    cb.addEventListener('change', function(){
+      savedChecks[k] = cb.checked;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(savedChecks)); } catch(e){}
+    });
+  });
+
+  // === Event Filters ===
+  function applyEventFilters(){
+    var activeType = document.querySelector('#event-type-filters .filter-btn.active');
+    var activeCity = document.querySelector('#event-city-filters .filter-btn.active');
+    var etype = activeType ? activeType.getAttribute('data-etype') : 'all';
+    var ecity = activeCity ? activeCity.getAttribute('data-ecity') : 'all';
+    document.querySelectorAll('.event-item').forEach(function(item){
+      var matchType = etype === 'all' || item.getAttribute('data-etype') === etype;
+      var matchCity = ecity === 'all' || item.getAttribute('data-ecity') === ecity;
+      item.style.display = (matchType && matchCity) ? 'flex' : 'none';
+    });
+  }
+  document.querySelectorAll('#event-type-filters .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#event-type-filters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyEventFilters();
+    });
+  });
+  document.querySelectorAll('#event-city-filters .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#event-city-filters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyEventFilters();
+    });
+  });
+
+  // === Funding Filters ===
+  function applyFundingFilters(){
+    var activeGeo = document.querySelector('#funding-geo-filters .filter-btn.active');
+    var activeStage = document.querySelector('#funding-stage-filters .filter-btn.active');
+    var fgeo = activeGeo ? activeGeo.getAttribute('data-fgeo') : 'all';
+    var fstage = activeStage ? activeStage.getAttribute('data-fstage') : 'all';
+    document.querySelectorAll('#funding-cards .card, #ma-cards .card').forEach(function(card){
+      var matchGeo = fgeo === 'all' || card.getAttribute('data-fgeo') === fgeo;
+      var matchStage = fstage === 'all' || card.getAttribute('data-fstage') === fstage;
+      card.style.display = (matchGeo && matchStage) ? '' : 'none';
+    });
+  }
+  document.querySelectorAll('#funding-geo-filters .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#funding-geo-filters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFundingFilters();
+    });
+  });
+  document.querySelectorAll('#funding-stage-filters .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#funding-stage-filters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFundingFilters();
+    });
+  });
+})();
+
+// === Sentiment Toggle (global for onclick) ===
+function toggleSentiment(el){
+  var detail = el.querySelector('.sentiment-detail');
+  if(detail) detail.classList.toggle('open');
+}
+</script>
+</body>
+</html>

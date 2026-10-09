@@ -1,0 +1,657 @@
+{
+  "date_display": "9 Oct 2026",
+  "date_iso": "2026-10-09",
+
+  "stats": [
+    {"value": "$589M+", "label": "Funding Tracked"},
+    {"value": "216", "label": "Days to DPDP", "id": "dpdp-days-stat"},
+    {"value": "5", "label": "Events Upcoming"},
+    {"value": "6", "label": "New Funding Deals"}
+  ],
+
+  "dpdp_banner_text": "Full compliance by <strong>May 13, 2027</strong>. Consent Manager Framework (Rule 4) goes live <strong>Nov 13, 2026</strong> &mdash; just <span id=\"consent-days\">35</span> days away. MeitY has proposed accelerating full compliance to Nov 13, 2026.",
+
+  "sentiments": [
+    {
+      "label": "US",
+      "positive": 70, "neutral": 20, "negative": 10,
+      "detail": "GC tech spending doubled YoY. 36% increasing outside counsel spend. AI adoption ~50% across legal departments. FTC enforcement accelerating with Take It Down Act and state-level AI regulations proliferating."
+    },
+    {
+      "label": "UK",
+      "positive": 30, "neutral": 50, "negative": 20,
+      "detail": "FCA crypto rules finalized (June 2026). ICO taking sectoral AI approach. Regulatory burden increasing for financial services compliance. Legal spend growth moderate compared to US market."
+    },
+    {
+      "label": "India",
+      "positive": 65, "neutral": 25, "negative": 10,
+      "detail": "3rd largest startup ecosystem globally. M&A doubled to 140+ deals. Deep tech attracted $2.3B. 42 IPOs. DPDP Act creating compliance urgency across sectors. GCC expansion accelerating with 1,700+ centres."
+    }
+  ],
+
+  "top_signals": [
+    {
+      "title": "Harvey AI Raises $550M Series D",
+      "date": "Sep 9, 2026",
+      "source_url": "https://harvey.ai",
+      "source_domain": "harvey.ai",
+      "body": "Largest legal tech raise ever at $15.5B valuation. Signals massive enterprise demand for AI-native legal platforms. Partnered with OpenAI Astra for Law.",
+      "tags": [
+        {"text": "Funding", "class": "tag-lime"},
+        {"text": "Partnership Signal", "class": "tag-green"}
+      ]
+    },
+    {
+      "title": "OpenAI Launches Astra for Law",
+      "date": "Sep 17, 2026",
+      "source_url": "https://openai.com",
+      "source_domain": "openai.com",
+      "body": "Enterprise legal AI platform with partnerships across Thomson Reuters, iManage, Harvey, and Clio. Reshaping how law firms adopt AI at scale.",
+      "tags": [
+        {"text": "AI Platform", "class": "tag-blue"},
+        {"text": "Market Shift", "class": "tag-lime"}
+      ]
+    },
+    {
+      "title": "SEBI Project Jagrook &mdash; Nov 1",
+      "date": "Nov 1, 2026",
+      "source_url": "https://sebi.gov.in",
+      "source_domain": "sebi.gov.in",
+      "body": "SEBI&rsquo;s investor awareness initiative launches Nov 1. Creates compliance requirements for financial services firms and advisory opportunities for TC.",
+      "tags": [
+        {"text": "Regulatory", "class": "tag-amber"},
+        {"text": "FGC Opportunity", "class": "tag-lime"}
+      ]
+    },
+    {
+      "title": "Consent Manager Framework &mdash; 35 Days",
+      "date": "Nov 13, 2026",
+      "source_url": "https://meity.gov.in",
+      "source_domain": "meity.gov.in",
+      "body": "DPDP Rule 4 on Consent Managers goes live Nov 13. Businesses processing significant personal data must register or engage certified consent managers.",
+      "tags": [
+        {"text": "Urgent", "class": "tag-red"},
+        {"text": "ECP+FGC", "class": "tag-lime"}
+      ]
+    }
+  ],
+
+  "outbound": [
+    {
+      "title": "GCC Expansion Intel",
+      "cards": [
+        {
+          "title": "Cohere Health",
+          "date": "Oct 2026",
+          "meta_tags": ["AI Healthcare"],
+          "source_url": "https://coherehealth.com",
+          "source_domain": "coherehealth.com",
+          "body": "Expanding to Hyderabad. AI-driven healthcare utilisation management. Needs India legal entity setup, employment contracts, DPDP compliance for health data.",
+          "tags": [{"text": "ECP+FGC", "class": "tag-lime"}],
+          "relevance": 5
+        },
+        {
+          "title": "ArcelorMittal",
+          "date": "Q4 2026",
+          "meta_tags": ["Steel & Mining"],
+          "source_url": "https://arcelormittal.com",
+          "source_domain": "arcelormittal.com",
+          "body": "R&amp;D hub expansion in Pune/Hyderabad. Needs regulatory compliance, employment law advisory, IP protection for R&amp;D operations in India.",
+          "tags": [{"text": "FGC", "class": "tag-blue"}],
+          "relevance": 4
+        },
+        {
+          "title": "Lonza",
+          "date": "Q4 2026",
+          "meta_tags": ["Pharma"],
+          "source_url": "https://lonza.com",
+          "source_domain": "lonza.com",
+          "body": "Pharma GCC expansion in Hyderabad. Requires pharma regulatory compliance, employment law, trade compliance, and data privacy advisory.",
+          "tags": [{"text": "FGC", "class": "tag-blue"}],
+          "relevance": 4
+        },
+        {
+          "title": "Deepwatch",
+          "date": "Q4 2026",
+          "meta_tags": ["Cybersecurity"],
+          "source_url": "https://deepwatch.com",
+          "source_domain": "deepwatch.com",
+          "body": "Cybersecurity GCC in Bengaluru. Needs IT/cyber regulation advisory, DPDP compliance for security data, employment law for India ops.",
+          "tags": [{"text": "ECP+FGC", "class": "tag-lime"}],
+          "relevance": 4
+        },
+        {
+          "title": "Ferguson",
+          "date": "Q4 2026",
+          "meta_tags": ["Plumbing/HVAC"],
+          "source_url": "https://ferguson.com",
+          "source_domain": "ferguson.com",
+          "body": "GCC setup in Bengaluru for back-office operations. Needs entity setup, GST registration, employment contracts, vendor agreements.",
+          "tags": [{"text": "ECP", "class": "tag-blue"}],
+          "relevance": 3
+        }
+      ]
+    },
+    {
+      "title": "Leadership Changes to Track",
+      "cards": [
+        {
+          "title": "Freshworks &mdash; New GC Appointed",
+          "date": "Sep 2026",
+          "source_url": "https://freshworks.com",
+          "source_domain": "freshworks.com",
+          "body": "New General Counsel onboarded at Freshworks. Likely reviewing outside counsel panel and compliance posture. High DPDP relevance given SaaS data processing volumes.",
+          "tags": [{"text": "FGC Opportunity", "class": "tag-lime"}]
+        },
+        {
+          "title": "Razorpay &mdash; CLO Transition",
+          "date": "Oct 2026",
+          "source_url": "https://razorpay.com",
+          "source_domain": "razorpay.com",
+          "body": "Chief Legal Officer transition underway. Fintech regulatory landscape evolving rapidly with RBI digital lending norms. Window for advisory engagement.",
+          "tags": [{"text": "Monitor", "class": "tag-amber"}]
+        }
+      ]
+    },
+    {
+      "title": "Trigger Events",
+      "cards": [
+        {
+          "title": "PhonePe &mdash; $100M+ Secondary Round",
+          "date": "Sep 2026",
+          "source_url": "https://phonepe.com",
+          "source_domain": "phonepe.com",
+          "body": "Major secondary transaction signals governance restructuring. Compliance needs across payments regulation, DPDP, and cross-border data transfers.",
+          "tags": [{"text": "ECP+FGC", "class": "tag-lime"}]
+        },
+        {
+          "title": "Meesho &mdash; Pre-IPO Restructuring",
+          "date": "Oct 2026",
+          "source_url": "https://meesho.com",
+          "source_domain": "meesho.com",
+          "body": "IPO-bound restructuring requires corporate governance overhaul, ESOP structuring, regulatory filings, and DPDP compliance certification.",
+          "tags": [
+            {"text": "ECP", "class": "tag-lime"},
+            {"text": "CRaaS", "class": "tag-blue"}
+          ]
+        },
+        {
+          "title": "Swiggy &mdash; Acquisition of DineOut",
+          "date": "Q3 2026",
+          "source_url": "https://swiggy.com",
+          "source_domain": "swiggy.com",
+          "body": "M&amp;A integration creates legal needs around entity merger, employment transitions, data migration compliance, and combined DPDP posture.",
+          "tags": [{"text": "FGC", "class": "tag-blue"}]
+        }
+      ]
+    }
+  ],
+
+  "inbound": {
+    "sections": [
+      {
+        "title": "DPDP Act Content Opportunities",
+        "cards": [
+          {
+            "title": "Consent Manager Framework: What Businesses Need Before Nov 13, 2026",
+            "date": "Publish by Oct 20, 2026",
+            "meta_tags": ["Blog + Webinar"],
+            "body": "Deep dive into Rule 4 requirements, consent manager registration process, and what data fiduciaries must do before the Nov 13 deadline. Include checklist template.",
+            "tags": [
+              {"text": "Urgency: HIGH", "class": "tag-red"},
+              {"text": "FGC Lead Gen", "class": "tag-lime"}
+            ]
+          },
+          {
+            "title": "DPDP Compliance Playbook: 216 Days to Deadline",
+            "date": "Publish by Oct 15, 2026",
+            "meta_tags": ["Whitepaper + LinkedIn Series"],
+            "body": "Comprehensive compliance roadmap for businesses. Cover data audits, consent architecture, DPO appointment, grievance redressal, and board-level obligations.",
+            "tags": [
+              {"text": "Urgency: HIGH", "class": "tag-red"},
+              {"text": "ECP+FGC", "class": "tag-lime"}
+            ]
+          },
+          {
+            "title": "Cross-Border Data Transfers Under DPDP: What&rsquo;s Still Unknown",
+            "date": "Publish by Nov 1, 2026",
+            "meta_tags": ["Blog + LinkedIn Article"],
+            "body": "Analyse SDF designation rules (still pending), cross-border transfer restrictions, and how GCCs should prepare for potential data localisation requirements.",
+            "tags": [
+              {"text": "Urgency: MEDIUM", "class": "tag-amber"},
+              {"text": "Thought Leadership", "class": "tag-blue"}
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Market Trend Content",
+        "cards": [
+          {
+            "title": "GCC Legal Ops: Why Every Fortune 500 Needs India Legal Counsel",
+            "date": "Publish by Oct 25, 2026",
+            "meta_tags": ["Long-form Blog"],
+            "body": "Tie to GCC expansion data: 1,700+ centres, $64.6B revenue. Cover entity setup, employment law, regulatory compliance, and why fractional GC is the smart play for mid-size GCCs.",
+            "tags": [{"text": "ECP+FGC Lead Gen", "class": "tag-lime"}]
+          },
+          {
+            "title": "AI in Legal: From Experiment to Enterprise",
+            "date": "Publish by Nov 5, 2026",
+            "meta_tags": ["Blog + Social Series"],
+            "body": "Tie to OpenAI Astra for Law and Harvey $550M raise. Cover AI adoption trends (50% of legal depts), risk mitigation, and how TC helps clients navigate AI governance.",
+            "tags": [{"text": "Thought Leadership", "class": "tag-blue"}]
+          }
+        ]
+      }
+    ],
+    "seo_table": {
+      "title": "SEO / Keyword Signals",
+      "headers": ["Keyword", "Trend", "Volume", "TC Service Line"],
+      "rows": [
+        ["DPDP Act compliance", "<span class=\"signal-high\">Rising</span>", "12,400/mo", "FGC, ECP"],
+        ["consent manager India", "<span class=\"signal-high\">Surging</span>", "6,800/mo", "FGC"],
+        ["GCC legal setup India", "<span class=\"signal-medium\">Growing</span>", "3,200/mo", "ECP"],
+        ["data protection officer India", "<span class=\"signal-high\">Rising</span>", "4,500/mo", "FGC, CRaaS"],
+        ["fractional general counsel", "<span class=\"signal-medium\">Growing</span>", "2,100/mo", "FGC"],
+        ["India employment law compliance", "<span class=\"signal-medium\">Stable</span>", "3,900/mo", "ECP"],
+        ["AI legal governance India", "<span class=\"signal-high\">Rising</span>", "1,800/mo", "FGC"],
+        ["cross border data transfer India", "<span class=\"signal-medium\">Growing</span>", "2,400/mo", "FGC"]
+      ]
+    }
+  },
+
+  "pr": {
+    "dpdp_tracker": {
+      "title": "DPDP Act Tracker",
+      "headers": ["Date", "Milestone", "Status", "Impact"],
+      "rows": [
+        ["Aug 11, 2025", "DPDP Rules notified by MeitY", "<span class=\"tag tag-green\">DONE</span>", "Full regulatory framework published"],
+        ["Nov 2025", "Draft Consent Manager Rules released", "<span class=\"tag tag-green\">DONE</span>", "Rule 4 framework defined"],
+        ["Feb 18, 2026", "Data Protection Board selection invited", "<span class=\"tag tag-green\">DONE</span>", "Enforcement body formation initiated"],
+        ["Apr 2026", "DPB Chairperson applications invited", "<span class=\"tag tag-green\">DONE</span>", "Board leadership selection"],
+        ["May&ndash;Jun 2026", "NHRC notices to Meta, Khan Academy, Gemini", "<span class=\"tag tag-green\">DONE</span>", "Early enforcement signals for child data"],
+        ["Jul 2026", "First breach penalties proposed", "<span class=\"tag tag-amber\">IN PROGRESS</span>", "Penalty framework up to Rs 250 Cr"],
+        ["Nov 13, 2026", "Consent Manager Framework (Rule 4)", "<span class=\"tag tag-red\">UPCOMING &mdash; 35 days</span>", "Registration mandatory for consent managers"],
+        ["TBD", "SDF designation &amp; cross-border rules", "<span class=\"tag tag-amber\">PENDING</span>", "Data localisation &amp; transfer restrictions"],
+        ["May 13, 2027", "Full compliance deadline (Rules 3, 5-16, 22-23)", "<span class=\"tag tag-red\">UPCOMING &mdash; 216 days</span>", "All data fiduciary obligations enforceable"]
+      ]
+    },
+    "sections": [
+      {
+        "title": "India Policy Watch",
+        "cards": [
+          {
+            "title": "SEBI Project Jagrook",
+            "date": "Nov 1, 2026",
+            "source_url": "https://sebi.gov.in",
+            "source_domain": "sebi.gov.in",
+            "body": "Investor awareness and protection initiative. New compliance requirements for financial services firms. Creates advisory opportunities around investor disclosures and KYC frameworks.",
+            "tags": [{"text": "Regulatory", "class": "tag-amber"}]
+          },
+          {
+            "title": "MeitY IT Intermediary Guidelines",
+            "date": "Ongoing",
+            "source_url": "https://meity.gov.in",
+            "source_domain": "meity.gov.in",
+            "body": "Updated intermediary compliance requirements for digital platforms. Content moderation, grievance officer mandates, and traceability obligations for messaging platforms.",
+            "tags": [{"text": "Compliance", "class": "tag-amber"}]
+          },
+          {
+            "title": "Jan Vishwas Act 2.0",
+            "date": "Q4 2026",
+            "source_url": "https://legislative.gov.in",
+            "source_domain": "legislative.gov.in",
+            "body": "Decriminalisation of minor business offences. Simplifies compliance burden across 183 provisions. Shifts penalties from criminal to civil, reducing legal risk for businesses.",
+            "tags": [{"text": "Business Friendly", "class": "tag-lime"}]
+          },
+          {
+            "title": "FEMA Updates &mdash; Cross-Border Investment",
+            "date": "Ongoing",
+            "source_url": "https://rbi.org.in",
+            "source_domain": "rbi.org.in",
+            "body": "Revised FDI rules and overseas investment regulations. Simplified ECB framework. Relevant for GCC entity structuring and cross-border fund flows.",
+            "tags": [{"text": "ECP", "class": "tag-blue"}]
+          },
+          {
+            "title": "IndiaAI Mission &mdash; AI Governance Framework",
+            "date": "2026&ndash;2027",
+            "source_url": "https://indiaai.gov.in",
+            "source_domain": "indiaai.gov.in",
+            "body": "Rs 10,372 Cr allocation for AI ecosystem. Governance framework under development. Will shape AI compliance requirements for enterprises operating in India.",
+            "tags": [{"text": "FGC Opportunity", "class": "tag-lime"}]
+          }
+        ]
+      },
+      {
+        "title": "Global Regulatory Radar",
+        "cards": [
+          {
+            "title": "United States",
+            "date": "Oct 2026",
+            "body": "<strong>FTC Take It Down Act</strong> &mdash; non-consensual deepfake provisions active. State AI laws proliferating across Colorado, Connecticut, Utah. <strong>SEC enforcement</strong> actions on AI-washing claims. 19+ states with comprehensive privacy laws.",
+            "tags": [{"text": "Watch", "class": "tag-blue"}]
+          },
+          {
+            "title": "United Kingdom",
+            "date": "Oct 2026",
+            "body": "<strong>FCA crypto rules</strong> finalized June 2026 with registration requirements. <strong>ICO</strong> taking sectoral AI approach rather than horizontal regulation. Data protection adequacy post-Brexit remains stable.",
+            "tags": [{"text": "Monitor", "class": "tag-amber"}]
+          },
+          {
+            "title": "European Union",
+            "date": "Oct 2026",
+            "body": "<strong>EU AI Act</strong> high-risk system obligations phasing in through 2027. GPAI model provider obligations effective Aug 2025. Penalties up to 7% global turnover. Noxtua acquisition signals market response.",
+            "tags": [{"text": "Monitor", "class": "tag-amber"}]
+          }
+        ]
+      }
+    ]
+  },
+
+  "partnerships": [
+    {
+      "title": "Strategic Partnership Leads",
+      "cards": [
+        {
+          "title": "Intapp",
+          "date": "Oct 2026",
+          "source_url": "https://intapp.com",
+          "source_domain": "intapp.com",
+          "body": "Claude-powered compliance platform for law firms. Co-sell opportunity with TC&rsquo;s advisory services. Anthropic partnership enables AI-driven regulatory compliance workflows.",
+          "tags": [
+            {"text": "Co-sell", "class": "tag-lime"},
+            {"text": "AI Compliance", "class": "tag-blue"}
+          ]
+        },
+        {
+          "title": "Chamelio",
+          "date": "Sep 23, 2026",
+          "meta_tags": ["$26M raised"],
+          "source_url": "https://unite.ai",
+          "source_domain": "unite.ai",
+          "body": "AI legal ops for in-house counsel teams. Complementary to TC&rsquo;s FGC and CRaaS offerings. Fresh funding means growth mode &mdash; partnership window open.",
+          "tags": [
+            {"text": "FGC+CRaaS", "class": "tag-lime"},
+            {"text": "Integration", "class": "tag-green"}
+          ]
+        },
+        {
+          "title": "SpotDraft",
+          "date": "Jan 2026",
+          "meta_tags": ["$8M Series B Ext"],
+          "source_url": "https://spotdraft.com",
+          "source_domain": "spotdraft.com",
+          "body": "India&rsquo;s leading CLM platform. Strategic Qualcomm Ventures backing. Potential CRaaS integration partner for contract lifecycle management workflows.",
+          "tags": [
+            {"text": "CRaaS", "class": "tag-blue"},
+            {"text": "India CLM", "class": "tag-green"}
+          ]
+        },
+        {
+          "title": "Clio",
+          "date": "Sep 2026",
+          "source_url": "https://clio.com",
+          "source_domain": "clio.com",
+          "body": "OpenAI Astra partner. Leading small-mid firm CLM platform. India corridor opportunity as US/UK firms expand India operations and need local legal support.",
+          "tags": [{"text": "India Corridor", "class": "tag-lime"}]
+        }
+      ]
+    },
+    {
+      "title": "GCC Legal Team Opportunities",
+      "cards": [
+        {
+          "title": "Mid-Size GCCs Without India Legal Heads",
+          "date": "Oct 2026",
+          "body": "200+ GCCs with 100&ndash;500 employees lack dedicated India legal teams. DPDP compliance urgency + employment law complexity = strong fractional GC demand. Target: US tech/fintech GCCs in Bengaluru/Hyderabad.",
+          "tags": [
+            {"text": "FGC", "class": "tag-lime"},
+            {"text": "High Priority", "class": "tag-green"}
+          ]
+        },
+        {
+          "title": "European Pharma & Auto GCCs",
+          "date": "Oct 2026",
+          "body": "German/Swiss pharma and automotive companies expanding India R&amp;D centres. Need IP protection, employment law, regulatory compliance. Lonza, Bosch, Siemens patterns.",
+          "tags": [{"text": "FGC", "class": "tag-blue"}]
+        }
+      ]
+    },
+    {
+      "title": "OEM / Tech Alliance Signals",
+      "cards": [
+        {
+          "title": "OpenAI Astra for Law",
+          "date": "Sep 17, 2026",
+          "source_url": "https://openai.com",
+          "source_domain": "openai.com",
+          "body": "Enterprise legal AI platform. Partnerships with Thomson Reuters, iManage, Harvey, and Clio. Signals that AI-native legal workflows are becoming standard. TC opportunity: advisory for firms adopting these tools.",
+          "tags": [{"text": "AI Platform", "class": "tag-blue"}]
+        },
+        {
+          "title": "Anthropic + LexisNexis",
+          "date": "2026",
+          "source_url": "https://lexisnexis.com",
+          "source_domain": "lexisnexis.com",
+          "body": "Claude integrated into LexisNexis Protege platform. AI-powered legal research at enterprise scale. Positions Anthropic as key legal tech infrastructure layer.",
+          "tags": [{"text": "AI Research", "class": "tag-lime"}]
+        },
+        {
+          "title": "Anthropic + Intapp",
+          "date": "2026",
+          "source_url": "https://intapp.com",
+          "source_domain": "intapp.com",
+          "body": "AI agents for regulated industries. Claude-powered compliance workflows for professional services. Direct co-sell opportunity with TC&rsquo;s advisory practice.",
+          "tags": [{"text": "Co-sell", "class": "tag-green"}]
+        }
+      ]
+    }
+  ],
+
+  "events": [
+    {
+      "id": "techsparks",
+      "type": "conference",
+      "city": "bengaluru",
+      "name": "TechSparks 2026",
+      "meta": "Oct 13&ndash;15, 2026 &middot; Bengaluru &middot; 10,000+ attendees &middot; <a href=\"https://yourstory.com/techsparks\" target=\"_blank\">yourstory.com</a>",
+      "description": "India&rsquo;s flagship startup-tech conference. GCC leaders, founders, VCs. Strong ECP networking opportunity.",
+      "tag_text": "Conference",
+      "tag_class": "tag-lime",
+      "relevance_label": "ECP Relevance:",
+      "relevance": 5
+    },
+    {
+      "id": "cii-partnership",
+      "type": "summit",
+      "city": "others",
+      "name": "CII Partnership Summit",
+      "meta": "Nov 12&ndash;13, 2026 &middot; Visakhapatnam &middot; Industry leaders &middot; <a href=\"https://cii.in\" target=\"_blank\">cii.in</a>",
+      "description": "Industry-government convergence. Trade, investment, and policy discussions. Relevant for policy advisory positioning.",
+      "tag_text": "Summit",
+      "tag_class": "tag-amber",
+      "relevance_label": "ECP Relevance:",
+      "relevance": 3
+    },
+    {
+      "id": "bts-2026",
+      "type": "summit",
+      "city": "bengaluru",
+      "name": "Bengaluru Tech Summit (BTS) 2026",
+      "meta": "Nov 17&ndash;19, 2026 &middot; BIEC, Bengaluru &middot; 25,000+ delegates &middot; <a href=\"https://bengalurutechsummit.com\" target=\"_blank\">bengalurutechsummit.com</a>",
+      "description": "Karnataka&rsquo;s premier tech event. Global CXOs, GCC leaders, policymakers. High-value networking for ECP and FGC.",
+      "tag_text": "Summit",
+      "tag_class": "tag-amber",
+      "relevance_label": "ECP Relevance:",
+      "relevance": 4
+    },
+    {
+      "id": "wearedev",
+      "type": "conference",
+      "city": "bengaluru",
+      "name": "WeAreDevelopers India",
+      "meta": "Nov 25&ndash;26, 2026 &middot; Bengaluru &middot; 3,000+ developers &middot; <a href=\"https://wearedevelopers.com\" target=\"_blank\">wearedevelopers.com</a>",
+      "description": "Developer-focused with growing legal tech track. AI governance and open source compliance discussions.",
+      "tag_text": "Conference",
+      "tag_class": "tag-lime",
+      "relevance_label": "ECP Relevance:",
+      "relevance": 3
+    },
+    {
+      "id": "data-protection-conf",
+      "type": "conference",
+      "city": "delhi",
+      "name": "India Data Protection Conference",
+      "meta": "Dec 2026 (TBD) &middot; Delhi &middot; DPDP focused &middot; <a href=\"https://nasscom.in\" target=\"_blank\">nasscom.in</a>",
+      "description": "Dedicated DPDP Act conference. DPOs, compliance officers, legal heads. Must-attend for FGC thought leadership positioning.",
+      "tag_text": "Conference",
+      "tag_class": "tag-lime",
+      "relevance_label": "FGC Relevance:",
+      "relevance": 5
+    },
+    {
+      "id": "legal-tech-conf",
+      "type": "conference",
+      "city": "others",
+      "name": "Indian Legal Tech Conference",
+      "meta": "Q4 2026 (TBD) &middot; Mumbai &middot; Legal professionals &middot; <a href=\"https://legaltechconference.in\" target=\"_blank\">legaltechconference.in</a>",
+      "description": "Convergence of legal and tech professionals. CLM, AI governance, compliance automation. Relevant across all TC service lines.",
+      "tag_text": "Conference",
+      "tag_class": "tag-lime",
+      "relevance_label": "All Services:",
+      "relevance": 5
+    }
+  ],
+
+  "funding_cards": [
+    {
+      "title": "Harvey AI",
+      "date": "Sep 9, 2026",
+      "meta_tags": ["Series D"],
+      "body": "<strong>$550M</strong> at $15.5B valuation. Led by Diffusion + Lightspeed. AI-native legal platform. Largest legal tech raise ever. Partners with OpenAI Astra for Law.",
+      "tags": [
+        {"text": "US", "class": "tag-lime"},
+        {"text": "Series D", "class": "tag-green"}
+      ],
+      "source_url": "https://harvey.ai",
+      "source_domain": "harvey.ai",
+      "show_source_in_footer": true,
+      "signal": "high",
+      "data_fgeo": "us",
+      "data_fstage": "series-b-plus"
+    },
+    {
+      "title": "Noxtua",
+      "date": "Sep 23, 2026",
+      "meta_tags": ["Series C"],
+      "body": "<strong>&euro;100M+</strong>. C.H.BECK majority stake acquisition. European AI legal research platform. Major strategic acquisition signalling market consolidation in EU legal tech.",
+      "tags": [
+        {"text": "Germany", "class": "tag-blue"},
+        {"text": "Series C", "class": "tag-green"}
+      ],
+      "source_url": "https://tech.eu",
+      "source_domain": "tech.eu",
+      "show_source_in_footer": true,
+      "signal": "high",
+      "data_fgeo": "europe",
+      "data_fstage": "series-b-plus"
+    },
+    {
+      "title": "Chamelio",
+      "date": "Sep 23, 2026",
+      "meta_tags": ["Series A"],
+      "body": "<strong>$26M</strong>. Led by Entree Capital. AI legal ops platform for in-house counsel teams. Automates legal workflows. Complementary to TC&rsquo;s FGC and CRaaS offerings.",
+      "tags": [
+        {"text": "Israel", "class": "tag-amber"},
+        {"text": "Series A", "class": "tag-green"}
+      ],
+      "source_url": "https://unite.ai",
+      "source_domain": "unite.ai",
+      "show_source_in_footer": true,
+      "signal": "medium",
+      "data_fgeo": "israel",
+      "data_fstage": "series-a"
+    },
+    {
+      "title": "Blee",
+      "date": "Sep 8, 2026",
+      "meta_tags": ["Series A"],
+      "body": "<strong>$20M</strong>. AI-powered marketing regulatory compliance. Automates ad review and compliance checking. Adjacent to TC&rsquo;s compliance advisory services.",
+      "tags": [
+        {"text": "US", "class": "tag-lime"},
+        {"text": "Series A", "class": "tag-green"}
+      ],
+      "source_url": "https://fintech.global",
+      "source_domain": "fintech.global",
+      "show_source_in_footer": true,
+      "signal": "watch",
+      "data_fgeo": "us",
+      "data_fstage": "series-a"
+    },
+    {
+      "title": "Pandektes",
+      "date": "Oct 5, 2026",
+      "meta_tags": ["Series A"],
+      "body": "<strong>&euro;13.5M</strong>. AI-powered legal research for Nordic markets. Expanding across Europe. Signals growing demand for jurisdiction-specific AI legal tools.",
+      "tags": [
+        {"text": "Denmark", "class": "tag-blue"},
+        {"text": "Series A", "class": "tag-green"}
+      ],
+      "source_url": "https://legaltech-talk.com",
+      "source_domain": "legaltech-talk.com",
+      "show_source_in_footer": true,
+      "signal": "watch",
+      "data_fgeo": "europe",
+      "data_fstage": "series-a"
+    },
+    {
+      "title": "SpotDraft",
+      "date": "Jan 2026",
+      "meta_tags": ["Series B Ext"],
+      "body": "<strong>$8M</strong> extension from Qualcomm Ventures. India CLM leader. Strategic backing signals enterprise readiness. Potential CRaaS integration partner for TC.",
+      "tags": [
+        {"text": "India", "class": "tag-lime"},
+        {"text": "Series B Ext", "class": "tag-green"}
+      ],
+      "source_url": "https://spotdraft.com",
+      "source_domain": "spotdraft.com",
+      "show_source_in_footer": true,
+      "signal": "medium",
+      "data_fgeo": "india",
+      "data_fstage": "series-b-plus"
+    }
+  ],
+
+  "ma_cards": [
+    {
+      "title": "Wolters Kluwer / Brightflag",
+      "date": "May 2025",
+      "meta_tags": [],
+      "body": "<strong>&euro;425M</strong> acquisition. Strategic CLM market consolidation. Wolters Kluwer strengthening legal tech portfolio. Signals that enterprise CLM is a must-have category.",
+      "tags": [
+        {"text": "M&A", "class": "tag-amber"},
+        {"text": "CLM", "class": "tag-blue"}
+      ],
+      "signal": "high",
+      "signal_label": "Strategic",
+      "data_fgeo": "europe",
+      "data_fstage": "ma"
+    },
+    {
+      "title": "Legora &mdash; Serial Acquirer",
+      "date": "2025&ndash;2026",
+      "meta_tags": [],
+      "body": "5+ acquisitions across European legal tech. Building integrated legal intelligence platform. Consolidation pattern suggests market maturing.",
+      "tags": [
+        {"text": "M&A", "class": "tag-amber"},
+        {"text": "Europe", "class": "tag-blue"}
+      ],
+      "signal": "medium",
+      "signal_label": "Consolidation",
+      "data_fgeo": "europe",
+      "data_fstage": "ma"
+    }
+  ],
+
+  "funding_summary": "The $589M+ in tracked legal tech funding signals an industry investing heavily in AI-native workflows. Harvey&rsquo;s $15.5B valuation validates the enterprise legal AI thesis. For Team Counsel, the opportunity is three-fold: (1) advisory services for Indian enterprises adopting these tools, (2) fractional GC demand from GCCs whose parent companies use Harvey/Clio/Astra and need India-side legal alignment, and (3) CRaaS partnerships with well-funded CLM platforms like SpotDraft and Chamelio that need India market expertise. The DPDP compliance deadline creates a 216-day urgency window where every data fiduciary in India needs legal counsel."
+}
