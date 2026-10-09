@@ -326,12 +326,12 @@ def build(data, template_html):
         "{{FUNDING_CARDS}}": render_funding_cards(d["funding_cards"]),
         "{{MA_CARDS}}": render_ma_cards(d["ma_cards"]),
         "{{FUNDING_SUMMARY}}": d["funding_summary"],
-        "{{CLD_CONTENT}}": render_cld(d["cld"]),
-        "{{CLD_SUMMARY}}": d["cld_summary"],
-        "{{COMPETITORS_CONTENT}}": render_competitors(d["competitors"]),
-        "{{COMPETITORS_SUMMARY}}": d["competitors_summary"],
-        "{{OFFERINGS_CONTENT}}": render_offerings(d["offerings"]),
-        "{{OFFERINGS_SUMMARY}}": d["offerings_summary"],
+        "{{CLD_CONTENT}}": render_cld(d["cld"]) if d.get("cld") else "",
+        "{{CLD_SUMMARY}}": d.get("cld_summary", ""),
+        "{{COMPETITORS_CONTENT}}": render_competitors(d["competitors"]) if d.get("competitors") else "",
+        "{{COMPETITORS_SUMMARY}}": d.get("competitors_summary", ""),
+        "{{OFFERINGS_CONTENT}}": render_offerings(d["offerings"]) if d.get("offerings") else "",
+        "{{OFFERINGS_SUMMARY}}": d.get("offerings_summary", ""),
     }
 
     output = template_html
