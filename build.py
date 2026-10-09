@@ -121,6 +121,12 @@ def render_card(card):
         attrs += f' data-fgeo="{esc(card["data_fgeo"])}"'
     if card.get("data_fstage"):
         attrs += f' data-fstage="{esc(card["data_fstage"])}"'
+    if card.get("data_country"):
+        attrs += f' data-country="{esc(card["data_country"])}"'
+    if card.get("data_threat"):
+        attrs += f' data-threat="{esc(card["data_threat"])}"'
+    if card.get("data_otype"):
+        attrs += f' data-otype="{esc(card["data_otype"])}"'
 
     # Optional extra class
     extra_cls = f' {card["extra_class"]}' if card.get("extra_class") else ""
@@ -259,6 +265,48 @@ def render_ma_cards(cards):
     return render_card_grid(cards)
 
 
+def render_cld(cld):
+    """Render the CLD tab content (sections with country-filtered cards)."""
+    parts = []
+    for section in cld.get("sections", []):
+        parts.append(render_section(section))
+    if cld.get("table"):
+        table = cld["table"]
+        table_html = render_table(table)
+        parts.append(
+            f'<div class="section">\n'
+            f'  <div class="section-title">{esc(table.get("title", "Market Statistics"))}</div>\n'
+            f'{table_html}\n'
+            f'</div>'
+        )
+    return "\n\n".join(parts)
+
+
+def render_competitors(competitors):
+    """Render the Competitors tab content."""
+    parts = []
+    if competitors.get("table"):
+        table = competitors["table"]
+        table_html = render_table(table)
+        parts.append(
+            f'<div class="section">\n'
+            f'  <div class="section-title">{esc(table.get("title", "Competitor Landscape"))}</div>\n'
+            f'{table_html}\n'
+            f'</div>'
+        )
+    for section in competitors.get("sections", []):
+        parts.append(render_section(section))
+    return "\n\n".join(parts)
+
+
+def render_offerings(offerings):
+    """Render the Offerings tab content."""
+    parts = []
+    for section in offerings.get("sections", []):
+        parts.append(render_section(section))
+    return "\n\n".join(parts)
+
+
 def build(data, template_html):
     """Replace all placeholders in template with rendered content."""
     d = data
@@ -278,6 +326,12 @@ def build(data, template_html):
         "{{FUNDING_CARDS}}": render_funding_cards(d["funding_cards"]),
         "{{MA_CARDS}}": render_ma_cards(d["ma_cards"]),
         "{{FUNDING_SUMMARY}}": d["funding_summary"],
+        "{{CLD_CONTENT}}": render_cld(d["cld"]),
+        "{{CLD_SUMMARY}}": d["cld_summary"],
+        "{{COMPETITORS_CONTENT}}": render_competitors(d["competitors"]),
+        "{{COMPETITORS_SUMMARY}}": d["competitors_summary"],
+        "{{OFFERINGS_CONTENT}}": render_offerings(d["offerings"]),
+        "{{OFFERINGS_SUMMARY}}": d["offerings_summary"],
     }
 
     output = template_html

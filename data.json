@@ -1265,5 +1265,954 @@
       "data_fstage": "ma"
     }
   ],
-  "funding_summary": "The $870M+ in tracked legal tech funding signals an industry doubling down on AI-native compliance, due-diligence, and legal ops automation. Harvey&rsquo;s $15.5B valuation anchors the market; new entrants like Xapien ($56M for AI due diligence), Comp AI ($34M for compliance automation), and Complaion (&euro;13.5M for SME compliance) confirm that <strong>compliance-tech</strong> is the hottest sub-sector. For Team Counsel: (1) advisory demand as Indian enterprises adopt these tools, (2) fractional GC pipeline from GCCs &mdash; Eli Lilly, Costco, LPL Financial, HCA Healthcare all establishing Hyderabad centres without India legal heads, (3) partnership windows with well-funded platforms like Comp AI and SpotDraft that need India market expertise. The 35-day DPDP consent manager deadline creates immediate urgency for every data fiduciary in India."
+  "funding_summary": "The $870M+ in tracked legal tech funding signals an industry doubling down on AI-native compliance, due-diligence, and legal ops automation. Harvey&rsquo;s $15.5B valuation anchors the market; new entrants like Xapien ($56M for AI due diligence), Comp AI ($34M for compliance automation), and Complaion (&euro;13.5M for SME compliance) confirm that <strong>compliance-tech</strong> is the hottest sub-sector. For Team Counsel: (1) advisory demand as Indian enterprises adopt these tools, (2) fractional GC pipeline from GCCs &mdash; Eli Lilly, Costco, LPL Financial, HCA Healthcare all establishing Hyderabad centres without India legal heads, (3) partnership windows with well-funded platforms like Comp AI and SpotDraft that need India market expertise. The 35-day DPDP consent manager deadline creates immediate urgency for every data fiduciary in India.",
+  "cld": {
+    "sections": [
+      {
+        "title": "Market Overview & ALSP Adoption",
+        "cards": [
+          {
+            "title": "ALSP Market Hits $28.5B — 18% CAGR",
+            "date": "2026 Thomson Reuters / Acritas",
+            "body": "The Alternative Legal Service Provider market reached <strong>$28.5 billion</strong> with an 18% compound annual growth rate. CLD adoption stands at <strong>57% globally</strong>, with the UK leading at 65%. India’s GCC boom (111 new centres in 8 months) is creating a parallel demand wave for managed legal services and compliance-as-a-service.",
+            "tags": [
+              {
+                "text": "Market Size",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_country": "all"
+          },
+          {
+            "title": "India: 111 New GCCs Drive Legal Ops Demand",
+            "date": "Oct 2026",
+            "body": "India added <strong>111 Global Capability Centres</strong> in the last 8 months. Each GCC needs India-specific legal infrastructure — employment law, data privacy (DPDP), contract management. Most launch without a dedicated India legal head, creating an immediate <strong>fractional GC opportunity</strong> for Team Counsel.",
+            "tags": [
+              {
+                "text": "GCC Growth",
+                "class": "tag-lime"
+              },
+              {
+                "text": "India",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 5,
+            "data_country": "india",
+            "signal": "high",
+            "signal_label": "Immediate Opportunity"
+          },
+          {
+            "title": "US: Legal Tech Spending Surges 9.7% YoY",
+            "date": "2026 CLD Report",
+            "body": "US corporate legal departments increased technology spending by <strong>9.7% year-over-year</strong>. The build-vs-buy debate is intensifying across AmLaw 200 firms. Harvey’s $15.5B valuation validates enterprise AI demand. <strong>47% of departments</strong> now have GenAI tools deployed.",
+            "tags": [
+              {
+                "text": "Tech Spend",
+                "class": "tag-green"
+              },
+              {
+                "text": "US",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 4,
+            "data_country": "us"
+          },
+          {
+            "title": "UK: 96% AI Integration, Highest ALSP Adoption at 65%",
+            "date": "2026 Clio UK Report",
+            "body": "<strong>96% of UK firms</strong> have integrated AI into operations, with 62% planning to expand. <strong>34% are investing £100K+</strong> in technology. 54% have shifted to fixed-fee billing. The UK leads globally with <strong>65% ALSP adoption</strong> — firms are actively seeking external legal ops partners.",
+            "tags": [
+              {
+                "text": "AI Leaders",
+                "class": "tag-green"
+              },
+              {
+                "text": "UK",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 4,
+            "data_country": "uk"
+          }
+        ]
+      },
+      {
+        "title": "GC Visibility & AI Adoption Gap",
+        "cards": [
+          {
+            "title": "86% GCs vs 17% C-Suite Visibility Gap",
+            "date": "Thomson Reuters CLD 2026",
+            "body": "<strong>86% of General Counsel</strong> believe legal contributes to business strategy, but only <strong>17% of C-Suite executives</strong> agree. <strong>42% of C-Suite</strong> say legal contributes “little or not at all.” This disconnect creates a massive opportunity for TC to bridge the gap with data-driven reporting and fractional GC services.",
+            "tags": [
+              {
+                "text": "Visibility Gap",
+                "class": "tag-red"
+              },
+              {
+                "text": "TC Opportunity",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_country": "all",
+            "signal": "high",
+            "signal_label": "Critical Gap"
+          },
+          {
+            "title": "India: DPDP Consent Manager Deadline in 35 Days",
+            "date": "Nov 13, 2026",
+            "body": "The DPDP Act <strong>Consent Manager Framework (Rule 4)</strong> goes live on Nov 13, 2026. Every data fiduciary in India must comply. AI governance frameworks are still emerging. TC can position as the <strong>compliance-readiness partner</strong> for enterprises scrambling to meet the deadline.",
+            "tags": [
+              {
+                "text": "DPDP Deadline",
+                "class": "tag-red"
+              },
+              {
+                "text": "India",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 5,
+            "data_country": "india",
+            "signal": "high",
+            "signal_label": "Urgent"
+          },
+          {
+            "title": "47% Have GenAI Tools, 72% Want More Applied",
+            "date": "Thomson Reuters CLD 2026",
+            "body": "<strong>47% of CLDs</strong> have GenAI tools deployed, but <strong>72% say GenAI should be applied more broadly</strong>. Tech priority among GCs doubled from 14% to 28% YoY. <strong>86% of technology comments mention AI</strong>. The demand for AI-augmented legal services far outstrips current adoption.",
+            "tags": [
+              {
+                "text": "AI Gap",
+                "class": "tag-amber"
+              },
+              {
+                "text": "GenAI",
+                "class": "tag-green"
+              }
+            ],
+            "relevance": 4,
+            "data_country": "all"
+          },
+          {
+            "title": "UK: 43% Report AI Boosted Productivity",
+            "date": "Clio UK 2026",
+            "body": "<strong>43% of UK solicitors</strong> report AI has already boosted productivity. <strong>42% of clients</strong> are comfortable with AI chatbots for initial case assessment. However, <strong>39% lack AI governance frameworks</strong>. Data portability crisis persists — 50% of firms lose 44+ working days to poor data practices.",
+            "tags": [
+              {
+                "text": "Productivity",
+                "class": "tag-green"
+              },
+              {
+                "text": "UK",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 4,
+            "data_country": "uk"
+          },
+          {
+            "title": "US: Nearly Half Cite Staffing Constraints",
+            "date": "Thomson Reuters CLD 2026",
+            "body": "Nearly <strong>50% of US CLDs</strong> cite staffing constraints as a top challenge. Regulatory matters are the largest expected spend growth area. M&A spending in Q4 2025 was <strong>10x Q4 2024</strong>. The staffing crunch + regulatory wave = outsourcing demand that TC can capture.",
+            "tags": [
+              {
+                "text": "Staffing Gap",
+                "class": "tag-amber"
+              },
+              {
+                "text": "US",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 4,
+            "data_country": "us"
+          }
+        ]
+      },
+      {
+        "title": "TC Opportunity Mapping",
+        "cards": [
+          {
+            "title": "Fractional GC — GCC Pipeline",
+            "date": "Q4 2026 Priority",
+            "body": "<strong>111 new GCCs</strong> without India legal heads = immediate fractional GC pipeline. Target Eli Lilly, Costco, LPL Financial, HCA Healthcare Hyderabad centres. <strong>Pitch:</strong> Full-stack India legal ops (employment, DPDP, contracts) at a fraction of an in-house hire.",
+            "tags": [
+              {
+                "text": "Revenue Play",
+                "class": "tag-lime"
+              },
+              {
+                "text": "India",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 5,
+            "data_country": "india",
+            "signal": "high",
+            "signal_label": "Priority Action"
+          },
+          {
+            "title": "DPDP Compliance-as-a-Service",
+            "date": "Now – Nov 13, 2026",
+            "body": "35-day window to <strong>sell DPDP readiness packages</strong>. Package: consent manager assessment + privacy policy audit + employee training. <strong>Target:</strong> Series B+ startups, GCCs, mid-market enterprises without in-house privacy counsel. Price point: ₹5–15L engagement.",
+            "tags": [
+              {
+                "text": "Compliance",
+                "class": "tag-red"
+              },
+              {
+                "text": "India",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 5,
+            "data_country": "india",
+            "signal": "high",
+            "signal_label": "Time-Critical"
+          },
+          {
+            "title": "AI Governance Advisory",
+            "date": "2026–2027",
+            "body": "With <strong>72% wanting more GenAI</strong> but <strong>39% lacking governance frameworks</strong>, TC can offer AI policy advisory: responsible AI use policies, vendor due diligence for AI tools, AI risk assessment frameworks. Cross-sell with DPDP compliance.",
+            "tags": [
+              {
+                "text": "Advisory",
+                "class": "tag-green"
+              },
+              {
+                "text": "Cross-sell",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 4,
+            "data_country": "all"
+          },
+          {
+            "title": "UK Market Entry via ALSP Partnerships",
+            "date": "H1 2027 Target",
+            "body": "<strong>65% UK ALSP adoption</strong> = mature market ready for India-delivery partnerships. Target UK ALSPs for India legal ops delivery. £100K+ tech budgets = willingness to pay. Fixed-fee model (54% shifted) aligns with TC’s pricing structure.",
+            "tags": [
+              {
+                "text": "Expansion",
+                "class": "tag-blue"
+              },
+              {
+                "text": "UK",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 3,
+            "data_country": "uk"
+          }
+        ]
+      }
+    ],
+    "table": {
+      "title": "CLD Market Statistics by Country",
+      "headers": [
+        "Metric",
+        "India",
+        "US",
+        "UK"
+      ],
+      "rows": [
+        [
+          "ALSP Adoption Rate",
+          "48% (growing fast)",
+          "57%",
+          "<strong>65%</strong> (highest)"
+        ],
+        [
+          "AI Tool Deployment",
+          "Rising (DPDP driving)",
+          "47% have GenAI",
+          "<strong>96%</strong> AI integration"
+        ],
+        [
+          "Tech Budget Trend",
+          "↑ GCC-driven",
+          "↑ 9.7% YoY",
+          "↑ 34% investing £100K+"
+        ],
+        [
+          "Top Legal Challenge",
+          "DPDP compliance",
+          "Staffing constraints",
+          "Data portability"
+        ],
+        [
+          "Key Deadline",
+          "DPDP Nov 13, 2026",
+          "State privacy laws wave",
+          "AI governance pending"
+        ],
+        [
+          "TC Opportunity",
+          "Fractional GC + DPDP",
+          "Advisory + Partnerships",
+          "ALSP delivery partner"
+        ]
+      ]
+    }
+  },
+  "cld_summary": "The CLD landscape presents a convergence of three forces favouring TC: (1) India’s GCC boom (111 new centres) creates immediate fractional GC demand, amplified by the 35-day DPDP deadline, (2) the 86% vs 17% GC-to-C-Suite visibility gap globally means enterprises need data-driven legal ops — exactly TC’s positioning, and (3) 72% of CLDs want more GenAI applied but 39% lack governance frameworks, opening an AI advisory play. <strong>Priority actions:</strong> Launch DPDP compliance packages this week, activate GCC outreach for fractional GC pipeline, and begin UK ALSP partnership conversations for H1 2027 entry.",
+  "competitors": {
+    "table": {
+      "title": "Competitor Landscape",
+      "headers": [
+        "Company",
+        "Core Offer",
+        "Geography",
+        "Threat Level",
+        "TC Differentiator"
+      ],
+      "rows": [
+        [
+          "<strong>SpotDraft</strong>",
+          "CLM platform (Series B, $26M)",
+          "India / Global",
+          "<span class=\"signal-high\">HIGH</span>",
+          "TC = advisory + human layer they lack"
+        ],
+        [
+          "<strong>Legistify</strong>",
+          "Litigation management SaaS",
+          "India",
+          "<span class=\"signal-high\">HIGH</span>",
+          "TC goes broader: contracts + DPDP + advisory"
+        ],
+        [
+          "<strong>Volody</strong>",
+          "CLM + compliance",
+          "India",
+          "<span class=\"signal-medium\">MEDIUM</span>",
+          "TC bundles tech + counsel; Volody is pure tech"
+        ],
+        [
+          "<strong>Kira Systems</strong>",
+          "AI contract analysis",
+          "Global",
+          "<span class=\"signal-medium\">MEDIUM</span>",
+          "TC’s India expertise + advisory vs. Kira’s pure ML"
+        ],
+        [
+          "<strong>Practical Law (TR)</strong>",
+          "Legal know-how",
+          "Global",
+          "<span class=\"signal-medium\">MEDIUM</span>",
+          "TC offers execution, not just templates"
+        ],
+        [
+          "<strong>Tessaract.io</strong>",
+          "Legal practice mgmt",
+          "Southeast Asia",
+          "<span class=\"signal-watch\">LOW</span>",
+          "Different geography; TC has India depth"
+        ],
+        [
+          "<strong>Vakilsearch</strong>",
+          "SME legal services",
+          "India",
+          "<span class=\"signal-medium\">MEDIUM</span>",
+          "TC targets enterprise/GCCs, not SME"
+        ],
+        [
+          "<strong>LawRato</strong>",
+          "Lawyer marketplace",
+          "India",
+          "<span class=\"signal-watch\">LOW</span>",
+          "Marketplace vs TC’s managed service"
+        ],
+        [
+          "<strong>Clio</strong>",
+          "Practice management",
+          "Global (UK focus)",
+          "<span class=\"signal-watch\">LOW</span>",
+          "Clio = tools; TC = strategy + execution"
+        ],
+        [
+          "<strong>Harvey AI</strong>",
+          "GenAI for law ($15.5B)",
+          "US / Global",
+          "<span class=\"signal-medium\">MEDIUM</span>",
+          "Different segment; partnership potential"
+        ],
+        [
+          "<strong>Comp AI</strong>",
+          "Compliance automation ($34M)",
+          "US / Global",
+          "<span class=\"signal-watch\">LOW</span>",
+          "Partnership target, not competitor"
+        ]
+      ]
+    },
+    "sections": [
+      {
+        "title": "Business Model Analysis",
+        "cards": [
+          {
+            "title": "SpotDraft: Platform Play with Network Effects",
+            "date": "Series B — $26M raised",
+            "body": "<strong>Model:</strong> SaaS CLM platform with self-serve + enterprise tiers. Building network effects through contract repository. <strong>Weakness:</strong> Pure tech play — no advisory layer, no India-specific compliance expertise. <strong>TC angle:</strong> Position as the <em>advisory + implementation partner</em> that SpotDraft customers need.",
+            "tags": [
+              {
+                "text": "High Threat",
+                "class": "tag-red"
+              },
+              {
+                "text": "Partnership Possible",
+                "class": "tag-green"
+              }
+            ],
+            "relevance": 5,
+            "data_threat": "high"
+          },
+          {
+            "title": "Legistify: India-Focused Litigation SaaS",
+            "date": "Growing presence",
+            "body": "<strong>Model:</strong> Litigation tracking + management platform targeting Indian enterprises. <strong>Weakness:</strong> Narrow focus on litigation only; no contract, compliance, or advisory offering. <strong>TC angle:</strong> Out-position by offering <em>full-stack legal ops</em> including litigation oversight as one component.",
+            "tags": [
+              {
+                "text": "High Threat",
+                "class": "tag-red"
+              },
+              {
+                "text": "India Market",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 5,
+            "data_threat": "high"
+          },
+          {
+            "title": "Vakilsearch & LawRato: SME Marketplace Models",
+            "date": "Established players",
+            "body": "<strong>Model:</strong> High-volume, low-ACV marketplace connecting lawyers with SMEs and individuals. <strong>Weakness:</strong> Commoditised services, no enterprise capability. <strong>TC angle:</strong> Completely different segment — TC targets enterprise/GCCs. No direct conflict, but <em>guard against down-market drift</em>.",
+            "tags": [
+              {
+                "text": "Low Threat",
+                "class": "tag-green"
+              },
+              {
+                "text": "Different Segment",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 2,
+            "data_threat": "low"
+          }
+        ]
+      },
+      {
+        "title": "Strategic Analysis — 7 Model Framework",
+        "cards": [
+          {
+            "title": "Partnership Model: Ecosystem vs. Solo Play",
+            "date": "Strategic Priority",
+            "body": "<strong>SpotDraft</strong> and <strong>Harvey AI</strong> have built tech that TC’s clients need. Rather than competing, TC should <em>embed as the advisory layer</em> in their ecosystems. <strong>Play:</strong> Certified implementation partner for SpotDraft India, referral arrangements with compliance-tech platforms. <strong>Comp AI ($34M)</strong> needs India market expertise — ideal partnership target.",
+            "tags": [
+              {
+                "text": "Partnerships",
+                "class": "tag-green"
+              },
+              {
+                "text": "Ecosystem",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_threat": "high"
+          },
+          {
+            "title": "Operations: Tech-Enabled vs Pure Tech",
+            "date": "Competitive Advantage",
+            "body": "Pure tech competitors (SpotDraft, Volody, Kira) solve <em>one layer</em> of the legal ops stack. TC’s advantage: <strong>human expertise + tech enablement</strong>. GCCs need someone to run the India legal function, not just a dashboard. <strong>Key metric:</strong> TC resolves 90%+ of matters without external counsel referral — competitors can’t match this.",
+            "tags": [
+              {
+                "text": "Operations",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Moat",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_threat": "medium"
+          },
+          {
+            "title": "Sales Model: Consultative vs Self-Serve",
+            "date": "Go-to-Market",
+            "body": "Competitors like Vakilsearch and LawRato use <strong>self-serve/marketplace</strong> models with low ACV. SpotDraft uses product-led growth. TC should lean into <strong>consultative, high-touch sales</strong>: DPDP readiness assessments, GC office audits, and compliance workshops as top-of-funnel. <strong>Target ACV:</strong> ₹10–50L per engagement.",
+            "tags": [
+              {
+                "text": "Sales",
+                "class": "tag-amber"
+              },
+              {
+                "text": "High-Touch",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 4,
+            "data_threat": "medium"
+          },
+          {
+            "title": "Customer Acquisition: Event-Led + Content-Led",
+            "date": "Growth Strategy",
+            "body": "Competitors rely on SEO (Vakilsearch), product virality (SpotDraft), or analyst coverage (Kira, Harvey). TC’s differentiated acquisition: <strong>event-led (DPDP workshops, GCC roundtables)</strong> + <strong>content-led (CLD reports, industry benchmarks)</strong>. The Knowledge Engine itself is a top-of-funnel asset. <strong>Target:</strong> 50 qualified leads per quarter from events.",
+            "tags": [
+              {
+                "text": "Acquisition",
+                "class": "tag-green"
+              },
+              {
+                "text": "Events",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 4,
+            "data_threat": "medium"
+          }
+        ]
+      },
+      {
+        "title": "90-Day Competitive Action Plan",
+        "cards": [
+          {
+            "title": "Days 1–30: Establish Position",
+            "date": "Month 1",
+            "body": "<strong>•</strong> Launch DPDP compliance offering (exploit 35-day deadline urgency)<br><strong>•</strong> Publish competitive positioning deck for sales team<br><strong>•</strong> Initiate SpotDraft partnership conversation<br><strong>•</strong> Map 20 target GCCs without India legal heads<br><strong>•</strong> Set up competitor monitoring alerts",
+            "tags": [
+              {
+                "text": "Month 1",
+                "class": "tag-red"
+              },
+              {
+                "text": "Foundation",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_threat": "high"
+          },
+          {
+            "title": "Days 31–60: Build Moat",
+            "date": "Month 2",
+            "body": "<strong>•</strong> Host first DPDP workshop (20+ enterprise attendees)<br><strong>•</strong> Secure 2–3 GCC fractional GC engagements<br><strong>•</strong> Formalize Comp AI / SpotDraft partnership terms<br><strong>•</strong> Publish CLD India report (content-led acquisition)<br><strong>•</strong> Begin UK ALSP outreach for partnership conversations",
+            "tags": [
+              {
+                "text": "Month 2",
+                "class": "tag-amber"
+              },
+              {
+                "text": "Traction",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_threat": "medium"
+          },
+          {
+            "title": "Days 61–90: Scale & Measure",
+            "date": "Month 3",
+            "body": "<strong>•</strong> Convert 5+ DPDP assessment leads to retainer clients<br><strong>•</strong> Second GCC roundtable event with expanded reach<br><strong>•</strong> First UK ALSP partnership MOU signed<br><strong>•</strong> Achieve 50 qualified leads in pipeline<br><strong>•</strong> Review competitive KPIs and adjust strategy",
+            "tags": [
+              {
+                "text": "Month 3",
+                "class": "tag-green"
+              },
+              {
+                "text": "Scale",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_threat": "low"
+          }
+        ]
+      },
+      {
+        "title": "Key Competitive KPIs",
+        "cards": [
+          {
+            "title": "Pipeline & Revenue Targets",
+            "date": "Q4 2026 – Q1 2027",
+            "body": "<strong>Pipeline:</strong> 50 qualified leads by Day 90<br><strong>Conversion:</strong> 15–20% lead-to-client<br><strong>GCC Engagements:</strong> 5 fractional GC contracts<br><strong>DPDP Revenue:</strong> ₹25L+ from compliance packages<br><strong>Partnerships:</strong> 2 formalized (SpotDraft + 1 compliance-tech)<br><strong>Content:</strong> 3 industry reports published",
+            "tags": [
+              {
+                "text": "KPIs",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Targets",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_threat": "all"
+          }
+        ]
+      }
+    ]
+  },
+  "competitors_summary": "TC operates in a market where pure-tech competitors (SpotDraft, Legistify, Volody) solve one layer of legal ops, while TC offers the <strong>full-stack: advisory + tech-enablement + execution</strong>. The 86% GC vs 17% C-Suite visibility gap is a market failure that tech alone cannot fix — it requires the human advisory layer TC provides. <strong>Strategic moat:</strong> Partnership ecosystem (embed with tech players) + India expertise (DPDP, GCCs) + consultative sales model. The 90-day plan targets 50 qualified leads, 5 GCC engagements, and 2 formalized partnerships.",
+  "offerings": {
+    "sections": [
+      {
+        "title": "Outbound — Trigger-Based Outreach",
+        "cards": [
+          {
+            "title": "Trigger: New Funding Announcements",
+            "date": "Ongoing monitoring",
+            "body": "<strong>Signal:</strong> Company raises Series A+ funding.<br><strong>Action:</strong> Within 48 hours, send congratulatory outreach + offer: “As you scale, your legal complexity scales faster. Here’s how TC helps funded startups stay compliant without building a full legal team.”<br><strong>Channel:</strong> LinkedIn InMail + warm email via Apollo.<br><strong>KPI:</strong> 20% open rate, 5% meeting rate.",
+            "tags": [
+              {
+                "text": "Outbound",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Funding Trigger",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_otype": "outbound"
+          },
+          {
+            "title": "Trigger: DPDP Compliance Deadline",
+            "date": "Now – Nov 13, 2026",
+            "body": "<strong>Signal:</strong> DPDP consent manager deadline 35 days out.<br><strong>Action:</strong> Targeted campaign to data fiduciaries: “Are you ready for the Nov 13 consent manager deadline? TC’s DPDP readiness assessment identifies gaps in 5 business days.”<br><strong>Channel:</strong> Email sequence + LinkedIn ads targeting GC/DPO titles.<br><strong>KPI:</strong> 15 assessments booked by Nov 1.",
+            "tags": [
+              {
+                "text": "Outbound",
+                "class": "tag-blue"
+              },
+              {
+                "text": "DPDP",
+                "class": "tag-red"
+              }
+            ],
+            "relevance": 5,
+            "data_otype": "outbound",
+            "signal": "high",
+            "signal_label": "Time-Critical"
+          },
+          {
+            "title": "Trigger: GCC India Launch",
+            "date": "Ongoing monitoring",
+            "body": "<strong>Signal:</strong> Multinational announces India GCC/office.<br><strong>Action:</strong> Within 1 week of announcement, multi-touch sequence: (1) Congratulate on India entry, (2) Share ‘India Legal Ops Starter Kit’ one-pager, (3) Offer 30-min consult on India legal landscape.<br><strong>Channel:</strong> LinkedIn + direct email to Head of Legal/GC.<br><strong>KPI:</strong> 10 GCC conversations per quarter.",
+            "tags": [
+              {
+                "text": "Outbound",
+                "class": "tag-blue"
+              },
+              {
+                "text": "GCC",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_otype": "outbound"
+          },
+          {
+            "title": "Trigger: Leadership Change (GC/CLO Appointment)",
+            "date": "Ongoing monitoring",
+            "body": "<strong>Signal:</strong> New GC or CLO appointed at target company.<br><strong>Action:</strong> Send personalized welcome + industry benchmarks. New GCs have a 90-day window where they’re most receptive to new partnerships and eager to make their mark.<br><strong>Channel:</strong> LinkedIn InMail + tailored email.<br><strong>KPI:</strong> 8% meeting conversion rate.",
+            "tags": [
+              {
+                "text": "Outbound",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Leadership",
+                "class": "tag-amber"
+              }
+            ],
+            "relevance": 4,
+            "data_otype": "outbound"
+          },
+          {
+            "title": "Trigger: Regulatory Change or Enforcement",
+            "date": "Event-driven",
+            "body": "<strong>Signal:</strong> New regulation, enforcement action, or policy change in target sector.<br><strong>Action:</strong> Rapid-response outreach with compliance impact brief. Position TC as the expert who can help navigate the change. <br><strong>Channel:</strong> Email blast to affected segment + LinkedIn thought leadership post.<br><strong>KPI:</strong> 25% open rate on regulatory alerts.",
+            "tags": [
+              {
+                "text": "Outbound",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Regulatory",
+                "class": "tag-amber"
+              }
+            ],
+            "relevance": 4,
+            "data_otype": "outbound"
+          },
+          {
+            "title": "Trigger: M&A Activity in Target Sector",
+            "date": "Event-driven",
+            "body": "<strong>Signal:</strong> M&A deal announced involving target company or sector.<br><strong>Action:</strong> Offer post-merger legal integration support. M&A creates legal complexity (contracts, compliance, employment) that overwhelms in-house teams.<br><strong>Channel:</strong> Direct outreach to both acquirer and target legal teams.<br><strong>KPI:</strong> 3 M&A advisory engagements per quarter.",
+            "tags": [
+              {
+                "text": "Outbound",
+                "class": "tag-blue"
+              },
+              {
+                "text": "M&A",
+                "class": "tag-amber"
+              }
+            ],
+            "relevance": 4,
+            "data_otype": "outbound"
+          }
+        ]
+      },
+      {
+        "title": "Inbound — Content & SEO Strategy",
+        "cards": [
+          {
+            "title": "DPDP Act Compliance Hub",
+            "date": "Launch by Oct 20, 2026",
+            "body": "<strong>Strategy:</strong> Build the definitive DPDP compliance resource centre. Content pillars: (1) DPDP Act explainer series, (2) Consent manager implementation guide, (3) Industry-specific compliance checklists, (4) Weekly regulatory updates.<br><strong>SEO targets:</strong> “DPDP Act compliance”, “consent manager India”, “data protection India 2026”.<br><strong>KPI:</strong> 5,000 monthly organic visits by Q1 2027.",
+            "tags": [
+              {
+                "text": "Inbound",
+                "class": "tag-green"
+              },
+              {
+                "text": "Content Hub",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_otype": "inbound",
+            "signal": "high",
+            "signal_label": "Priority Launch"
+          },
+          {
+            "title": "GCC Legal Ops Thought Leadership",
+            "date": "Monthly series",
+            "body": "<strong>Strategy:</strong> Position TC as the go-to GCC legal expert. Monthly content: (1) ‘GCC Legal Landscape’ quarterly reports, (2) Case studies from GCC engagements, (3) India employment law guides for multinationals, (4) Webinar series with GCC legal heads.<br><strong>Distribution:</strong> LinkedIn + TC blog + email nurture.<br><strong>KPI:</strong> 500 qualified subscribers, 20 inbound leads/quarter.",
+            "tags": [
+              {
+                "text": "Inbound",
+                "class": "tag-green"
+              },
+              {
+                "text": "Thought Leadership",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 4,
+            "data_otype": "inbound"
+          },
+          {
+            "title": "Knowledge Engine as Lead Magnet",
+            "date": "Ongoing",
+            "body": "<strong>Strategy:</strong> Gate select Knowledge Engine reports behind email capture. Weekly digest email with curated legal-tech signals. Build the audience that trusts TC’s market intelligence before they need legal services.<br><strong>Content:</strong> CLD reports, funding trackers, regulatory alerts.<br><strong>KPI:</strong> 1,000 email subscribers by Q1 2027, 10% conversion to consultation.",
+            "tags": [
+              {
+                "text": "Inbound",
+                "class": "tag-green"
+              },
+              {
+                "text": "Lead Gen",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 4,
+            "data_otype": "inbound"
+          },
+          {
+            "title": "SEO: Dominate India Legal Tech Keywords",
+            "date": "Ongoing optimisation",
+            "body": "<strong>Target keywords:</strong> “legal tech India”, “fractional GC India”, “DPDP compliance services”, “GCC legal support India”, “contract management India”.<br><strong>Strategy:</strong> Long-form SEO content + backlinks from legal publications + Knowledge Engine pages indexed for search.<br><strong>KPI:</strong> Top 5 ranking for 10 target keywords by Q2 2027.",
+            "tags": [
+              {
+                "text": "Inbound",
+                "class": "tag-green"
+              },
+              {
+                "text": "SEO",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 4,
+            "data_otype": "inbound"
+          },
+          {
+            "title": "Trigger: Content Engagement Scoring",
+            "date": "Automation",
+            "body": "<strong>Strategy:</strong> Score leads based on content consumption patterns. A prospect who reads 3+ DPDP articles, downloads the GCC guide, and attends a webinar = hot lead.<br><strong>Action:</strong> Auto-route scored leads to sales for personalised outreach within 24 hours.<br><strong>Tools:</strong> Apollo lead scoring + CRM integration.<br><strong>KPI:</strong> 30% conversion rate for scored leads.",
+            "tags": [
+              {
+                "text": "Inbound",
+                "class": "tag-green"
+              },
+              {
+                "text": "Automation",
+                "class": "tag-amber"
+              }
+            ],
+            "relevance": 3,
+            "data_otype": "inbound"
+          }
+        ]
+      },
+      {
+        "title": "Partnerships — Ecosystem Development",
+        "cards": [
+          {
+            "title": "Legal Tech Platform Partnerships",
+            "date": "Q4 2026 Priority",
+            "body": "<strong>Targets:</strong> SpotDraft (CLM), Comp AI (compliance), Legistify (litigation management).<br><strong>Model:</strong> Certified implementation/advisory partner. TC handles India-specific customisation, compliance mapping, and ongoing advisory. Platform handles tech.<br><strong>Revenue:</strong> Implementation fees + ongoing advisory retainer + referral commissions.<br><strong>KPI:</strong> 2 partnerships signed by Day 60.",
+            "tags": [
+              {
+                "text": "Partnership",
+                "class": "tag-amber"
+              },
+              {
+                "text": "Tech Ecosystem",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 5,
+            "data_otype": "partnership",
+            "signal": "high",
+            "signal_label": "Priority"
+          },
+          {
+            "title": "Big 4 / Consulting Firm Referrals",
+            "date": "H1 2027",
+            "body": "<strong>Strategy:</strong> Position TC as the India legal ops referral partner for Big 4 firms who advise GCCs on India setup but lack in-house legal execution.<br><strong>Targets:</strong> Deloitte Legal, EY Law, KPMG Legal, PwC NewLaw.<br><strong>Value prop:</strong> “When your client sets up in India, TC handles legal from Day 1.”<br><strong>KPI:</strong> 3 referral conversations initiated by Day 90.",
+            "tags": [
+              {
+                "text": "Partnership",
+                "class": "tag-amber"
+              },
+              {
+                "text": "Big 4",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 4,
+            "data_otype": "partnership"
+          },
+          {
+            "title": "UK ALSP Delivery Partnerships",
+            "date": "H1 2027 Target",
+            "body": "<strong>Strategy:</strong> Partner with UK ALSPs who need India legal ops delivery capability. UK has <strong>65% ALSP adoption</strong> — mature market with established buyers.<br><strong>Model:</strong> White-label India legal ops delivery for UK ALSP clients.<br><strong>Revenue:</strong> Per-matter fees + monthly retainer.<br><strong>KPI:</strong> 1 UK ALSP MOU by Day 90.",
+            "tags": [
+              {
+                "text": "Partnership",
+                "class": "tag-amber"
+              },
+              {
+                "text": "UK Expansion",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 4,
+            "data_otype": "partnership"
+          },
+          {
+            "title": "Industry Association Collaboration",
+            "date": "Ongoing",
+            "body": "<strong>Targets:</strong> ACC (Association of Corporate Counsel), ILTA, NASSCOM Legal, BPP Legal.<br><strong>Activities:</strong> Co-host events, contribute to publications, sponsor legal tech awards.<br><strong>Value:</strong> Brand visibility + direct access to GCs and CLOs.<br><strong>KPI:</strong> 2 co-hosted events by Q1 2027.",
+            "tags": [
+              {
+                "text": "Partnership",
+                "class": "tag-amber"
+              },
+              {
+                "text": "Associations",
+                "class": "tag-lime"
+              }
+            ],
+            "relevance": 3,
+            "data_otype": "partnership"
+          },
+          {
+            "title": "Trigger: Partner Customer Pain Points",
+            "date": "Continuous",
+            "body": "<strong>Signal:</strong> Partner’s customer asks for India-specific legal help, DPDP compliance, or GCC legal setup.<br><strong>Action:</strong> Partner warm-introduces TC. TC provides free 30-min assessment as partner co-branded service.<br><strong>Feedback loop:</strong> Share insights back to partner for their product roadmap.<br><strong>KPI:</strong> 5 partner-referred leads per quarter.",
+            "tags": [
+              {
+                "text": "Partnership",
+                "class": "tag-amber"
+              },
+              {
+                "text": "Referrals",
+                "class": "tag-green"
+              }
+            ],
+            "relevance": 4,
+            "data_otype": "partnership"
+          }
+        ]
+      },
+      {
+        "title": "Cross-Channel KPIs & Targets",
+        "cards": [
+          {
+            "title": "Outbound KPIs",
+            "date": "Q4 2026 Targets",
+            "body": "<strong>•</strong> 200 targeted outreach emails/month<br><strong>•</strong> 20% open rate, 5% meeting rate<br><strong>•</strong> 10 DPDP assessments booked pre-deadline<br><strong>•</strong> 10 GCC conversations per quarter<br><strong>•</strong> 3 M&A advisory engagements/quarter<br><strong>•</strong> Average response time to triggers: &lt;48 hours",
+            "tags": [
+              {
+                "text": "KPIs",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Outbound",
+                "class": "tag-blue"
+              }
+            ],
+            "relevance": 5,
+            "data_otype": "outbound"
+          },
+          {
+            "title": "Inbound KPIs",
+            "date": "Q4 2026 – Q1 2027 Targets",
+            "body": "<strong>•</strong> 5,000 monthly organic visits by Q1 2027<br><strong>•</strong> 1,000 email subscribers<br><strong>•</strong> Top 5 ranking for 10 target keywords<br><strong>•</strong> 20 inbound leads per quarter<br><strong>•</strong> 10% email-to-consultation conversion<br><strong>•</strong> 30% conversion for engagement-scored leads",
+            "tags": [
+              {
+                "text": "KPIs",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Inbound",
+                "class": "tag-green"
+              }
+            ],
+            "relevance": 5,
+            "data_otype": "inbound"
+          },
+          {
+            "title": "Partnership KPIs",
+            "date": "Q4 2026 – Q1 2027 Targets",
+            "body": "<strong>•</strong> 2 tech platform partnerships signed<br><strong>•</strong> 3 Big 4 referral conversations<br><strong>•</strong> 1 UK ALSP MOU<br><strong>•</strong> 2 co-hosted events with industry associations<br><strong>•</strong> 5 partner-referred leads per quarter<br><strong>•</strong> 15% partner-referred lead conversion rate",
+            "tags": [
+              {
+                "text": "KPIs",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Partnerships",
+                "class": "tag-amber"
+              }
+            ],
+            "relevance": 5,
+            "data_otype": "partnership"
+          }
+        ]
+      }
+    ]
+  },
+  "offerings_summary": "The Growth Playbook integrates three channels into a unified engine: <strong>Outbound</strong> (trigger-based outreach on funding, DPDP deadlines, GCC launches, leadership changes, regulatory shifts, and M&A), <strong>Inbound</strong> (DPDP compliance hub, GCC thought leadership, Knowledge Engine as lead magnet, SEO dominance, and engagement scoring), and <strong>Partnerships</strong> (tech platform ecosystem with SpotDraft/Comp AI, Big 4 referral network, UK ALSP delivery, and industry association collaboration). The 35-day DPDP deadline is the highest-urgency lever across all three channels. <strong>90-day targets:</strong> 50 qualified pipeline leads, 10 DPDP assessments, 5 GCC fractional GC contracts, 2 tech partnerships signed, and 1 UK ALSP MOU."
 }

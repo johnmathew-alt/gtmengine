@@ -180,6 +180,9 @@ footer a{color:var(--tc-blue);}
   <button class="tab-btn" data-tab="partnerships">Partnerships</button>
   <button class="tab-btn" data-tab="events">Events</button>
   <button class="tab-btn" data-tab="funding">Funding</button>
+  <button class="tab-btn" data-tab="cld">CLD</button>
+  <button class="tab-btn" data-tab="competitors">Competitors</button>
+  <button class="tab-btn" data-tab="offerings">Offerings</button>
 </div>
 
 <div class="container">
@@ -291,6 +294,60 @@ footer a{color:var(--tc-blue);}
 <div class="summary-card">
   <h3>What This Means for TC</h3>
   <p>{{FUNDING_SUMMARY}}</p>
+</div>
+</div>
+
+<!-- ============== TAB 8: CLD ============== -->
+<div class="tab-panel" id="tab-cld">
+
+<div class="filter-bar" id="cld-country-filters">
+  <button class="filter-btn active" data-country="all">All Countries</button>
+  <button class="filter-btn" data-country="india">India</button>
+  <button class="filter-btn" data-country="us">US</button>
+  <button class="filter-btn" data-country="uk">UK</button>
+</div>
+
+{{CLD_CONTENT}}
+
+<div class="summary-card">
+  <h3>TC Opportunity Summary</h3>
+  <p>{{CLD_SUMMARY}}</p>
+</div>
+</div>
+
+<!-- ============== TAB 9: COMPETITORS ============== -->
+<div class="tab-panel" id="tab-competitors">
+
+<div class="filter-bar" id="competitor-threat-filters">
+  <button class="filter-btn active" data-threat="all">All</button>
+  <button class="filter-btn" data-threat="high">High Threat</button>
+  <button class="filter-btn" data-threat="medium">Medium Threat</button>
+  <button class="filter-btn" data-threat="low">Low Threat</button>
+</div>
+
+{{COMPETITORS_CONTENT}}
+
+<div class="summary-card">
+  <h3>Competitive Strategy Summary</h3>
+  <p>{{COMPETITORS_SUMMARY}}</p>
+</div>
+</div>
+
+<!-- ============== TAB 10: OFFERINGS ============== -->
+<div class="tab-panel" id="tab-offerings">
+
+<div class="filter-bar" id="offerings-type-filters">
+  <button class="filter-btn active" data-otype="all">All</button>
+  <button class="filter-btn" data-otype="outbound">Outbound</button>
+  <button class="filter-btn" data-otype="inbound">Inbound</button>
+  <button class="filter-btn" data-otype="partnership">Partnerships</button>
+</div>
+
+{{OFFERINGS_CONTENT}}
+
+<div class="summary-card">
+  <h3>Growth Playbook Summary</h3>
+  <p>{{OFFERINGS_SUMMARY}}</p>
 </div>
 </div>
 
@@ -414,6 +471,78 @@ footer a{color:var(--tc-blue);}
       applyFundingFilters();
     });
   });
+  // === CLD Country Filters ===
+  function applyCldFilters(){
+    var activeCountry = document.querySelector('#cld-country-filters .filter-btn.active');
+    var country = activeCountry ? activeCountry.getAttribute('data-country') : 'all';
+    document.querySelectorAll('#tab-cld .card').forEach(function(card){
+      var match = country === 'all' || card.getAttribute('data-country') === country;
+      card.style.display = match ? '' : 'none';
+    });
+    document.querySelectorAll('#tab-cld .section').forEach(function(sec){
+      var cards = sec.querySelectorAll('.card');
+      if(cards.length === 0) return;
+      var anyVisible = false;
+      cards.forEach(function(c){ if(c.style.display !== 'none') anyVisible = true; });
+      sec.style.display = anyVisible ? '' : 'none';
+    });
+  }
+  document.querySelectorAll('#cld-country-filters .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#cld-country-filters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyCldFilters();
+    });
+  });
+
+  // === Competitor Threat Filters ===
+  function applyCompetitorFilters(){
+    var activeThreat = document.querySelector('#competitor-threat-filters .filter-btn.active');
+    var threat = activeThreat ? activeThreat.getAttribute('data-threat') : 'all';
+    document.querySelectorAll('#tab-competitors .card').forEach(function(card){
+      var match = threat === 'all' || card.getAttribute('data-threat') === threat;
+      card.style.display = match ? '' : 'none';
+    });
+    document.querySelectorAll('#tab-competitors .section').forEach(function(sec){
+      var cards = sec.querySelectorAll('.card');
+      if(cards.length === 0) return;
+      var anyVisible = false;
+      cards.forEach(function(c){ if(c.style.display !== 'none') anyVisible = true; });
+      sec.style.display = anyVisible ? '' : 'none';
+    });
+  }
+  document.querySelectorAll('#competitor-threat-filters .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#competitor-threat-filters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyCompetitorFilters();
+    });
+  });
+
+  // === Offerings Type Filters ===
+  function applyOfferingsFilters(){
+    var activeType = document.querySelector('#offerings-type-filters .filter-btn.active');
+    var otype = activeType ? activeType.getAttribute('data-otype') : 'all';
+    document.querySelectorAll('#tab-offerings .card').forEach(function(card){
+      var match = otype === 'all' || card.getAttribute('data-otype') === otype;
+      card.style.display = match ? '' : 'none';
+    });
+    document.querySelectorAll('#tab-offerings .section').forEach(function(sec){
+      var cards = sec.querySelectorAll('.card');
+      if(cards.length === 0) return;
+      var anyVisible = false;
+      cards.forEach(function(c){ if(c.style.display !== 'none') anyVisible = true; });
+      sec.style.display = anyVisible ? '' : 'none';
+    });
+  }
+  document.querySelectorAll('#offerings-type-filters .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#offerings-type-filters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyOfferingsFilters();
+    });
+  });
+
 })();
 
 // === Sentiment Toggle (global for onclick) ===
