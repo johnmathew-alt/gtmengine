@@ -1,44 +1,65 @@
 {
   "date_display": "9 Oct 2026",
   "date_iso": "2026-10-09",
-
   "stats": [
-    {"value": "$870M+", "label": "Funding Tracked"},
-    {"value": "216", "label": "Days to DPDP", "id": "dpdp-days-stat"},
-    {"value": "8", "label": "Events Upcoming"},
-    {"value": "11", "label": "New Funding Deals"}
+    {
+      "value": "$870M+",
+      "label": "Funding Tracked"
+    },
+    {
+      "value": "216",
+      "label": "Days to DPDP",
+      "id": "dpdp-days-stat"
+    },
+    {
+      "value": "8",
+      "label": "Events Upcoming"
+    },
+    {
+      "value": "11",
+      "label": "New Funding Deals"
+    }
   ],
-
   "dpdp_banner_text": "Full compliance by <strong>May 13, 2027</strong> (216 days). Consent Manager Framework (Rule 4) goes live <strong>Nov 13, 2026</strong> &mdash; just <span id=\"consent-days\">35</span> days away. Data Protection Board appointments still pending; consent manager registration portal expected before deadline.",
-
   "sentiments": [
     {
       "label": "US",
-      "positive": 72, "neutral": 18, "negative": 10,
-      "detail": "Legal tech spending surged 9.7% YoY as firms race to integrate AI. Build-vs-buy debate intensifying across AmLaw 200. Harvey&rsquo;s $15.5B valuation validates enterprise AI demand. Comp AI&rsquo;s $34M raise signals compliance-AI convergence."
+      "positive": 72,
+      "neutral": 18,
+      "negative": 10,
+      "detail": "Legal tech spending surged 9.7% YoY as firms race to integrate AI. Build-vs-buy debate intensifying across AmLaw 200. Harvey’s $15.5B valuation validates enterprise AI demand. Comp AI’s $34M raise signals compliance-AI convergence."
     },
     {
       "label": "UK",
-      "positive": 35, "neutral": 45, "negative": 20,
-      "detail": "Xapien&rsquo;s $56M Series B highlights AI due-diligence demand. FCA crypto rules finalized. ICO sectoral AI approach maturing. HelmGuard and AI Score seed rounds show GRC innovation pipeline. Brexit regulatory divergence creating compliance complexity."
+      "positive": 35,
+      "neutral": 45,
+      "negative": 20,
+      "detail": "Xapien’s $56M Series B highlights AI due-diligence demand. FCA crypto rules finalized. ICO sectoral AI approach maturing. HelmGuard and AI Score seed rounds show GRC innovation pipeline. Brexit regulatory divergence creating compliance complexity."
     },
     {
       "label": "India",
-      "positive": 68, "neutral": 22, "negative": 10,
-      "detail": "DPDP consent manager deadline 35 days out &mdash; compliance urgency peaking. RBI MPC holds repo at 5.50%. 111 new GCCs added in 8 months. Eli Lilly, Costco, LPL Financial opening Hyderabad centres. Meesho IPO proceeds; startup ecosystem robust."
+      "positive": 68,
+      "neutral": 22,
+      "negative": 10,
+      "detail": "DPDP consent manager deadline 35 days out — compliance urgency peaking. RBI MPC holds repo at 5.50%. 111 new GCCs added in 8 months. Eli Lilly, Costco, LPL Financial opening Hyderabad centres. Meesho IPO proceeds; startup ecosystem robust."
     }
   ],
-
   "top_signals": [
     {
-      "title": "Opus 2 Acquires Bundledocs &mdash; Legal Tech M&amp;A Accelerates",
+      "title": "Opus 2 Acquires Bundledocs — Legal Tech M&A Accelerates",
       "date": "Oct 2, 2026",
       "source_url": "https://www.legaltech-talk.com/insights/news/mergers-acquisitions/",
       "source_domain": "legaltech-talk.com",
       "body": "Opus 2 acquired Cork-based Bundledocs, consolidating litigation support tech. Follows Epiq/Canopy and Repario/UnitedLex deals in September. Legal tech M&amp;A pace accelerating &mdash; 12+ deals in Q3 alone.",
       "tags": [
-        {"text": "M&A", "class": "tag-amber"},
-        {"text": "Litigation Tech", "class": "tag-blue"}
+        {
+          "text": "M&A",
+          "class": "tag-amber"
+        },
+        {
+          "text": "Litigation Tech",
+          "class": "tag-blue"
+        }
       ]
     },
     {
@@ -48,30 +69,48 @@
       "source_domain": "pulse2.com",
       "body": "London-based Xapien raised $56M Series B led by Spectrum Equity for AI-native third-party risk and due diligence. Signals strong demand for automated KYC/AML compliance &mdash; directly relevant to TC&rsquo;s GCC advisory.",
       "tags": [
-        {"text": "Funding", "class": "tag-lime"},
-        {"text": "Due Diligence", "class": "tag-blue"}
+        {
+          "text": "Funding",
+          "class": "tag-lime"
+        },
+        {
+          "text": "Due Diligence",
+          "class": "tag-blue"
+        }
       ]
     },
     {
-      "title": "LexNova Conclave Delhi &mdash; Happening Today",
-      "date": "Oct 9&ndash;10, 2026",
+      "title": "LexNova Conclave Delhi — Happening Today",
+      "date": "Oct 9–10, 2026",
       "source_url": "https://legaltechevents.com/events/in/india",
       "source_domain": "legaltechevents.com",
       "body": "LexNova Conclave underway in New Delhi. Legal tech and legal operations focus. Networking opportunity with in-house counsel, law firm leaders, and legal ops professionals across India.",
       "tags": [
-        {"text": "Live Event", "class": "tag-red"},
-        {"text": "Networking", "class": "tag-green"}
+        {
+          "text": "Live Event",
+          "class": "tag-red"
+        },
+        {
+          "text": "Networking",
+          "class": "tag-green"
+        }
       ]
     },
     {
-      "title": "Consent Manager Framework &mdash; 35 Days",
+      "title": "Consent Manager Framework — 35 Days",
       "date": "Nov 13, 2026",
       "source_url": "https://www.mondaq.com/india/privacy-protection/1846732/the-digital-personal-data-protection-consent-manager-framework-what-data-fiduciaries-must-do-before-the-november-2026-deadline",
       "source_domain": "mondaq.com",
       "body": "DPDP Rule 4 on Consent Managers goes live Nov 13. Consent Managers must be Indian-incorporated, INR 2Cr minimum net worth, ISO 27001/SOC 2 certified. Data Protection Board appointments still pending &mdash; registration portal expected before deadline.",
       "tags": [
-        {"text": "Urgent", "class": "tag-red"},
-        {"text": "ECP+FGC", "class": "tag-lime"}
+        {
+          "text": "Urgent",
+          "class": "tag-red"
+        },
+        {
+          "text": "ECP+FGC",
+          "class": "tag-lime"
+        }
       ]
     },
     {
@@ -81,12 +120,17 @@
       "source_domain": "bankingfinance.in",
       "body": "RBI Monetary Policy Committee held repo at 5.50%. Also proposed draft KYC amendment directions for money mule accounts with 60-day debit holds. New compliance requirements emerging for fintech clients.",
       "tags": [
-        {"text": "RBI", "class": "tag-amber"},
-        {"text": "Fintech Impact", "class": "tag-blue"}
+        {
+          "text": "RBI",
+          "class": "tag-amber"
+        },
+        {
+          "text": "Fintech Impact",
+          "class": "tag-blue"
+        }
       ]
     }
   ],
-
   "outbound": [
     {
       "title": "GCC Expansion Intel",
@@ -94,61 +138,103 @@
         {
           "title": "Eli Lilly",
           "date": "2026",
-          "meta_tags": ["Pharmaceuticals"],
+          "meta_tags": [
+            "Pharmaceuticals"
+          ],
           "source_url": "https://www.ceipal.com/resources/new-gccs-in-india-who-launched-whos-expanding-and-whos-coming-next-2024-2026",
           "source_domain": "ceipal.com",
           "body": "New GCC in Hyderabad for AI, automation, and software engineering. Scaling to <strong>1,500 employees</strong> by 2027. Needs pharma regulatory compliance, employment law, IP protection, and DPDP advisory for health data processing.",
-          "tags": [{"text": "ECP+FGC", "class": "tag-lime"}],
+          "tags": [
+            {
+              "text": "ECP+FGC",
+              "class": "tag-lime"
+            }
+          ],
           "relevance": 5
         },
         {
           "title": "Costco",
           "date": "2026",
-          "meta_tags": ["Retail Technology"],
+          "meta_tags": [
+            "Retail Technology"
+          ],
           "source_url": "https://www.ceipal.com/resources/new-gccs-in-india-who-launched-whos-expanding-and-whos-coming-next-2024-2026",
           "source_domain": "ceipal.com",
           "body": "New GCC in Hyderabad for technology, research, and digital operations. <strong>1,000+ professionals</strong> initially. Needs entity setup, employment contracts, IT compliance, vendor agreements, and data privacy framework.",
-          "tags": [{"text": "ECP", "class": "tag-lime"}],
+          "tags": [
+            {
+              "text": "ECP",
+              "class": "tag-lime"
+            }
+          ],
           "relevance": 5
         },
         {
           "title": "LPL Financial",
           "date": "2026",
-          "meta_tags": ["Wealth Management / BFSI"],
+          "meta_tags": [
+            "Wealth Management / BFSI"
+          ],
           "source_url": "https://www.ceipal.com/resources/new-gccs-in-india-who-launched-whos-expanding-and-whos-coming-next-2024-2026",
           "source_domain": "ceipal.com",
           "body": "New GCC in Hyderabad for digital platforms, cybersecurity, and data analytics. <strong>300,000 sq ft</strong> office, hundreds of roles over 3&ndash;5 years. BFSI compliance, RBI advisory, cross-border data transfer needs.",
-          "tags": [{"text": "ECP+FGC", "class": "tag-lime"}],
+          "tags": [
+            {
+              "text": "ECP+FGC",
+              "class": "tag-lime"
+            }
+          ],
           "relevance": 5
         },
         {
           "title": "OpenAI",
           "date": "2026",
-          "meta_tags": ["AI / Technology"],
+          "meta_tags": [
+            "AI / Technology"
+          ],
           "source_url": "https://www.ceipal.com/resources/new-gccs-in-india-who-launched-whos-expanding-and-whos-coming-next-2024-2026",
           "source_domain": "ceipal.com",
           "body": "New GCC in New Delhi for AI research, partnerships, and policy engagement. High-profile entry signals India&rsquo;s AI talent depth. Needs entity setup, employment law, IP advisory, and AI governance framework.",
-          "tags": [{"text": "ECP+FGC", "class": "tag-lime"}],
+          "tags": [
+            {
+              "text": "ECP+FGC",
+              "class": "tag-lime"
+            }
+          ],
           "relevance": 4
         },
         {
           "title": "Western Union + HCLTech",
           "date": "2026",
-          "meta_tags": ["Fintech / Payments"],
+          "meta_tags": [
+            "Fintech / Payments"
+          ],
           "source_url": "https://www.ceipal.com/resources/new-gccs-in-india-who-launched-whos-expanding-and-whos-coming-next-2024-2026",
           "source_domain": "ceipal.com",
           "body": "New GCC in Hyderabad for platform engineering and AI-driven payments. <strong>400+ professionals</strong>. Payments regulation, RBI compliance, DPDP for financial data, employment law advisory.",
-          "tags": [{"text": "FGC", "class": "tag-blue"}],
+          "tags": [
+            {
+              "text": "FGC",
+              "class": "tag-blue"
+            }
+          ],
           "relevance": 4
         },
         {
           "title": "HCA Healthcare",
           "date": "2026",
-          "meta_tags": ["Healthcare"],
+          "meta_tags": [
+            "Healthcare"
+          ],
           "source_url": "https://www.ceipal.com/resources/new-gccs-in-india-who-launched-whos-expanding-and-whos-coming-next-2024-2026",
           "source_domain": "ceipal.com",
           "body": "New GCC in Hyderabad for hospital operations and healthcare technology. <strong>$75M investment</strong>. Needs healthcare regulatory compliance, employment law, DPDP for health data, cross-border data transfers.",
-          "tags": [{"text": "ECP+FGC", "class": "tag-lime"}],
+          "tags": [
+            {
+              "text": "ECP+FGC",
+              "class": "tag-lime"
+            }
+          ],
           "relevance": 4
         }
       ]
@@ -157,20 +243,30 @@
       "title": "Leadership Changes to Track",
       "cards": [
         {
-          "title": "Freshworks &mdash; New GC Appointed",
+          "title": "Freshworks — New GC Appointed",
           "date": "Sep 2026",
           "source_url": "https://freshworks.com",
           "source_domain": "freshworks.com",
           "body": "New General Counsel onboarded at Freshworks. Likely reviewing outside counsel panel and compliance posture. High DPDP relevance given SaaS data processing volumes.",
-          "tags": [{"text": "FGC Opportunity", "class": "tag-lime"}]
+          "tags": [
+            {
+              "text": "FGC Opportunity",
+              "class": "tag-lime"
+            }
+          ]
         },
         {
-          "title": "Razorpay &mdash; CLO Transition",
+          "title": "Razorpay — CLO Transition",
           "date": "Oct 2026",
           "source_url": "https://razorpay.com",
           "source_domain": "razorpay.com",
           "body": "Chief Legal Officer transition underway. Fintech regulatory landscape evolving rapidly with RBI digital lending norms and new KYC amendment directions. Window for advisory engagement.",
-          "tags": [{"text": "Monitor", "class": "tag-amber"}]
+          "tags": [
+            {
+              "text": "Monitor",
+              "class": "tag-amber"
+            }
+          ]
         }
       ]
     },
@@ -178,36 +274,51 @@
       "title": "Trigger Events",
       "cards": [
         {
-          "title": "PhonePe &mdash; IPO Preparation Intensifies",
+          "title": "PhonePe — IPO Preparation Intensifies",
           "date": "2026",
           "source_url": "https://www.angelone.in/news/ipos/2026-ipo-pipeline-reliance-jio-nse-phonepe-and-more-set-for-big-listings",
           "source_domain": "angelone.in",
           "body": "PhonePe among top IPOs to watch in 2026. Pre-IPO governance restructuring, SEBI compliance, DPDP readiness, and cross-border data framework needed for listing. Massive compliance opportunity.",
-          "tags": [{"text": "ECP+FGC", "class": "tag-lime"}]
+          "tags": [
+            {
+              "text": "ECP+FGC",
+              "class": "tag-lime"
+            }
+          ]
         },
         {
-          "title": "Meesho &mdash; IPO Filed with SEBI",
+          "title": "Meesho — IPO Filed with SEBI",
           "date": "Oct 2026",
           "source_url": "https://inc42.com/features/indian-startup-ipo-tracker-2026/",
           "source_domain": "inc42.com",
           "body": "Meesho&rsquo;s IPO opened recently after SEBI nod. Corporate governance overhaul, ESOP structuring, regulatory filings, and DPDP compliance certification all required. Template for e-commerce IPO compliance.",
           "tags": [
-            {"text": "ECP", "class": "tag-lime"},
-            {"text": "CRaaS", "class": "tag-blue"}
+            {
+              "text": "ECP",
+              "class": "tag-lime"
+            },
+            {
+              "text": "CRaaS",
+              "class": "tag-blue"
+            }
           ]
         },
         {
-          "title": "RBI KYC Amendment &mdash; Fintech Compliance Wave",
+          "title": "RBI KYC Amendment — Fintech Compliance Wave",
           "date": "Oct 2026",
           "source_url": "https://www.bankingfinance.in/regulatory-radar-for-october-2026.html",
           "source_domain": "bankingfinance.in",
           "body": "Draft KYC amendment directions propose 60-day debit holds on suspected money mule accounts. Effective Apr 2027. All fintech and banking clients will need policy updates, compliance training, and customer communication frameworks.",
-          "tags": [{"text": "FGC", "class": "tag-blue"}]
+          "tags": [
+            {
+              "text": "FGC",
+              "class": "tag-blue"
+            }
+          ]
         }
       ]
     }
   ],
-
   "inbound": {
     "sections": [
       {
@@ -216,31 +327,55 @@
           {
             "title": "Consent Manager Framework: What Businesses Need Before Nov 13",
             "date": "Publish by Oct 20, 2026",
-            "meta_tags": ["Blog + Webinar"],
+            "meta_tags": [
+              "Blog + Webinar"
+            ],
             "body": "Deep dive into Rule 4 requirements: Indian incorporation, INR 2Cr net worth, ISO 27001/SOC 2 certification, DPBI registration. Include API integration checklist for data fiduciaries and 7-year consent log retention requirements.",
             "tags": [
-              {"text": "High Priority", "class": "tag-red"},
-              {"text": "SEO + Thought Leadership", "class": "tag-lime"}
+              {
+                "text": "High Priority",
+                "class": "tag-red"
+              },
+              {
+                "text": "SEO + Thought Leadership",
+                "class": "tag-lime"
+              }
             ]
           },
           {
-            "title": "Data Protection Board: What We Know and What&rsquo;s Missing",
+            "title": "Data Protection Board: What We Know and What’s Missing",
             "date": "Publish by Oct 25, 2026",
-            "meta_tags": ["Analysis Piece"],
+            "meta_tags": [
+              "Analysis Piece"
+            ],
             "body": "DPBI chairperson and members not yet appointed. Search-cum-selection committee still evaluating. Registration portal pending. Analyse implications for consent manager registration and enforcement timeline.",
             "tags": [
-              {"text": "Thought Leadership", "class": "tag-lime"},
-              {"text": "Analysis", "class": "tag-blue"}
+              {
+                "text": "Thought Leadership",
+                "class": "tag-lime"
+              },
+              {
+                "text": "Analysis",
+                "class": "tag-blue"
+              }
             ]
           },
           {
             "title": "RBI KYC Amendment 2026: Fintech Compliance Playbook",
             "date": "Publish by Nov 1, 2026",
-            "meta_tags": ["Compliance Guide"],
+            "meta_tags": [
+              "Compliance Guide"
+            ],
             "body": "New money mule account rules: 60-day debit holds, 20-day customer justification windows. Impact on fintechs, neobanks, and payment companies. Position TC as go-to advisory for RBI compliance.",
             "tags": [
-              {"text": "Fintech", "class": "tag-amber"},
-              {"text": "Content Opportunity", "class": "tag-lime"}
+              {
+                "text": "Fintech",
+                "class": "tag-amber"
+              },
+              {
+                "text": "Content Opportunity",
+                "class": "tag-lime"
+              }
             ]
           }
         ]
@@ -251,21 +386,37 @@
           {
             "title": "India GCC Legal Checklist: From Entity Setup to DPDP Compliance",
             "date": "Evergreen + Update Q4",
-            "meta_tags": ["Lead Magnet"],
+            "meta_tags": [
+              "Lead Magnet"
+            ],
             "body": "111 new GCCs in 8 months. Comprehensive checklist: entity incorporation, FEMA compliance, employment contracts, IP protection, vendor agreements, GST registration, DPDP framework. Gate as downloadable PDF.",
             "tags": [
-              {"text": "Lead Gen", "class": "tag-lime"},
-              {"text": "GCC", "class": "tag-blue"}
+              {
+                "text": "Lead Gen",
+                "class": "tag-lime"
+              },
+              {
+                "text": "GCC",
+                "class": "tag-blue"
+              }
             ]
           },
           {
             "title": "Why Hyderabad Is the New GCC Capital",
             "date": "Publish by Oct 30",
-            "meta_tags": ["Blog"],
+            "meta_tags": [
+              "Blog"
+            ],
             "body": "Eli Lilly, Costco, LPL Financial, HCA Healthcare, Western Union all choosing Hyderabad. Analyse regulatory environment, talent pool, cost advantages, and legal infrastructure for GCC operations.",
             "tags": [
-              {"text": "SEO", "class": "tag-lime"},
-              {"text": "Hyderabad Focus", "class": "tag-green"}
+              {
+                "text": "SEO",
+                "class": "tag-lime"
+              },
+              {
+                "text": "Hyderabad Focus",
+                "class": "tag-green"
+              }
             ]
           }
         ]
@@ -273,29 +424,98 @@
     ],
     "seo_table": {
       "title": "SEO / Keyword Signals",
-      "headers": ["Keyword / Topic", "Trend", "Content Angle", "Priority"],
+      "headers": [
+        "Keyword / Topic",
+        "Trend",
+        "Content Angle",
+        "Priority"
+      ],
       "rows": [
-        ["DPDP consent manager registration", "<span class='tag tag-lime' style='font-size:11px'>Rising</span>", "How-to guide + checklist for aspiring consent managers", "<span class='tag tag-red' style='font-size:11px'>High</span>"],
-        ["India data protection board 2026", "<span class='tag tag-lime' style='font-size:11px'>Rising</span>", "Status update analysis &mdash; appointments, portal, enforcement", "<span class='tag tag-red' style='font-size:11px'>High</span>"],
-        ["GCC legal compliance India", "<span class='tag tag-lime' style='font-size:11px'>Rising</span>", "Entity setup + employment law + DPDP checklist", "<span class='tag tag-amber' style='font-size:11px'>Medium</span>"],
-        ["RBI KYC amendment 2026 fintech", "<span class='tag tag-lime' style='font-size:11px'>New</span>", "Money mule compliance playbook for fintechs", "<span class='tag tag-amber' style='font-size:11px'>Medium</span>"],
-        ["AI governance framework India", "<span class='tag tag-lime' style='font-size:11px'>Rising</span>", "Enterprise AI governance + DPDP intersection", "<span class='tag tag-amber' style='font-size:11px'>Medium</span>"],
-        ["SEBI Project Jagrook compliance", "<span class='tag tag-amber' style='font-size:11px'>Moderate</span>", "Broker compliance guide for Nov 1 deadline", "<span class='tag tag-blue' style='font-size:11px'>Watch</span>"]
+        [
+          "DPDP consent manager registration",
+          "<span class='tag tag-lime' style='font-size:11px'>Rising</span>",
+          "How-to guide + checklist for aspiring consent managers",
+          "<span class='tag tag-red' style='font-size:11px'>High</span>"
+        ],
+        [
+          "India data protection board 2026",
+          "<span class='tag tag-lime' style='font-size:11px'>Rising</span>",
+          "Status update analysis &mdash; appointments, portal, enforcement",
+          "<span class='tag tag-red' style='font-size:11px'>High</span>"
+        ],
+        [
+          "GCC legal compliance India",
+          "<span class='tag tag-lime' style='font-size:11px'>Rising</span>",
+          "Entity setup + employment law + DPDP checklist",
+          "<span class='tag tag-amber' style='font-size:11px'>Medium</span>"
+        ],
+        [
+          "RBI KYC amendment 2026 fintech",
+          "<span class='tag tag-lime' style='font-size:11px'>New</span>",
+          "Money mule compliance playbook for fintechs",
+          "<span class='tag tag-amber' style='font-size:11px'>Medium</span>"
+        ],
+        [
+          "AI governance framework India",
+          "<span class='tag tag-lime' style='font-size:11px'>Rising</span>",
+          "Enterprise AI governance + DPDP intersection",
+          "<span class='tag tag-amber' style='font-size:11px'>Medium</span>"
+        ],
+        [
+          "SEBI Project Jagrook compliance",
+          "<span class='tag tag-amber' style='font-size:11px'>Moderate</span>",
+          "Broker compliance guide for Nov 1 deadline",
+          "<span class='tag tag-blue' style='font-size:11px'>Watch</span>"
+        ]
       ]
     }
   },
-
   "pr": {
     "dpdp_tracker": {
       "title": "DPDP Act Implementation Tracker",
-      "headers": ["Milestone", "Date", "Status", "TC Action"],
+      "headers": [
+        "Milestone",
+        "Date",
+        "Status",
+        "TC Action"
+      ],
       "rows": [
-        ["DPDP Rules notified (G.S.R. 846(E))", "Nov 13, 2025", "<span class='tag tag-lime' style='font-size:11px'>Done</span>", "Completed"],
-        ["Data Protection Board constituted", "Q1 2026", "<span class='tag tag-amber' style='font-size:11px'>Partial</span>", "Board created on paper; Chairperson &amp; Members not yet appointed"],
-        ["Consent Manager Framework (Rule 4)", "Nov 13, 2026", "<span class='tag tag-red' style='font-size:11px'>35 days</span>", "Publish compliance guide by Oct 20; client advisory outreach"],
-        ["SEBI Project Jagrook", "Nov 1, 2026", "<span class='tag tag-amber' style='font-size:11px'>23 days</span>", "Broker compliance advisory for investor awareness mandates"],
-        ["RBI KYC Amendment (Draft)", "Apr 1, 2027", "<span class='tag tag-blue' style='font-size:11px'>Proposed</span>", "Track finalisation; prepare fintech compliance playbook"],
-        ["Full DPDP Compliance", "May 13, 2027", "<span class='tag tag-amber' style='font-size:11px'>216 days</span>", "All substantive obligations: notice, consent, security, breach reporting"]
+        [
+          "DPDP Rules notified (G.S.R. 846(E))",
+          "Nov 13, 2025",
+          "<span class='tag tag-lime' style='font-size:11px'>Done</span>",
+          "Completed"
+        ],
+        [
+          "Data Protection Board constituted",
+          "Q1 2026",
+          "<span class='tag tag-amber' style='font-size:11px'>Partial</span>",
+          "Board created on paper; Chairperson &amp; Members not yet appointed"
+        ],
+        [
+          "Consent Manager Framework (Rule 4)",
+          "Nov 13, 2026",
+          "<span class='tag tag-red' style='font-size:11px'>35 days</span>",
+          "Publish compliance guide by Oct 20; client advisory outreach"
+        ],
+        [
+          "SEBI Project Jagrook",
+          "Nov 1, 2026",
+          "<span class='tag tag-amber' style='font-size:11px'>23 days</span>",
+          "Broker compliance advisory for investor awareness mandates"
+        ],
+        [
+          "RBI KYC Amendment (Draft)",
+          "Apr 1, 2027",
+          "<span class='tag tag-blue' style='font-size:11px'>Proposed</span>",
+          "Track finalisation; prepare fintech compliance playbook"
+        ],
+        [
+          "Full DPDP Compliance",
+          "May 13, 2027",
+          "<span class='tag tag-amber' style='font-size:11px'>216 days</span>",
+          "All substantive obligations: notice, consent, security, breach reporting"
+        ]
       ]
     },
     "sections": [
@@ -303,47 +523,71 @@
         "title": "India Policy Watch",
         "cards": [
           {
-            "title": "RBI MPC Holds Repo at 5.50% &mdash; Draft KYC Amendment",
+            "title": "RBI MPC Holds Repo at 5.50% — Draft KYC Amendment",
             "date": "Oct 7, 2026",
             "source_url": "https://www.bankingfinance.in/regulatory-radar-for-october-2026.html",
             "source_domain": "bankingfinance.in",
             "body": "MPC held rates steady. More significant: draft KYC amendment directions propose temporary 60-day debit holds on suspected money mule accounts, 20-day justification window. Follows Supreme Court order of Aug 4, 2026. Proposed effective Apr 2027.",
             "tags": [
-              {"text": "RBI", "class": "tag-amber"},
-              {"text": "Fintech", "class": "tag-blue"}
+              {
+                "text": "RBI",
+                "class": "tag-amber"
+              },
+              {
+                "text": "Fintech",
+                "class": "tag-blue"
+              }
             ]
           },
           {
-            "title": "SEBI Project Jagrook &mdash; Nov 1 Deadline",
+            "title": "SEBI Project Jagrook — Nov 1 Deadline",
             "date": "Nov 1, 2026",
             "source_url": "https://www.whalesbook.com/news/English/economy/SEBIs-New-Investor-Rules-and-RBI-MPC-Key-Updates-for-October-2026/6ac274965aacb956d08b238e",
             "source_domain": "whalesbook.com",
             "body": "From Nov 1, stock brokers must display investor awareness messages on websites and mobile trading apps. Closing Auction Session framework under review &mdash; 3,500+ public comments received.",
             "tags": [
-              {"text": "SEBI", "class": "tag-amber"},
-              {"text": "Compliance", "class": "tag-blue"}
+              {
+                "text": "SEBI",
+                "class": "tag-amber"
+              },
+              {
+                "text": "Compliance",
+                "class": "tag-blue"
+              }
             ]
           },
           {
-            "title": "DPDP Board Appointments Pending &mdash; Nov 13 Looms",
+            "title": "DPDP Board Appointments Pending — Nov 13 Looms",
             "date": "Oct 2026",
             "source_url": "https://candourlegal.com/dpdp-consent-manager-framework-2026/",
             "source_domain": "candourlegal.com",
             "body": "Data Protection Board Chairperson and four Members not yet appointed. Cabinet Secretary-chaired selection committee still evaluating. Consent manager registration portal not yet live. Creates uncertainty for businesses preparing for Nov 13 deadline.",
             "tags": [
-              {"text": "DPDP", "class": "tag-red"},
-              {"text": "Governance Gap", "class": "tag-amber"}
+              {
+                "text": "DPDP",
+                "class": "tag-red"
+              },
+              {
+                "text": "Governance Gap",
+                "class": "tag-amber"
+              }
             ]
           },
           {
-            "title": "Account Aggregator &ndash; Consent Manager Overlap",
+            "title": "Account Aggregator – Consent Manager Overlap",
             "date": "2026",
             "source_url": "https://candourlegal.com/dpdp-consent-manager-framework-2026/",
             "source_domain": "candourlegal.com",
             "body": "Sahamati proposes RBI-licensed Account Aggregators (17 operational, 140M+ consent requests) be deemed sector-specific Consent Managers under DPDP. Not yet settled. Creates advisory opportunity for fintech and BFSI clients navigating dual frameworks.",
             "tags": [
-              {"text": "Regulatory", "class": "tag-amber"},
-              {"text": "Advisory Opportunity", "class": "tag-lime"}
+              {
+                "text": "Regulatory",
+                "class": "tag-amber"
+              },
+              {
+                "text": "Advisory Opportunity",
+                "class": "tag-lime"
+              }
             ]
           }
         ]
@@ -353,13 +597,19 @@
         "cards": [
           {
             "title": "EU AI Act Compliance Deadlines Approaching",
-            "date": "2026&ndash;2027",
+            "date": "2026–2027",
             "source_url": "https://artificialintelligenceact.eu",
             "source_domain": "artificialintelligenceact.eu",
             "body": "High-risk AI system compliance obligations phasing in. Affects multinationals with India GCCs using AI in employment, lending, and legal operations. Cross-border compliance advisory opportunity for TC.",
             "tags": [
-              {"text": "EU", "class": "tag-blue"},
-              {"text": "AI Governance", "class": "tag-amber"}
+              {
+                "text": "EU",
+                "class": "tag-blue"
+              },
+              {
+                "text": "AI Governance",
+                "class": "tag-amber"
+              }
             ]
           },
           {
@@ -369,15 +619,20 @@
             "source_domain": "lawnext.com",
             "body": "FTC enforcement accelerating with Take It Down Act. State-level AI regulations proliferating across California, Colorado, Illinois. US firms with India operations need coordinated AI governance &mdash; TC advisory opportunity.",
             "tags": [
-              {"text": "US", "class": "tag-blue"},
-              {"text": "AI Regulation", "class": "tag-amber"}
+              {
+                "text": "US",
+                "class": "tag-blue"
+              },
+              {
+                "text": "AI Regulation",
+                "class": "tag-amber"
+              }
             ]
           }
         ]
       }
     ]
   },
-
   "partnerships": [
     {
       "title": "Strategic Partnership Leads",
@@ -385,49 +640,81 @@
         {
           "title": "Comp AI",
           "date": "Oct 2026",
-          "meta_tags": ["$34M raised"],
+          "meta_tags": [
+            "$34M raised"
+          ],
           "source_url": "https://pulse2.com/comp-ai-raises-34-million-series-a/",
           "source_domain": "pulse2.com",
           "body": "Agentic AI for compliance and cybersecurity automation. Fresh $34M Series A. Directly complementary to TC&rsquo;s compliance advisory &mdash; potential technology partnership for AI-powered compliance workflows.",
           "tags": [
-            {"text": "Co-sell", "class": "tag-lime"},
-            {"text": "AI Compliance", "class": "tag-blue"}
+            {
+              "text": "Co-sell",
+              "class": "tag-lime"
+            },
+            {
+              "text": "AI Compliance",
+              "class": "tag-blue"
+            }
           ]
         },
         {
           "title": "Xapien",
           "date": "Sep 11, 2026",
-          "meta_tags": ["$56M raised"],
+          "meta_tags": [
+            "$56M raised"
+          ],
           "source_url": "https://pulse2.com/xapien-secures-56-million-led-by-spectrum-equity-to-scale-ai-native-due-diligence-platform/",
           "source_domain": "pulse2.com",
           "body": "AI-native due diligence and third-party risk platform. $56M Series B from Spectrum Equity. KYC/AML automation directly relevant to TC&rsquo;s GCC clients needing vendor and counterparty due diligence.",
           "tags": [
-            {"text": "Due Diligence", "class": "tag-lime"},
-            {"text": "Risk/Compliance", "class": "tag-blue"}
+            {
+              "text": "Due Diligence",
+              "class": "tag-lime"
+            },
+            {
+              "text": "Risk/Compliance",
+              "class": "tag-blue"
+            }
           ]
         },
         {
           "title": "Chamelio",
           "date": "Sep 23, 2026",
-          "meta_tags": ["$26M raised"],
+          "meta_tags": [
+            "$26M raised"
+          ],
           "source_url": "https://unite.ai",
           "source_domain": "unite.ai",
           "body": "AI legal ops for in-house counsel teams. Complementary to TC&rsquo;s FGC and CRaaS offerings. Fresh funding means growth mode &mdash; partnership window open.",
           "tags": [
-            {"text": "FGC+CRaaS", "class": "tag-lime"},
-            {"text": "Integration", "class": "tag-green"}
+            {
+              "text": "FGC+CRaaS",
+              "class": "tag-lime"
+            },
+            {
+              "text": "Integration",
+              "class": "tag-green"
+            }
           ]
         },
         {
           "title": "SpotDraft",
           "date": "Jan 2026",
-          "meta_tags": ["$8M Series B Ext"],
+          "meta_tags": [
+            "$8M Series B Ext"
+          ],
           "source_url": "https://spotdraft.com",
           "source_domain": "spotdraft.com",
           "body": "India&rsquo;s leading CLM platform. Strategic Qualcomm Ventures backing. Potential CRaaS integration partner for contract lifecycle management workflows.",
           "tags": [
-            {"text": "CRaaS", "class": "tag-blue"},
-            {"text": "India CLM", "class": "tag-green"}
+            {
+              "text": "CRaaS",
+              "class": "tag-blue"
+            },
+            {
+              "text": "India CLM",
+              "class": "tag-green"
+            }
           ]
         }
       ]
@@ -436,12 +723,18 @@
       "title": "GCC Legal Team Opportunities",
       "cards": [
         {
-          "title": "Hyderabad GCC Cluster &mdash; Legal Services Gap",
+          "title": "Hyderabad GCC Cluster — Legal Services Gap",
           "date": "Oct 2026",
           "body": "Eli Lilly (1,500 employees), Costco (1,000+), LPL Financial (300K sq ft), HCA Healthcare ($75M), Western Union (400+) all setting up in Hyderabad. Most lack dedicated India legal teams. DPDP urgency + employment law complexity = strong FGC demand.",
           "tags": [
-            {"text": "FGC", "class": "tag-lime"},
-            {"text": "High Priority", "class": "tag-green"}
+            {
+              "text": "FGC",
+              "class": "tag-lime"
+            },
+            {
+              "text": "High Priority",
+              "class": "tag-green"
+            }
           ]
         },
         {
@@ -449,8 +742,14 @@
           "date": "Oct 2026",
           "body": "200+ GCCs with 100&ndash;500 employees lack dedicated India legal teams. DPDP compliance urgency + employment law complexity = strong fractional GC demand. Target: US tech/fintech GCCs in Bengaluru/Hyderabad.",
           "tags": [
-            {"text": "FGC", "class": "tag-lime"},
-            {"text": "Pipeline", "class": "tag-blue"}
+            {
+              "text": "FGC",
+              "class": "tag-lime"
+            },
+            {
+              "text": "Pipeline",
+              "class": "tag-blue"
+            }
           ]
         }
       ]
@@ -464,7 +763,12 @@
           "source_url": "https://openai.com",
           "source_domain": "openai.com",
           "body": "Enterprise legal AI platform. Partnerships with Thomson Reuters, iManage, Harvey, and Clio. Signals that AI-native legal workflows are becoming standard. TC opportunity: advisory for firms adopting these tools.",
-          "tags": [{"text": "AI Platform", "class": "tag-blue"}]
+          "tags": [
+            {
+              "text": "AI Platform",
+              "class": "tag-blue"
+            }
+          ]
         },
         {
           "title": "Anthropic + LexisNexis Protege",
@@ -472,7 +776,12 @@
           "source_url": "https://lexisnexis.com",
           "source_domain": "lexisnexis.com",
           "body": "Claude integrated into LexisNexis Protege platform. AI-powered legal research at enterprise scale. Positions Anthropic as key legal tech infrastructure layer.",
-          "tags": [{"text": "AI Research", "class": "tag-lime"}]
+          "tags": [
+            {
+              "text": "AI Research",
+              "class": "tag-lime"
+            }
+          ]
         },
         {
           "title": "Thomson Reuters Acquisition Spree",
@@ -480,12 +789,16 @@
           "source_url": "https://www.legaltech-talk.com/insights/news/mergers-acquisitions/",
           "source_domain": "legaltech-talk.com",
           "body": "TR acquired Noetica (AI transaction analysis, Feb) and Etain/HighQ modules (Apr). Building integrated AI-native legal platform. Co-sell opportunity with TC&rsquo;s advisory services.",
-          "tags": [{"text": "Platform Play", "class": "tag-green"}]
+          "tags": [
+            {
+              "text": "Platform Play",
+              "class": "tag-green"
+            }
+          ]
         }
       ]
     }
   ],
-
   "events": [
     {
       "id": "lexnova",
@@ -584,16 +897,23 @@
       "relevance": 5
     }
   ],
-
   "funding_cards": [
     {
       "title": "Harvey AI",
       "date": "Sep 9, 2026",
-      "meta_tags": ["Series D"],
+      "meta_tags": [
+        "Series D"
+      ],
       "body": "<strong>$550M</strong> at $15.5B valuation. Led by Diffusion + Lightspeed. AI-native legal platform. Largest legal tech raise ever. Partners with OpenAI Astra for Law.",
       "tags": [
-        {"text": "US", "class": "tag-lime"},
-        {"text": "Series D", "class": "tag-green"}
+        {
+          "text": "US",
+          "class": "tag-lime"
+        },
+        {
+          "text": "Series D",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://harvey.ai",
       "source_domain": "harvey.ai",
@@ -605,11 +925,19 @@
     {
       "title": "Noxtua",
       "date": "Sep 23, 2026",
-      "meta_tags": ["Strategic Acquisition"],
+      "meta_tags": [
+        "Strategic Acquisition"
+      ],
       "body": "<strong>&euro;100M+</strong>. C.H.BECK majority stake acquisition. European AI legal research platform. Major strategic acquisition signalling market consolidation in EU legal tech.",
       "tags": [
-        {"text": "Germany", "class": "tag-blue"},
-        {"text": "Strategic", "class": "tag-green"}
+        {
+          "text": "Germany",
+          "class": "tag-blue"
+        },
+        {
+          "text": "Strategic",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://tech.eu",
       "source_domain": "tech.eu",
@@ -621,11 +949,19 @@
     {
       "title": "Xapien",
       "date": "Sep 11, 2026",
-      "meta_tags": ["Series B"],
+      "meta_tags": [
+        "Series B"
+      ],
       "body": "<strong>$56M</strong> led by Spectrum Equity. AI-native due diligence and third-party risk platform. London-based, expanding to US. KYC/AML compliance automation for enterprises.",
       "tags": [
-        {"text": "UK", "class": "tag-blue"},
-        {"text": "Series B", "class": "tag-green"}
+        {
+          "text": "UK",
+          "class": "tag-blue"
+        },
+        {
+          "text": "Series B",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://pulse2.com/xapien-secures-56-million-led-by-spectrum-equity-to-scale-ai-native-due-diligence-platform/",
       "source_domain": "pulse2.com",
@@ -637,11 +973,19 @@
     {
       "title": "Comp AI",
       "date": "Oct 2026",
-      "meta_tags": ["Series A"],
+      "meta_tags": [
+        "Series A"
+      ],
       "body": "<strong>$34M</strong>. Agentic AI for compliance and cybersecurity automation. Directly relevant to TC&rsquo;s compliance advisory practice. Partnership opportunity for AI-driven regulatory workflows.",
       "tags": [
-        {"text": "US", "class": "tag-lime"},
-        {"text": "Series A", "class": "tag-green"}
+        {
+          "text": "US",
+          "class": "tag-lime"
+        },
+        {
+          "text": "Series A",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://pulse2.com/comp-ai-raises-34-million-series-a/",
       "source_domain": "pulse2.com",
@@ -653,11 +997,19 @@
     {
       "title": "Chamelio",
       "date": "Sep 23, 2026",
-      "meta_tags": ["Series A"],
+      "meta_tags": [
+        "Series A"
+      ],
       "body": "<strong>$26M</strong>. Led by Entree Capital. AI legal ops platform for in-house counsel teams. Automates legal workflows. Complementary to TC&rsquo;s FGC and CRaaS offerings.",
       "tags": [
-        {"text": "Israel", "class": "tag-amber"},
-        {"text": "Series A", "class": "tag-green"}
+        {
+          "text": "Israel",
+          "class": "tag-amber"
+        },
+        {
+          "text": "Series A",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://unite.ai",
       "source_domain": "unite.ai",
@@ -669,11 +1021,19 @@
     {
       "title": "Luminary",
       "date": "Sep 10, 2026",
-      "meta_tags": ["Series A"],
+      "meta_tags": [
+        "Series A"
+      ],
       "body": "<strong>$22M</strong>. AI-powered wealth transfer and estate administration platform. NYC-based. Signals growing legaltech + wealthtech convergence. Adjacent advisory opportunity for TC&rsquo;s BFSI clients.",
       "tags": [
-        {"text": "US", "class": "tag-lime"},
-        {"text": "Series A", "class": "tag-green"}
+        {
+          "text": "US",
+          "class": "tag-lime"
+        },
+        {
+          "text": "Series A",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://withluminary.com/resources/luminary-raises-series-a",
       "source_domain": "withluminary.com",
@@ -685,11 +1045,19 @@
     {
       "title": "Blee",
       "date": "Sep 8, 2026",
-      "meta_tags": ["Series A"],
+      "meta_tags": [
+        "Series A"
+      ],
       "body": "<strong>$20M</strong>. AI-powered marketing regulatory compliance. Automates ad review and compliance checking. Adjacent to TC&rsquo;s compliance advisory services.",
       "tags": [
-        {"text": "US", "class": "tag-lime"},
-        {"text": "Series A", "class": "tag-green"}
+        {
+          "text": "US",
+          "class": "tag-lime"
+        },
+        {
+          "text": "Series A",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://fintech.global",
       "source_domain": "fintech.global",
@@ -701,11 +1069,19 @@
     {
       "title": "Pandektes",
       "date": "Oct 5, 2026",
-      "meta_tags": ["Series A"],
+      "meta_tags": [
+        "Series A"
+      ],
       "body": "<strong>&euro;13.5M</strong>. AI-powered legal research for Nordic markets. Expanding across Europe. Signals growing demand for jurisdiction-specific AI legal tools.",
       "tags": [
-        {"text": "Denmark", "class": "tag-blue"},
-        {"text": "Series A", "class": "tag-green"}
+        {
+          "text": "Denmark",
+          "class": "tag-blue"
+        },
+        {
+          "text": "Series A",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://legaltech-talk.com",
       "source_domain": "legaltech-talk.com",
@@ -717,11 +1093,19 @@
     {
       "title": "Complaion",
       "date": "Sep 28, 2026",
-      "meta_tags": ["Growth"],
+      "meta_tags": [
+        "Growth"
+      ],
       "body": "<strong>&euro;13.5M</strong>. ISO certification and compliance platform for European SMEs. Italy-based. Signals regulatory compliance tech demand across mid-market. Adjacent to TC&rsquo;s compliance advisory.",
       "tags": [
-        {"text": "Italy", "class": "tag-blue"},
-        {"text": "Growth", "class": "tag-green"}
+        {
+          "text": "Italy",
+          "class": "tag-blue"
+        },
+        {
+          "text": "Growth",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://tech.eu/2026/09/28/complaion-raises-eur135m-to-simplify-compliance-for-european-smes/",
       "source_domain": "tech.eu",
@@ -733,11 +1117,19 @@
     {
       "title": "Resolutiion",
       "date": "Sep 14, 2026",
-      "meta_tags": ["Growth"],
+      "meta_tags": [
+        "Growth"
+      ],
       "body": "<strong>$10.4M</strong>. AI contract-dispute early warning detection. London-based. Predictive dispute analytics &mdash; relevant for TC&rsquo;s contract advisory and CRaaS practice.",
       "tags": [
-        {"text": "UK", "class": "tag-blue"},
-        {"text": "Growth", "class": "tag-green"}
+        {
+          "text": "UK",
+          "class": "tag-blue"
+        },
+        {
+          "text": "Growth",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://www.startupmag.co.uk/funding/resolutiion-2026-growth-funding/",
       "source_domain": "startupmag.co.uk",
@@ -749,11 +1141,19 @@
     {
       "title": "SpotDraft",
       "date": "Jan 2026",
-      "meta_tags": ["Series B Ext"],
+      "meta_tags": [
+        "Series B Ext"
+      ],
       "body": "<strong>$8M</strong> extension from Qualcomm Ventures. India CLM leader. Strategic backing signals enterprise readiness. Potential CRaaS integration partner for TC.",
       "tags": [
-        {"text": "India", "class": "tag-lime"},
-        {"text": "Series B Ext", "class": "tag-green"}
+        {
+          "text": "India",
+          "class": "tag-lime"
+        },
+        {
+          "text": "Series B Ext",
+          "class": "tag-green"
+        }
       ],
       "source_url": "https://spotdraft.com",
       "source_domain": "spotdraft.com",
@@ -763,7 +1163,6 @@
       "data_fstage": "series-b-plus"
     }
   ],
-
   "ma_cards": [
     {
       "title": "Wolters Kluwer / Brightflag",
@@ -771,8 +1170,14 @@
       "meta_tags": [],
       "body": "<strong>&euro;425M</strong> acquisition. Strategic CLM market consolidation. Wolters Kluwer strengthening legal tech portfolio. Signals that enterprise CLM is a must-have category.",
       "tags": [
-        {"text": "M&A", "class": "tag-amber"},
-        {"text": "CLM", "class": "tag-blue"}
+        {
+          "text": "M&A",
+          "class": "tag-amber"
+        },
+        {
+          "text": "CLM",
+          "class": "tag-blue"
+        }
       ],
       "signal": "high",
       "signal_label": "Strategic",
@@ -785,8 +1190,14 @@
       "meta_tags": [],
       "body": "Opus 2 acquires Cork-based Bundledocs. Litigation support tech consolidation. Strengthens Opus 2&rsquo;s position in document bundling and trial prep. Signals continued M&amp;A appetite in legal tech.",
       "tags": [
-        {"text": "M&A", "class": "tag-amber"},
-        {"text": "Litigation", "class": "tag-blue"}
+        {
+          "text": "M&A",
+          "class": "tag-amber"
+        },
+        {
+          "text": "Litigation",
+          "class": "tag-blue"
+        }
       ],
       "signal": "medium",
       "signal_label": "Consolidation",
@@ -799,8 +1210,14 @@
       "meta_tags": [],
       "body": "Epiq acquires Canopy, a data breach response technology company. Combines e-discovery infrastructure with incident response. Relevant as data breach notification requirements increase under DPDP.",
       "tags": [
-        {"text": "M&A", "class": "tag-amber"},
-        {"text": "Data Breach", "class": "tag-red"}
+        {
+          "text": "M&A",
+          "class": "tag-amber"
+        },
+        {
+          "text": "Data Breach",
+          "class": "tag-red"
+        }
       ],
       "signal": "medium",
       "signal_label": "Strategic",
@@ -813,8 +1230,14 @@
       "meta_tags": [],
       "body": "Repario acquires UnitedLex. Combines two legal services businesses. Major ALSP consolidation play. UnitedLex was a large India-based ALSP with significant GCC operations.",
       "tags": [
-        {"text": "M&A", "class": "tag-amber"},
-        {"text": "ALSP", "class": "tag-blue"}
+        {
+          "text": "M&A",
+          "class": "tag-amber"
+        },
+        {
+          "text": "ALSP",
+          "class": "tag-blue"
+        }
       ],
       "signal": "high",
       "signal_label": "ALSP Play",
@@ -827,8 +1250,14 @@
       "meta_tags": [],
       "body": "Haveli Investments takes controlling stake in AI-native CLM company Sirion, buying out Sequoia and Tiger Global. Major ownership restructuring in enterprise CLM. Sirion has strong India operations.",
       "tags": [
-        {"text": "M&A", "class": "tag-amber"},
-        {"text": "CLM", "class": "tag-blue"}
+        {
+          "text": "M&A",
+          "class": "tag-amber"
+        },
+        {
+          "text": "CLM",
+          "class": "tag-blue"
+        }
       ],
       "signal": "medium",
       "signal_label": "Ownership Change",
@@ -836,6 +1265,5 @@
       "data_fstage": "ma"
     }
   ],
-
   "funding_summary": "The $870M+ in tracked legal tech funding signals an industry doubling down on AI-native compliance, due-diligence, and legal ops automation. Harvey&rsquo;s $15.5B valuation anchors the market; new entrants like Xapien ($56M for AI due diligence), Comp AI ($34M for compliance automation), and Complaion (&euro;13.5M for SME compliance) confirm that <strong>compliance-tech</strong> is the hottest sub-sector. For Team Counsel: (1) advisory demand as Indian enterprises adopt these tools, (2) fractional GC pipeline from GCCs &mdash; Eli Lilly, Costco, LPL Financial, HCA Healthcare all establishing Hyderabad centres without India legal heads, (3) partnership windows with well-funded platforms like Comp AI and SpotDraft that need India market expertise. The 35-day DPDP consent manager deadline creates immediate urgency for every data fiduciary in India."
 }
