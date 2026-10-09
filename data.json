@@ -3,7 +3,7 @@
   "date_iso": "2026-10-09",
   "stats": [
     {
-      "value": "$870M+",
+      "value": "$1.27B+",
       "label": "Funding Tracked"
     },
     {
@@ -16,7 +16,7 @@
       "label": "Events Upcoming"
     },
     {
-      "value": "11",
+      "value": "12",
       "label": "New Funding Deals"
     }
   ],
@@ -27,7 +27,7 @@
       "positive": 72,
       "neutral": 18,
       "negative": 10,
-      "detail": "Legal tech spending surged 9.7% YoY as firms race to integrate AI. Build-vs-buy debate intensifying across AmLaw 200. Harvey’s $15.5B valuation validates enterprise AI demand. Comp AI’s $34M raise signals compliance-AI convergence."
+      "detail": "Legal tech spending surged 9.7% YoY as firms race to integrate AI. Filevine raises $400M Series D — legal intelligence platform scaling fast. Harvey’s $15.5B valuation validates enterprise AI demand. Comp AI’s $34M raise signals compliance-AI convergence."
     },
     {
       "label": "UK",
@@ -84,7 +84,7 @@
       "date": "Oct 9–10, 2026",
       "source_url": "https://legaltechevents.com/events/in/india",
       "source_domain": "legaltechevents.com",
-      "body": "LexNova Conclave underway in New Delhi. Legal tech and legal operations focus. Networking opportunity with in-house counsel, law firm leaders, and legal ops professionals across India.",
+      "body": "LexNova Conclave Day 1 underway in New Delhi &mdash; Day 2 tomorrow. Legal tech and legal operations focus. Networking opportunity with in-house counsel, law firm leaders, and legal ops professionals across India.",
       "tags": [
         {
           "text": "Live Event",
@@ -126,6 +126,23 @@
         },
         {
           "text": "Fintech Impact",
+          "class": "tag-blue"
+        }
+      ]
+    },
+    {
+      "title": "Filevine Raises $400M Series D — Legal Intelligence at Scale",
+      "date": "Oct 2026",
+      "source_url": "https://news.bloomberglaw.com/business-and-practice/filevine-raises-400m-in-new-funding-round-valuing-it-at-2-3b",
+      "source_domain": "news.bloomberglaw.com",
+      "body": "Filevine raised <strong>$400M Series D</strong> from Insight Partners, Accel, and Halo Fund, valued at $2.3B. AI-powered legal intelligence platform for mid-market and enterprise firms. Validates massive demand for AI-native case and practice management.",
+      "tags": [
+        {
+          "text": "Funding",
+          "class": "tag-lime"
+        },
+        {
+          "text": "Legal AI",
           "class": "tag-blue"
         }
       ]
@@ -274,11 +291,11 @@
       "title": "Trigger Events",
       "cards": [
         {
-          "title": "PhonePe — IPO Preparation Intensifies",
-          "date": "2026",
-          "source_url": "https://www.angelone.in/news/ipos/2026-ipo-pipeline-reliance-jio-nse-phonepe-and-more-set-for-big-listings",
-          "source_domain": "angelone.in",
-          "body": "PhonePe among top IPOs to watch in 2026. Pre-IPO governance restructuring, SEBI compliance, DPDP readiness, and cross-border data framework needed for listing. Massive compliance opportunity.",
+          "title": "PhonePe — SEBI Nod Received, IPO on Track",
+          "date": "Oct 2026",
+          "source_url": "https://www.outlookbusiness.com/markets/phonepe-gets-sebi-nod-for-ipo",
+          "source_domain": "outlookbusiness.com",
+          "body": "PhonePe received <strong>SEBI approval</strong> for IPO. Updated DRHP filed &mdash; Walmart to sell 9% stake via OFS at ~Rs 12,000 crore (~$1.3B). Pre-IPO governance restructuring, DPDP readiness, and cross-border data framework needed. Massive compliance opportunity.",
           "tags": [
             {
               "text": "ECP+FGC",
@@ -596,11 +613,11 @@
         "title": "Global Regulatory Radar",
         "cards": [
           {
-            "title": "EU AI Act Compliance Deadlines Approaching",
-            "date": "2026–2027",
+            "title": "EU AI Act — Council Clears Rewrite, Enforcement Ticking",
+            "date": "Oct 2026",
             "source_url": "https://artificialintelligenceact.eu",
             "source_domain": "artificialintelligenceact.eu",
-            "body": "High-risk AI system compliance obligations phasing in. Affects multinationals with India GCCs using AI in employment, lending, and legal operations. Cross-border compliance advisory opportunity for TC.",
+            "body": "EU Council cleared the AI Act rewrite &mdash; enforcement clock now ticking. High-risk AI system compliance obligations phasing in. Affects multinationals with India GCCs using AI in employment, lending, and legal operations. Cross-border compliance advisory opportunity for TC.",
             "tags": [
               {
                 "text": "EU",
@@ -806,7 +823,7 @@
       "city": "delhi",
       "name": "LexNova Conclave Delhi 2026",
       "meta": "Oct 9&ndash;10, 2026 &middot; New Delhi &middot; Legal Tech &middot; <a href=\"https://legaltechevents.com/events/in/india\" target=\"_blank\">legaltechevents.com</a>",
-      "description": "Legal tech and legal operations conclave. Happening TODAY &mdash; networking with in-house counsel and legal ops leaders.",
+      "description": "Legal tech and legal operations conclave. Day 1 underway &mdash; Day 2 tomorrow. Networking with in-house counsel and legal ops leaders.",
       "tag_text": "LIVE",
       "tag_class": "tag-red",
       "relevance_label": "ECP Relevance:",
@@ -1161,6 +1178,30 @@
       "signal": "medium",
       "data_fgeo": "india",
       "data_fstage": "series-b-plus"
+    },
+    {
+      "title": "Filevine",
+      "date": "Oct 2026",
+      "meta_tags": [
+        "Series D"
+      ],
+      "body": "<strong>$400M</strong> from Insight Partners, Accel, Halo Fund at $2.3B valuation. AI-powered legal intelligence platform for mid-market and enterprise firms. Second-largest legal tech raise of 2026 after Harvey. Validates demand for AI case + practice management.",
+      "tags": [
+        {
+          "text": "US",
+          "class": "tag-lime"
+        },
+        {
+          "text": "Series D",
+          "class": "tag-green"
+        }
+      ],
+      "source_url": "https://news.bloomberglaw.com/business-and-practice/filevine-raises-400m-in-new-funding-round-valuing-it-at-2-3b",
+      "source_domain": "news.bloomberglaw.com",
+      "show_source_in_footer": true,
+      "signal": "high",
+      "data_fgeo": "us",
+      "data_fstage": "series-b-plus"
     }
   ],
   "ma_cards": [
@@ -1263,9 +1304,29 @@
       "signal_label": "Ownership Change",
       "data_fgeo": "us",
       "data_fstage": "ma"
+    },
+    {
+      "title": "Summize / InnoLaw Group",
+      "date": "Jun 2026",
+      "meta_tags": [],
+      "body": "Summize acquires CLM consultancy InnoLaw Group. Combines AI contract management platform with deep CLM implementation expertise. Signals CLM vendors moving toward full-service advisory models &mdash; validates TC&rsquo;s bundled advisory approach.",
+      "tags": [
+        {
+          "text": "M&A",
+          "class": "tag-amber"
+        },
+        {
+          "text": "CLM",
+          "class": "tag-blue"
+        }
+      ],
+      "signal": "medium",
+      "signal_label": "Advisory Play",
+      "data_fgeo": "europe",
+      "data_fstage": "ma"
     }
   ],
-  "funding_summary": "The $870M+ in tracked legal tech funding signals an industry doubling down on AI-native compliance, due-diligence, and legal ops automation. Harvey&rsquo;s $15.5B valuation anchors the market; new entrants like Xapien ($56M for AI due diligence), Comp AI ($34M for compliance automation), and Complaion (&euro;13.5M for SME compliance) confirm that <strong>compliance-tech</strong> is the hottest sub-sector. For Team Counsel: (1) advisory demand as Indian enterprises adopt these tools, (2) fractional GC pipeline from GCCs &mdash; Eli Lilly, Costco, LPL Financial, HCA Healthcare all establishing Hyderabad centres without India legal heads, (3) partnership windows with well-funded platforms like Comp AI and SpotDraft that need India market expertise. The 35-day DPDP consent manager deadline creates immediate urgency for every data fiduciary in India.",
+  "funding_summary": "The $1.27B+ in tracked legal tech funding signals an industry doubling down on AI-native compliance, due-diligence, and legal ops automation. Harvey&rsquo;s $550M ($15.5B valuation) and Filevine&rsquo;s $400M ($2.3B valuation) anchor the market; Xapien ($56M for AI due diligence), Comp AI ($34M for compliance automation), and Complaion (&euro;13.5M for SME compliance) confirm that <strong>compliance-tech</strong> is the hottest sub-sector. Legal tech pulled $2.2B+ in 2026 with 12 rounds at $50M+. For Team Counsel: (1) advisory demand as Indian enterprises adopt these tools, (2) fractional GC pipeline from GCCs &mdash; Eli Lilly, Costco, LPL Financial, HCA Healthcare all establishing Hyderabad centres without India legal heads, (3) partnership windows with well-funded platforms like Comp AI and SpotDraft that need India market expertise. The 35-day DPDP consent manager deadline creates immediate urgency for every data fiduciary in India.",
   "cld": {
     "sections": [
       {
