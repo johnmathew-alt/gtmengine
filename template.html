@@ -163,7 +163,7 @@ footer a{color:var(--tc-blue);}
 <!-- TOPBAR -->
 <div class="topbar">
 <div class="topbar-inner">
-  <div class="logo"><span class="logo-team">Team</span><span class="logo-dot"></span><span class="logo-counsel">Counsel</span></div>
+  <div class="logo"><img src="https://cdn.prod.website-files.com/6a2bef73200216edf6f8afeb/6a2f167e872c0f8f4fa25670_Vector.svg" alt="Team Counsel" style="height:28px;"></div>
   <div class="topbar-right">
     <span>{{DATE_DISPLAY}}</span>
     <a href="/archive/index.html">Archive</a>
@@ -183,6 +183,7 @@ footer a{color:var(--tc-blue);}
   <button class="tab-btn" data-tab="cld">CLD</button>
   <button class="tab-btn" data-tab="competitors">Competitors</button>
   <button class="tab-btn" data-tab="offerings">Offerings</button>
+  <button class="tab-btn" data-tab="legaltech">Legal Tech</button>
 </div>
 
 <div class="container">
@@ -280,6 +281,8 @@ footer a{color:var(--tc-blue);}
   <button class="filter-btn" data-fstage="ma">M&amp;A</button>
 </div>
 
+{{FUNDING_TABLE}}
+
 <div class="card-grid" id="funding-cards">
 {{FUNDING_CARDS}}
 </div>
@@ -348,6 +351,28 @@ footer a{color:var(--tc-blue);}
 <div class="summary-card">
   <h3>Growth Playbook Summary</h3>
   <p>{{OFFERINGS_SUMMARY}}</p>
+</div>
+</div>
+
+<!-- ============== TAB 11: LEGAL TECH ============== -->
+<div class="tab-panel" id="tab-legaltech">
+
+<div class="filter-bar" id="legaltech-category-filters">
+  <button class="filter-btn active" data-ltcat="all">All</button>
+  <button class="filter-btn" data-ltcat="ai-legal">AI for Legal</button>
+  <button class="filter-btn" data-ltcat="fundraising">Fundraising</button>
+  <button class="filter-btn" data-ltcat="alsp">ALSP</button>
+  <button class="filter-btn" data-ltcat="oem">OEM / Integrations</button>
+  <button class="filter-btn" data-ltcat="legal-ops">Legal Ops</button>
+  <button class="filter-btn" data-ltcat="regulatory">Regulatory</button>
+  <button class="filter-btn" data-ltcat="india">India Legal Tech</button>
+</div>
+
+{{LEGALTECH_CONTENT}}
+
+<div class="summary-card">
+  <h3>Legal Tech Weekly Summary</h3>
+  <p>{{LEGALTECH_SUMMARY}}</p>
 </div>
 </div>
 
@@ -499,15 +524,24 @@ footer a{color:var(--tc-blue);}
   function applyCompetitorFilters(){
     var activeThreat = document.querySelector('#competitor-threat-filters .filter-btn.active');
     var threat = activeThreat ? activeThreat.getAttribute('data-threat') : 'all';
+    // Filter cards
     document.querySelectorAll('#tab-competitors .card').forEach(function(card){
       var match = threat === 'all' || card.getAttribute('data-threat') === threat;
       card.style.display = match ? '' : 'none';
     });
+    // Filter table rows (competitor landscape table)
+    document.querySelectorAll('#tab-competitors .tc-table tbody tr').forEach(function(row){
+      var match = threat === 'all' || row.getAttribute('data-threat') === threat;
+      row.style.display = match ? '' : '';
+      if(!match) row.style.display = 'none';
+    });
     document.querySelectorAll('#tab-competitors .section').forEach(function(sec){
       var cards = sec.querySelectorAll('.card');
-      if(cards.length === 0) return;
+      var rows = sec.querySelectorAll('.tc-table tbody tr');
+      if(cards.length === 0 && rows.length === 0) return;
       var anyVisible = false;
       cards.forEach(function(c){ if(c.style.display !== 'none') anyVisible = true; });
+      rows.forEach(function(r){ if(r.style.display !== 'none') anyVisible = true; });
       sec.style.display = anyVisible ? '' : 'none';
     });
   }
@@ -540,6 +574,30 @@ footer a{color:var(--tc-blue);}
       document.querySelectorAll('#offerings-type-filters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
       btn.classList.add('active');
       applyOfferingsFilters();
+    });
+  });
+
+  // === Legal Tech Category Filters ===
+  function applyLegaltechFilters(){
+    var activeCat = document.querySelector('#legaltech-category-filters .filter-btn.active');
+    var cat = activeCat ? activeCat.getAttribute('data-ltcat') : 'all';
+    document.querySelectorAll('#tab-legaltech .card').forEach(function(card){
+      var match = cat === 'all' || card.getAttribute('data-ltcat') === cat;
+      card.style.display = match ? '' : 'none';
+    });
+    document.querySelectorAll('#tab-legaltech .section').forEach(function(sec){
+      var cards = sec.querySelectorAll('.card');
+      if(cards.length === 0) return;
+      var anyVisible = false;
+      cards.forEach(function(c){ if(c.style.display !== 'none') anyVisible = true; });
+      sec.style.display = anyVisible ? '' : 'none';
+    });
+  }
+  document.querySelectorAll('#legaltech-category-filters .filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#legaltech-category-filters .filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyLegaltechFilters();
     });
   });
 

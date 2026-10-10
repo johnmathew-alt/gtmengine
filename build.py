@@ -163,8 +163,12 @@ def render_sections(sections):
     return "\n\n".join(render_section(s) for s in sections)
 
 
-def render_table(table):
-    """Render a tc-table from structured data."""
+def render_table(table, row_data_attr=None, row_data_col=None):
+    """Render a tc-table from structured data.
+
+    row_data_attr: if set, add this data attribute to each <tr>
+    row_data_col: column index to extract the value from (parsed from signal-* class or lowercased text)
+    """
     headers = table["headers"]
     rows = table["rows"]
 
@@ -174,7 +178,17 @@ def render_table(table):
         cells = []
         for cell in row:
             cells.append(f"<td>{cell}</td>")  # cell may contain HTML (tags, spans)
-        tbody_rows.append("<tr>" + "".join(cells) + "</tr>")
+        tr_attrs = ""
+        if row_data_attr is not None and row_data_col is not None and row_data_col < len(row):
+            cell_val = row[row_data_col]
+            # Extract from signal-high/medium/low class or fall back to text
+            import re
+            m = re.search(r'signal-(high|medium|low)', cell_val)
+            if m:
+                tr_attrs = f' data-{row_data_attr}="{m.group(1)}"'
+            else:
+                tr_attrs = f' data-{row_data_attr}="{cell_val.strip().lower()}"'
+        tbody_rows.append(f"<tr{tr_attrs}>" + "".join(cells) + "</tr>")
     tbody = "\n      ".join(tbody_rows)
 
     return (
@@ -287,7 +301,13 @@ def render_competitors(competitors):
     parts = []
     if competitors.get("table"):
         table = competitors["table"]
-        table_html = render_table(table)
+        # Find the "Threat Level" column index for data-threat attribute
+        threat_col = None
+        for i, h in enumerate(table["headers"]):
+            if "threat" in h.lower():
+                threat_col = i
+                break
+        table_html = render_table(table, row_data_attr="threat", row_data_col=threat_col)
         parts.append(
             f'<div class="section">\n'
             f'  <div class="section-title">{esc(table.get("title", "Competitor Landscape"))}</div>\n'
@@ -305,6 +325,26 @@ def render_offerings(offerings):
     for section in offerings.get("sections", []):
         parts.append(render_section(section))
     return "\n\n".join(parts)
+
+
+def render_legaltech(legaltech):
+    """Render the Legal Tech tab content."""
+    parts = []
+    for section in legaltech.get("sections", []):
+        parts.append(render_section(section))
+    return "\n\n".join(parts)
+
+
+def render_funding_table(funding_table):
+    """Render the India funding report table."""
+    if not funding_table:
+        return ""
+    return (
+        f'<div class="section">\n'
+        f'  <div class="section-title">{esc(funding_table.get("title", "India Startup Funding — Seed to Series A ($1M–$100M)"))}</div>\n'
+        f'{render_table(funding_table)}\n'
+        f'</div>'
+    )
 
 
 def build(data, template_html):
@@ -332,6 +372,9 @@ def build(data, template_html):
         "{{COMPETITORS_SUMMARY}}": d.get("competitors_summary", ""),
         "{{OFFERINGS_CONTENT}}": render_offerings(d["offerings"]) if d.get("offerings") else "",
         "{{OFFERINGS_SUMMARY}}": d.get("offerings_summary", ""),
+        "{{LEGALTECH_CONTENT}}": render_legaltech(d["legaltech"]) if d.get("legaltech") else "",
+        "{{LEGALTECH_SUMMARY}}": d.get("legaltech_summary", ""),
+        "{{FUNDING_TABLE}}": render_funding_table(d.get("funding_table")),
     }
 
     output = template_html

@@ -709,87 +709,370 @@
   },
   "partnerships": [
     {
+      "title": "Partner Stickiness Programs — What TC Can Offer",
+      "cards": [
+        {
+          "title": "Revenue Share & Referral Commissions",
+          "date": "Cross-Industry Model",
+          "body": "Offer partners 10–20% recurring revenue share on referred clients (modeled on <strong>Clio's Channel Partner Program</strong> and <strong>HubSpot's tiered commissions</strong>). Partners earn ongoing income as clients stay, creating natural retention. SpotDraft's affiliate program offers per-referral payouts — TC can beat this with recurring rev-share tied to client lifetime value.",
+          "tags": [
+            {
+              "text": "Stickiness: HIGH",
+              "class": "tag-green"
+            },
+            {
+              "text": "Revenue Model",
+              "class": "tag-lime"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "Priority"
+        },
+        {
+          "title": "Certified Partner Program & Training",
+          "date": "Cross-Industry Model",
+          "body": "Create a <strong>TC Certified Partner</strong> designation (like Clio Certified Consultants or HubSpot Gold/Platinum tiers). Partners complete training on DPDP Act, Indian corporate law, and TC's service methodology. Certification builds partner expertise, creates switching costs, and lets TC feature certified partners in a directory. Partners gain credibility + lead flow.",
+          "tags": [
+            {
+              "text": "Stickiness: HIGH",
+              "class": "tag-green"
+            },
+            {
+              "text": "Certification",
+              "class": "tag-blue"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "Priority"
+        },
+        {
+          "title": "Co-Marketing & Joint Content Engine",
+          "date": "Cross-Industry Model",
+          "body": "Offer partners co-branded content (whitepapers, webinars, case studies) and joint event speaking slots — modeled on <strong>SpotDraft's Strategic Partner</strong> tier. TC's Knowledge Engine intelligence becomes co-branded market reports partners can share with their clients. Partners get thought leadership content; TC gets distribution.",
+          "tags": [
+            {
+              "text": "Stickiness: MEDIUM",
+              "class": "tag-amber"
+            },
+            {
+              "text": "Co-Marketing",
+              "class": "tag-blue"
+            }
+          ],
+          "signal": "medium",
+          "signal_label": "Enablement"
+        },
+        {
+          "title": "Exclusive Territory / Vertical Rights",
+          "date": "Cross-Industry Model",
+          "body": "Grant top-performing partners exclusive territory rights (e.g., exclusive TC referral partner for Hyderabad GCCs, or exclusive legal ops partner for fintech startups). Modeled on <strong>Salesforce's ISV partner territories</strong>. Creates deep lock-in: partners invest in building their territory, making switching costly.",
+          "tags": [
+            {
+              "text": "Stickiness: HIGH",
+              "class": "tag-green"
+            },
+            {
+              "text": "Territory Lock-in",
+              "class": "tag-lime"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "Strategic"
+        },
+        {
+          "title": "Partner Portal & Deal Registration",
+          "date": "Cross-Industry Model",
+          "body": "Build a partner portal with deal registration (protect partner leads from channel conflict), performance dashboards, client tracking, and resource library. Modeled on <strong>HubSpot's Solutions Partner Portal</strong>. Portal becomes the daily tool partners use → habitual engagement. Include tiered rewards: Bronze (0–5 referrals), Silver (5–15), Gold (15+) with escalating benefits.",
+          "tags": [
+            {
+              "text": "Stickiness: MEDIUM",
+              "class": "tag-amber"
+            },
+            {
+              "text": "Platform",
+              "class": "tag-blue"
+            }
+          ],
+          "signal": "medium",
+          "signal_label": "Infrastructure"
+        },
+        {
+          "title": "Client Success Co-Ownership",
+          "date": "Cross-Industry Model",
+          "body": "Involve partners in quarterly client reviews and give them visibility into service outcomes — NPS scores, compliance milestones, cost savings. Modeled on <strong>Accenture's ecosystem partner model</strong>. Partners who see client success stay longer. TC differentiator: unlike pure-tech partner programs, TC offers human-advisory depth that tech platforms can't.",
+          "tags": [
+            {
+              "text": "Stickiness: HIGH",
+              "class": "tag-green"
+            },
+            {
+              "text": "Retention",
+              "class": "tag-lime"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "Differentiator"
+        }
+      ]
+    },
+    {
+      "title": "ECP Partners — Early-Stage Company Program",
+      "cards": [
+        {
+          "title": "Pre-Seed to Series A Funding Platforms",
+          "date": "Oct 2026",
+          "body": "Companies that help pre-seed to Series A startups with funding are natural ECP referral partners. <strong>AngelList India</strong>, <strong>LetsVenture</strong>, <strong>Venture Catalysts</strong>, <strong>100X.VC</strong> — their portfolio companies need incorporation, ESOP setup, shareholder agreements, DPDP compliance. TC becomes the default legal partner at company formation.",
+          "tags": [
+            {
+              "text": "ECP",
+              "class": "tag-lime"
+            },
+            {
+              "text": "Referral Pipeline",
+              "class": "tag-blue"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "ECP Priority"
+        },
+        {
+          "title": "Startup Accelerators & Incubators",
+          "date": "Oct 2026",
+          "body": "<strong>Y Combinator India alumni network</strong>, <strong>Techstars India</strong>, <strong>NASSCOM 10K Startups</strong>, <strong>T-Hub Hyderabad</strong>, <strong>Startup India Hub</strong>. Each cohort = 20–50 startups needing legal setup. TC offers batch pricing: incorporation + first contracts + DPDP foundation at fixed cost. Accelerator gets value-add for their portfolio; TC gets pipeline.",
+          "tags": [
+            {
+              "text": "ECP",
+              "class": "tag-lime"
+            },
+            {
+              "text": "Batch Pipeline",
+              "class": "tag-green"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "ECP Priority"
+        },
+        {
+          "title": "Startup Banking & Financial Infra",
+          "date": "Oct 2026",
+          "body": "<strong>Razorpay</strong> (payments + Razorpay Rize for startups), <strong>Mercury</strong> (US banking for Indian-origin startups), <strong>Winvesta</strong> (cross-border banking). Startups opening business accounts also need legal entity setup, compliance frameworks, and cross-border structuring. Joint offering: bank account + legal foundation package.",
+          "tags": [
+            {
+              "text": "ECP",
+              "class": "tag-lime"
+            },
+            {
+              "text": "Bundled Offering",
+              "class": "tag-amber"
+            }
+          ],
+          "signal": "medium",
+          "signal_label": "ECP Synergy"
+        }
+      ]
+    },
+    {
+      "title": "FGC Partners — Fractional General Counsel",
+      "cards": [
+        {
+          "title": "GCC Setup & Expansion Consultants",
+          "date": "Oct 2026",
+          "body": "<strong>ANSR</strong> (GCC-as-a-Service, 100+ GCCs built), <strong>Zinnov</strong> (GCC advisory), <strong>Quess Corp</strong> (staffing + managed services for GCCs). These firms set up GCCs but don't provide legal teams. TC's FGC fills the gap: fractional GC for GCCs scaling from 50 to 500 employees, covering employment law, vendor contracts, IP, and DPDP compliance.",
+          "tags": [
+            {
+              "text": "FGC",
+              "class": "tag-blue"
+            },
+            {
+              "text": "GCC Pipeline",
+              "class": "tag-green"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "FGC Priority"
+        },
+        {
+          "title": "HR Tech & PEO/EOR Platforms",
+          "date": "Oct 2026",
+          "body": "<strong>Deel</strong>, <strong>Remote.com</strong>, <strong>Multiplier</strong>, <strong>Oyster HR</strong> — EOR/PEO platforms helping companies hire in India. Their clients need India-specific legal counsel (employment contracts, POSH compliance, gratuity, PF/ESI). TC's FGC handles the ongoing legal ops these platforms can't: board resolutions, shareholder agreements, regulatory filings.",
+          "tags": [
+            {
+              "text": "FGC",
+              "class": "tag-blue"
+            },
+            {
+              "text": "EOR Channel",
+              "class": "tag-amber"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "FGC Priority"
+        },
+        {
+          "title": "CFO-as-a-Service & Finance Platforms",
+          "date": "Oct 2026",
+          "body": "<strong>Kruze Consulting</strong> (US startup CFOs), <strong>Pilot</strong> (bookkeeping for startups), <strong>IndiQus</strong> (India CFO services). Fractional CFOs work alongside fractional GCs — same buyer persona (Series A–B companies). Joint go-to-market: CFO + GC bundle. Finance teams trigger legal needs: fundraising docs, cap table management, compliance filings.",
+          "tags": [
+            {
+              "text": "FGC",
+              "class": "tag-blue"
+            },
+            {
+              "text": "CFO+GC Bundle",
+              "class": "tag-lime"
+            }
+          ],
+          "signal": "medium",
+          "signal_label": "FGC Synergy"
+        }
+      ]
+    },
+    {
+      "title": "CRaaS Partners — Compliance & Regulatory as a Service",
+      "cards": [
+        {
+          "title": "Data Privacy & DPDP Compliance Tech",
+          "date": "Oct 2026",
+          "body": "<strong>OneTrust</strong>, <strong>BigID</strong>, <strong>Securiti.ai</strong>, <strong>Tsaaro</strong> (India-focused). These provide the tech layer for DPDP compliance — consent management, data mapping, DPIA automation. TC provides the legal advisory + implementation layer. CRaaS = tech platform + TC's regulatory interpretation and compliance design.",
+          "tags": [
+            {
+              "text": "CRaaS",
+              "class": "tag-red"
+            },
+            {
+              "text": "DPDP Stack",
+              "class": "tag-amber"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "CRaaS Priority"
+        },
+        {
+          "title": "GRC & Audit Platforms",
+          "date": "Oct 2026",
+          "body": "<strong>Sprinto</strong> (SOC 2 / ISO automation, $20M Series B), <strong>Scrut Automation</strong> (India GRC), <strong>Drata</strong> (compliance automation). Companies going through SOC 2 / ISO 27001 certification also need DPDP compliance, contract reviews, and vendor due diligence. TC handles the legal workstreams these platforms flag but can't resolve.",
+          "tags": [
+            {
+              "text": "CRaaS",
+              "class": "tag-red"
+            },
+            {
+              "text": "Compliance Stack",
+              "class": "tag-green"
+            }
+          ],
+          "signal": "high",
+          "signal_label": "CRaaS Priority"
+        },
+        {
+          "title": "CLM & Contract Intelligence",
+          "date": "Oct 2026",
+          "body": "<strong>SpotDraft</strong> (CLM, India), <strong>Ironclad</strong> (enterprise CLM), <strong>Juro</strong> (in-browser contracts). These platforms manage contracts but need legal expertise for template creation, clause libraries, and regulatory-compliant drafting. TC's CRaaS: build and maintain the contract templates + compliance rules that feed into CLM platforms.",
+          "tags": [
+            {
+              "text": "CRaaS",
+              "class": "tag-red"
+            },
+            {
+              "text": "CLM Integration",
+              "class": "tag-blue"
+            }
+          ],
+          "signal": "medium",
+          "signal_label": "CRaaS Synergy"
+        }
+      ]
+    },
+    {
       "title": "Strategic Partnership Leads",
       "cards": [
         {
           "title": "Comp AI",
           "date": "Oct 2026",
           "meta_tags": [
-            "$34M raised"
+            "Series A"
           ],
-          "source_url": "https://pulse2.com/comp-ai-raises-34-million-series-a/",
-          "source_domain": "pulse2.com",
-          "body": "Agentic AI for compliance and cybersecurity automation. Fresh $34M Series A. Directly complementary to TC&rsquo;s compliance advisory &mdash; potential technology partnership for AI-powered compliance workflows.",
+          "body": "Agentic AI for compliance and cybersecurity automation. Fresh $34M Series A. Directly relevant to TC&rsquo;s compliance advisory practice. Partnership opportunity for AI-driven regulatory workflows.",
           "tags": [
             {
-              "text": "Co-sell",
-              "class": "tag-lime"
+              "text": "CRaaS",
+              "class": "tag-red"
             },
             {
-              "text": "AI Compliance",
+              "text": "AI Integration",
               "class": "tag-blue"
             }
-          ]
+          ],
+          "signal": "high",
+          "signal_label": "Signal: HIGH",
+          "source_url": "https://pulse2.com",
+          "source_domain": "pulse2.com",
+          "relevance": 5
         },
         {
           "title": "Xapien",
-          "date": "Sep 11, 2026",
+          "date": "Sep 2026",
           "meta_tags": [
-            "$56M raised"
+            "Series B"
           ],
-          "source_url": "https://pulse2.com/xapien-secures-56-million-led-by-spectrum-equity-to-scale-ai-native-due-diligence-platform/",
-          "source_domain": "pulse2.com",
-          "body": "AI-native due diligence and third-party risk platform. $56M Series B from Spectrum Equity. KYC/AML automation directly relevant to TC&rsquo;s GCC clients needing vendor and counterparty due diligence.",
+          "body": "AI-native due diligence and third-party risk platform. $56M Series B from Spectrum Equity. London-based, expanding to US. KYC/AML compliance automation for enterprises.",
           "tags": [
             {
-              "text": "Due Diligence",
-              "class": "tag-lime"
+              "text": "CRaaS",
+              "class": "tag-red"
             },
             {
-              "text": "Risk/Compliance",
-              "class": "tag-blue"
+              "text": "Due Diligence",
+              "class": "tag-amber"
             }
-          ]
+          ],
+          "signal": "high",
+          "signal_label": "Signal: HIGH",
+          "source_url": "https://pulse2.com",
+          "source_domain": "pulse2.com",
+          "relevance": 4
         },
         {
           "title": "Bayshore",
-          "date": "Jun 2026",
+          "date": "Oct 2026",
           "meta_tags": [
-            "$8M raised"
+            "Seed"
           ],
-          "source_url": "https://tech.eu/2026/06/02/bayshore-raises-8m-to-turn-compliance-rules-into-code/",
-          "source_domain": "tech.eu",
-          "body": "Turns legal and compliance rules into auditable AI agents. $8M seed led by Earlybird. Automates compliance with code-level precision. Partnership opportunity for TC&rsquo;s regulatory advisory &mdash; embed TC&rsquo;s India compliance expertise into Bayshore&rsquo;s agent framework.",
+          "body": "Turns legal and compliance rules into auditable AI agents. $8M seed led by Early Light. Relevant to TC&rsquo;s regulatory advisory — potential OEM partner for automating compliance checks.",
           "tags": [
+            {
+              "text": "CRaaS",
+              "class": "tag-red"
+            },
             {
               "text": "AI Agents",
               "class": "tag-lime"
-            },
-            {
-              "text": "Compliance Tech",
-              "class": "tag-blue"
             }
-          ]
+          ],
+          "signal": "medium",
+          "signal_label": "Signal: MEDIUM",
+          "relevance": 4
         },
         {
           "title": "SpotDraft",
-          "date": "Jan 2026",
+          "date": "Oct 2026",
           "meta_tags": [
-            "$8M Series B Ext"
+            "CLM Leader"
           ],
-          "source_url": "https://india.entrepreneur.com/news-and-trends/spotdraft-raises-usd-8-mn-in-series-b-extension-from/502230",
-          "source_domain": "entrepreneur.com",
           "body": "India&rsquo;s leading CLM platform. Strategic Qualcomm Ventures backing. Potential CRaaS integration partner for contract lifecycle management workflows.",
           "tags": [
             {
               "text": "CRaaS",
-              "class": "tag-blue"
+              "class": "tag-red"
             },
             {
-              "text": "India CLM",
-              "class": "tag-green"
+              "text": "CLM",
+              "class": "tag-blue"
             }
-          ]
+          ],
+          "signal": "high",
+          "signal_label": "Signal: HIGH",
+          "relevance": 5
         }
       ]
     },
@@ -803,28 +1086,34 @@
           "tags": [
             {
               "text": "FGC",
-              "class": "tag-lime"
+              "class": "tag-blue"
             },
             {
-              "text": "High Priority",
-              "class": "tag-green"
+              "text": "ECP+FGC",
+              "class": "tag-lime"
             }
-          ]
+          ],
+          "signal": "high",
+          "signal_label": "FGC Pipeline",
+          "relevance": 5
         },
         {
           "title": "Mid-Size GCCs Without India Legal Heads",
           "date": "Oct 2026",
-          "body": "200+ GCCs with 100&ndash;500 employees lack dedicated India legal teams. DPDP compliance urgency + employment law complexity = strong fractional GC demand. Target: US tech/fintech GCCs in Bengaluru/Hyderabad.",
+          "body": "200+ GCCs with 100&ndash;500 employees lack dedicated India legal teams. DPDP compliance deadline (Nov 2026 for consent managers) forces action. TC&rsquo;s FGC offering = ideal fit for ongoing fractional legal coverage at this scale.",
           "tags": [
             {
               "text": "FGC",
-              "class": "tag-lime"
+              "class": "tag-blue"
             },
             {
-              "text": "Pipeline",
-              "class": "tag-blue"
+              "text": "DPDP Trigger",
+              "class": "tag-amber"
             }
-          ]
+          ],
+          "signal": "high",
+          "signal_label": "FGC Pipeline",
+          "relevance": 5
         }
       ]
     },
@@ -833,42 +1122,57 @@
       "cards": [
         {
           "title": "OpenAI Astra for Law",
-          "date": "Sep 17, 2026",
-          "source_url": "https://openai.com",
-          "source_domain": "openai.com",
-          "body": "Enterprise legal AI platform. Partnerships with Thomson Reuters, iManage, Harvey, and Clio. Signals that AI-native legal workflows are becoming standard. TC opportunity: advisory for firms adopting these tools.",
+          "date": "Sep 2026",
+          "body": "Enterprise legal AI platform. Partnerships with Thomson Reuters, iManage, Harvey. Creates ecosystem where TC can position as the human-advisory layer complementing AI-driven legal research and drafting.",
           "tags": [
             {
-              "text": "AI Platform",
+              "text": "AI Alliance",
               "class": "tag-blue"
+            },
+            {
+              "text": "Advisory Layer",
+              "class": "tag-lime"
             }
-          ]
+          ],
+          "signal": "high",
+          "signal_label": "Strategic Watch",
+          "relevance": 4
         },
         {
           "title": "Anthropic + LexisNexis Protege",
-          "date": "2026",
-          "source_url": "https://lexisnexis.com",
-          "source_domain": "lexisnexis.com",
-          "body": "Claude integrated into LexisNexis Protege platform. AI-powered legal research at enterprise scale. Positions Anthropic as key legal tech infrastructure layer.",
+          "date": "Sep 2026",
+          "body": "Claude integrated into LexisNexis Protege platform. AI-powered legal research at enterprise scale. TC opportunity: implementation partner for Indian firms adopting Protege.",
           "tags": [
             {
-              "text": "AI Research",
-              "class": "tag-lime"
+              "text": "AI Alliance",
+              "class": "tag-blue"
+            },
+            {
+              "text": "Implementation",
+              "class": "tag-green"
             }
-          ]
+          ],
+          "signal": "high",
+          "signal_label": "Strategic Watch",
+          "relevance": 4
         },
         {
           "title": "Thomson Reuters Acquisition Spree",
-          "date": "2026",
-          "source_url": "https://www.legaltech-talk.com/insights/news/mergers-acquisitions/",
-          "source_domain": "legaltech-talk.com",
-          "body": "TR acquired Noetica (AI transaction analysis, Feb) and Etain/HighQ modules (Apr). Building integrated AI-native legal platform. Co-sell opportunity with TC&rsquo;s advisory services.",
+          "date": "Oct 2026",
+          "body": "TR acquired Noetica (AI transaction analysis, Feb) and Etain/HighQ modules (Apr). Building integrated legal ops stack. TC opportunity: advisory partner for Indian enterprises adopting TR&rsquo;s expanding platform.",
           "tags": [
             {
-              "text": "Platform Play",
-              "class": "tag-green"
+              "text": "M&A Signal",
+              "class": "tag-amber"
+            },
+            {
+              "text": "Advisory Layer",
+              "class": "tag-lime"
             }
-          ]
+          ],
+          "signal": "medium",
+          "signal_label": "Strategic Watch",
+          "relevance": 3
         }
       ]
     }
@@ -2409,5 +2713,299 @@
       }
     ]
   },
-  "offerings_summary": "The Growth Playbook integrates three channels into a unified engine: <strong>Outbound</strong> (trigger-based outreach on funding, DPDP deadlines, GCC launches, leadership changes, regulatory shifts, and M&A), <strong>Inbound</strong> (DPDP compliance hub — DPBI now operational so enforcement angle critical, GCC thought leadership, Knowledge Engine as lead magnet, SEO dominance, and engagement scoring), and <strong>Partnerships</strong> (tech platform ecosystem with SpotDraft/Comp AI/Bayshore, Big 4 referral network, UK ALSP delivery, and industry association collaboration). The 34-day DPDP deadline is the highest-urgency lever across all three channels. TechSparks in 3 days = immediate event-led outbound opportunity. <strong>90-day targets:</strong> 50 qualified pipeline leads, 10 DPDP assessments, 5 GCC fractional GC contracts, 2 tech partnerships signed, and 1 UK ALSP MOU."
+  "offerings_summary": "The Growth Playbook integrates three channels into a unified engine: <strong>Outbound</strong> (trigger-based outreach on funding, DPDP deadlines, GCC launches, leadership changes, regulatory shifts, and M&A), <strong>Inbound</strong> (DPDP compliance hub — DPBI now operational so enforcement angle critical, GCC thought leadership, Knowledge Engine as lead magnet, SEO dominance, and engagement scoring), and <strong>Partnerships</strong> (tech platform ecosystem with SpotDraft/Comp AI/Bayshore, Big 4 referral network, UK ALSP delivery, and industry association collaboration). The 34-day DPDP deadline is the highest-urgency lever across all three channels. TechSparks in 3 days = immediate event-led outbound opportunity. <strong>90-day targets:</strong> 50 qualified pipeline leads, 10 DPDP assessments, 5 GCC fractional GC contracts, 2 tech partnerships signed, and 1 UK ALSP MOU.",
+  "funding_table": {
+    "title": "India Startup Funding — Seed to Series A ($1M–$100M) | Oct 4–10, 2026",
+    "headers": [
+      "#",
+      "Startup",
+      "Sector",
+      "Amount",
+      "Round",
+      "Lead Investor",
+      "Source"
+    ],
+    "rows": [
+      [
+        "1",
+        "<strong>Nat Habit</strong>",
+        "D2C / Personal Care",
+        "₹142 Cr (~$17M)",
+        "Series B",
+        "Trident Growth Partners",
+        "<a href=\"https://entrackr.com\" target=\"_blank\">Entrackr</a>"
+      ],
+      [
+        "2",
+        "<strong>KISAH</strong>",
+        "D2C / Menswear",
+        "₹35.9 Cr (~$4.3M)",
+        "Series A",
+        "Not disclosed",
+        "<a href=\"https://inc42.com\" target=\"_blank\">Inc42</a>"
+      ],
+      [
+        "3",
+        "<strong>Lumio</strong>",
+        "Consumer Electronics",
+        "$12M",
+        "Series A",
+        "Blume Ventures",
+        "<a href=\"https://startuptalky.com\" target=\"_blank\">StartupTalky</a>"
+      ],
+      [
+        "4",
+        "<strong>NeoGrowth</strong>",
+        "Fintech / MSME Lending",
+        "₹85 Cr (~$10.2M)",
+        "Debt + Equity",
+        "FMO, LeapFrog",
+        "<a href=\"https://entrackr.com\" target=\"_blank\">Entrackr</a>"
+      ],
+      [
+        "5",
+        "<strong>Gramiyaa</strong>",
+        "D2C / Food",
+        "Undisclosed",
+        "Series A",
+        "Not disclosed",
+        "<a href=\"https://entrackr.com\" target=\"_blank\">Entrackr</a>"
+      ],
+      [
+        "6",
+        "<strong>Ionage</strong>",
+        "Energy / CleanTech",
+        "$1.3M",
+        "Pre-Series A",
+        "Not disclosed",
+        "<a href=\"https://entrackr.com\" target=\"_blank\">Entrackr</a>"
+      ]
+    ]
+  },
+  "legaltech": {
+    "sections": [
+      {
+        "title": "AI for Legal",
+        "cards": [
+          {
+            "title": "Harvey AI Raises $550M Series D",
+            "date": "Sep 2026",
+            "body": "$550M at $15.5B valuation. Led by Diffusion + Lightspeed. Largest legal tech raise ever. Partners with OpenAI Astra for Law. Signals massive enterprise demand for AI-powered legal workflows.",
+            "tags": [
+              {
+                "text": "AI Legal",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Series D",
+                "class": "tag-lime"
+              }
+            ],
+            "signal": "high",
+            "signal_label": "Market Signal",
+            "data_ltcat": "ai-legal",
+            "source_url": "https://harvey.ai",
+            "source_domain": "harvey.ai",
+            "show_source_in_footer": true
+          },
+          {
+            "title": "Filevine $400M Series D — AI Legal Intelligence",
+            "date": "Oct 2026",
+            "body": "$400M from Insight Partners, Accel, Halo Fund at $2.3B valuation. AI-powered legal intelligence platform for mid-market and enterprise firms. Second-largest legal tech raise of 2026 after Harvey.",
+            "tags": [
+              {
+                "text": "AI Legal",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Series D",
+                "class": "tag-lime"
+              }
+            ],
+            "signal": "high",
+            "signal_label": "Market Signal",
+            "data_ltcat": "ai-legal",
+            "source_url": "https://news.bloomberglaw.com",
+            "source_domain": "news.bloomberglaw.com",
+            "show_source_in_footer": true
+          },
+          {
+            "title": "Comp AI — Agentic Compliance Automation",
+            "date": "Oct 2026",
+            "body": "$34M Series A. Agentic AI for compliance and cybersecurity automation. Directly relevant to TC&rsquo;s CRaaS offering. Partnership opportunity for AI-driven regulatory workflows.",
+            "tags": [
+              {
+                "text": "AI Legal",
+                "class": "tag-blue"
+              },
+              {
+                "text": "Series A",
+                "class": "tag-green"
+              }
+            ],
+            "signal": "high",
+            "signal_label": "TC Angle",
+            "data_ltcat": "ai-legal",
+            "source_url": "https://pulse2.com",
+            "source_domain": "pulse2.com",
+            "show_source_in_footer": true
+          }
+        ]
+      },
+      {
+        "title": "Legal Tech Fundraising & Deals",
+        "cards": [
+          {
+            "title": "Noxtua — €100M+ Strategic Acquisition",
+            "date": "Sep 2026",
+            "body": "C.H.BECK majority stake acquisition. European AI legal research platform. Major strategic acquisition signalling market consolidation in EU legal tech.",
+            "tags": [
+              {
+                "text": "M&A",
+                "class": "tag-amber"
+              },
+              {
+                "text": "EU Legal Tech",
+                "class": "tag-blue"
+              }
+            ],
+            "signal": "high",
+            "signal_label": "Market Signal",
+            "data_ltcat": "fundraising",
+            "source_url": "https://tech.eu",
+            "source_domain": "tech.eu",
+            "show_source_in_footer": true
+          },
+          {
+            "title": "Xapien $56M Series B — AI Due Diligence",
+            "date": "Sep 2026",
+            "body": "Led by Spectrum Equity. AI-native due diligence and third-party risk platform. London-based, expanding to US. KYC/AML compliance automation for enterprises.",
+            "tags": [
+              {
+                "text": "Fundraising",
+                "class": "tag-lime"
+              },
+              {
+                "text": "Series B",
+                "class": "tag-green"
+              }
+            ],
+            "signal": "high",
+            "signal_label": "Watch",
+            "data_ltcat": "fundraising",
+            "source_url": "https://pulse2.com",
+            "source_domain": "pulse2.com",
+            "show_source_in_footer": true
+          },
+          {
+            "title": "Chamelio $26M Series A — Legal Ops Platform",
+            "date": "Sep 2026",
+            "body": "Led by Entree Capital. AI legal ops platform for in-house counsel teams. Automates legal workflows. Complementary to TC&rsquo;s FGC and CRaaS offerings.",
+            "tags": [
+              {
+                "text": "Fundraising",
+                "class": "tag-lime"
+              },
+              {
+                "text": "Series A",
+                "class": "tag-green"
+              }
+            ],
+            "signal": "medium",
+            "signal_label": "Watch",
+            "data_ltcat": "fundraising",
+            "source_url": "https://unite.ai",
+            "source_domain": "unite.ai",
+            "show_source_in_footer": true
+          }
+        ]
+      },
+      {
+        "title": "ALSP & Legal Ops",
+        "cards": [
+          {
+            "title": "Big Four Legal Expansion in India Accelerates",
+            "date": "Oct 2026",
+            "body": "Big Four accounting firms have doubled their partner ranks in India over the past 2 years, aggressively expanding legal and compliance advisory. Both a competitive threat (entering TC&rsquo;s space) and a partnership opportunity (they need specialized legal execution capacity).",
+            "tags": [
+              {
+                "text": "ALSP",
+                "class": "tag-amber"
+              },
+              {
+                "text": "India",
+                "class": "tag-green"
+              }
+            ],
+            "signal": "high",
+            "signal_label": "TC Angle",
+            "data_ltcat": "alsp"
+          },
+          {
+            "title": "Corporate Legal Departments Shift to Managed Services",
+            "date": "Oct 2026",
+            "body": "Thomson Reuters Institute reports 62% of corporate legal departments plan to increase ALSP spending in 2027. Key drivers: cost pressure, AI adoption gaps, and regulatory complexity. TC&rsquo;s FGC and CRaaS positioned for this wave.",
+            "tags": [
+              {
+                "text": "Legal Ops",
+                "class": "tag-blue"
+              },
+              {
+                "text": "ALSP Growth",
+                "class": "tag-lime"
+              }
+            ],
+            "signal": "medium",
+            "signal_label": "Trend",
+            "data_ltcat": "legal-ops"
+          }
+        ]
+      },
+      {
+        "title": "India Legal Tech",
+        "cards": [
+          {
+            "title": "SpotDraft $8M Qualcomm Ventures — On-Device Legal AI",
+            "date": "Jan 2026",
+            "body": "SpotDraft secured $8M from Qualcomm Ventures for on-device AI processing in enterprise legal workflows. India&rsquo;s leading CLM platform continues to expand. Potential CRaaS integration partner.",
+            "tags": [
+              {
+                "text": "India",
+                "class": "tag-green"
+              },
+              {
+                "text": "CLM",
+                "class": "tag-blue"
+              }
+            ],
+            "signal": "high",
+            "signal_label": "TC Angle",
+            "data_ltcat": "india",
+            "source_url": "https://www.businesswire.com/news/home/20260126696119/en/SpotDraft-Secures-8M-from-Qualcomm-Ventures-Pioneering-On-Device-AI-for-Enterprise-Legal",
+            "source_domain": "businesswire.com",
+            "show_source_in_footer": true
+          },
+          {
+            "title": "India DPDP Act — Consent Manager Deadline Nov 2026",
+            "date": "Oct 2026",
+            "body": "Consent manager registration deadline approaching (Nov 13, 2026). Enterprises scrambling to comply. Creates immediate CRaaS demand for TC — DPDP compliance assessment + consent framework implementation.",
+            "tags": [
+              {
+                "text": "India",
+                "class": "tag-green"
+              },
+              {
+                "text": "DPDP",
+                "class": "tag-red"
+              }
+            ],
+            "signal": "high",
+            "signal_label": "Deadline",
+            "data_ltcat": "regulatory"
+          }
+        ]
+      }
+    ]
+  },
+  "legaltech_summary": "Legal tech investment continues at record pace with Harvey ($550M) and Filevine ($400M) mega-rounds. AI-powered compliance and legal ops platforms present immediate partnership opportunities for TC's CRaaS and FGC offerings. India market heating up with SpotDraft's Qualcomm backing and DPDP deadline urgency."
 }
