@@ -3007,5 +3007,191 @@
       }
     ]
   },
-  "legaltech_summary": "Legal tech investment continues at record pace with Harvey ($550M) and Filevine ($400M) mega-rounds. AI-powered compliance and legal ops platforms present immediate partnership opportunities for TC's CRaaS and FGC offerings. India market heating up with SpotDraft's Qualcomm backing and DPDP deadline urgency."
+  "legaltech_summary": "Legal tech investment continues at record pace with Harvey ($550M) and Filevine ($400M) mega-rounds. AI-powered compliance and legal ops platforms present immediate partnership opportunities for TC's CRaaS and FGC offerings. India market heating up with SpotDraft's Qualcomm backing and DPDP deadline urgency.",
+
+  "scorecard": {
+    "items": [
+      {
+        "metric": "Pipeline Value",
+        "value": "$2.4M",
+        "trend": "up",
+        "trend_text": "+18% MoM",
+        "status": "green",
+        "sparkline": [1.2, 1.4, 1.5, 1.8, 1.9, 2.0, 2.4]
+      },
+      {
+        "metric": "DPDP Countdown",
+        "value": "215 days",
+        "trend": "down",
+        "trend_text": "Consent Mgr in 34d",
+        "status": "amber",
+        "sparkline": [365, 335, 305, 275, 245, 215]
+      },
+      {
+        "metric": "Funding Tracked",
+        "value": "$1.29B+",
+        "trend": "up",
+        "trend_text": "14 new deals",
+        "status": "green",
+        "sparkline": [0.6, 0.7, 0.85, 0.95, 1.1, 1.29]
+      },
+      {
+        "metric": "Competitor Moves",
+        "value": "3 HIGH",
+        "trend": "up",
+        "trend_text": "SpotDraft, Legistify active",
+        "status": "red",
+        "sparkline": [1, 1, 2, 2, 3, 3]
+      },
+      {
+        "metric": "Events Pipeline",
+        "value": "9 upcoming",
+        "trend": "up",
+        "trend_text": "TechSparks in 3 days",
+        "status": "green",
+        "sparkline": [4, 5, 6, 7, 8, 9]
+      }
+    ]
+  },
+
+  "outbound_actions": {
+    "items": [
+      {
+        "priority": "NOW",
+        "text": "Send DPDP consent-manager deadline email to 50 GCC legal heads — <strong>34 days to Nov 13 deadline</strong>"
+      },
+      {
+        "priority": "NOW",
+        "text": "Follow up on Hyderabad GCC prospects (JLL, Guidehouse) with ECP pitch"
+      },
+      {
+        "priority": "SOON",
+        "text": "Build cold sequence targeting Series A-B funded Indian startups from this week's funding deals"
+      },
+      {
+        "priority": "PLAN",
+        "text": "Develop DPDP compliance assessment lead magnet for outbound campaigns"
+      }
+    ]
+  },
+
+  "inbound_actions": {
+    "items": [
+      {
+        "priority": "NOW",
+        "text": "Publish DPDP Consent Manager Framework explainer blog — <strong>deadline Nov 13</strong>"
+      },
+      {
+        "priority": "SOON",
+        "text": "Create SEO content around \"DPDP compliance India\" and \"GCC legal ops Hyderabad\""
+      },
+      {
+        "priority": "SOON",
+        "text": "Develop case study from existing GCC client for website social proof"
+      },
+      {
+        "priority": "PLAN",
+        "text": "Launch gated whitepaper: \"GCC Legal Playbook — India 2027\" for lead capture"
+      }
+    ]
+  },
+
+  "pr_actions": {
+    "items": [
+      {
+        "priority": "NOW",
+        "text": "Pitch commentary on DPDP consent manager rules to <strong>Economic Times</strong> and <strong>Mint</strong>"
+      },
+      {
+        "priority": "SOON",
+        "text": "Draft thought-leadership piece on GCC legal-ops trends for LinkedIn and industry publications"
+      },
+      {
+        "priority": "PLAN",
+        "text": "Pitch speaking slot at upcoming India Legal Tech Summit (Q1 2027)"
+      }
+    ]
+  },
+
+  "partnerships_actions": {
+    "items": [
+      {
+        "priority": "NOW",
+        "text": "Reach out to <strong>SpotDraft</strong> for certified implementation partner program in India"
+      },
+      {
+        "priority": "SOON",
+        "text": "Explore referral arrangement with Comp AI ($34M raised) and Bayshore ($8M) for India entry support"
+      },
+      {
+        "priority": "PLAN",
+        "text": "Propose co-hosted webinar with compliance-tech vendor targeting DPDP readiness"
+      }
+    ]
+  },
+
+  "competitors_actions": {
+    "items": [
+      {
+        "priority": "NOW",
+        "text": "Update win/loss tracking for SpotDraft and Legistify encounters"
+      },
+      {
+        "priority": "SOON",
+        "text": "Position TC's <strong>human + tech</strong> advisory model against pure-SaaS competitors in all pitch decks"
+      },
+      {
+        "priority": "PLAN",
+        "text": "Build comparison matrix for sales team: TC vs SpotDraft vs Legistify vs Volody"
+      }
+    ]
+  },
+
+  "battlecards": [
+    {
+      "name": "SpotDraft",
+      "threat": "HIGH",
+      "strengths": [
+        "SaaS CLM with network effects — $26M Series B, Qualcomm backing",
+        "Self-serve + enterprise tiers scaling fast",
+        "Strong product-led growth in contract management"
+      ],
+      "weaknesses": [
+        "Pure tech play — no advisory or implementation layer",
+        "No India-specific compliance expertise (DPDP, MCA)",
+        "Cannot run end-to-end legal function for GCCs"
+      ],
+      "win_strategy": "Position TC as the advisory + implementation partner that SpotDraft customers need. Offer to manage the legal function end-to-end, using SpotDraft as one tool in the stack."
+    },
+    {
+      "name": "Legistify",
+      "threat": "HIGH",
+      "strengths": [
+        "India-focused litigation SaaS — strong local relevance",
+        "Growing enterprise customer base",
+        "Purpose-built for Indian court and regulatory tracking"
+      ],
+      "weaknesses": [
+        "Narrow focus on litigation only",
+        "No contract, compliance, or advisory offering",
+        "Cannot handle cross-border or multi-jurisdictional work"
+      ],
+      "win_strategy": "Out-position by offering full-stack legal ops including litigation oversight as one component. TC resolves 90%+ of matters without external counsel — Legistify can't match this."
+    },
+    {
+      "name": "Volody / Kira (Pure Tech)",
+      "threat": "HIGH",
+      "strengths": [
+        "Pure technology platforms with AI-native features",
+        "Strong contract analysis and CLM capabilities",
+        "Well-funded and scaling globally"
+      ],
+      "weaknesses": [
+        "Solve only one layer of legal ops stack",
+        "No human advisory component",
+        "Cannot manage India-specific regulatory landscape"
+      ],
+      "win_strategy": "Emphasize TC's human expertise + tech enablement model. GCCs need someone to run the India legal function, not just a dashboard. TC's 90%+ in-house resolution rate is the moat."
+    }
+  ]
 }
