@@ -144,6 +144,131 @@ footer a{color:var(--tc-blue);}
 /* Source link */
 .source-link{font-size:11px;color:var(--tc-blue);font-weight:500;}
 
+/* Executive Scorecard */
+.scorecard{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:24px;}
+.scorecard-item{background:var(--tc-card-bg);border:1px solid var(--tc-border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+.scorecard-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.scorecard-item.sc-green::before{background:var(--tc-green);}
+.scorecard-item.sc-amber::before{background:#d4a017;}
+.scorecard-item.sc-red::before{background:var(--tc-red);}
+.scorecard-metric{font-family:'Sora',sans-serif;font-size:11px;font-weight:600;color:var(--tc-muted);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:6px;}
+.scorecard-value{font-family:'Sora',sans-serif;font-size:24px;font-weight:700;color:var(--tc-navy);}
+.scorecard-trend{font-size:12px;font-weight:600;margin-top:4px;}
+.scorecard-trend.up{color:var(--tc-green);}
+.scorecard-trend.down{color:var(--tc-red);}
+.scorecard-trend.flat{color:var(--tc-muted);}
+.scorecard-spark{margin-top:8px;height:24px;}
+.scorecard-spark svg{width:100%;height:24px;}
+
+/* Search bar */
+.search-wrap{position:relative;max-width:280px;}
+.search-input{font-family:'Figtree',sans-serif;font-size:13px;padding:7px 12px 7px 32px;border:1px solid var(--tc-border);border-radius:99px;background:var(--tc-card-bg);width:100%;outline:none;transition:border-color .2s;}
+.search-input:focus{border-color:var(--tc-blue);}
+.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;color:var(--tc-muted);pointer-events:none;}
+.search-results{position:absolute;top:100%;left:0;right:0;background:var(--tc-card-bg);border:1px solid var(--tc-border);border-radius:var(--radius);box-shadow:var(--shadow-hover);max-height:320px;overflow-y:auto;z-index:200;display:none;margin-top:4px;}
+.search-results.open{display:block;}
+.search-result-item{padding:10px 14px;border-bottom:1px solid var(--tc-border);cursor:pointer;font-size:13px;}
+.search-result-item:hover{background:#f5f5f0;}
+.search-result-item:last-child{border-bottom:none;}
+.search-result-tab{font-size:10px;font-weight:600;color:var(--tc-blue);text-transform:uppercase;margin-bottom:2px;}
+.search-result-title{font-family:'Sora',sans-serif;font-weight:600;font-size:13px;}
+.search-result-snippet{font-size:12px;color:var(--tc-muted);margin-top:2px;}
+
+/* Recommended Actions */
+.actions-bar{background:linear-gradient(135deg,#f0f4e8,#e8f0e0);border:1px solid #d5e0c0;border-radius:var(--radius);padding:16px 20px;margin-bottom:20px;}
+.actions-bar-title{font-family:'Sora',sans-serif;font-size:13px;font-weight:600;color:var(--tc-green);text-transform:uppercase;letter-spacing:0.3px;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.actions-bar-title::before{content:'▶';font-size:10px;}
+.action-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(95,122,31,0.12);}
+.action-item:last-child{border-bottom:none;}
+.action-priority{font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;flex-shrink:0;margin-top:2px;}
+.action-priority.ap-now{background:#fce4e1;color:var(--tc-red);}
+.action-priority.ap-soon{background:#fdf0d5;color:var(--tc-amber);}
+.action-priority.ap-plan{background:#dceafb;color:#1a5aab;}
+.action-text{font-size:13px;line-height:1.45;color:#333;}
+
+/* Battlecards */
+.battlecard{background:var(--tc-card-bg);border:1px solid var(--tc-border);border-radius:var(--radius);margin-bottom:12px;box-shadow:var(--shadow);overflow:hidden;}
+.battlecard-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;transition:background .2s;}
+.battlecard-header:hover{background:#f8f8f3;}
+.battlecard-name{font-family:'Sora',sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;gap:10px;}
+.battlecard-toggle{font-size:18px;color:var(--tc-muted);transition:transform .2s;flex-shrink:0;}
+.battlecard.open .battlecard-toggle{transform:rotate(180deg);}
+.battlecard-body{display:none;padding:0 18px 16px;border-top:1px solid var(--tc-border);}
+.battlecard.open .battlecard-body{display:block;}
+.bc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.bc-col h4{font-family:'Sora',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:8px;}
+.bc-col.bc-strengths h4{color:var(--tc-green);}
+.bc-col.bc-weaknesses h4{color:var(--tc-red);}
+.bc-col ul{list-style:none;padding:0;margin:0;}
+.bc-col li{font-size:13px;padding:4px 0;border-bottom:1px solid var(--tc-border);line-height:1.4;}
+.bc-col li:last-child{border-bottom:none;}
+.bc-win{margin-top:14px;padding:12px;background:#f0f4e8;border-radius:8px;}
+.bc-win h4{font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:var(--tc-navy);text-transform:uppercase;letter-spacing:0.3px;margin-bottom:6px;}
+.bc-win p{font-size:13px;color:#333;line-height:1.45;}
+
+/* View Switcher */
+.view-switcher{position:relative;display:inline-block;}
+.view-btn{font-family:'Sora',sans-serif;font-size:12px;font-weight:500;padding:6px 14px;border:1px solid var(--tc-border);background:var(--tc-card-bg);border-radius:99px;cursor:pointer;color:var(--tc-muted);transition:all .2s;display:flex;align-items:center;gap:6px;}
+.view-btn:hover{border-color:var(--tc-lime-bright);}
+.view-btn.active{background:var(--tc-navy);color:#fff;border-color:var(--tc-navy);}
+.view-btn::after{content:'▾';font-size:10px;}
+.view-menu{position:absolute;top:100%;right:0;background:var(--tc-card-bg);border:1px solid var(--tc-border);border-radius:var(--radius);box-shadow:var(--shadow-hover);min-width:180px;z-index:300;display:none;margin-top:4px;}
+.view-menu.open{display:block;}
+.view-option{padding:10px 14px;font-size:13px;cursor:pointer;border-bottom:1px solid var(--tc-border);transition:background .15s;}
+.view-option:hover{background:#f5f5f0;}
+.view-option:last-child{border-bottom:none;}
+.view-option .view-option-name{font-family:'Sora',sans-serif;font-weight:600;font-size:13px;}
+.view-option .view-option-desc{font-size:11px;color:var(--tc-muted);margin-top:2px;}
+
+/* Win/Loss Tracking */
+.winloss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:20px;}
+.winloss-card{background:var(--tc-card-bg);border:1px solid var(--tc-border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);}
+.winloss-card h4{font-family:'Sora',sans-serif;font-size:13px;font-weight:600;color:var(--tc-navy);margin-bottom:10px;}
+.winloss-stat{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--tc-border);}
+.winloss-stat:last-child{border-bottom:none;}
+.winloss-label{font-size:13px;color:#444;}
+.winloss-value{font-family:'Sora',sans-serif;font-weight:700;font-size:14px;}
+.winloss-value.win{color:var(--tc-green);}
+.winloss-value.loss{color:var(--tc-red);}
+.winloss-value.rate{color:var(--tc-navy);}
+.winloss-bar-track{height:8px;background:#eee;border-radius:4px;overflow:hidden;margin-top:6px;}
+.winloss-bar-fill{height:100%;border-radius:4px;}
+.winloss-bar-fill.fill-green{background:var(--tc-green);}
+.winloss-bar-fill.fill-red{background:var(--tc-red);}
+.winloss-bar-fill.fill-amber{background:#d4a017;}
+.objection-item{padding:8px 0;border-bottom:1px solid var(--tc-border);font-size:13px;}
+.objection-item:last-child{border-bottom:none;}
+.objection-freq{font-family:'Sora',sans-serif;font-weight:600;color:var(--tc-navy);margin-right:6px;}
+
+/* Analytics Panel */
+.analytics-toggle{font-family:'Figtree',sans-serif;font-size:11px;padding:4px 10px;border:1px solid var(--tc-border);background:var(--tc-card-bg);border-radius:99px;cursor:pointer;color:var(--tc-muted);transition:all .2s;}
+.analytics-toggle:hover{border-color:var(--tc-lime-bright);}
+.analytics-panel{display:none;position:fixed;bottom:16px;right:16px;background:var(--tc-card-bg);border:1px solid var(--tc-border);border-radius:var(--radius);box-shadow:var(--shadow-hover);padding:16px;z-index:400;min-width:240px;max-width:300px;}
+.analytics-panel.open{display:block;}
+.analytics-panel h4{font-family:'Sora',sans-serif;font-size:13px;font-weight:600;color:var(--tc-navy);margin-bottom:10px;}
+.analytics-row{display:flex;align-items:center;justify-content:space-between;padding:5px 0;font-size:12px;border-bottom:1px solid var(--tc-border);}
+.analytics-row:last-child{border-bottom:none;}
+.analytics-bar{height:6px;background:#eee;border-radius:3px;flex:1;margin:0 8px;max-width:80px;}
+.analytics-bar-fill{height:100%;background:var(--tc-lime-bright);border-radius:3px;}
+.analytics-close{position:absolute;top:8px;right:10px;cursor:pointer;font-size:14px;color:var(--tc-muted);background:none;border:none;}
+
+/* Annotations */
+.annotation-btn{font-size:11px;padding:3px 8px;border:1px dashed var(--tc-border);border-radius:6px;background:transparent;cursor:pointer;color:var(--tc-muted);transition:all .2s;margin-left:auto;}
+.annotation-btn:hover{border-color:var(--tc-blue);color:var(--tc-blue);}
+.annotation-list{margin-top:8px;border-top:1px solid var(--tc-border);padding-top:6px;}
+.annotation-note{font-size:12px;color:#555;padding:4px 0;border-bottom:1px dashed var(--tc-border);display:flex;align-items:flex-start;gap:6px;}
+.annotation-note:last-child{border-bottom:none;}
+.annotation-author{font-family:'Sora',sans-serif;font-size:10px;font-weight:600;color:var(--tc-blue);flex-shrink:0;}
+.annotation-text{flex:1;}
+.annotation-time{font-size:10px;color:var(--tc-muted);flex-shrink:0;}
+.annotation-input-wrap{display:flex;gap:6px;margin-top:6px;}
+.annotation-input{font-family:'Figtree',sans-serif;font-size:12px;flex:1;padding:5px 8px;border:1px solid var(--tc-border);border-radius:6px;outline:none;}
+.annotation-input:focus{border-color:var(--tc-blue);}
+.annotation-submit{font-family:'Figtree',sans-serif;font-size:11px;padding:5px 10px;border:none;background:var(--tc-navy);color:#fff;border-radius:6px;cursor:pointer;}
+.annotation-submit:hover{background:var(--tc-blue);}
+.annotation-delete{cursor:pointer;font-size:10px;color:var(--tc-muted);margin-left:4px;}
+.annotation-delete:hover{color:var(--tc-red);}
+
 /* Responsive */
 @media(max-width:768px){
   .stat-row{grid-template-columns:repeat(2,1fr);}
@@ -152,9 +277,21 @@ footer a{color:var(--tc-blue);}
   .dpdp-big{font-size:40px;}
   .topbar-inner{height:48px;}
   .logo{font-size:17px;}
+  .scorecard{grid-template-columns:repeat(2,1fr);}
+  .bc-grid{grid-template-columns:1fr;}
+  .search-wrap{max-width:200px;}
+  .search-input{font-size:12px;padding:6px 10px 6px 28px;}
+  .actions-bar{padding:12px 14px;}
+  .tc-table{font-size:12px;}
+  .tc-table th,.tc-table td{padding:8px 10px;}
 }
 @media(max-width:480px){
   .stat-row{grid-template-columns:1fr;}
+  .scorecard{grid-template-columns:1fr;}
+  .search-wrap{max-width:160px;}
+  .topbar-right span:not(.search-wrap *){display:none;}
+  .tab-bar{gap:4px;}
+  .tab-btn{padding:6px 10px;font-size:11px;}
 }
 </style>
 </head>
@@ -165,7 +302,23 @@ footer a{color:var(--tc-blue);}
 <div class="topbar-inner">
   <div class="logo"><img src="https://cdn.prod.website-files.com/6a2bef73200216edf6f8afeb/6a2f167e872c0f8f4fa25670_Vector.svg" alt="Team Counsel" style="height:28px;"></div>
   <div class="topbar-right">
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" id="global-search" placeholder="Search signals, companies…" autocomplete="off">
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <div class="view-switcher">
+      <button class="view-btn" id="view-toggle">All Tabs</button>
+      <div class="view-menu" id="view-menu">
+        <div class="view-option" data-view="all"><div class="view-option-name">All Tabs</div><div class="view-option-desc">Full dashboard</div></div>
+        <div class="view-option" data-view="morning"><div class="view-option-name">Morning Brief</div><div class="view-option-desc">Scorecard · Signals · DPDP</div></div>
+        <div class="view-option" data-view="sales"><div class="view-option-name">Sales Intelligence</div><div class="view-option-desc">Outbound · Competitors · CLD</div></div>
+        <div class="view-option" data-view="market"><div class="view-option-name">Market Pulse</div><div class="view-option-desc">Funding · Legal Tech · Sentiment</div></div>
+        <div class="view-option" data-view="ops"><div class="view-option-name">GTM Ops</div><div class="view-option-desc">Events · Partnerships · Offerings</div></div>
+      </div>
+    </div>
     <span>{{DATE_DISPLAY}}</span>
+    <button class="analytics-toggle" id="analytics-toggle" title="Usage Analytics">📊</button>
     <a href="/archive/index.html">Archive</a>
   </div>
 </div>
@@ -190,6 +343,8 @@ footer a{color:var(--tc-blue);}
 
 <!-- ============== TAB 1: OVERVIEW ============== -->
 <div class="tab-panel active" id="tab-overview">
+
+{{SCORECARD}}
 
 <div class="stat-row">
 {{STAT_CARDS}}
@@ -224,21 +379,25 @@ footer a{color:var(--tc-blue);}
 
 <!-- ============== TAB 2: OUTBOUND ============== -->
 <div class="tab-panel" id="tab-outbound">
+{{OUTBOUND_ACTIONS}}
 {{OUTBOUND_CONTENT}}
 </div>
 
 <!-- ============== TAB 3: INBOUND ============== -->
 <div class="tab-panel" id="tab-inbound">
+{{INBOUND_ACTIONS}}
 {{INBOUND_CONTENT}}
 </div>
 
 <!-- ============== TAB 4: P&R ============== -->
 <div class="tab-panel" id="tab-pr">
+{{PR_ACTIONS}}
 {{PR_CONTENT}}
 </div>
 
 <!-- ============== TAB 5: PARTNERSHIPS ============== -->
 <div class="tab-panel" id="tab-partnerships">
+{{PARTNERSHIPS_ACTIONS}}
 {{PARTNERSHIPS_CONTENT}}
 </div>
 
@@ -328,7 +487,13 @@ footer a{color:var(--tc-blue);}
   <button class="filter-btn" data-threat="low">Low Threat</button>
 </div>
 
+{{COMPETITORS_ACTIONS}}
+
 {{COMPETITORS_CONTENT}}
+
+{{WIN_LOSS}}
+
+{{BATTLECARDS}}
 
 <div class="summary-card">
   <h3>Competitive Strategy Summary</h3>
@@ -377,6 +542,13 @@ footer a{color:var(--tc-blue);}
 </div>
 
 </div><!-- /container -->
+
+<!-- Analytics Panel -->
+<div class="analytics-panel" id="analytics-panel">
+  <button class="analytics-close" id="analytics-close">✕</button>
+  <h4>Usage Analytics</h4>
+  <div id="analytics-content">No data yet</div>
+</div>
 
 <footer>
   <div style="margin-bottom:6px;">Built by <strong>Team Counsel</strong> &middot; Knowledge Engine &middot; Updated {{DATE_DISPLAY}}</div>
@@ -599,6 +771,232 @@ footer a{color:var(--tc-blue);}
       btn.classList.add('active');
       applyLegaltechFilters();
     });
+  });
+
+  // === Global Search ===
+  var searchInput = document.getElementById('global-search');
+  var searchResults = document.getElementById('search-results');
+  if(searchInput && searchResults){
+    var searchIndex = [];
+    // Index all cards, events, table rows
+    document.querySelectorAll('.card-title, .event-name, .battlecard-name, .scorecard-metric').forEach(function(el){
+      var panel = el.closest('.tab-panel');
+      var tabId = panel ? panel.id.replace('tab-','') : 'overview';
+      var body = '';
+      var bodyEl = el.closest('.card,.event-item,.battlecard,.scorecard-item');
+      if(bodyEl) body = bodyEl.textContent;
+      searchIndex.push({title: el.textContent.trim(), tab: tabId, body: body.substring(0,200), el: bodyEl});
+    });
+    searchInput.addEventListener('input', function(){
+      var q = searchInput.value.trim().toLowerCase();
+      if(q.length < 2){ searchResults.classList.remove('open'); return; }
+      var matches = [];
+      searchIndex.forEach(function(item){
+        if(item.title.toLowerCase().indexOf(q) > -1 || item.body.toLowerCase().indexOf(q) > -1){
+          matches.push(item);
+        }
+      });
+      if(matches.length === 0){ searchResults.innerHTML = '<div class="search-result-item" style="color:var(--tc-muted)">No results</div>'; searchResults.classList.add('open'); return; }
+      var html = '';
+      matches.slice(0,8).forEach(function(m){
+        html += '<div class="search-result-item" data-tab="'+m.tab+'">';
+        html += '<div class="search-result-tab">'+m.tab+'</div>';
+        html += '<div class="search-result-title">'+m.title+'</div>';
+        html += '</div>';
+      });
+      searchResults.innerHTML = html;
+      searchResults.classList.add('open');
+      searchResults.querySelectorAll('.search-result-item[data-tab]').forEach(function(item){
+        item.addEventListener('click', function(){
+          var t = item.getAttribute('data-tab');
+          tabBtns.forEach(function(b){ b.classList.remove('active'); if(b.getAttribute('data-tab')===t) b.classList.add('active'); });
+          tabPanels.forEach(function(p){ p.classList.remove('active'); });
+          var panel = document.getElementById('tab-'+t);
+          if(panel) panel.classList.add('active');
+          searchResults.classList.remove('open');
+          searchInput.value = '';
+        });
+      });
+    });
+    document.addEventListener('click', function(e){
+      if(!searchInput.contains(e.target) && !searchResults.contains(e.target)) searchResults.classList.remove('open');
+    });
+  }
+
+  // === Battlecard Toggle ===
+  document.querySelectorAll('.battlecard-header').forEach(function(header){
+    header.addEventListener('click', function(){
+      header.closest('.battlecard').classList.toggle('open');
+    });
+  });
+
+  // === View Switcher (Role-based Views) ===
+  var viewToggle = document.getElementById('view-toggle');
+  var viewMenu = document.getElementById('view-menu');
+  var VIEW_TAB_MAP = {
+    all: null, // show all tabs
+    morning: ['overview'],
+    sales: ['overview','outbound','competitors','cld'],
+    market: ['overview','funding','legaltech','inbound'],
+    ops: ['overview','events','partnerships','offerings']
+  };
+  if(viewToggle && viewMenu){
+    viewToggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      viewMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', function(e){
+      if(!viewMenu.contains(e.target)) viewMenu.classList.remove('open');
+    });
+    viewMenu.querySelectorAll('.view-option').forEach(function(opt){
+      opt.addEventListener('click', function(){
+        var view = opt.getAttribute('data-view');
+        var name = opt.querySelector('.view-option-name').textContent;
+        viewToggle.textContent = name;
+        viewMenu.classList.remove('open');
+        var allowed = VIEW_TAB_MAP[view];
+        tabBtns.forEach(function(btn){
+          var tab = btn.getAttribute('data-tab');
+          if(!allowed){
+            btn.style.display = '';
+          } else {
+            btn.style.display = allowed.indexOf(tab) > -1 ? '' : 'none';
+          }
+        });
+        // Activate first visible tab
+        var firstVisible = document.querySelector('.tab-btn:not([style*="display: none"])');
+        if(firstVisible) firstVisible.click();
+        // Track view switch
+        try{var ak='tc-ke-analytics-'+document.querySelector('meta[name="description"]')+'';var ad=JSON.parse(localStorage.getItem('tc-ke-analytics'))||{};ad['view_'+view]=(ad['view_'+view]||0)+1;localStorage.setItem('tc-ke-analytics',JSON.stringify(ad));}catch(e){}
+      });
+    });
+  }
+
+  // === Analytics / Engagement Tracking ===
+  var ANALYTICS_KEY = 'tc-ke-analytics';
+  var analyticsData = {};
+  try { analyticsData = JSON.parse(localStorage.getItem(ANALYTICS_KEY)) || {}; } catch(e){}
+  // Track tab clicks
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var tab = btn.getAttribute('data-tab');
+      analyticsData['tab_'+tab] = (analyticsData['tab_'+tab]||0) + 1;
+      analyticsData['last_visit'] = new Date().toISOString();
+      try{localStorage.setItem(ANALYTICS_KEY, JSON.stringify(analyticsData));}catch(e){}
+    });
+  });
+  // Track time on tabs
+  var currentTab = 'overview';
+  var tabStartTime = Date.now();
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var elapsed = Math.round((Date.now()-tabStartTime)/1000);
+      analyticsData['time_'+currentTab] = (analyticsData['time_'+currentTab]||0) + elapsed;
+      currentTab = btn.getAttribute('data-tab');
+      tabStartTime = Date.now();
+      try{localStorage.setItem(ANALYTICS_KEY, JSON.stringify(analyticsData));}catch(e){}
+    });
+  });
+  // Analytics panel toggle
+  var analyticsToggleBtn = document.getElementById('analytics-toggle');
+  var analyticsPanel = document.getElementById('analytics-panel');
+  var analyticsClose = document.getElementById('analytics-close');
+  var analyticsContent = document.getElementById('analytics-content');
+  function renderAnalytics(){
+    try{analyticsData = JSON.parse(localStorage.getItem(ANALYTICS_KEY))||{};}catch(e){}
+    var tabs = ['overview','outbound','inbound','pr','partnerships','events','funding','cld','competitors','offerings','legaltech'];
+    var maxClicks = 1;
+    tabs.forEach(function(t){maxClicks = Math.max(maxClicks, analyticsData['tab_'+t]||0);});
+    var html = '';
+    tabs.forEach(function(t){
+      var clicks = analyticsData['tab_'+t]||0;
+      var secs = analyticsData['time_'+t]||0;
+      var mins = Math.floor(secs/60);
+      var pct = maxClicks>0?Math.round((clicks/maxClicks)*100):0;
+      html += '<div class="analytics-row"><span style="width:80px;flex-shrink:0">'+t+'</span>';
+      html += '<div class="analytics-bar"><div class="analytics-bar-fill" style="width:'+pct+'%"></div></div>';
+      html += '<span style="width:30px;text-align:right">'+clicks+'</span>';
+      html += '<span style="width:40px;text-align:right;color:var(--tc-muted);font-size:11px">'+(mins>0?mins+'m':secs+'s')+'</span></div>';
+    });
+    if(analyticsData.last_visit){
+      html += '<div style="margin-top:8px;font-size:11px;color:var(--tc-muted)">Last: '+new Date(analyticsData.last_visit).toLocaleString()+'</div>';
+    }
+    html += '<div style="margin-top:8px;text-align:right"><button onclick="try{localStorage.removeItem(\'tc-ke-analytics\');document.getElementById(\'analytics-content\').innerHTML=\'Cleared\'}catch(e){}" style="font-size:11px;padding:3px 8px;border:1px solid var(--tc-border);border-radius:4px;background:none;cursor:pointer;color:var(--tc-muted)">Reset</button></div>';
+    analyticsContent.innerHTML = html;
+  }
+  if(analyticsToggleBtn){
+    analyticsToggleBtn.addEventListener('click', function(){
+      renderAnalytics();
+      analyticsPanel.classList.toggle('open');
+    });
+  }
+  if(analyticsClose){
+    analyticsClose.addEventListener('click', function(){
+      analyticsPanel.classList.remove('open');
+    });
+  }
+
+  // === Collaborative Annotations ===
+  var NOTES_KEY = 'tc-ke-notes-{{DATE_ISO}}';
+  var notesData = {};
+  try { notesData = JSON.parse(localStorage.getItem(NOTES_KEY)) || {}; } catch(e){}
+  function saveNotes(){try{localStorage.setItem(NOTES_KEY,JSON.stringify(notesData));}catch(e){}}
+  function renderNotes(cardEl,cardId){
+    var existing = cardEl.querySelector('.annotation-list');
+    if(existing) existing.remove();
+    var notes = notesData[cardId]||[];
+    if(notes.length===0) return;
+    var list = document.createElement('div');
+    list.className = 'annotation-list';
+    notes.forEach(function(n,i){
+      var div = document.createElement('div');
+      div.className = 'annotation-note';
+      div.innerHTML = '<span class="annotation-author">'+n.author+'</span><span class="annotation-text">'+n.text+'</span><span class="annotation-time">'+n.time+'</span><span class="annotation-delete" data-idx="'+i+'" title="Delete">✕</span>';
+      div.querySelector('.annotation-delete').addEventListener('click', function(e){
+        e.stopPropagation();
+        notesData[cardId].splice(i,1);
+        if(notesData[cardId].length===0) delete notesData[cardId];
+        saveNotes();
+        renderNotes(cardEl,cardId);
+      });
+      list.appendChild(div);
+    });
+    var body = cardEl.querySelector('.card-body')||cardEl;
+    body.parentNode.insertBefore(list, body.nextSibling);
+  }
+  // Add annotation buttons to all cards
+  document.querySelectorAll('.card').forEach(function(card,idx){
+    var cardId = 'card-'+idx;
+    card.setAttribute('data-card-id', cardId);
+    var footer = card.querySelector('.card-footer');
+    if(!footer) return;
+    var btn = document.createElement('button');
+    btn.className = 'annotation-btn';
+    btn.textContent = '+ Note';
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      // Toggle input
+      var existingInput = card.querySelector('.annotation-input-wrap');
+      if(existingInput){existingInput.remove();return;}
+      var wrap = document.createElement('div');
+      wrap.className = 'annotation-input-wrap';
+      wrap.innerHTML = '<input class="annotation-input" placeholder="Add a note…" maxlength="200"><button class="annotation-submit">Add</button>';
+      footer.parentNode.insertBefore(wrap, footer.nextSibling);
+      var input = wrap.querySelector('.annotation-input');
+      input.focus();
+      wrap.querySelector('.annotation-submit').addEventListener('click', function(){
+        var text = input.value.trim();
+        if(!text) return;
+        if(!notesData[cardId]) notesData[cardId]=[];
+        notesData[cardId].push({author:'TC',text:text,time:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})});
+        saveNotes();
+        wrap.remove();
+        renderNotes(card,cardId);
+      });
+      input.addEventListener('keydown',function(e){if(e.key==='Enter') wrap.querySelector('.annotation-submit').click();});
+    });
+    footer.appendChild(btn);
+    renderNotes(card,cardId);
   });
 
 })();

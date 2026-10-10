@@ -3193,5 +3193,28 @@
       ],
       "win_strategy": "Emphasize TC's human expertise + tech enablement model. GCCs need someone to run the India legal function, not just a dashboard. TC's 90%+ in-house resolution rate is the moat."
     }
-  ]
+  ],
+  "win_loss": {
+    "overall": {
+      "wins": 12,
+      "losses": 5
+    },
+    "by_competitor": [
+      {"name": "SpotDraft", "wins": 4, "losses": 2},
+      {"name": "Legistify", "wins": 3, "losses": 1},
+      {"name": "Volody/Kira", "wins": 3, "losses": 1},
+      {"name": "Big Law Firms", "wins": 2, "losses": 1}
+    ],
+    "objections": [
+      {"theme": "Price vs Big Law brand credibility", "frequency": 7},
+      {"theme": "Prefer pure-tech self-serve over advisory model", "frequency": 5},
+      {"theme": "Concerns about boutique firm scalability", "frequency": 4},
+      {"theme": "Existing vendor lock-in / switching cost", "frequency": 3}
+    ],
+    "trend": [
+      {"period": "Q1", "rate": 60},
+      {"period": "Q2", "rate": 65},
+      {"period": "Q3", "rate": 71}
+    ]
+  }
 }

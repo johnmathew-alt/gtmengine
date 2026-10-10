@@ -340,6 +340,201 @@ def render_legaltech(legaltech):
     return "\n\n".join(parts)
 
 
+def render_scorecard(scorecard):
+    """Render the executive scorecard for Overview tab."""
+    if not scorecard:
+        return ""
+    items = scorecard.get("items", [])
+    if not items:
+        return ""
+    parts = []
+    for item in items:
+        metric = esc(item["metric"])
+        value = esc(item["value"])
+        trend_dir = item.get("trend", "flat")  # up, down, flat
+        trend_text = esc(item.get("trend_text", ""))
+        status = item.get("status", "green")  # green, amber, red
+
+        # Sparkline SVG if data points provided
+        spark_html = ""
+        spark_data = item.get("sparkline", [])
+        if spark_data and len(spark_data) >= 2:
+            max_v = max(spark_data) or 1
+            min_v = min(spark_data)
+            rng = max_v - min_v or 1
+            w = 100
+            h = 24
+            pts = []
+            for i, v in enumerate(spark_data):
+                x = (i / (len(spark_data) - 1)) * w
+                y = h - ((v - min_v) / rng) * (h - 4) - 2
+                pts.append(f"{x:.1f},{y:.1f}")
+            polyline = " ".join(pts)
+            color = "#5f7a1f" if trend_dir == "up" else ("#b23b2a" if trend_dir == "down" else "#6b6b6b")
+            spark_html = (
+                f'<div class="scorecard-spark">'
+                f'<svg viewBox="0 0 {w} {h}" preserveAspectRatio="none">'
+                f'<polyline points="{polyline}" fill="none" stroke="{color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+                f'</svg></div>'
+            )
+
+        trend_cls = trend_dir
+        arrow = "▲" if trend_dir == "up" else ("▼" if trend_dir == "down" else "—")
+
+        parts.append(
+            f'<div class="scorecard-item sc-{status}">\n'
+            f'  <div class="scorecard-metric">{metric}</div>\n'
+            f'  <div class="scorecard-value">{value}</div>\n'
+            f'  <div class="scorecard-trend {trend_cls}">{arrow} {trend_text}</div>\n'
+            f'{spark_html}\n'
+            f'</div>'
+        )
+    return f'<div class="scorecard">\n' + "\n".join(parts) + '\n</div>'
+
+
+def render_actions(actions):
+    """Render recommended actions bar for a tab."""
+    if not actions:
+        return ""
+    items = actions.get("items", [])
+    if not items:
+        return ""
+    title = esc(actions.get("title", "Recommended Actions"))
+    parts = []
+    for item in items:
+        priority = item.get("priority", "soon")  # now, soon, plan
+        text = item["text"]  # may contain HTML
+        parts.append(
+            f'  <div class="action-item">\n'
+            f'    <span class="action-priority ap-{priority}">{priority.upper()}</span>\n'
+            f'    <span class="action-text">{text}</span>\n'
+            f'  </div>'
+        )
+    return (
+        f'<div class="actions-bar">\n'
+        f'  <div class="actions-bar-title">{title}</div>\n'
+        + "\n".join(parts) +
+        f'\n</div>'
+    )
+
+
+def render_battlecards(battlecards):
+    """Render expandable battlecards for high-threat competitors."""
+    if not battlecards:
+        return ""
+    parts = []
+    parts.append('<div class="section">\n  <div class="section-title">Competitive Battlecards</div>')
+    for bc in battlecards:
+        name = esc(bc["name"])
+        threat = esc(bc.get("threat", "high"))
+        threat_tag = f'<span class="tag tag-red" style="font-size:11px">{threat.upper()} THREAT</span>'
+        strengths = bc.get("strengths", [])
+        weaknesses = bc.get("weaknesses", [])
+        win_strategy = bc.get("win_strategy", "")
+        s_items = "".join(f"<li>{esc(s)}</li>" for s in strengths)
+        w_items = "".join(f"<li>{esc(w)}</li>" for w in weaknesses)
+        win_html = ""
+        if win_strategy:
+            win_html = (
+                f'<div class="bc-win"><h4>How TC Wins</h4>'
+                f'<p>{esc(win_strategy)}</p></div>'
+            )
+        parts.append(
+            f'  <div class="battlecard" data-threat="{threat}">\n'
+            f'    <div class="battlecard-header">\n'
+            f'      <div class="battlecard-name">{name} {threat_tag}</div>\n'
+            f'      <span class="battlecard-toggle">▾</span>\n'
+            f'    </div>\n'
+            f'    <div class="battlecard-body">\n'
+            f'      <div class="bc-grid">\n'
+            f'        <div class="bc-col bc-strengths"><h4>Their Strengths</h4><ul>{s_items}</ul></div>\n'
+            f'        <div class="bc-col bc-weaknesses"><h4>Their Weaknesses</h4><ul>{w_items}</ul></div>\n'
+            f'      </div>\n'
+            f'{win_html}\n'
+            f'    </div>\n'
+            f'  </div>'
+        )
+    parts.append('</div>')
+    return "\n".join(parts)
+
+
+def render_win_loss(win_loss):
+    """Render win/loss tracking section for Competitors tab."""
+    if not win_loss:
+        return ""
+    parts = []
+    parts.append('<div class="section">\n  <div class="section-title">Win / Loss Tracking</div>\n  <div class="winloss-grid">')
+
+    # Overall stats card
+    overall = win_loss.get("overall", {})
+    if overall:
+        wins = overall.get("wins", 0)
+        losses = overall.get("losses", 0)
+        total = wins + losses or 1
+        rate = round((wins / total) * 100)
+        parts.append(
+            f'    <div class="winloss-card">\n'
+            f'      <h4>Overall Record</h4>\n'
+            f'      <div class="winloss-stat"><span class="winloss-label">Wins</span><span class="winloss-value win">{wins}</span></div>\n'
+            f'      <div class="winloss-stat"><span class="winloss-label">Losses</span><span class="winloss-value loss">{losses}</span></div>\n'
+            f'      <div class="winloss-stat"><span class="winloss-label">Win Rate</span><span class="winloss-value rate">{rate}%</span></div>\n'
+            f'      <div class="winloss-bar-track"><div class="winloss-bar-fill fill-green" style="width:{rate}%"></div></div>\n'
+            f'    </div>'
+        )
+
+    # By competitor
+    by_competitor = win_loss.get("by_competitor", [])
+    if by_competitor:
+        rows = ""
+        for c in by_competitor:
+            name = esc(c["name"])
+            w = c.get("wins", 0)
+            l = c.get("losses", 0)
+            t = w + l or 1
+            r = round((w / t) * 100)
+            color = "fill-green" if r >= 60 else ("fill-amber" if r >= 40 else "fill-red")
+            rows += (
+                f'      <div class="winloss-stat"><span class="winloss-label">{name}</span>'
+                f'<span class="winloss-value">{w}W / {l}L ({r}%)</span></div>\n'
+                f'      <div class="winloss-bar-track"><div class="winloss-bar-fill {color}" style="width:{r}%"></div></div>\n'
+            )
+        parts.append(f'    <div class="winloss-card">\n      <h4>By Competitor</h4>\n{rows}    </div>')
+
+    # Objection themes
+    objections = win_loss.get("objections", [])
+    if objections:
+        obj_html = ""
+        for o in objections:
+            theme = esc(o["theme"])
+            freq = o.get("frequency", 0)
+            obj_html += f'      <div class="objection-item"><span class="objection-freq">{freq}×</span>{theme}</div>\n'
+        parts.append(f'    <div class="winloss-card">\n      <h4>Top Objection Themes</h4>\n{obj_html}    </div>')
+
+    # Win rate trend
+    trend = win_loss.get("trend", [])
+    if trend and len(trend) >= 2:
+        max_v = max(t.get("rate", 0) for t in trend) or 1
+        w = 100
+        h = 40
+        pts = []
+        for i, t in enumerate(trend):
+            x = (i / (len(trend) - 1)) * w
+            y = h - (t.get("rate", 0) / 100) * (h - 4) - 2
+            pts.append(f"{x:.1f},{y:.1f}")
+        polyline = " ".join(pts)
+        labels = "".join(f'<span style="font-size:10px;color:var(--tc-muted)">{esc(t.get("period",""))}</span>' for t in trend)
+        parts.append(
+            f'    <div class="winloss-card">\n      <h4>Win Rate Trend</h4>\n'
+            f'      <svg viewBox="0 0 {w} {h}" style="width:100%;height:40px" preserveAspectRatio="none">'
+            f'<polyline points="{polyline}" fill="none" stroke="#5f7a1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>\n'
+            f'      <div style="display:flex;justify-content:space-between;margin-top:4px">{labels}</div>\n'
+            f'    </div>'
+        )
+
+    parts.append('  </div>\n</div>')
+    return "\n".join(parts)
+
+
 def render_funding_table(funding_table):
     """Render the India funding report table."""
     if not funding_table:
@@ -359,13 +554,18 @@ def build(data, template_html):
     replacements = {
         "{{DATE_DISPLAY}}": d["date_display"],
         "{{DATE_ISO}}": d["date_iso"],
+        "{{SCORECARD}}": render_scorecard(d.get("scorecard")),
         "{{STAT_CARDS}}": render_stat_cards(d["stats"]),
         "{{DPDP_BANNER_TEXT}}": d["dpdp_banner_text"],
         "{{SENTIMENT_BARS}}": render_sentiment_bars(d["sentiments"]),
         "{{TOP_SIGNALS}}": render_card_grid(d["top_signals"]),
+        "{{OUTBOUND_ACTIONS}}": render_actions(d.get("outbound_actions")),
         "{{OUTBOUND_CONTENT}}": render_sections(d["outbound"]),
+        "{{INBOUND_ACTIONS}}": render_actions(d.get("inbound_actions")),
         "{{INBOUND_CONTENT}}": render_inbound(d["inbound"]),
+        "{{PR_ACTIONS}}": render_actions(d.get("pr_actions")),
         "{{PR_CONTENT}}": render_pr(d["pr"]),
+        "{{PARTNERSHIPS_ACTIONS}}": render_actions(d.get("partnerships_actions")),
         "{{PARTNERSHIPS_CONTENT}}": render_sections(d["partnerships"]),
         "{{EVENTS_LIST}}": render_events(d["events"]),
         "{{FUNDING_CARDS}}": render_funding_cards(d["funding_cards"]),
@@ -373,7 +573,10 @@ def build(data, template_html):
         "{{FUNDING_SUMMARY}}": d["funding_summary"],
         "{{CLD_CONTENT}}": render_cld(d["cld"]) if d.get("cld") else "",
         "{{CLD_SUMMARY}}": d.get("cld_summary", ""),
+        "{{COMPETITORS_ACTIONS}}": render_actions(d.get("competitors_actions")),
         "{{COMPETITORS_CONTENT}}": render_competitors(d["competitors"]) if d.get("competitors") else "",
+        "{{WIN_LOSS}}": render_win_loss(d.get("win_loss")),
+        "{{BATTLECARDS}}": render_battlecards(d.get("battlecards")),
         "{{COMPETITORS_SUMMARY}}": d.get("competitors_summary", ""),
         "{{OFFERINGS_CONTENT}}": render_offerings(d["offerings"]) if d.get("offerings") else "",
         "{{OFFERINGS_SUMMARY}}": d.get("offerings_summary", ""),
