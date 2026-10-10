@@ -183,11 +183,16 @@ def render_table(table, row_data_attr=None, row_data_col=None):
             cell_val = row[row_data_col]
             # Extract from signal-high/medium/low class or fall back to text
             import re
-            m = re.search(r'signal-(high|medium|low)', cell_val)
+            m = re.search(r'signal-(high|medium|low|watch)', cell_val)
             if m:
-                tr_attrs = f' data-{row_data_attr}="{m.group(1)}"'
+                level = m.group(1)
+                if level == "watch":
+                    level = "low"
+                tr_attrs = f' data-{row_data_attr}="{level}"'
             else:
-                tr_attrs = f' data-{row_data_attr}="{cell_val.strip().lower()}"'
+                # Strip HTML tags before using as attribute value
+                clean_val = re.sub(r'<[^>]+>', '', cell_val).strip().lower()
+                tr_attrs = f' data-{row_data_attr}="{esc(clean_val)}"'
         tbody_rows.append(f"<tr{tr_attrs}>" + "".join(cells) + "</tr>")
     tbody = "\n      ".join(tbody_rows)
 
